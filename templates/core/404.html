@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}Oh no, There's nothing here!{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>404 - Page not found</h1>
+  </div>
+  <div class="row">
+    <h4>The page you were looking for could not be found. </h4>
+    <h4>Don't worry, I've sent these people to to go and find it. Rest assured it will be found!</h4>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="container center-text">
+  <h5>Nope, There's nothing down here either. <a href="javascript:window.history.back()">Go back to where you came from!</h5></a>
+</div>
+{% endblock %}

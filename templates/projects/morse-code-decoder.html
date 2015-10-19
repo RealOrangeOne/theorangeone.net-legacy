@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block htmltitle %}Wiki Game Solver{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>Wiki Game Solver</h1>
+  </div>
+  <div class="row">
+    <h4>Sometimes writing a cheat for a game is more fun than the game itself!</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <p>
+      It's not often someone will need to decode text into morse code (and visa-versa), but if I had something like this when I needed it, it would have saved me hours of time! I originally wrote this code for the Student Robotics 2015 Entry, to convert a string message into a morse code message that would be transmitted using LEDs, for aestetics and debugging. Unfortunately due to a fixed time frame, this idea was scraped before it could be fully implemented. Fortunately the decoder worked perfectly!
+    </p>
+    <p>
+      Originally I had written the code in python, but to make it much more useful for people, I've removed the decoding part of the code, and converted the information into JSON, so it can be used in a variety of different languages easily.
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Using the library</h3>
+        <p>
+          Because the format is JSON, the library can be used in a wide variety of different languages. Just make sure to look up how to read JSON files in your chosen language, and it should work perfectly!
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h3>View Source</h3>
+        <p>
+          The source of the library is on github as a gist. I recommend downloading the file to use yourself, however for testing you can use githubs raw view as a hotlink.
+        </p>
+        <p>
+          <a href="" class="btn btn-default btn-lg btn-block">
+            View on Github <i class="icon ion-social-github"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

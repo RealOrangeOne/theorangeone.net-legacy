@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}Student Robotics 2015{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>Student Robotics 2015</h1>
+  </div>
+  <div class="row">
+    <h4>The home of the Autonomous Logistics and Inevitable Collision Engine!</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img style="border-radius: 12px; width: 100%;" src="https://farm1.staticflickr.com/737/20984044320_ccbba155f9_o.gif" />
+      </div>
+      <div class="col-sm-8">
+        <p>Welcome to the homepage of Collyer's Student Robotics Team 2015 (The 'A' Team) - Creators of 'A.L.I.C.E'! Here you can see everything that goes on throughout the competition.</p>
+        <p>This website is here to bridge the gap between the team and the outside world, and also to document everything that we do so that parents and Blue Shirts can see what we have been getting up to! Not only is the website for this, but it's also in the competition too! There is a prize (Awarded at the competition itself), for the best online presence. Hopefully no one else that has entered has their own domain name with dedicated section for the competition! </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>The Competition</h2>
+        <p>As was announced at kickstart, the game for this year is a take on the classic gamemode Capture the Flag. 4 teams compete over 5 flags to move as many of them as they can into their scoring zones. The person with the most flags in their scoring zone wins.</p>
+        <p>The flags are 25cm cubes of wood on caster wheels weighing roughly 2kg. The rules prevent us from lifting them, so the idea is to drag them around!</p>
+        <p>To see a copy of the rules from the competition, <a>Click Here!</a></p>
+      </div>
+      <div class="col-sm-4">
+        <div class="list-group">
+          <a class="list-group-item active h4">Quick Links</a>
+          <a href="{% url 'robotics:2015-robot' %}" class="list-group-item">The Robot - A.L.I.C.E</a>
+          <a href="#" class="list-group-item">The Code</a>
+          <a href="#" class="list-group-item">Gallery</a>
+          <a href="#" class="list-group-item">Blog</a>
+          <a href="#" class="list-group-item">Competition Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="full-width" style="height: 75%;">
+    <div class="full-height fix-image" style="background-size: cover; background-image: url('https://farm8.staticflickr.com/7704/17309744901_2d0ac6a174_b.jpg');"></div>
+  </div>
+{% endblock %}

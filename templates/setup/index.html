@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}My Setup{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>All the Tech!</h1>
+  </div>
+  <div class="row">
+    <h4>Yes there is a lot, but it all serves a purpose. Or at least most of it does anyway.</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <p>
+      My setup is much more of a project than something that is stable and constant. I am constantly upgrading, and changing things, whether it's on my main machine (which most of it is), my desk at work, or just a standard upgrade to my phone. As I use technology every day, for many, <strong>Many</strong> hours, I need it to work brilliantly, and not hold me back from anything I want to do.
+    </p>
+    <p>
+      As well as my main desk, there are a few other machines I use often, namely my laptop, work rig, and my phone. All of which follow the same criteria of not holdng me back from what I wantever to do.
+  </div>
+  <div class="container center-text" style="margin-bottom: 5px;">
+    <h2>Main Rig</h2>
+    <p>My main rig is the most powerful machine I own, and have ever owned. It's a fully custom built machine, currently in it's second generation, with an upgrade coming early 2016.</p>
+    <a href="{% url 'setup:desk' %}" class="btn btn-lg btn-primary">More Information</a>
+  </div>
+  <div class="full-width" style="height: 70%;">
+    <div class="full-height fix-image" style="background-image: url('https://c1.staticflickr.com/1/557/18312934624_ce49630c5f_b.jpg');">
+    </div>
+  </div>
+  <div class="container center-text" style="margin-bottom: 5px;">
+    <h2>Portable Devices</h2>
+    <p>Like most people my age, I'm never far from an interent connection, or at least some kind of gadget.</p>
+    <a href="" class="btn btn-lg btn-primary">More Information</a>
+  </div>
+  <div class="full-width" style="height: 75%;">
+    <div class="full-height fix-image" style="background-image: url('');">
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}About{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>About all the things</h1>
+  </div>
+  <div class="row">
+    <h4>So, who and/or what am I exactly? Let's find out...</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <p>
+      There are 2 parts to this, me and my website. Information for both of which is below.
+    </p>
+  </div>
+  <div class="container">
+    <div class="row center-text">
+      <div class="col-sm-6">
+        <div class="thumbnail panel-primary">
+          <p class="center-text mega-icon">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          </p>
+          <div class="caption">
+            <h3>About Me</h3>
+            <p></p>
+            <p><a href="#" class="btn btn-primary btn-block btn-lg" role="button">Find out more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="thumbnail panel-primary">
+          <p class="center-text mega-icon">
+            <span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
+          </p>
+          <div class="caption">
+            <h3>About the website</h3>
+            <p></p>
+            <p><a href="#" class="btn btn-primary btn-block btn-lg" role="button">Find out more</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

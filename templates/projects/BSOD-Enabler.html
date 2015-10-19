@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block htmltitle %}BSOD Enabler{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>BSOD Enabler</h1>
+  </div>
+  <div class="row">
+    <h4>Ever wanted to call a Blue Screen of Death on demand? Well now you can!</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container margin-bottom">
+    <p>For those that use windows, the famous <a href="https://en.wikipedia.org/wiki/Blue_Screen_of_Death">Blue Screen of Death</a> is an annoyance that plagues computers, causing error, frustration, and even loss of work. Whilst trying to configute Nvidia surround on my main rig and it keep blue screening, I thought to myself <q>This is really annoying, I wonder who else I can annoy with a BSOD</q></p>
+    <p><strong>And thus the BSOD_Enabler was born!</strong></p>
+    <p>After researching into it for a while, it turns out that there are a few different ways to cause a BSOD, unfortunately most of which are by doing things that are meant to cause a BSOD, and can therefore be dangereous to a computer, something I didn't really want. Then I stumbled upon <a href="http://www.wikihow.com/Force-a-Blue-Screen-in-Windows">this article</a>, which shows that you can infact envoke a BSOD through completely natural methods, which won't cause damage to a computer. Now to write a program that toggles it.</p>
+  </div>
+  <div class="full-width" style="height: 50%;">
+    <div class="full-height fix-image" style="background-size: cover; background-image: url('{% static 'img/BSOD_Enabler_Screenshot.png' %}');"></div>
+  </div>
+  <div class="container">
+    <p>Obviously there are many differnet ways, and probably far better ways of doing this, but I wanted something that was simple to use, fast, and could be done by anyone, no matter how technically illiterate. So I decided to write it in C#, and use a windows console interface.</p>
+    <p>Below you can find a download link to the application, as well as a link to the source code. I am hoping to upgrade the project in the future to allow for automated triggering, a much faster UI, with options, as well as a simple one-click setup and BSOD.</p>
+  </div>
+  <div class="container">
+    <div class="btn-group btn-group-justified">
+      <p class="center-text">
+        <a class="btn btn-primary btn-lg" href="" download="BSOD_Enabler.exe">Download BSOD Enabler Here</a>
+        <a class="btn btn-default btn-lg" href="javascript:alert('Coming in next version.');">View on Github <i class="icon ion-social-github"></i></a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,3 @@
+DEBUG=true
+DATABASE_URL=postgres://localhost/theorangeonenet
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend

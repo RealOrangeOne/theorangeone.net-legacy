@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block htmltitle %}Wiki Game Solver{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>Wiki Game Solver</h1>
+  </div>
+  <div class="row">
+    <h4>Sometimes writing a cheat for a game is more fun than the game itself!</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <p>
+      For those who dont know what the Wiki Game is: The Wiki Game is an online game where you attempt to navigate through wikipedia from a start page to a goal page using as few other pages as possible. Once i was shown the Wiki Game by my friend, and after i realised that I really wasn't very good at it, I looked into how the system worked, and how I could beat it.
+    </p>
+    <p>
+      I couldnt see how the back end worked, but after playing a few games and checking what happened on the page,the way that the game was won was when the iframe was at the final page location, or at least a clone of it on their servers with extra querystring information.
+    </p>
+    <p>
+      With this information, I started to write some javascript that would change the location of the iframe to the goal. Fortunately for me, there was already a link to the real winning page, so I could use that to construct the final URL, and direct the iframe to it, meaning I was able to win the game in 1 turn.
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h3>Using the code</h3>
+        <p>In the interest of ease of use, it's very simple to use. Just use the code, and let it do all the work.</p>
+        <ol>
+          <li>Start a new game on <a href="http://thewikigame.com/speed-race">Wiki Game</a>, DON'T press start!</li>
+          <li>Open your browser's developers console. This will vary from browser.</li>
+          <li>Open the javascript console</li>
+          <li>Paste the compact version of the code there, and execute it (press enter)</li>
+          <li>Congratulations, you just won!</li>
+        </ol>
+        <p>
+          If you want to win more games, just repaste the code, it works as often as you like!
+        </p>
+      </div>
+      <div class="col-md-7">
+        <h3>View Source</h3>
+        <script src="https://gist.github.com/RealOrangeOne/7da9a3dd1bf90ecdf7be.js"></script>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h3>Disclamier</h3>
+    <p>
+      As I experienced whilst developing this, the people that play Wiki Game don't tend to like people cheating. There were a lot of people getting very annoyed when I was testing it. So please use this at your own risk! At the moment I don't think there is any kind of banning system, but be warned!
+    </p>
+  </div>
+{% endblock %}

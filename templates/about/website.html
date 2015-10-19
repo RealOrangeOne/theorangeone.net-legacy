@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}About the website{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>The Website</h1>
+  </div>
+  <div class="row">
+    <h4>Well it's obvious it works pretty damn well, you're looking at it right now!</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <p>
+      My website is the culmination of all my knowledge, compiled into 1 place. It not only contains all my projects, but it in itself is a project. Making sure this website works properly is a tall order, especially considering it's self hosted. And making sure that it stays secure is also important, as it contains a large amount of personal information.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img style="border-radius: 12px;" class="full-width" src="" />
+      </div>
+      <div class="col-sm-8">
+        <h3>The server</h3>
+        <p>
+          The server itself is a VPS hosted by Inception hosting. Obviously if I did more looking around I could probably find a slightly better deal, but these people have brilliant customer support, fast and customizable servers, that are also hosted in a data center in the UK (a major bonus)!
+        </p>
+        <p>
+          The spec on this server are nothing special, but considering it wouldn't be running much, other than a web server, and a couple of other applications, it's pleanty. The most important thing is that it is hosted in the UK, for connection speed, and for other applications like a VPN.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img style="border-radius: 12px;" class="full-width" src="" />
+      </div>
+      <div class="col-sm-8">
+        <h3>The website</h3>
+        <p>
+          The website itself is written in python, using Django, and a PostgreSQL database. Now obviously for what I need this is massivly overkill, but it means I can use the skills and shortcuts I learn at work to make a very fast and good looking website. It also means that if I ever want to expand and add new features, then with python running the back end, it's going to be very easy!
+        </p>
+        <p>
+          I went with the Django framework because it's what I work with at work, so I have a lot of contact with it, so exposure to bugs or clean ways to write things happen on a daily basis. I also chose it because it's written in python, one of my favourite languages, and one i'm highly fluent in. I chose PostgreSQL as a database engine because it's again what we use at work, and I already had some files preconfigured with the required config.
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

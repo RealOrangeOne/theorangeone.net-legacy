@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}My Main Rig{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>My Glorious Setup</h1>
+  </div>
+  <div class="row">
+    <h4>Yes it's incredibly overkill for what I do, but that's just the way I like it!</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <p>
+      My setup is everything, I use my computer at least once a day to browse the internet, work on projects, even update this website, so it's very important that everything works perfectly and the fastest it can. Obviously these machines are probably a little too powerful for someone that does almost primarily software development, but it means when I want to do things like video editing, 3D modeling, or anything else that would require a high end computer, I can, because my computer is equip to handle it.
+    </p>
+    <p>
+      Over the 2 generations, my setup has evolved from a single monitor i5 workstation machine, to a triple monitor AMD FX-based monster of a computer. Parts lists for both machines, as well as my next planned build can be found below!
+    </p>
+  </div>
+
+  <div class="full-width" style="height: 75%;">
+    <div class="full-height fix-image" style="background-size: cover; background-image: url('https://c1.staticflickr.com/1/557/18747807580_b259bb0b48_h.jpg');">
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-primary">
+        <div class="panel-heading" role="tab" id="heading1">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+              1st Generation
+            </a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+          <div class="panel-body black-text">
+            <p>
+              The first generation of this was the first custom build i'd ever done. When I first built this, I wasn't really into gaming, programming, or any kind of heavy workflow for that matter, so this build isn't particullly powerful, although compared to my old <a href="http://www.pcworld.com/product/31104/dell-inspiron-1525.html">Dell Inspiron 1525</a>, it was pretty damn incredible!
+            </p>
+            <p>
+              You can find the full list of parts over on the PCPartPicker link below. Unfortunately due to the lack of catalog, or bad memory on my part, not all the parts are there, but there are as many as possible.
+            </p>
+            <p class="center-text">
+              <a href="" class="btn btn-primary btn-lg">Visit PCPartPicker</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading" role="tab" id="heading2">
+          <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              2nd Generation
+            </a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+          <div class="panel-body black-text">
+            <p>
+              The second generation of my build was in response to an updated workflow. I'd recently started working on 3D modeling, and found the wonderful world that is PC gaming, and needed something slightly more powerful than the <a href="#gen1">1st generation</a>.
+            </p>
+            <p>
+              I've been using the current generation for around 3 years now, and it's worked perfectly for all of this. The main reason I'm upgrading is to get more features, The 990FX chipset is very old, and my motherboard is missing a few key features such as dynamic fan control. And also I want to get into surround gaming, and I need some symetrical monitors, and more graphics horsepower for that!
+            </p>
+            <p class="center-text">
+              <a href="" class="btn btn-primary btn-lg">Visit PCPartPicker</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading" role="tab" id="heading3">
+          <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              3rd Generation - Coming Soon
+            </a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+          <div class="panel-body black-text">
+            <p>
+              The 3rd generation of my build isn't actually a thing yet, but I'm still actively working on what it's going to look like and the components inside it. Currently it's going to be an Intel based build, unless AMD release the reported 16-core monster, which I obviously have to have! You can find the current parts list at the link below, the list is always changing.
+            </p>
+            <p>
+              The main reason this build will be different, and a complete change from the previous 2, is the OS setup. Unlike the other 2, the main OS will be Ubuntu Gnome, and to maintain support for windows-only software and games, I'm going to be using a virtual machine running windows, with a graphics card hardware pass-through to it, so I can run windows applications, and then game using steam in-home streaming from the VM to the linux machine. The best of both worlds! I got the idea for doing this from a video <a href="https://www.youtube.com/user/razethew0rld">TekSyndicate</a> made, which is by far the single greatest example of tech wizzardry i've ever seen. You can find the video <a href="https://www.youtube.com/watch?v=16dbAUrtMX4">here</a>.
+            </p>
+            <p class="center-text">
+              <a href="" class="btn btn-primary btn-lg">Visit PCPartPicker</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

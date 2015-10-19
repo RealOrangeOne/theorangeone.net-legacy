@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}Homepage{% endblock %}
+
+{% block headercontent %}
+  <div class="row">
+    <h1>Welcome Internet!</h1>
+  </div>
+  <div class="row">
+    <h4>Welcome to the place where my knowledge lies - Or at least most of it.</h4>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    <p>Welcome people, to my little slice of the internet. I'm Jake, an apprentice software engineer at <a href="//dabapps.com">Dabapps</a>, and this is my website. Somewhere I can put all my work, projects, media, and anything else I can think of. I've done a lot of things in the past, such as <a href="{% url 'robotics:index' %}">Student Robotics</a>, <a href="{% url 'setup:desk' %}">Custom built PC's</a> and <a>College Projects</a>. All of this and more ca be found here. Take a look around, chances are you'll see some very cool things!</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1 h5">
+        <div class="list-group">
+          <a class="list-group-item active h4">Recently Added</a>
+          <a href="#" class="list-group-item">Printr Module for Python. Display messages like a BOSS!</a>
+          <a href="#" class="list-group-item">Hipchat emoticons on other websites? Yes Please!</a>
+          <a href="#" class="list-group-item">All the Roboics media is finally live!</a>
+          <a href="#" class="list-group-item"></a>
+        </div>
+      </div>
+      <div class="col-md-5 col-md-offset-1">
+        <p style="text-align:center"><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/RealOrangeOne" data-widget-id="600774030069760003">Tweets by @RealOrangeOne</a></p>
+        <script>
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="full-width">
+    <div id="index-carousel-container"></div>
+  </div>
+{% endblock %}

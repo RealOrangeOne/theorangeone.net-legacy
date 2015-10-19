@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block htmltitle %}{% titleMD %}{% endblock %}{% endblock %}
+
+{% block headercontent %}
+    {% block headerMD %}{% endblock %}
+{% endblock %}
+
+{% block content%}
+    <div class="container" id="markdown-container">
+    <pre>
+        {% autoescape off %}
+            {% block contentMD %}{% endblock %}
+        {% endautoescape %}
+    </pre></div>
+    <script type="text/javascript" src="{% static 'js/markdown.js'%}"></script>
+    <script>$('#markdown-container > pre')[0].innerHTML = markdown.toHTML($('#markdown-container > pre')[0].innerHTML); </script>
+{% endblock %}
