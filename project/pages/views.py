@@ -6,6 +6,12 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['body_class'] = "index"
+        return context
+
+
 
 class NoJavascriptView(TemplateView):
     template_name = 'core/no-js.html'

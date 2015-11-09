@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="shortcut icon" href=""/>
   </head>
-  <body>
+  <body class="{{ body_class }}">
     {% block content%}{% endblock %}
     <script type="text/javascript" src="{% static 'js/libs.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
