@@ -21,14 +21,15 @@
     "url": "https://github.com/RealOrangeOne/theorangeone.net"
   },
   "dependencies": {
+    "animate.css": "^3.4.0",
     "bootstrap": "^3.3.5",
+    "ionicons-pre": "^1.0.0-pre",
     "jquery": "^2.1.4",
     "less": "^2.5.1",
     "markdown": "^0.5.0",
     "react": "^0.13.3",
     "react-bootstrap": "^0.25.1",
-    "skrollr": "^0.6.26",
-    "ionicons-pre": "^1.0.0-pre",
+    "skrollr": "^0.6.26"
   },
   "devDependencies": {
     "browserify": "^11.0.1",
