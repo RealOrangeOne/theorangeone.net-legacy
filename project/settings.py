@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import dj_database_url
-# import logging
 import os
 import sys
 
@@ -38,16 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'rest_framework',
     'bootstrapform',
 
     'project.pages',
     'project.common',
-    'project.projects',
-    'project.robotics',
-    'project.setup',
-    'project.media',
-    'project.college'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,4 +98,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected-static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static', 'build'),
 )
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
