@@ -27,6 +27,7 @@
     "jquery": "^2.1.4",
     "less": "^2.5.1",
     "markdown": "^0.5.0",
+    "normalize.css": "^3.0.3",
     "react": "^0.13.3",
     "react-bootstrap": "^0.25.1",
     "skrollr": "^0.6.26"
