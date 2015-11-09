@@ -14,7 +14,7 @@
     "watch-images": "watch 'npm run build-images' static/src/img/",
     "watch-less": "watch 'npm run build-less' static/src/less/",
     "watch": "npm run watch-less & npm run watch-images",
-    "clean": "rm -rf static/build collected-static/ node_modules/ env/ private"
+    "clean": "rm -rf static/build collected-static/ node_modules/ env/"
   },
   "repository": {
     "type": "git",
