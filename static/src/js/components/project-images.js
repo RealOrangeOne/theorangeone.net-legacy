@@ -1,13 +1,32 @@
 var React = require('react');
+var ReactBootstrap = require('react-bootstrap');
+var Row = ReactBootstrap.Row;
+var ProjectImage = require('./project-image');
 
-const projectData = [
-  {key: 1, title: "College", info: "", link: ""},
-  {key: 2, title: "Personal", info: "", link: ""},
-  {key: 3, title: "Work", info: "", link: ""}
+const DATA = [
+  {
+    className: "",
+    title: "College",
+    text: "",
+    link: "",
+  },
+  {
+    className: "",
+    title: "Personal",
+    text: "",
+    link: "",
+  },
+  {
+    className: "",
+    title: "Work",
+    text: "",
+    link: "",
+  }
 ];
 
 
 var projectImages = React.createClass({
+  keys: [1,2,3],
   getInitialState: function () {
     return {
       hover: 0,
@@ -18,21 +37,20 @@ var projectImages = React.createClass({
     this.setState({hover: key});
   },
   render: function () {
-    var isHovered;
-    var projectTiles = projectData.map(function (project) {
-      isHovered = (project.key == this.state.hover);
+    var images = this.keys.map(function (key) {
       return (
-        <div className="col-sm-4">
-
-        </div>
-      );
-    });
+        <ProjectImage isHovered={this.state.hover == key} 
+          data={DATA[key - 1]} 
+          onHover={this.setHovering.bind(this, key)} 
+          onLeave={this.setHovering.bind(this, 0)} />
+        );
+    }.bind(this));
     return (
       <div className="container">
         <div className="panel panel-default">
-          <div className="panel-body row">
-            { projectTiles }
-          </div>
+          <Row className="panel-body">
+            { images }
+          </Row>
         </div>
       </div>
     );

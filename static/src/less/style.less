@@ -73,15 +73,56 @@ ol , ul{
       font-size: 17px;
     }
   }
+
+
   #project-images {
     background: url(http://catesmechanical.com/images/blueprint-background1.jpg);
-    background-position: fixed;
+    background-size: cover;
     .container {
       text-align: center; 
       margin-top: 35px; 
       margin-bottom: 35px;
       .panel-body {
         font-size: 16px;
+        @media screen and (max-width: @screen-xs-max) {
+          .wrapper,
+          .wrapper .project {
+            height: 275px;
+            width: 275px;
+          }          
+        }
+
+        @media screen and (min-width: @screen-sm-min) {
+          .wrapper,
+          .wrapper .project {
+            height: 200px;
+            width: 200px;
+          }
+        }
+        @media screen and (min-width: @screen-md-min) {
+          .wrapper,
+          .wrapper .project {
+            height: 280px;
+            width: 280px;
+          }
+        }
+        & > div {
+          margin: 10px 0;
+        }
+
+        .wrapper {
+          background-color: black;
+          color: white;
+          margin: 0 auto;
+
+          &:hover .project {
+            opacity: 0.6;
+          }
+
+          & .project {
+            opacity: 1;
+          }
+        }
       }
     }
   }
