@@ -1,8 +1,8 @@
 var React = require('react');
 
 const projectData = [
-  {key: 1, title: "College", info: "", link: ""}
-  {key: 2, title: "Personal", info: "", link: ""}
+  {key: 1, title: "College", info: "", link: ""},
+  {key: 2, title: "Personal", info: "", link: ""},
   {key: 3, title: "Work", info: "", link: ""}
 ];
 
@@ -23,7 +23,7 @@ var projectImages = React.createClass({
       isHovered = (project.key == this.state.hover);
       return (
         <div className="col-sm-4">
-          
+
         </div>
       );
     });
