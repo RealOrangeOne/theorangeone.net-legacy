@@ -7,19 +7,19 @@ const DATA = [
   {
     className: "",
     title: "College",
-    text: "",
+    text: "Some College Stuff",
     link: "",
   },
   {
     className: "",
     title: "Personal",
-    text: "",
+    text: "Some Personal Stuff",
     link: "",
   },
   {
     className: "",
     title: "Work",
-    text: "",
+    text: "Some Work Stuff",
     link: "",
   }
 ];

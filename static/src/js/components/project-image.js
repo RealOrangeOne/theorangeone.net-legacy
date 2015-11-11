@@ -7,13 +7,13 @@ var projectImage = React.createClass({
   render: function () {
     var contents = this.props.isHovered ? 
     (
-      <span>
+      <div className="animated zoomIn">
         <h4>{this.props.data.title}</h4>
         <p>{this.props.data.text}</p>
         <a href={this.props.data.link} className="btn btn-default">
           Find out more
         </a> 
-      </span>    
+      </div>    
     ) : null;
     return (
       <Col sm={4}>

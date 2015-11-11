@@ -111,16 +111,23 @@ ol , ul{
         }
 
         .wrapper {
-          background-color: black;
           color: white;
           margin: 0 auto;
+          background-color: red;
 
           &:hover .project {
-            opacity: 0.6;
-          }
+            opacity: 1;
+          } 
 
           & .project {
-            opacity: 1;
+            padding: 18px;
+            .transition(~"opacity 0.5s ease-in");
+            opacity: 0;
+            background-color: rgba(0,0,0,0.6);
+
+            h2 {
+              margin-top: 0;
+            }
           }
         }
       }
