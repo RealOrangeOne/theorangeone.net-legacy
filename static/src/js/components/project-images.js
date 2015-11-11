@@ -47,6 +47,7 @@ var projectImages = React.createClass({
     }.bind(this));
     return (
       <div className="container">
+        <h1>Projects</h1>
         <Row>
           { images }
         </Row>
