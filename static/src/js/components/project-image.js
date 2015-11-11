@@ -8,8 +8,8 @@ var projectImage = React.createClass({
     var animationClass = this.props.isHovered ? 'zoomIn' : 'zoomOut';
     return (
       <Col sm={4}>
-        <div className="wrapper" >
-          <div className={"project " + this.props.data.className} 
+        <div className={"wrapper " + this.props.data.className}>
+          <div className="project" 
             onMouseOver={this.props.onHover}
             onMouseLeave={this.props.onLeave} >
             <div className={"animated " + animationClass}>
