@@ -5,19 +5,19 @@ var ProjectImage = require('./project-image');
 
 const DATA = [
   {
-    className: "",
+    className: "college",
     title: "College",
     text: "Some College Stuff",
     link: "",
   },
   {
-    className: "",
+    className: "personal",
     title: "Personal",
     text: "Some Personal Stuff",
     link: "",
   },
   {
-    className: "",
+    className: "work",
     title: "Work",
     text: "Some Work Stuff",
     link: "",
