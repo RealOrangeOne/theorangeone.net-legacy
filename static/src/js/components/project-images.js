@@ -47,11 +47,9 @@ var projectImages = React.createClass({
     }.bind(this));
     return (
       <div className="container">
-        <div className="panel panel-default">
-          <Row className="panel-body">
-            { images }
-          </Row>
-        </div>
+        <Row>
+          { images }
+        </Row>
       </div>
     );
   }
