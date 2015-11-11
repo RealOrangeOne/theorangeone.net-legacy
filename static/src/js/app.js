@@ -1,9 +1,20 @@
 var React = require('react');
 var ProjectImages = require('./components/project-images');
 
-window.scrollToElement = function(ident) {
-  $('html, body').animate({scrollTop: $(ident).offset().top}, 1000);
-}
+$(function() { // https://css-tricks.com/snippets/jquery/smooth-scrolling/
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
 
 $(window).load(function(){
     $(window).trigger('scroll').trigger('resize');
