@@ -7,19 +7,19 @@ const DATA = [
   {
     className: "college",
     title: "College",
-    text: "Some College Stuff",
+    text: "In my life as a student, I wrote a lot of code!",
     link: "",
   },
   {
     className: "personal",
     title: "Personal",
-    text: "Some Personal Stuff",
+    text: "All the stuff I've written on my own time",
     link: "",
   },
   {
     className: "work",
     title: "Work",
-    text: "Some Work Stuff",
+    text: "I'm an apprentice software developer at Dabapps, and this is what I've done.",
     link: "",
   }
 ];
