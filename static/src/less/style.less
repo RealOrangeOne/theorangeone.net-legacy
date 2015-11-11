@@ -82,58 +82,54 @@ ol , ul{
       text-align: center; 
       margin-top: 35px; 
       margin-bottom: 35px;
-      .panel {
-        margin-bottom: 0;
+      font-size: 16px;
+      @media screen and (max-width: @screen-xs-max) {
+        .wrapper,
+        .wrapper .project {
+          height: 275px;
+          width: 275px;
+        }          
       }
-      .panel-body {
-        font-size: 16px;
-        @media screen and (max-width: @screen-xs-max) {
-          .wrapper,
-          .wrapper .project {
-            height: 275px;
-            width: 275px;
-          }          
-        }
 
-        @media screen and (min-width: @screen-sm-min) {
-          .wrapper,
-          .wrapper .project {
-            height: 200px;
-            width: 200px;
+      @media screen and (min-width: @screen-sm-min) {
+        .wrapper,
+        .wrapper .project {
+          height: 200px;
+          width: 200px;
+        }
+      }
+      @media screen and (min-width: @screen-md-min) {
+        .wrapper,
+        .wrapper .project {
+          height: 280px;
+          width: 280px;
+        }
+      }
+      & > div {
+        margin: 10px 0;
+      }
+
+      .wrapper {
+        color: white;
+        margin: 0 auto;
+        background-color: red;
+        .box-shadow(0px 4px 5px 2px rgba(0,0,0,0.7));
+
+        &:hover .project {
+          opacity: 1;
+        } 
+
+        & .project {
+          padding: 25px;
+          .transition(~"opacity 0.5s ease-in");
+          opacity: 0;
+          background-color: rgba(0,0,0,0.6);
+
+          p, a.btn {
+            font-size: 12px;
           }
-        }
-        @media screen and (min-width: @screen-md-min) {
-          .wrapper,
-          .wrapper .project {
-            height: 280px;
-            width: 280px;
-          }
-        }
-        & > div {
-          margin: 10px 0;
-        }
-
-        .wrapper {
-          color: white;
-          margin: 0 auto;
-          background-color: red;
-
-          &:hover .project {
-            opacity: 1;
-          } 
-
-          & .project {
-            padding: 25px;
-            .transition(~"opacity 0.5s ease-in");
-            opacity: 0;
-            background-color: rgba(0,0,0,0.6);
-
-            p, a.btn {
-              font-size: 12px;
-            }
-            h4 {
-              font-size: 23px;
-            }
+          h4 {
+            font-size: 23px;
           }
         }
       }
