@@ -48,68 +48,8 @@
         color: white;
         font-size: 40px;
       }
-      @media screen and (max-width: @screen-xs-max) {
-        .wrapper,
-        .wrapper .project {
-          height: 275px;
-          width: 275px;
-        }          
-      }
-
-      @media screen and (min-width: @screen-sm-min) {
-        .wrapper,
-        .wrapper .project {
-          height: 200px;
-          width: 200px;
-        }
-      }
-      @media screen and (min-width: @screen-md-min) {
-        .wrapper,
-        .wrapper .project {
-          height: 280px;
-          width: 280px;
-        }
-      }
-      & > div {
-        margin: 10px 0;
-      }
-
-      .wrapper {
-        color: white;
-        margin: 0 auto;
-        cursor: pointer;
-        background-size: cover;
-        background-position: center;
-        .box-shadow(0px 4px 5px 2px rgba(0,0,0,0.7));
-
-        &:hover .project {
-          opacity: 1;
-        } 
-
-        &.college {
-          background-image: url(http://cdn.ttgtmedia.com/rms/computerweekly/39826_college-of-richard-collyer.gif);
-        }
-        &.personal {
-          background-image: url(http://www.inzeed.com/kaleidoscope/wp-content/uploads/2014/11/stock-footage-computer-code-background1.jpg);
-        }
-        &.work {
-          background-image: url(http://www.recommendedagencies.com/images/logos/dabapps-logo-1432733278.jpg);
-        }
-
-        & .project {
-          padding: 15px;
-          padding-top: 20%;
-          .transition(~"opacity 0.5s ease-in");
-          opacity: 0;
-          background-color: rgba(0,0,0,0.6);
-
-          p, a.btn {
-            font-size: 12px;
-          }
-          h4 {
-            font-size: 23px;
-          }
-        }
+      .row {
+      	margin-bottom: 10px;
       }
     }
   }
@@ -124,3 +64,69 @@
     }
   }
 }
+
+/* @group project-images */
+.project-image {
+  @media screen and (max-width: @screen-xs-max) {
+    .wrapper,
+    .wrapper .project {
+      height: 275px;
+      width: 275px;
+    }          
+  }
+
+  @media screen and (min-width: @screen-sm-min) {
+    .wrapper,
+    .wrapper .project {
+      height: 200px;
+      width: 200px;
+    }
+  }
+  @media screen and (min-width: @screen-md-min) {
+    .wrapper,
+    .wrapper .project {
+      height: 280px;
+      width: 280px;
+    }
+  }
+
+  .wrapper {
+    color: white;
+    margin: 0 auto;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    .box-shadow(0px 4px 5px 2px rgba(0,0,0,0.7));
+
+    &:hover .project {
+      opacity: 1;
+    } 
+
+    &.college {
+      background-image: url(http://cdn.ttgtmedia.com/rms/computerweekly/39826_college-of-richard-collyer.gif);
+    }
+    &.personal {
+      background-image: url(http://www.inzeed.com/kaleidoscope/wp-content/uploads/2014/11/stock-footage-computer-code-background1.jpg);
+    }
+    &.work {
+      background-image: url(http://www.recommendedagencies.com/images/logos/dabapps-logo-1432733278.jpg);
+    }
+
+    & .project {
+      padding: 15px;
+      padding-top: 20%;
+      .transition(~"opacity 0.5s ease-in");
+      opacity: 0;
+      background-color: rgba(0,0,0,0.6);
+      text-align: center;
+
+      p, a.btn {
+        font-size: 12px;
+      }
+      h4 {
+        font-size: 23px;
+      }
+    }
+  }
+}
+/* @end project-images */

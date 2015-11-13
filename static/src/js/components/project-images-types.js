@@ -25,7 +25,7 @@ const DATA = [
 ];
 
 
-var projectImages = React.createClass({
+var projectImagesTypes = React.createClass({
   keys: [1,2,3],
   getInitialState: function () {
     return {
@@ -56,4 +56,4 @@ var projectImages = React.createClass({
   }
 });
 
-module.exports = projectImages;
+module.exports = projectImagesTypes;
