@@ -7,13 +7,13 @@ const DATA = [
   {
     className: "college",
     title: "College",
-    text: "In my life as a student, I wrote a lot of code!",
+    text: "My time at college was where I learnt most about programming, and discovered my skill and passion for it.",
     link: "",
   },
   {
     className: "personal",
     title: "Personal",
-    text: "All the stuff I've written on my own time",
+    text: "I write code just to write code, but sometimes it serves a purpose.",
     link: "",
   },
   {
