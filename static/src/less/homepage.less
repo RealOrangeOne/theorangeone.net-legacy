@@ -38,6 +38,10 @@
   #project-images-types {
     background: url(http://catesmechanical.com/images/blueprint-background1.jpg);
     background-size: cover;
+    background-attachment: fixed;
+    @media screen and (max-width: @screen-xs-max) {
+      background-attachment: initial;
+    }
     .container {
       text-align: center; 
       margin-top: 27px; 
@@ -61,12 +65,12 @@
       margin-bottom: 25px;
     }
     .twitter-timeline {
-      height: 70vh !important;  // Because twitter uses inline styles.
+      height: 65vh !important;  // Because twitter uses inline styles.
     }
     .twitter-icon {
       text-align: center;
       font-size: 175px;
-      height: 70vh;
+      height: 65vh;
       position: relative;
       .icon {
         position: absolute;
