@@ -4,7 +4,7 @@
   "description": "TheOrangeOne.net site",
   "main": "app.js",
   "scripts": {
-    "lint": "echo 'Nothing yet.';",
+    "lint": "eslint -c node_modules/eslint-config/.eslintrc 'static/src/js/'",
     "build-js": "bash scripts/build-js.sh",
     "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
     "build": "npm run create-build-dirs && npm run build-fonts && npm run build-images && npm run build-js && npm run build-less",
@@ -38,6 +38,7 @@
     "browserify": "^11.0.1",
     "clean-css": "^3.4.1",
     "eslint": "^1.5.0",
+    "eslint-config": "git://github.com/dabapps/eslint-config.git",
     "eslint-plugin-react": "^3.4.2",
     "react-tools": "^0.13.2",
     "uglify-js": "^2.4.24",
