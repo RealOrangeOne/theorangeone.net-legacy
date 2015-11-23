@@ -12,7 +12,6 @@ class IndexView(TemplateView):
         return context
 
 
-
 class NoJavascriptView(TemplateView):
     template_name = 'core/no-js.html'
 
