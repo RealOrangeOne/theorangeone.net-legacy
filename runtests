@@ -4,6 +4,7 @@ set -e
 
 export PATH=env/bin:${PATH}
 
-flake8 project --ignore=E128,E501 --exclude="migrations,settings,*/wsgi.py"
+flake8 project --ignore=E128,E501,E401 --exclude="migrations,settings,*/wsgi.py"
+echo "All Python tests passed!"
 
 npm test
