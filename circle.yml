@@ -4,6 +4,7 @@ machine:
   environment:
     DEBUG: true
     DATABASE_URL: postgres://localhost/theorangeonenets
+    EMAIL_BACKEND: django.core.mail.backends.console.EmailBackend
 
 dependencies:
   pre:
