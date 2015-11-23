@@ -5,3 +5,5 @@ set -e
 export PATH=env/bin:${PATH}
 
 flake8 project --ignore=E128,E501 --exclude="migrations,settings,*/wsgi.py"
+
+npm test
