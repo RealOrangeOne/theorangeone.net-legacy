@@ -1,5 +1,6 @@
 var React = require('react');
 var ProjectImagesTypes = require('./components/project-images-types');
+var ProjectImagesMain = require('./components/project-images-main');
 
 $(function() { // https://css-tricks.com/snippets/jquery/smooth-scrolling/
   $('a[href*=#]:not([href=#])').click(function() {
@@ -21,3 +22,4 @@ $(window).load(function(){
 });
 
 React.render(<ProjectImagesTypes />, document.getElementById('project-images-types'));
+React.render(<ProjectImagesMain />, document.getElementById('project-images-main'));
