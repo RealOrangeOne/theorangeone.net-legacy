@@ -1,6 +1,9 @@
 machine:
   python:
     version: 3.4.2
+  environment:
+    DEBUG: true
+    DATABASE_URL: postgres://localhost/theorangeonenets
 
 dependencies:
   pre:

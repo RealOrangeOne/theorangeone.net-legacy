@@ -3,8 +3,6 @@
 set -e
 
 export PATH=env/bin:${PATH}
-export DEBUG=true
-export DATABASE_URL=postgres://localhost/theorangeonenet
 
 flake8 project --ignore=E128,E501,E401 --exclude="migrations,settings,*/wsgi.py"
 echo "All Python tests passed!"
