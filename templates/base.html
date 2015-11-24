@@ -11,6 +11,16 @@
   </head>
   <body class="{{ body_class }}">
     {% block content%}{% endblock %}
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Copyright &copy; TheOrangeOne 2015</h3>
+            <a href="">About</a> | <a href="https://github.com/RealOrangeOne/theorangeone.net">View Source</a> | <a href="">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="text/javascript" src="{% static 'js/libs.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
     <noscript>
