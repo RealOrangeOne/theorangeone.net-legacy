@@ -71,7 +71,7 @@ var projectImagesMain = React.createClass({
     });
     return (
       <div className="container">
-        <h1>Projects</h1>
+        <h1>Personal Projects</h1>
         { images }
       </div>
     );
