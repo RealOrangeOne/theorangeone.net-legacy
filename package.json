@@ -11,7 +11,6 @@
     "build-less": "lessc --silent static/src/less/style.less static/build/css/style.css && cleancss -d --s0 -o static/build/css/style.css static/build/css/style.css",
     "build-fonts": "cp -R node_modules/bootstrap/dist/fonts static/build/ && cp -R node_modules/ionicons-pre/fonts static/build/ ",
     "build-images": "cp -r static/src/img/* static/build/img/",
-    "watch-images": "watch 'npm run build-images' static/src/img/",
     "watch-less": "watch 'npm run build-less' static/src/less/",
     "watch": "npm run watch-less & npm run watch-images",
     "clean": "rm -rf static/build collected-static/ node_modules/ env/",
