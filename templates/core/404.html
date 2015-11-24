@@ -12,8 +12,16 @@
   </div>
 {% endblock %}
 
+{% block bodyClass %}404{% endblock %}
+
 {% block content %}
-<div class="container center-text">
-  <h5>Nope, There's nothing down here either. <a href="javascript:window.history.back()">Go back to where you came from!</h5></a>
-</div>
+  <div class="container-fluid">
+    <div class="container">
+      <h1>There's nothing here!</h1>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="container">
+    </div>
+  </div>
 {% endblock %}

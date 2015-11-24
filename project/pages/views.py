@@ -6,11 +6,6 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 class IndexView(TemplateView):
     template_name = 'index.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['body_class'] = "index"
-        return context
-
 
 class NoJavascriptView(TemplateView):
     template_name = 'core/no-js.html'
@@ -18,12 +13,6 @@ class NoJavascriptView(TemplateView):
 
 class Custom404View(CustomHeaderBG.Template):
     template_name = 'core/404.html'
-    header_BG = static('img/ninjas.png')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['no_footer'] = True
-        return context
 
     def get(self, request, *args, **kwargs):
         context = self.get_context_data(**kwargs)
@@ -32,7 +21,6 @@ class Custom404View(CustomHeaderBG.Template):
 
 class AboutWebsiteView(CustomHeaderBG.Template):
     template_name = 'about/website.html'
-    header_BG = ''
 
 
 class AboutIndexView(TemplateView):
