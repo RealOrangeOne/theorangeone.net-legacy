@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block baseHtmlTitle %}{% endblock %} | TheOrangeOne</title>
+    <title>{{ html_title }} | TheOrangeOne</title>
     <meta chatset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="shortcut icon" href=""/>
   </head>
-  <body class="{% block baseBodyClass%}{% endblock %}">
+  <body class="{{ body_class }}">
     {% block baseContent%}{% endblock %}
     <footer>
       <div class="container">

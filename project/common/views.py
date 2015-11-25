@@ -1,13 +1,12 @@
 from django.views.generic import TemplateView
 
 
-class CustomHeaderBG():
-    """Allow custom header background"""
-
-    class Template(TemplateView):
-        header_BG = ""
-
-        def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context['header_BG'] = self.header_BG
-            return context
+class CustomTemplate(TemplateView):
+    html_title = ""
+    body_class = ""
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['html_title'] = self.html_title
+        context['body_class'] = self.body_class
+        return context

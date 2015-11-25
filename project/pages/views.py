@@ -1,13 +1,14 @@
-from django.views.generic import TemplateView
-from project.common.views import CustomHeaderBG
+from project.common.views import CustomTemplate
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
-class IndexView(TemplateView):
+class IndexView(CustomTemplate):
     template_name = 'index.html'
+    html_title = "Homepage"
+    body_class = "index"
 
 
-class NoJavascriptView(TemplateView):
+class NoJavascriptView(CustomTemplate):
     template_name = 'core/no-js.html'
 
     def get_context_data(self, **kwargs):
@@ -16,7 +17,7 @@ class NoJavascriptView(TemplateView):
         return context
 
 
-class Custom404View(CustomHeaderBG.Template):
+class Custom404View(CustomTemplate):
     template_name = 'core/404.html'
 
     def get(self, request, *args, **kwargs):
@@ -24,9 +25,9 @@ class Custom404View(CustomHeaderBG.Template):
         return self.render_to_response(context, status=404)
 
 
-class AboutWebsiteView(CustomHeaderBG.Template):
+class AboutWebsiteView(CustomTemplate):
     template_name = 'about/website.html'
 
 
-class AboutIndexView(TemplateView):
+class AboutIndexView(CustomTemplate):
     template_name = 'about/index.html'
