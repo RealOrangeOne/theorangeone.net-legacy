@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block baseHtmlTitle%}
+  {% block htmlTitle %}{% endblock %}
+{% endblock %}
+
+{% block baseBodyClass %}
+  {% block bodyClass %}{% endblock %}
+{% endblock%}
+
+{% block baseContent %}
+  <div class="jumbotron header">
+    <div class="container">
+      <h1>{% block pageTitle %}{% endblock %}</h1>
+    </div>
+  </div>
+  {% block content %}{% endblock %}
+{% endblock %}
+

@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block htmltitle %}{% endblock %} | TheOrangeOne</title>
+    <title>{% block baseHtmlTitle %}{% endblock %} | TheOrangeOne</title>
     <meta chatset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="shortcut icon" href=""/>
   </head>
-  <body class="{% block bodyClass%}{% endblock %}">
-    {% block content%}{% endblock %}
+  <body class="{% block baseBodyClass%}{% endblock %}">
+    {% block baseContent%}{% endblock %}
     <footer>
       <div class="container">
         <div class="row">
@@ -38,7 +38,7 @@
     {% if not no_js_redirect %}
       <noscript>
         <style> html, body { display:none; }</style>
-        <meta http-equiv="refresh" content="0.0;url={% url 'pages:no-js' %}">
+        <meta http-equiv="refresh" content="0.0;url={% url 'no-js' %}">
       </noscript>
     {% endif %}
   </body>
