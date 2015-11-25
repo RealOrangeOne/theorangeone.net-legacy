@@ -10,6 +10,11 @@ class IndexView(TemplateView):
 class NoJavascriptView(TemplateView):
     template_name = 'core/no-js.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['no_js_redirect'] = True
+        return context
+
 
 class Custom404View(CustomHeaderBG.Template):
     template_name = 'core/404.html'

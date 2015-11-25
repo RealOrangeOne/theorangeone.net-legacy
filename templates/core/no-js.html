@@ -1,72 +1,65 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Javascript Disabled | TheOrangeOne</title>
-  <meta chatset='utf-8' />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
-  <link rel="shortcut icon" href=""/>
-</head>
-<body>
-<div class="jumbotron" style="background-image: url('{% static 'img/bg.png' %}'); background-attachment: fixed;"><div class="container"><h1>Javascript is disabled!</h1></div></div>
-<div class="container">
-  <p>You appear to have javascript disabled. For my site to function properly, javascript must be enabled! The javascript is used to dynamically change the webpage on your device. Without them then the site will break, cause a tonne of errors, and not look right, all of which aren't very nice, for you or me. </p>
-  <p>The javascript on this page won't damage your computer in any way, and has been written entirely by me, or has used trusted and open-source 3rd-party libraries. You can trust this site! Re-enabling the javascript functions inside your browser is very easy, and helpful tutorials can be found below!</p>
-</div>
-<div class="container">
-  <h2>Re-enabling Javascript in your browser</h2>
-  <div class="panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">Re-enabling in Firefox</h3>
-    </div>
-    <div class="panel-body panel black-text">
-      <ol>
-        <li>Navigate to 'about:config', using the browsers address bar.</li>
-        <li>Accept the security warning, and notice that no dragons lie ahead.</li>
-        <li>In the search bar, enter 'javascript'</li>
-        <li>Find the entry 'Javascript.enabled' (possibly using <kbd>ctrl + F</kbd>)</li>
-        <li>Toggle the entry by either double-clicking the entry, or right-clicking and selecting 'Toggle'.</li>
-      </ol>
-    </div>
-  </div>
+{% block htmltitle %}Javascript is Disabled!{% endblock %}
 
-  <div class="panel-success">
-    <div class="panel-heading">
-      <h3 class="panel-title">Re-enabling in Chrome</h3>
-    </div>
-    <div class="panel-body panel black-text">
-      <ol>
-        <li>Click the Chrome menu icon (<i class="icon ion-navicon-round"></i>) in the top right hand corder of the window.</li>
-        <li>Click 'Settings'.</li>
-        <li>Under the 'Privacy' section, select 'Content settings'.</li>
-        <li>Under 'Javascript', select 'Allow all sites to run Javascript(Recommended)'.</li>
-      </ol>
-    </div>
+{% block content %}
+  <div class="jumbotron" style="background-image: url('{% static 'img/bg.png' %}'); background-attachment: fixed;"><div class="container"><h1>Javascript is disabled!</h1></div></div>
+  <div class="container">
+    <p>You appear to have javascript disabled. For my site to function properly, javascript must be enabled! The javascript is used to dynamically change the webpage on your device. Without them then the site will break, cause a tonne of errors, and not look right, all of which aren't very nice, for you or me. </p>
+    <p>The javascript on this page won't damage your computer in any way, and has been written entirely by me, or has used trusted and open-source 3rd-party libraries. You can trust this site! Re-enabling the javascript functions inside your browser is very easy, and helpful tutorials can be found below!</p>
   </div>
-
-  <div class="panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">Re-enabling in Internet Explorer</h3>
-    </div>
-    <img src="{% static 'img/IE-scare.png' %}" height="200px" style="float: right;"/>
+  <div class="container">
+    <h2>Re-enabling Javascript in your browser</h2>
+    <div class="panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Re-enabling in Firefox</h3>
+      </div>
       <div class="panel-body panel black-text">
-      <ol>
-        <li>Select the gear icon in the top right hand corner <i class="icon ion-ios-gear"></i>, and click 'Internet Options'.</li>
-        <li>Select Security > Internet > Custom Level.</li>
-        <li>Scroll down until you find 'Scripting', and select 'Enable'</li>
-      </ol>
-      <p>
-        <strong>Also: </strong> If you are using Internet Explorer (Or Microsoft Edge for that matter), <stong>Stop!</stong> Use one of the other ones. They're much faster, and better, especially <a href="//firefox.com">Firefox</a>!
-      </p>
+        <ol>
+          <li>Navigate to 'about:config', using the browsers address bar.</li>
+          <li>Accept the security warning, and notice that no dragons lie ahead.</li>
+          <li>In the search bar, enter 'javascript'</li>
+          <li>Find the entry 'Javascript.enabled' (possibly using <kbd>ctrl + F</kbd>)</li>
+          <li>Toggle the entry by either double-clicking the entry, or right-clicking and selecting 'Toggle'.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">Re-enabling in Chrome</h3>
+      </div>
+      <div class="panel-body panel black-text">
+        <ol>
+          <li>Click the Chrome menu icon (<i class="icon ion-navicon-round"></i>) in the top right hand corder of the window.</li>
+          <li>Click 'Settings'.</li>
+          <li>Under the 'Privacy' section, select 'Content settings'.</li>
+          <li>Under 'Javascript', select 'Allow all sites to run Javascript(Recommended)'.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Re-enabling in Internet Explorer</h3>
+      </div>
+      <img src="{% static 'img/IE-scare.png' %}" height="200px" style="float: right;"/>
+        <div class="panel-body panel black-text">
+        <ol>
+          <li>Select the gear icon in the top right hand corner <i class="icon ion-ios-gear"></i>, and click 'Internet Options'.</li>
+          <li>Select Security > Internet > Custom Level.</li>
+          <li>Scroll down until you find 'Scripting', and select 'Enable'</li>
+        </ol>
+        <p>
+          <strong>Also: </strong> If you are using Internet Explorer (Or Microsoft Edge for that matter), <stong>Stop!</stong> Use one of the other ones. They're much faster, and better, especially <a href="//firefox.com">Firefox</a>!
+        </p>
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <p>
-    After enabling javascript, the page should automatically redirect to the homepage. If it doesn't, just refresh the page, or <a href="{% url 'pages:index'%}">Click here</a>.
-  </p>
-</div>
-</body>
-<script>window.location.href=location.href.replace("{% url 'pages:no-js' %}", '');</script>
-</html>
+  <div class="container">
+    <p>
+      After enabling javascript, the page should automatically redirect to the homepage. If it doesn't, just refresh the page, or <a href="{% url 'pages:index'%}">Click here</a>.
+    </p>
+  </div>
+  <script>window.location.href=location.href.replace("{% url 'pages:no-js' %}", '');</script>
+{% endblock%}
