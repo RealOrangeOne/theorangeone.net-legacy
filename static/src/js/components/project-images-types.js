@@ -14,7 +14,7 @@ const DATA = [
     className: 'personal',
     title: 'Personal',
     text: 'I write code just to write code, but sometimes it serves a purpose.',
-    link: '',
+    link: '#project-images-main',
   },
   {
     className: 'work',
