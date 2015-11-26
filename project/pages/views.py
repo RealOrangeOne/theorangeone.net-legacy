@@ -1,5 +1,4 @@
 from project.common.views import CustomTemplate
-from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 class IndexView(CustomTemplate):
