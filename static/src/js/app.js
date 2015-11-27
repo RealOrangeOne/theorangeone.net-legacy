@@ -19,9 +19,5 @@ $(function() { // https://css-tricks.com/snippets/jquery/smooth-scrolling/
   });
 });
 
-$(window).load(function() {
-  $(window).trigger('scroll').trigger('resize');
-});
-
 React.render(<ProjectImagesTypes />, document.getElementById('project-images-types'));
 React.render(<ProjectImagesMain />, document.getElementById('project-images-main'));
