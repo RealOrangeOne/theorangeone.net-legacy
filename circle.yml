@@ -9,11 +9,9 @@ machine:
 dependencies:
   pre:
     - ./build
+  cache_directories:
+    - env
 
 test:
   override:
     - ./runtests
-
-dependencies: 
-  cache_directories:
-    - env
