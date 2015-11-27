@@ -13,3 +13,7 @@ dependencies:
 test:
   override:
     - ./runtests
+
+dependencies: 
+  cache_directories:
+    - env
