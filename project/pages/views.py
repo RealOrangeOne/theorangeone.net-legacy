@@ -26,6 +26,7 @@ class Custom404View(CustomTemplate):
 
 class AboutWebsiteView(CustomTemplate):
     template_name = 'about/website.html'
+    html_title = "About website"
 
 
 class AboutIndexView(CustomTemplate):
