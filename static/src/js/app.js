@@ -1,4 +1,5 @@
 /* global $ */
+
 require('./utils.js');
 
 var React = require('react');
