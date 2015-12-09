@@ -3,7 +3,7 @@ machine:
     version: 3.4.2
   environment:
     DEBUG: true
-    DATABASE_URL: postgres://localhost/theorangeonenets
+    DATABASE_URL: postgres://localhost/theorangeonenet
     EMAIL_BACKEND: django.core.mail.backends.console.EmailBackend
 
 dependencies:
