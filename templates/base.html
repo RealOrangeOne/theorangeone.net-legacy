@@ -37,7 +37,7 @@
 
     <script type="text/javascript" src="{% static 'js/libs.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-    {% if not no_js_redirect %}
+    {% if js_redirect %}
       <noscript>
         <style> html, body { display:none; }</style>
         <meta http-equiv="refresh" content="0.0;url={% url 'no-js' %}">

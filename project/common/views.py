@@ -9,4 +9,5 @@ class CustomTemplate(TemplateView):
         context = super().get_context_data(**kwargs)
         context['html_title'] = self.html_title
         context['body_class'] = self.body_class
+        context['js_redirect'] = True
         return context

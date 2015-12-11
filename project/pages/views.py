@@ -12,7 +12,7 @@ class NoJavascriptView(CustomTemplate):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['no_js_redirect'] = True
+        context['js_redirect'] = False
         return context
 
 
