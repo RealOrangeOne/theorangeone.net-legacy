@@ -31,3 +31,4 @@ class AboutWebsiteView(CustomTemplate):
 
 class AboutIndexView(CustomTemplate):
     template_name = 'about/index.html'
+    html_title = "About"
