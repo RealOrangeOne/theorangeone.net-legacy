@@ -18,5 +18,5 @@ $(function() { // https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
 $('a[href="soon"]').click(function (e) {
   e.preventDefault();
-  alert("Content coming soon, stand by!");
+  alert('Content coming soon, stand by!');
 });

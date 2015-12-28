@@ -1,6 +1,6 @@
 /* global $ */
 
-require('./utils.js');
+require('./events.js');
 
 var React = require('react');
 var ProjectImagesTypes = require('./components/index/project-images-types');
