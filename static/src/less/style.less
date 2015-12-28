@@ -1,8 +1,8 @@
+@import "node_modules/less-mixins/index.less";
 @import "node_modules/bootstrap/less/bootstrap";
 @import "node_modules/bootstrap/less/theme";
 @import "node_modules/ionicons/less/ionicons";
-@import "node_modules/less-mixins/index.less";
-// @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700);
 @import (inline) "node_modules/animate.css/animate.css";
 @import (inline) "node_modules/normalize.css/normalize.css";
 @import 'homepage';
@@ -41,7 +41,7 @@ a.no-color-change {
 }
 /* @end Global */
 
-/* @ group Footer */
+/* @group Footer */
 footer {
   width: 100%;
   text-align: center;
@@ -58,9 +58,21 @@ footer {
       color: inherit;
     }
   }
+  .social {
+    font-size: 25px;
+    margin: 0;
+    margin-top: 6px;
+    a {
+      margin: 0 4px;
+      color: white;
+      &:hover {
+        color: #ff7f00;
+      }
+    }
+  }
   .ci-badge {
     height: 23px;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 }
 /* @end Footer */
