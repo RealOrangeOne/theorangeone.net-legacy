@@ -9,7 +9,7 @@
     "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
     "build": "npm run create-build-dirs && npm run build-fonts && npm run build-images && npm run build-js && npm run build-less",
     "build-less": "lessc --silent static/src/less/style.less static/build/css/style.css && cleancss -d --s0 -o static/build/css/style.css static/build/css/style.css",
-    "build-fonts": "cp -R node_modules/bootstrap/dist/fonts static/build/ && cp -R node_modules/ionicons-pre/fonts static/build/ ",
+    "build-fonts": "cp -R node_modules/bootstrap/dist/fonts static/build/ && cp -R node_modules/ionicons/fonts static/build/ ",
     "build-images": "cp -r static/src/img/* static/build/img/",
     "watch-less": "watch 'npm run build-less' static/src/less/",
     "watch": "npm run watch-less & npm run watch-images",
@@ -23,9 +23,8 @@
   "dependencies": {
     "animate.css": "=3.4.0",
     "bootstrap": "=3.3.5",
-    "ionicons-pre": "=1.0.0-pre",
+    "ionicons": "=2.0.1",
     "jquery": "=2.1.4",
-    "less": "=2.5.1",
     "markdown": "=0.5.0",
     "normalize.css": "=3.0.3",
     "react": "=0.13.3",
@@ -40,6 +39,8 @@
     "eslint": "=1.5.0",
     "eslint-config": "git://github.com/dabapps/eslint-config.git",
     "eslint-plugin-react": "=3.4.2",
+    "less": "=2.5.1",
+    "less-mixins": "git://github.com/RealOrangeOne/less-mixins.git",
     "react-tools": "=0.13.2",
     "uglify-js": "=2.4.24",
     "watch": "=0.16.0"
