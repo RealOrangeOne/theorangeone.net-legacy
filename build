@@ -9,3 +9,5 @@ npm install
 npm run build
 
 env/bin/python manage.py collectstatic --noinput
+
+scripts/get-private-data.sh
