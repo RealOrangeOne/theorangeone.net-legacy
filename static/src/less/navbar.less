@@ -1,0 +1,153 @@
+/* @group Navigation Bar */
+
+.dropdown-menu {
+  @media (min-width: @screen-sm) {
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    .transition(~"ease-in-out .2s all");
+  }
+  &.dropup {
+    bottom: 100%;
+    top: initial;
+  }
+  &.dropdown {
+    top: 100%;
+    bottom: initial;
+  }
+  .open & {
+    opacity: 1;
+  }
+}
+
+#navigation {
+  & a {
+    .transition(~"ease-in-out .3s color");
+  }
+  & > li {
+    @media (min-width: @screen-md-min) {
+      margin-right: 23px;
+    }
+    @media (max-width: @screen-sm-max) {
+      margin-right: 10px;
+      margin-left: 11px;
+    }
+    & > a {
+      @media (min-width: @screen-md-min) {
+        padding: 15px 10px;
+      }
+      @media (max-width: @screen-sm-max) {
+        padding: 15px 3px;
+      }
+    }
+  }
+}
+
+.navbar-nav.nav {
+  margin: 0;
+}
+
+#navbar-container {
+  z-index: 0;
+  & .container-fluid{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &.align {
+    @media (min-width: @screen-sm) {
+      position: absolute;
+      bottom: 0;
+      height: 52px;
+    }
+    @media (max-width: @screen-sm) {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+#navbar-anchor {
+  position: absolute;
+  bottom: 0;
+  height: 52px;
+}
+
+.home-button {
+  margin-right: 15px !important;
+}
+
+#navbar {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand {
+  margin-left: 15px;
+}
+
+
+/* @end Navigation Bar */
+
+/* @group Functional ++ */
+.stick-top {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.no-font {
+    font-size: 0px;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+div.fix-image {
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.black-text {
+  color: black !important;
+}
+
+.white-text {
+  color: white !important;
+}
+
+.drop-shadow {
+  .box-shadow(0 0.4px 6px 0 rgba(0, 0, 0, 0.9));
+}
+
+.mega-icon {
+  font-size: 110px;
+  text-align: center;
+  margin-bottom: 0;
+
+  & ~ div.caption {
+    padding-top: 0;
+    h3 {
+      margin: 0;
+    }
+  }
+}
+/* @end Functional ++ */
