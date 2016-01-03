@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 var ReactBootstrap = require('react-bootstrap');
+import ProjectImage from './project-image';
 var Row = ReactBootstrap.Row;
-var ProjectImage = require('./project-image');
 
 const DATA = [
   {
@@ -24,19 +24,21 @@ const DATA = [
   }
 ];
 
-
-var projectImagesTypes = React.createClass({
-  keys: [1, 2, 3],
-  getInitialState: function () {
-    return {
-      hover: 0,
+export default class ProjectImagesTypes extends React.Component {
+  constructor() {
+    super();
+    this.keys = [1, 2, 3];
+    this.state = {
+      hover: 0
     };
-  },
+    this.setHovering = this.setHovering.bind(this);
+  }
 
-  setHovering: function (key) {
+  setHovering(key) {
     this.setState({hover: key});
-  },
-  render: function () {
+  }
+
+  render() {
     var images = this.keys.map(function (key) {
       return (
         <ProjectImage isHovered={this.state.hover === key}
@@ -54,6 +56,4 @@ var projectImagesTypes = React.createClass({
       </div>
     );
   }
-});
-
-module.exports = projectImagesTypes;
+}

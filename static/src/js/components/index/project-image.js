@@ -1,9 +1,9 @@
-var React = require('react');
+import React from 'react';
 var ReactBootstrap = require('react-bootstrap');
 var Col = ReactBootstrap.Col;
 
-var projectImage = React.createClass({
-  render: function () {
+export default class ProjectImage extends React.Component {
+  render() {
     var animationClass = this.props.isHovered ? 'zoomIn' : 'zoomOut';
     return (
       <Col sm={4} className="project-image">
@@ -23,6 +23,4 @@ var projectImage = React.createClass({
       </Col>
     );
   }
-});
-
-module.exports = projectImage;
+}

@@ -1,10 +1,10 @@
 /* global $ */
 
-require('./events.js');
+import './events.js';
 
-var React = require('react');
-var ProjectImagesTypes = require('./components/index/project-images-types');
-var ProjectImagesMain = require('./components/index/project-images-main');
+import React from 'react';
+import ProjectImagesTypes from './components/index/project-images-types';
+import ProjectImagesMain from './components/index/project-images-main';
 
 
 if ($('body').hasClass('index')) {  // Render components on index
