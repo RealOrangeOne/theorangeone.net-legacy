@@ -1,12 +1,6 @@
 import React from 'react';
-var ReactBootstrap = require('react-bootstrap');
-var {
-  Navbar,
-  Nav,
-  MenuItem,
-  NavItem,
-  NavDropdown
-} = ReactBootstrap;
+import NavBarHeader from './navbar-header';
+var NavItem = require('react-bootstrap').NavItem;
 
 export default class NavBar extends React.Component {
   render() {
@@ -16,15 +10,7 @@ export default class NavBar extends React.Component {
         <div id="navbar-container" className="align h4">
           <nav className="navbar navbar-inverse">
             <div className="container-fluid">
-              <div className="navbar-header">
-                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-                <a className="navbar-brand visible-xs"><i className="icon ion-compass"></i> Navigation</a>
-              </div>
+              <NavBarHeader />
               <div className="collapse navbar-collapse" id="navbar">
                 <ul className="nav navbar-nav home-button hidden-sm">
                   <li className="active home"><a href=""><i className="icon ion-home"></i></a></li>
