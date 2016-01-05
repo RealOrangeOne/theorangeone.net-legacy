@@ -13,6 +13,6 @@ if ($('body').hasClass('index')) {  // Render components on index
   React.render(<ProjectImagesMain />, document.getElementById('project-images-main'));
 }
 
-if ($('#navbar-test')) {
-  React.render(<NavBar />, document.getElementById('navbar-test'));
+if ($('navbar')) {
+  React.render(<NavBar />, $('navbar')[0]);
 }
