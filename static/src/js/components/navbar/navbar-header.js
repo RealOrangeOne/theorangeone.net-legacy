@@ -1,5 +1,4 @@
 import React from 'react';
-var ReactBootstrap = require('react-bootstrap');
 
 export default class NavBarHeader extends React.Component {
   render() {

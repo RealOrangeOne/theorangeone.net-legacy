@@ -17,7 +17,11 @@ export default class NavBar extends React.Component {
                 </ul>
                 <ul className="nav navbar-nav" id="navigation">
                   <li className="dropdown">
-                    <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a className="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false">
                       Projects <i className="icon ion-ios-arrow-up navbar-icon h4"></i>
                     </a>
                     <ul className="dropdown-menu dropup">
@@ -29,14 +33,20 @@ export default class NavBar extends React.Component {
                     </ul>
                   </li>
                   <li className="dropdown">
-                    <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a className="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false">
                       Code <i className="icon ion-ios-arrow-up navbar-icon h4"></i>
                     </a>
                     <ul className="dropdown-menu dropup">
                       <li><a href="#"><i className="icon ion-code-working"></i> Code Challenges</a></li>
                       <li><a href=""><i className="icon ion-ios-circle-filled"></i> Morse Code Decoder</a></li>
                       <li><a href=""><i className="icon ion-ios-game-controller-a"></i> The Wiki Game Solver</a></li>
-                      <li><a href=""><span className="glyphicon glyphicon-print" aria-hidden="true"></span>  Printr</a></li>
+                      <li><a href="">
+                        <span className="glyphicon glyphicon-print" aria-hidden="true"></span> Printr
+                      </a></li>
                     </ul>
                   </li>
                   <NavItem href="#">Link 1</NavItem>
