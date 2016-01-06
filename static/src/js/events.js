@@ -19,7 +19,7 @@ function flip_dropdowns(obj, direction) {
   if (obj.hasClass('drop' + direction)) { return; }
   var reverse = ((direction === 'up') ? 'down' : 'up');
   obj.removeClass('drop' + reverse).addClass('drop' + direction);
-  obj.prev().children().removeClass('ion-ios-arrow-' + reverse).addClass('ion-ios-arrow-' + direction);
+  obj.prev().find('i').removeClass('ion-ios-arrow-' + reverse).addClass('ion-ios-arrow-' + direction);
 }
 
 function position_navbar() {
