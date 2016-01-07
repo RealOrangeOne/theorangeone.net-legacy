@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class NavBarHeader extends React.Component {
+export default class Header extends React.Component {
   render() {
     const items = [0, 1, 2];
     var iconBars = items.map(function (item) {
