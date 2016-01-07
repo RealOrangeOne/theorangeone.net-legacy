@@ -2,7 +2,7 @@
 var is_navbar_attached = false;
 
 $(window).load(function() {
-  $(window).trigger('scroll').trigger('resize');
+  $(window).trigger('scroll');
 });
 
 function detach_navbar() {
@@ -42,14 +42,6 @@ function position_navbar() {
   });
 }
 
-function space_navbar() { //This really should be CSS!
-  if ($(window).width() < 862) { return; }  // @screen-sm
-  var nav_width = $('#navigation').outerWidth(true);
-  var full_width = $('nav > .container-fluid').outerWidth(true) - $('.home-button').outerWidth(true);
-  var margin = (full_width - nav_width) / 2;
-  $('#navigation').css('margin-left', margin);
-}
-
 $(function() { // https://css-tricks.com/snippets/jquery/smooth-scrolling/
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
@@ -72,5 +64,3 @@ $('a[href="soon"]').click(function (e) {
 });
 
 $(window).scroll(position_navbar);
-
-$(window).resize(space_navbar);
