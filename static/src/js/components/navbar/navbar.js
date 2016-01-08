@@ -14,7 +14,7 @@ export default class NavBar extends React.Component {
               <Header />
               <div className="collapse navbar-collapse" id="navbar">
                 <ul className="nav navbar-nav home-button hidden-sm">
-                  <li className="active home"><a href=""><i className="icon ion-home"></i></a></li>
+                  <Item href="" icon="ion-home" />
                 </ul>
                 <ul className="nav navbar-nav" id="navigation">
                   <Dropdown title="Projects">

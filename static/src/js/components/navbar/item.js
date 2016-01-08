@@ -9,7 +9,7 @@ export default class Item extends React.Component {
       );
     }
     return (
-      <li><a href={this.props.href}>{icon} {this.props.children}</a></li>
+      <li><a href={this.props.href}>{icon}{this.props.children}</a></li>
     );
   }
 }
