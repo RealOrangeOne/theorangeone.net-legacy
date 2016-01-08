@@ -9,7 +9,7 @@ GREEN='tput setaf 2'
 
 cd
 echo "$($YELLOW)>> Fetching Repository...$($NC)"
-ctf fetch RealOrangeOne/theorangeone.net master deployment
+ctf fetch RealOrangeOne/theorangeone.net v3 deployment
 sleep 15
 echo "$($YELLOW)>> Entering Project...$($NC)"
 project_dir="$(\ls -1dt ./*/ | head -n 1)"
@@ -20,7 +20,7 @@ ctf project run build
 ctf project run manage.py migrate
 echo "$($YELLOW)>> Routing Project...$($NC)"
 ident=$project_dir + ":development:web"
-ctf router theorangeone.net --ident %ident
+ctf router staging.theorangeone.net --ident %ident
 echo "$($YELLOW)>> Destroying Previous Project...$($NC)"
 cd -
 cd previous_dir
