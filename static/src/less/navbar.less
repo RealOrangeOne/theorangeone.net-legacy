@@ -20,9 +20,11 @@
 }
 
 #navigation {
-  .flexbox();
-  justify-content: center;
-  float: none;
+  @media (min-width: @screen-xs-max) {
+    .flexbox();
+    justify-content: center;
+    float: none;
+  }
   & a {
     .transition(~"ease-in-out .3s color");
   }
@@ -100,6 +102,21 @@
   z-index: 10000;
 }
 
-navbar + * {
-  margin-top: 52px;
+@media (min-width: @screen-xs-max) {
+  navbar + * {
+    margin-top: 52px;
+  }
 }
+
+/* @group Header Navbar*/
+@media (min-width: @screen-xs-max) {
+  .header navbar{
+    #navbar-container {
+      position: initial;
+      margin: 0 auto;
+      width: 100%;
+    }
+  };
+}
+
+/* @end Header Navbar*/
