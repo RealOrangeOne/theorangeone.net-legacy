@@ -15,9 +15,3 @@ dependencies:
 test:
   override:
     - ./runtests
-
-deployment:
-  production:
-    branch: v3
-    commands:
-      - ./scripts/ci-deploy.sh
