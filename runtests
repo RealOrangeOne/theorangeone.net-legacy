@@ -9,30 +9,34 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 from django.core.management import execute_from_command_line
 init(autoreset=True)
 
-bin_dir = os.path.abspath(os.path.join(sys.executable, os.path.pardir))
 
+bin_dir = os.path.abspath(os.path.join(sys.executable, os.path.pardir))
 PERCENTAGE = 95
+
 
 cov = coverage.Coverage(
     source=["project"],
     omit=["*/wsgi.py", "*/settings.py", "*/migrations/*.py", "*/__init__*"]
 )
-
 cov.start()
+
+
 print(Fore.YELLOW + "Running Tests...")
-
 execute_from_command_line([sys.argv[0], 'test'])
-
 cov.stop()
+
+
 print(Fore.YELLOW + "Collecting Coverage...")
 cov.save()
 cov.html_report()
+
+
 covered = cov.report()
 if covered <= PERCENTAGE:
     print(Fore.RED + "ERROR: Your coverage needs to be higher. Current coverage: {}%. Required: {}%.".format(covered, PERCENTAGE))
     exit(1)
-
 print(Fore.GREEN + "Coverage Complete.")
+
 
 FLAKE8_IGNORE = '--ignore=E128,E501,E401'
 try:
@@ -46,6 +50,6 @@ except subprocess.CalledProcessError as e:
 
 print(Fore.GREEN + "All Python tests passed!")
 
-os.system('npm test')
 
+os.system('npm test')
 print(Fore.GREEN + "All Tests Passed!")
