@@ -62,8 +62,13 @@
 
 #navbar-container {
   z-index: 0;
-  width: 96%;
-  left: 2%;
+  @media (max-width: @screen-xs-max) {
+    width: 96%;
+    left: 2%;
+  }
+  @media (min-width: @screen-sm-min) {
+    width: 100%;
+  }
   margin: 0;
   z-index: 10000;
   i + * {
