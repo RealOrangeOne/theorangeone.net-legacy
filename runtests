@@ -1,16 +1,51 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
+import coverage
+import os, sys
+import subprocess
+from colorama import Fore, init
 
-set -e
 
-export PATH=env/bin:${PATH}
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
+from django.core.management import execute_from_command_line
+init(autoreset=True)
 
-./scripts/check-coverage.py
+bin_dir = os.path.abspath(os.path.join(sys.executable, os.path.pardir))
 
-flake8 project scripts --ignore=E128,E501,E401 --exclude="migrations,settings,*/wsgi.py"
+PERCENTAGE = 95
 
-coverage html
-coverage report
+cov = coverage.Coverage(
+    source=["project"],
+    omit=["*/wsgi.py", "*/settings.py", "*/migrations/*.py", "*/__init__*"]
+)
 
-echo "All Python tests passed!"
+cov.start()
+print(Fore.YELLOW + "Running Tests...")
 
-npm test
+execute_from_command_line([sys.argv[0], 'test'])
+
+cov.stop()
+print(Fore.YELLOW + "Collecting Coverage...")
+cov.save()
+cov.html_report()
+covered = cov.report()
+if covered <= PERCENTAGE:
+    print(Fore.RED + "ERROR: Your coverage needs to be higher. Current coverage: {}%. Required: {}%.".format(covered, PERCENTAGE))
+    exit(1)
+
+print(Fore.GREEN + "Coverage Complete.")
+
+FLAKE8_IGNORE = '--ignore=E128,E501,E401'
+try:
+    subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'project', FLAKE8_IGNORE, '--exclude=migrations,settings,wsgi.py'])
+    subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'scripts', FLAKE8_IGNORE])
+    subprocess.check_output([os.path.join(bin_dir, 'flake8'), sys.argv[0], FLAKE8_IGNORE])
+except subprocess.CalledProcessError as e:
+    print(Fore.RED + e.output.decode())
+    exit(e.returncode)
+
+
+print(Fore.GREEN + "All Python tests passed!")
+
+os.system('npm test')
+
+print(Fore.GREEN + "All Tests Passed!")
