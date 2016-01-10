@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import coverage
-import subprocess
+import os
 
 RED = "\033[31m"
 GREEN = "\033[32m"
 YELLOW = "\033[33m"
 NORMAL = "\033[0m"
+
 PERCENTAGE = 95
 
 cov = coverage.Coverage(
@@ -15,7 +16,7 @@ cov = coverage.Coverage(
 
 cov.start()
 print(YELLOW + "Running Tests..." + NORMAL)
-subprocess.check_output(["manage.py", "test"])
+os.system('manage.py test')
 cov.stop()
 
 print(YELLOW + "Collecting Coverage..." + NORMAL)
