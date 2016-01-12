@@ -7,6 +7,7 @@ import ProjectImagesTypes from './components/index/project-images-types';
 import ProjectImagesMain from './components/index/project-images-main';
 
 import NavBar from './components/navbar/navbar';
+import Breadcrumbs from './components/breadcrumbs';
 
 if ($('body').hasClass('index')) {  // Render components on index
   React.render(<ProjectImagesTypes />, document.getElementById('project-images-types'));
@@ -15,4 +16,8 @@ if ($('body').hasClass('index')) {  // Render components on index
 
 if ($('navbar')) {
   React.render(<NavBar />, $('navbar')[0]);
+}
+
+if ($('#breadcrumbs')) {
+  React.render(<Breadcrumbs />, $('#breadcrumbs')[0]);
 }
