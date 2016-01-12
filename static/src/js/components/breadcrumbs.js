@@ -1,33 +1,26 @@
 import React from 'react';
 
-let {
-  Breadcrumb,
-  BreadcrumbItem
-} = require('react-bootstrap');
-
 export default class Breadcrumbs extends React.Component {
+  constructor() {
+    super();
+    this.urlParts = Object.freeze(location.pathname.split('/').slice(1, -1));
+  }
+
   render() {
-    const parts = location.pathname.split('/').slice(1, -1);
     var elements = [];
-    for (var i = 0; i < parts.length; i++) {
+    for (var i = 0; i < this.urlParts.length; i++) {
       var dirs = [];
       for (var j = 0; j <= i; j++) {
-        dirs.push(parts[j]);
+        dirs.push(this.urlParts[j]);
       }
-      if (i === (parts.length - 1)) {
+      if (i === (this.urlParts.length - 1)) {
         elements.push(
-          <li className="active" href={url}>
-            {parts[i]}
-          </li>
+          <li className="active" href={url}>{this.urlParts[i]}</li>
         );
       } else {
         var url = '/' + dirs.join('/') + '/';
         elements.push(
-          <li>
-            <a href={url}>
-              {parts[i]}
-            </a>
-          </li>
+          <li><a href={url}>{this.urlParts[i]}</a></li>
         );
       }
     }
