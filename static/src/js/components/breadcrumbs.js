@@ -7,6 +7,9 @@ export default class Breadcrumbs extends React.Component {
   }
 
   render() {
+    if (this.urlParts.length < 2) {
+      return;
+    }
     var elements = [];
     for (var i = 0; i < this.urlParts.length; i++) {
       var dirs = [];
