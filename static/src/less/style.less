@@ -42,6 +42,28 @@ a.no-color-change {
 }
 /* @end Global */
 
+/* @group Functional */
+
+p.center-text {
+  text-align: center;
+}
+
+.mega-icon {
+  font-size: 110px;
+  text-align: center;
+  margin-bottom: 0;
+  cursor: default;
+
+  & ~ div.caption {
+    padding-top: 0;
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+/* @end Functional */
+
 /* @group Footer */
 footer {
   width: 100%;
@@ -156,7 +178,7 @@ footer {
 }
 
 .row {
-  width: 100%;
+  width: initial;
 }
 
 .gh-card iframe {
