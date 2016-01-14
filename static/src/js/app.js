@@ -14,10 +14,10 @@ if ($('body').hasClass('index')) {  // Render components on index
   React.render(<ProjectImagesMain />, document.getElementById('project-images-main'));
 }
 
-if ($('navbar')) {
+if ($('navbar').length > 0) {
   React.render(<NavBar />, $('navbar')[0]);
 }
 
-if ($('#breadcrumbs')) {
+if ($('#breadcrumbs') > 0) {
   React.render(<Breadcrumbs />, $('#breadcrumbs')[0]);
 }
