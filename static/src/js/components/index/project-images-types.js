@@ -5,19 +5,16 @@ var Row = ReactBootstrap.Row;
 
 const DATA = [
   {
-    className: 'college',
     title: 'College',
     text: 'My time at college was where I learnt most about programming, and discovered my skill and passion for it.',
     link: '',
   },
   {
-    className: 'personal',
     title: 'Personal',
     text: 'I write code just to write code, but sometimes it serves a purpose.',
     link: '#project-images-main',
   },
   {
-    className: 'work',
     title: 'Work',
     text: 'I\'m an apprentice software developer at Dabapps, and this is what I\'ve done.',
     link: '',

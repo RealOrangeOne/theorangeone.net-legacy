@@ -5,9 +5,10 @@ var Col = ReactBootstrap.Col;
 export default class ProjectImage extends React.Component {
   render() {
     var animationClass = this.props.isHovered ? 'zoomIn' : 'zoomOut';
+    var classes = this.props.data.title.toLowerCase().replace(' ', '-');
     return (
       <Col sm={4} className="project-image">
-        <div className={'wrapper ' + this.props.data.className}>
+        <div className={'wrapper ' + classes}>
           <div className="project"
             onMouseOver={this.props.onHover}
             onMouseLeave={this.props.onLeave} >
