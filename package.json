@@ -1,8 +1,7 @@
 {
   "name": "TheOrangeOne-Site",
-  "version": "0.0.1",
-  "description": "TheOrangeOne.net site",
-  "main": "app.js",
+  "version": "3.0.0",
+  "description": " Source code for TheOrangeOne.net",
   "scripts": {
     "lint": "eslint -c node_modules/eslint-config/.eslintrc 'static/src/js/'",
     "build-js": "./scripts/build-js.sh",
