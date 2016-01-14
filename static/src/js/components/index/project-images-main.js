@@ -6,32 +6,32 @@ var Row = ReactBootstrap.Row;
 const DATA = [
   {
     title: 'Custom PC',
-    text: 'My time at college was where I learnt most about programming, and discovered my skill and passion for it.',
+    text: 'Without my PCs, I wouldnt be able to do anything you see here.',
     link: '',
   },
   {
-    title: 'Personal',
-    text: 'I write code just to write code, but sometimes it serves a purpose.',
+    title: 'BSOD-Enabler',
+    text: 'Ever wanted to bring up a Blue Screen of Death on command, well now you can!',
+    link: '',
+  },
+  {
+    title: 'Yoga Pal',
+    text: 'For anyone running a 2-in-1 laptop on an OS other than Windows.',
+    link: '',
+  },
+  {
+    title: 'Django-client-reverse',
+    text: 'Hardcoding Django API URLs on your client is a thing of the past!',
+    link: '',
+  },
+  {
+    title: 'Dotfile-automator',
+    text: 'Automatically sync your dotfiles between machines. Keep things just the way you like them!',
     link: '',
   },
   {
     title: 'Work',
-    text: 'I\'m an apprentice software developer at Dabapps, and this is what I\'ve done.',
-    link: '',
-  },
-  {
-    title: 'College',
-    text: 'My time at college was where I learnt most about programming, and discovered my skill and passion for it.',
-    link: '',
-  },
-  {
-    title: 'Personal',
-    text: 'I write code just to write code, but sometimes it serves a purpose.',
-    link: '',
-  },
-  {
-    title: 'Work',
-    text: 'I\'m an apprentice software developer at Dabapps, and this is what I\'ve done.',
+    text: '',
     link: '',
   }
 ];
@@ -44,22 +44,27 @@ export default class ProjectImagesMain extends React.Component {
       hover: 0
     };
     this.setHovering = this.setHovering.bind(this);
+    this._generate_image = this._generate_image.bind(this);
   }
+
   setHovering(key) {
     this.setState({hover: key});
   }
+
+  _generate_image(key) {
+    return (
+      <ProjectImage
+        isHovered={this.state.hover === key}
+        data={DATA[key - 1]}
+        onHover={this.setHovering.bind(this, key)}
+        onLeave={this.setHovering.bind(this, 0)} />
+      );
+  }
+
   render() {
-    var generate_image = function (key) {
-      return (
-        <ProjectImage isHovered={this.state.hover === key}
-          data={DATA[key - 1]}
-          onHover={this.setHovering.bind(this, key)}
-          onLeave={this.setHovering.bind(this, 0)} />
-        );
-    }.bind(this);
     var images = this.keys.map( function (keyColumns) {
       var col = keyColumns.map(function (key) {
-        return generate_image(key);
+        return this._generate_image(key);
       });
       return (<Row>{col}</Row>);
     });
