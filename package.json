@@ -8,7 +8,7 @@
     "build-js": "./scripts/build-js.sh",
     "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
     "build": "npm run create-build-dirs && npm run build-fonts && npm run build-images && npm run build-js && npm run build-less",
-    "build-less": "lessc --silent static/src/less/style.less static/build/css/style.css && cleancss -d --s0 -o static/build/css/style.css static/build/css/style.css",
+    "build-less": "./scripts/build-less.sh",
     "build-fonts": "cp -R node_modules/bootstrap/dist/fonts static/build/ && cp -R node_modules/ionicons/fonts static/build/ ",
     "build-images": "cp -r static/src/img/* static/build/img/",
     "watch-less": "watch 'npm run build-less' static/src/less/",
