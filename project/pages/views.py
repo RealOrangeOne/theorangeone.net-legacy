@@ -1,4 +1,5 @@
-from project.common.views import CustomTemplate
+from project.common.views import CustomTemplate, CustomFormTemplate
+from project.common.forms import ContactForm
 
 
 class IndexView(CustomTemplate):
@@ -29,9 +30,10 @@ class AboutWebsiteView(CustomTemplate):
     html_title = "About website"
 
 
-class AboutIndexView(CustomTemplate):
+class AboutIndexView(CustomFormTemplate):
     template_name = 'about/index.html'
     html_title = "About"
+    form_class = ContactForm
 
 
 class AboutMeView(CustomTemplate):

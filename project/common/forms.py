@@ -1,3 +1,6 @@
+from django import forms
+
+
 class ContactForm(forms.Form):
     email = forms.CharField(label="Email Address", widget=forms.EmailInput(attrs={'placeholder': 'Email Address'}))
     name = forms.CharField(label="Full Name", widget=forms.TextInput(attrs={'placeholder': 'Full Name'}))
