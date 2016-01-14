@@ -2,14 +2,14 @@
 
 set -e
 
-if [[ $@ == **prod** ]]
+if [[ $@ == prod ]]
 then
   echo ">>> WARNING: Building in Production Mode!"
 fi
 
 mkdir -p static/build/js/lib
 
-if [[ $@ == **prod** ]]
+if [[ $@ == prod ]]
 then
   echo ">> Compressing Libraries..."
   uglifyjs node_modules/markdown/lib/markdown.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/lib/markdown.js
@@ -24,7 +24,7 @@ fi
 
 rm -rf static/build/js/lib
 
-if [[ $@ == **prod** ]]
+if [[ $@ == prod ]]
 then
   echo ">> Compressing jQuery..."
   uglifyjs node_modules/jquery/dist/jquery.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/jquery.js
@@ -37,7 +37,7 @@ fi
 echo ">> Building Application JS..."
 browserify -t [ babelify --presets [ es2015 react ] ] static/src/js/app.js -o static/build/js/app.js
 
-if [[ $@ == **prod** ]]
+if [[ $@ == prod ]]
 then
   echo ">> Compressing Application..."
   uglifyjs static/build/js/app.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/app.js
