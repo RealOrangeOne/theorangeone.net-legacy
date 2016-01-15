@@ -62,12 +62,12 @@ export default class ProjectImagesMain extends React.Component {
   }
 
   render() {
-    var images = this.keys.map( function (keyColumns) {
+    var images = this.keys.map(function (keyColumns) {
       var col = keyColumns.map(function (key) {
         return this._generate_image(key);
-      });
+      }.bind(this));
       return (<Row>{col}</Row>);
-    });
+    }.bind(this));
     return (
       <div className="container">
         <h1>Personal Projects</h1>
