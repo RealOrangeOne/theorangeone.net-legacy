@@ -11,3 +11,9 @@ npm install
 npm run build
 
 env/bin/python manage.py collectstatic --noinput
+
+if [[ $@ == prod ]]
+then
+  echo ">> Running Migrations..."
+  env/bin/python manage.py migrate
+fi
