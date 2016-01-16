@@ -20,8 +20,8 @@ const DATA = [
     link: '',
   },
   {
-    title: 'Django-client-reverse',
-    text: 'Hardcoding Django API URLs on your client is a thing of the past!',
+    title: 'Attack on Blocks',
+    text: 'The closest thing I\'ve done to games development',
     link: '',
   },
   {

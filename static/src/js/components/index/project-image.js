@@ -5,7 +5,7 @@ var Col = ReactBootstrap.Col;
 export default class ProjectImage extends React.Component {
   render() {
     var animationClass = this.props.isHovered ? 'zoomIn' : 'zoomOut';
-    var classes = this.props.data.title.toLowerCase().replace(' ', '-');
+    var classes = this.props.data.title.toLowerCase().replace(/ /g, '-');
     return (
       <Col sm={4} className="project-image">
         <div className={'wrapper ' + classes}>
