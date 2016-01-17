@@ -35,7 +35,7 @@ export default class ProjectImage extends React.Component {
     ).then(function (url) {
       this.setState({ url });
     }.bind(this)).catch(function (error) {
-      console.log("Got this error:", error);
+      console.log('Got this error:', error);
     });
   }
 
