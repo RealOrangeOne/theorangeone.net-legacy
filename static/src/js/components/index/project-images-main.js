@@ -7,7 +7,7 @@ const DATA = [
   {
     title: 'Custom PC',
     text: 'Without my PCs, I wouldnt be able to do anything you see here.',
-    link: '',
+    link: 'pages:about-me',
   },
   {
     title: 'BSOD-Enabler',

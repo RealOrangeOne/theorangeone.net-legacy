@@ -26,6 +26,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'bootstrapform',
+    'django_client_reverse',
 
     'project.pages',
     'project.common',

@@ -2,6 +2,8 @@
 
 import './events.js';
 
+import 'whatwg-fetch';
+
 import React from 'react';
 import ProjectImagesTypes from './components/index/project-images-types';
 import ProjectImagesMain from './components/index/project-images-main';
