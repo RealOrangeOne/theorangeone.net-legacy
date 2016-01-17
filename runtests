@@ -12,6 +12,12 @@ init(autoreset=True)
 
 bin_dir = os.path.abspath(os.path.join(sys.executable, os.path.pardir))
 PERCENTAGE = 95
+EXIT_CODE = 0
+
+
+def check_if_exit_code():
+    if EXIT_CODE != 0:
+        exit(EXIT_CODE)
 
 
 cov = coverage.Coverage(
@@ -34,7 +40,9 @@ cov.html_report()
 covered = cov.report()
 if covered <= PERCENTAGE:
     print(Fore.RED + "ERROR: Your coverage needs to be higher. Current coverage: {}%. Required: {}%.".format(covered, PERCENTAGE))
-    exit(1)
+    EXIT_CODE = 1
+
+check_if_exit_code()
 print(Fore.GREEN + "Coverage Complete.")
 
 
@@ -45,11 +53,13 @@ try:
     subprocess.check_output([os.path.join(bin_dir, 'flake8'), sys.argv[0], FLAKE8_IGNORE])
 except subprocess.CalledProcessError as e:
     print(Fore.RED + e.output.decode())
-    exit(e.returncode)
-
+    EXIT_CODE = 1
+check_if_exit_code()
 
 print(Fore.GREEN + "All Python tests passed!")
 
 
-os.system('npm test')
+EXIT_CODE = os.system('npm test')
+
+check_if_exit_code()
 print(Fore.GREEN + "All Tests Passed!")
