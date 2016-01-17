@@ -24,14 +24,19 @@ export default class ProjectImage extends React.Component {
       })
     }).then(function (response) {
       if (response.status === 302) {
-        this.setState({ url: response.json() });
         return response;
       } else {
         var error = new Error(response.statusText);
         error.response = response;
         throw error;
       }
-    }.bind(this)).catch((e) => console.log(e));
+    }).then(
+      (response) => response.json()
+    ).then(function (url) {
+      this.setState({ url });
+    }.bind(this)).catch(function (error) {
+      console.log("Got this error:", error);
+    });
   }
 
   render() {
