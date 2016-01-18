@@ -24,7 +24,6 @@
     "bootstrap": "=3.3.5",
     "ionicons": "=2.0.1",
     "jquery": "=2.1.4",
-    "normalize.css": "=3.0.3",
     "react": "=0.13.3",
     "react-bootstrap": "=0.25.1",
     "whatwg-fetch": "=0.10.1"
