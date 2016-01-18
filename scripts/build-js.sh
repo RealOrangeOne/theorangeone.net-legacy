@@ -14,11 +14,13 @@ then
   echo ">> Compressing Libraries..."
   uglifyjs node_modules/markdown/lib/markdown.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/lib/markdown.js
   uglifyjs node_modules/bootstrap/dist/js/bootstrap.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/lib/bootstrap.js
+  uglifyjs node_modules/bootstrap-material-design/dist/js/material.min.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/lib/bootstrap-material.js
   uglifyjs static/build/js/lib/* --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/libs.js
 else
   echo ">> Building Libraries..."
   cp node_modules/markdown/lib/markdown.js static/build/js/lib/markdown.js
   cp node_modules/bootstrap/dist/js/bootstrap.js static/build/js/lib/bootstrap.js
+  cp node_modules/bootstrap-material-design/dist/js/material.min.js static/build/js/lib/bootstrap-material.js
   uglifyjs static/build/js/lib/* --screw-ie8 --stats --keep-fnames -o static/build/js/libs.js
 fi
 
