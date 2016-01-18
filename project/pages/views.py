@@ -1,4 +1,4 @@
-from project.common.views import CustomTemplate, CustomFormTemplate
+from project.common.views import CustomTemplate, CustomFormTemplate, MarkdownView
 from project.common.forms import ContactForm
 
 
@@ -39,3 +39,13 @@ class AboutIndexView(CustomFormTemplate):
 class AboutMeView(CustomTemplate):
     template_name = 'about/me.html'
     html_title = "About Me"
+
+
+class AllProjectsView(CustomTemplate):
+    template_name = 'projects/all.html'
+
+
+class ProjectsView(MarkdownView):
+    def dispatch(self, request, *args, **kwargs):
+        self.markdown = 'projects/{0}.md'.format(kwargs['project'])
+        return super().dispatch(request, *args, **kwargs)
