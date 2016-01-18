@@ -32,7 +32,7 @@ then
   uglifyjs node_modules/jquery/dist/jquery.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/jquery.js
 else
   echo ">> Building jQuery..."
-  cp node_modules/jquery/dist/jquery.js static/build/js/jquery.js
+  uglifyjs node_modules/jquery/dist/jquery.js --screw-ie8 --stats --keep-fnames -o static/build/js/jquery.js
 fi
 
 
