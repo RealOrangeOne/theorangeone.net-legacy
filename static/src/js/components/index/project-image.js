@@ -1,4 +1,5 @@
 import React from 'react';
+import Reverser from '../../helpers/reverser';
 var ReactBootstrap = require('react-bootstrap');
 var Col = ReactBootstrap.Col;
 
@@ -13,28 +14,11 @@ export default class ProjectImage extends React.Component {
     if (this.props.data.link.startsWith('#')) {
       return;
     }
-    fetch('/reverse/', {
-      method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        ident: this.props.data.link,
-      })
-    }).then(function (response) {
-      if (response.status === 302) {
-        return response;
-      } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
-    }).then(
-      (response) => response.json()
-    ).then(function (url) {
+    Reverser(this.props.data.link)
+    .then(function (url) {
       this.setState({ url });
-    }.bind(this)).catch(function (error) {
+    }.bind(this))
+    .catch(function (error) {
       console.log('Got this error:', error);
     });
   }
