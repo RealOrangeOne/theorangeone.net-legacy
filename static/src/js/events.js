@@ -2,8 +2,8 @@
 var is_navbar_attached = false;
 
 $(window).load(function() {
+  $.material.init();
   $(window).trigger('scroll');
-  $.material.init()
 });
 
 function detach_navbar() {

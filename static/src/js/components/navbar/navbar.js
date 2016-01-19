@@ -8,7 +8,7 @@ export default class NavBar extends React.Component {
     return (
       <span>
         <div id="navbar-anchor" />
-        <div id="navbar-container" className="align h4">
+        <div id="navbar-container" className="align">
           <nav className="navbar navbar-inverse">
             <div className="container-fluid">
               <Header />

@@ -12,15 +12,14 @@ export default class ProjectImage extends React.Component {
   }
   componentDidMount() {
     if (this.props.data.link.startsWith('#')) {
-      return;
+      this.setState({url: this.props.data.link})
+    } else {
+      Reverser(this.props.data.link)
+      .then(function (url) {
+        this.setState({ url });
+      }.bind(this))
+      .catch(console.log);
     }
-    Reverser(this.props.data.link)
-    .then(function (url) {
-      this.setState({ url });
-    }.bind(this))
-    .catch(function (error) {
-      console.log('Got this error:', error);
-    });
   }
 
   render() {
