@@ -12,7 +12,7 @@ export default class ProjectImage extends React.Component {
   }
   componentDidMount() {
     if (this.props.data.link.startsWith('#')) {
-      this.setState({url: this.props.data.link})
+      this.setState({url: this.props.data.link});
     } else {
       Reverser(this.props.data.link)
       .then(function (url) {
