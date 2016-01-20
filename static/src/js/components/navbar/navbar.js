@@ -18,7 +18,7 @@ export default class NavBar extends React.Component {
                 </ul>
                 <ul className="nav navbar-nav" id="navigation">
                   <Dropdown title="Projects">
-                    <Item href="#" icon="ion-social-freebsd-devil">Pithos</Item>
+                    <Item ident="pages:projects" args={['pithos']} icon="ion-social-freebsd-devil">Pithos</Item>
                     <Item href="#" icon="ion-ios-monitor">BSOD Enabler</Item>
                     <Item href="#" icon="ion-chatbox-working">Hipchat Emoticons for All</Item>
                     <Item href="#" icon="ion-social-windows">Custom PC</Item>
@@ -54,7 +54,7 @@ export default class NavBar extends React.Component {
                   </Dropdown>
                   <Item href="#">Links</Item>
                   <Dropdown title="About">
-                    <Item href="#" icon="ion-android-person">Me</Item>
+                    <Item ident="pages:about-me" icon="ion-android-person">Me</Item>
                     <Item href="#" icon="">Website</Item>
                     <Item href="#" icon="ion-android-contacts">Contact Me</Item>
                   </Dropdown>
