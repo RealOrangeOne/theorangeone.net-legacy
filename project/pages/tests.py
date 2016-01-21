@@ -30,3 +30,9 @@ class NoJavascriptTestCase(TestCase):
     def test_accessable(self):
         response = self.client.get(reverse('no-js'))
         self.assertEqual(response.status_code, 200)
+
+
+class AllProjectsTestCase(TestCase):
+    def test_accessable(self):
+        response = self.client.get(reverse('pages:all-projects'))
+        self.assertEqual(response.status_code, 200)
