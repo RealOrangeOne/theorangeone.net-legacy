@@ -4,6 +4,7 @@ from django.template.base import TemplateDoesNotExist
 from django.http import Http404
 import markdown2
 
+
 class CustomTemplate(TemplateView):
     html_title = ""
     body_class = ""

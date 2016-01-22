@@ -4,6 +4,7 @@ import os.path
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
+
 class CustomTemplateTestCase(TestCase):
     def setUp(self):
         self.template = 'pages:index'
@@ -20,6 +21,7 @@ class CustomTemplateTestCase(TestCase):
 
 class ReverserTestCase(TestCase):
     REVERSER_IDENT = 'reverser:reverser'
+
     def test_reverser(self):
         response = self.client.post(reverse(self.REVERSER_IDENT), data={'ident': 'pages:index'})
         self.assertEqual(response.status_code, 302)
