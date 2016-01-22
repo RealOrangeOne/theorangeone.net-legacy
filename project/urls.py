@@ -12,4 +12,4 @@ urlpatterns = [
     url(r'', include('project.pages.urls', namespace='pages'))
 ]
 
-handler404 = Custom404View
+# handler404 = Custom404View
