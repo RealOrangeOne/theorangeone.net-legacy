@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, FormView
-from django.template import loader, Context, TemplateDoesNotExist
+from django.template import loader, Context
+from django.template.base import TemplateDoesNotExist
 from django.http import Http404
 import markdown2
 
