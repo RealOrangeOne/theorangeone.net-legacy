@@ -22,7 +22,7 @@ export default class NavBar extends React.Component {
                     <Item href="#" icon="ion-ios-monitor">BSOD Enabler</Item>
                     <Item href="#" icon="ion-chatbox-working">Hipchat Emoticons for All</Item>
                     <Item href="#" icon="ion-social-windows">Custom PC</Item>
-                    <Item href="#" icon="ion-android-more-vertical">All Projects...</Item>
+                    <Item ident="pages:all-projects" icon="ion-android-more-vertical">All Projects...</Item>
                   </Dropdown>
                   <Dropdown title="Code">
                     <Item href="#" icon="ion-code-working">Code Challenges</Item>
@@ -48,14 +48,14 @@ export default class NavBar extends React.Component {
                     <Item href="#" icon="ion-android-desktop">Setup</Item>
                   </Dropdown>
                   <Dropdown title="Media">
-                    <Item href="#" icon="ion-social-youtube">YouTube Channel</Item>
+                    <Item href="https://www.youtube.com/user/TheOrangeOneOfficial" icon="ion-social-youtube">YouTube Channel</Item>
                     <Item href="#" icon="ion-social-rss">Feed</Item>
-                    <Item href="#" icon="ion-social-camera">Gallery</Item>
+                    <Item href="https://www.flickr.com/photos/theorangeone/" icon="ion-social-camera">Gallery</Item>
                   </Dropdown>
                   <Item href="#">Links</Item>
                   <Dropdown title="About">
                     <Item ident="pages:about-me" icon="ion-android-person">Me</Item>
-                    <Item href="#" icon="">Website</Item>
+                  <Item ident="pages:about-website" icon="">Website</Item>
                     <Item href="#" icon="ion-android-contacts">Contact Me</Item>
                   </Dropdown>
                 </ul>
