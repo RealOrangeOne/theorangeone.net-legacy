@@ -48,7 +48,11 @@ export default class NavBar extends React.Component {
                     <Item href="#" icon="ion-android-desktop">Setup</Item>
                   </Dropdown>
                   <Dropdown title="Media">
-                    <Item href="https://www.youtube.com/user/TheOrangeOneOfficial" icon="ion-social-youtube">YouTube Channel</Item>
+                    <Item
+                      href="https://www.youtube.com/user/TheOrangeOneOfficial"
+                      icon="ion-social-youtube">
+                      YouTube Channel
+                    </Item>
                     <Item href="#" icon="ion-social-rss">Feed</Item>
                     <Item href="https://www.flickr.com/photos/theorangeone/" icon="ion-social-camera">Gallery</Item>
                   </Dropdown>
