@@ -18,11 +18,9 @@ ALLOWED_HOSTS = ['too.ctf.sh', 'theorangeone.net']
 
 # Application definition
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
 
     'bootstrapform',
