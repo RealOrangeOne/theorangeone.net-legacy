@@ -1,6 +1,9 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 import os.path
+from django_dbq.models import Job
+from . import jobs
+from collections import namedtuple
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -48,3 +51,46 @@ class MarkdownViewTestCase(TestCase):
     def test_invalid_template(self):
         response = self.client.get(reverse('pages:projects', args=['not-a-project']))
         self.assertEqual(response.status_code, 404)
+
+
+MockJob = namedtuple('MockJob', {'workspace': {}})
+
+
+class WorkerTestCase(TestCase):
+    def test_mail_job_creation(self):
+        data = {
+            'name': 'Person',
+            'email': '123@123.123',
+            'message': 'Hi there, things.'
+        }
+        workspace = {
+            'template': 'email/contact_message.html',
+            'from_email': data['email'],
+            'to_email': 'info@theorangeone.net',
+            'context': data
+        }
+        self.client.post(reverse('pages:about'), data)
+        self.assertEqual(Job.objects.count(), 1)
+        job = Job.objects.all()[0]
+        self.assertEqual(job.workspace, workspace)
+
+    def test_email_error(self):
+        data = {
+            'name': 'Person',
+            'email': '123@123.123',
+            'message': 'Hi there, things.'
+        }
+        workspace = {
+            'template': 'email/contact_message.html',
+            'from_email': 'me@123.123',
+            'to_email': data['email'],
+            'context': data
+        }
+        job = MockJob(workspace)
+        errors = None
+        try:
+            jobs.send_email(job)
+        except Exception as e:
+            errors = e
+
+        self.assertFalse(errors)

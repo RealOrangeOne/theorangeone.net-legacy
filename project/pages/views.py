@@ -33,7 +33,12 @@ class AboutWebsiteView(CustomTemplate):
 class AboutIndexView(CustomFormTemplate):
     template_name = 'about/index.html'
     html_title = "About"
+    success_url = '/about/?sent'
     form_class = ContactForm
+
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)
 
 
 class AboutMeView(CustomTemplate):

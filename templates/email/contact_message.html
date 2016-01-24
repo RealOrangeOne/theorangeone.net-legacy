@@ -1,0 +1,15 @@
+{% extends 'email/base.html' %}
+
+{% block subjectcontent %}Message from {{ name }}{% endblock %}
+
+{% block bodycontent %}
+    You have recieved a message from {{ name }}.
+    The message reads:
+        {{ message }}
+{% endblock %}
+
+{% block htmlcontent %}
+    <p>You have recieved a message from {{ name }}.</p>
+    <p>The message reads:</p>
+    <blockquote>{{ message }}</blockquote>
+{% endblock %}

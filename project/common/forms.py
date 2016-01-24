@@ -1,4 +1,5 @@
 from django import forms
+from django_dbq.models import Job
 
 
 class ContactForm(forms.Form):
@@ -7,4 +8,9 @@ class ContactForm(forms.Form):
     message = forms.CharField(label="Message", widget=forms.Textarea(attrs={'placeholder': 'Enter your message here'}))
 
     def send_email(self):
-        print("Sending email with", self.cleaned_data)
+        Job.objects.create(name='send_email', workspace={
+            'context': self.cleaned_data,
+            'to_email': 'info@theorangeone.net',
+            'from_email': self.cleaned_data['email'],
+            'template': 'email/contact_message.html'
+        })

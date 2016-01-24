@@ -19,6 +19,15 @@ class AboutIndexTestCase(TestCase):
         response = self.client.get(reverse('pages:about'))
         self.assertEqual(response.status_code, 200)
 
+    def test_email_send(self):
+        data = {
+            'email': '123@123.123',
+            'name': 'Person',
+            'message': 'Hi there, things.'
+        }
+        response = self.client.post(reverse('pages:about'), data)
+        self.assertRedirects(response, '/about/?sent')
+
 
 class Custom404TestCase(TestCase):
     def test_accessable(self):

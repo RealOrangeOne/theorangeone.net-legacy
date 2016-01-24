@@ -27,6 +27,8 @@ INSTALLED_APPS = (
 
     'bootstrapform',
     'django_client_reverse',
+    'mail_templated',
+    'django_dbq',
 
     'project.pages',
     'project.common',
@@ -87,3 +89,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected-static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static', 'build'),
 )
+
+JOBS = {
+    'send_email': {
+        'tasks': ['project.common.jobs.send_email'],
+    }
+}
