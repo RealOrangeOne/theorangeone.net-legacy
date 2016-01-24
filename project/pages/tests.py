@@ -28,6 +28,10 @@ class AboutIndexTestCase(TestCase):
         response = self.client.post(reverse('pages:about'), data)
         self.assertRedirects(response, '/about/?sent')
 
+    def test_success_message_shows(self):
+        response = self.client.get(reverse('pages:about') + '?sent')
+        self.assertContains(response, 'Already Sent')
+
 
 class Custom404TestCase(TestCase):
     def test_accessable(self):
