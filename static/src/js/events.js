@@ -2,7 +2,6 @@
 var is_navbar_attached = false;
 
 $(window).load(function() {
-  $.material.init();
   $(window).trigger('scroll');
 });
 
@@ -45,6 +44,9 @@ function position_navbar() {
 
 $(function() { // https://css-tricks.com/snippets/jquery/smooth-scrolling/
   $('a[href*=#]:not([href=#])').click(function() {
+    if ($(this).data('toggle') === 'collapse') {
+      return true;
+    }
     if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
       && location.hostname === this.hostname) {
       var target = $(this.hash);
