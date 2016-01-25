@@ -8,6 +8,10 @@
   </div>
 
   <script>
-    $('.header h1').text($('.markdown-content h1').text());
+    $(window).load(function () {
+      const TITLE = $('.markdown-content h1').text();
+      $('.header h1').text(TITLE);
+      window.updateTitle(TITLE);
+    });
   </script>
 {% endblock %}

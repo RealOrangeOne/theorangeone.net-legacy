@@ -154,21 +154,30 @@ footer {
   }
   h1 {
     margin: 15px 0;
+    display: inline-block;
   }
-  .breadcrumb-container {
-    text-align: right;
-    .breadcrumb {
-      li::before {
-        content: "/";
-        padding: 0 3px;
-      }
-      background: transparent;
-      margin-bottom: 3px;
-      font-size: 17px;
-      a {
-        color: white;
-        &:hover {
-          color: #ff7f00;
+  .container {
+    position: relative;
+    #breadcrumbs {
+      text-align: right;
+      position: absolute;
+      bottom: 5px;
+      right: 0;
+      .breadcrumb {
+        background: transparent;
+        margin-bottom: 3px;
+        font-size: 17px;
+        padding: 0;
+        li::before {
+          content: "/";
+          padding: 0 3px;
+        }
+        a {
+          .transition(color 0.4s);
+          color: white;
+          &:hover {
+            color: #ff7f00;
+          }
         }
       }
     }

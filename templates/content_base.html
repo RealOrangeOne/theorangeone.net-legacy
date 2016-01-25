@@ -7,14 +7,8 @@
 {% block baseContent %}
   <div class="jumbotron header">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-8">
-          <h1>{% block pageTitle %}{% endblock %}</h1>
-        </div>
-        <div class="col-sm-4 breadcrumb-container">
-          <div id="breadcrumbs"></div>
-        </div>
-      </div>
+      <h1>{% block pageTitle %}{% endblock %}</h1>
+      <div id="breadcrumbs"></div>
     </div>
     <navbar></navbar>
   </div>

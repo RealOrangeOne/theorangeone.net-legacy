@@ -1,6 +1,7 @@
 /* global $ */
 
 import './events.js';
+import './globals.js';
 
 import 'whatwg-fetch';
 
@@ -20,6 +21,6 @@ if ($('navbar').length > 0) {
   React.render(<NavBar />, $('navbar')[0]);
 }
 
-if ($('#breadcrumbs') > 0) {
+if ($('#breadcrumbs').length > 0) {
   React.render(<Breadcrumbs />, $('#breadcrumbs')[0]);
 }
