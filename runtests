@@ -22,7 +22,7 @@ def check_if_exit_code():
 
 cov = coverage.Coverage(
     source=["project"],
-    omit=["*/wsgi.py", "*/settings.py", "*/migrations/*.py", "*/__init__*"]
+    omit=["*/wsgi.py", "*/settings.py", "*/migrations/*.py", "*/__init__*", "*/tests.py"]
 )
 cov.start()
 
