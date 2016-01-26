@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django_client_reverse import urls as reverse_urls
-from project.pages.views import Custom404View, NoJavascriptView
+from project.pages.views.core import Custom404View, NoJavascriptView
 
 
 urlpatterns = [

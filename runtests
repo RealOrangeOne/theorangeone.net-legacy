@@ -48,7 +48,7 @@ print(Fore.GREEN + "Coverage Complete.")
 
 FLAKE8_IGNORE = '--ignore=E128,E501,E401'
 try:
-    subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'project', FLAKE8_IGNORE, '--exclude=migrations,settings,wsgi.py'])
+    subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'project', FLAKE8_IGNORE, '--exclude=migrations,settings,wsgi.py,__init__.py'])
     subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'scripts', FLAKE8_IGNORE])
     subprocess.check_output([os.path.join(bin_dir, 'flake8'), sys.argv[0], FLAKE8_IGNORE])
 except subprocess.CalledProcessError as e:
