@@ -30,9 +30,9 @@ const DATA = [
     link: '',
   },
   {
-    title: 'Work',
+    title: 'Student Robotics',
     text: '',
-    link: '',
+    link: 'pages:robotics-index',
   }
 ];
 

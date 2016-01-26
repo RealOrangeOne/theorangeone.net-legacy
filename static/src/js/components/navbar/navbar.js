@@ -30,7 +30,7 @@ export default class NavBar extends React.Component {
                     <Item href="#" icon="ion-ios-game-controller-a">The Wiki Game Solver</Item>
                   </Dropdown>
                   <Dropdown title="College">
-                    <Item href="#">Student Robotics</Item>
+                    <Item ident="pages:robotics-index">Student Robotics</Item>
                     <Item href="#" icon="ion-cube">Attack on Blocks Game</Item>
                     <Item href="#">Student Server</Item>
                     <Item href="#" icon="ion-ios-paper">EPQ</Item>
