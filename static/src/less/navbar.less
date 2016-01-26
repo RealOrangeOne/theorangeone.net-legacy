@@ -11,9 +11,12 @@
     @media (min-width: @screen-md-min) {
       margin-right: 23px;
     }
+    &:not(.dropdown) > a {
+      padding-top: 12px;
+    }
     & > a {
       @media (min-width: @screen-md-min) {
-        padding: 15px 10px;
+        padding: 10px 10px;
       }
       @media (max-width: @screen-xs-max) {
         padding: 15px 15px;
@@ -37,6 +40,7 @@
     &.dropdown {
       top: 100%;
       bottom: initial;
+      height: @navbar-height;
     }
     .open & {
       opacity: 1;
@@ -49,7 +53,7 @@
 
 
 .navbar {
-  max-height: 52px;
+  max-height: @navbar-height;
   border-radius: 0;
   .home-button a {
     .transition(~"ease-in-out .3 all");
@@ -85,7 +89,7 @@
   &.align {
     @media (min-width: @screen-sm) {
       position: absolute;
-      height: 52px;
+      height: @navbar-height;
     }
     @media (max-width: @screen-sm) {
       position: fixed;
@@ -98,7 +102,7 @@
 
 #navbar-anchor {
   position: absolute;
-  height: 52px;
+  height: @navbar-height;
 }
 
 @media (min-width: @screen-xs-max) {
@@ -124,7 +128,7 @@
 
 @media (min-width: @screen-xs-max) {
   navbar + * {
-    margin-top: 52px;
+    margin-top: @navbar-height;
   }
 }
 

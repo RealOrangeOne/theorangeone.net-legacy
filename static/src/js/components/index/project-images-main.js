@@ -7,7 +7,7 @@ const DATA = [
   {
     title: 'Custom PC',
     text: 'Without my PCs, I wouldnt be able to do anything you see here.',
-    link: 'pages:about-me',
+    link: 'about:me',
   },
   {
     title: 'BSOD-Enabler',
@@ -32,7 +32,7 @@ const DATA = [
   {
     title: 'Student Robotics',
     text: '',
-    link: 'pages:robotics-index',
+    link: 'robotics:index',
   }
 ];
 

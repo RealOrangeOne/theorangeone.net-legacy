@@ -18,11 +18,11 @@ export default class NavBar extends React.Component {
                 </ul>
                 <ul className="nav navbar-nav" id="navigation">
                   <Dropdown title="Projects">
-                    <Item ident="pages:projects" args={['pithos']} icon="ion-social-freebsd-devil">Pithos</Item>
+                    <Item ident="projects:project" args={['pithos']} icon="ion-social-freebsd-devil">Pithos</Item>
                     <Item href="#" icon="ion-ios-monitor">BSOD Enabler</Item>
                     <Item href="#" icon="ion-chatbox-working">Hipchat Emoticons for All</Item>
                     <Item href="#" icon="ion-social-windows">Custom PC</Item>
-                    <Item ident="pages:all-projects" icon="ion-android-more-vertical">All Projects...</Item>
+                    <Item ident="projects:all" icon="ion-android-more-vertical">All Projects...</Item>
                   </Dropdown>
                   <Dropdown title="Code">
                     <Item href="#" icon="ion-code-working">Code Challenges</Item>
@@ -30,7 +30,7 @@ export default class NavBar extends React.Component {
                     <Item href="#" icon="ion-ios-game-controller-a">The Wiki Game Solver</Item>
                   </Dropdown>
                   <Dropdown title="College">
-                    <Item ident="pages:robotics-index">Student Robotics</Item>
+                    <Item ident="robotics:index">Student Robotics</Item>
                     <Item href="#" icon="ion-cube">Attack on Blocks Game</Item>
                     <Item href="#">Student Server</Item>
                     <Item href="#" icon="ion-ios-paper">EPQ</Item>
@@ -58,8 +58,8 @@ export default class NavBar extends React.Component {
                   </Dropdown>
                   <Item href="#">Links</Item>
                   <Dropdown title="About">
-                    <Item ident="pages:about-me" icon="ion-android-person">Me</Item>
-                  <Item ident="pages:about-website" icon="">Website</Item>
+                    <Item ident="about:me" icon="ion-android-person">Me</Item>
+                    <Item ident="about:website" icon="">Website</Item>
                     <Item href="#" icon="ion-android-contacts">Contact Me</Item>
                   </Dropdown>
                 </ul>

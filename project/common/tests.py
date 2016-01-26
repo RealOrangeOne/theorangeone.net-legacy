@@ -37,19 +37,19 @@ class ReverserTestCase(TestCase):
 
 class MarkdownViewTestCase(TestCase):
     def test_accessable(self):
-        response = self.client.get(reverse('pages:projects', args=['test']))
+        response = self.client.get(reverse('projects:project', args=['test']))
         self.assertEqual(response.status_code, 200)
 
     def test_parsing(self):
-        response = self.client.get(reverse('pages:projects', args=['test']))
+        response = self.client.get(reverse('projects:project', args=['test']))
         self.assertContains(response, '<h1>Testing</h1>')
 
     def test_template_engine(self):
-        response = self.client.get(reverse('pages:projects', args=['test']))
-        self.assertContains(response, reverse('pages:all-projects'))
+        response = self.client.get(reverse('projects:project', args=['test']))
+        self.assertContains(response, reverse('projects:all'))
 
     def test_invalid_template(self):
-        response = self.client.get(reverse('pages:projects', args=['not-a-project']))
+        response = self.client.get(reverse('projects:project', args=['not-a-project']))
         self.assertEqual(response.status_code, 404)
 
 
@@ -69,7 +69,7 @@ class WorkerTestCase(TestCase):
             'to_email': 'info@theorangeone.net',
             'context': data
         }
-        self.client.post(reverse('pages:about'), data)
+        self.client.post(reverse('about:index'), data)
         self.assertEqual(Job.objects.count(), 1)
         job = Job.objects.all()[0]
         self.assertEqual(job.workspace, workspace)
