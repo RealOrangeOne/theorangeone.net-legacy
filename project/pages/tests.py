@@ -49,3 +49,17 @@ class AllProjectsTestCase(TestCase):
     def test_accessable(self):
         response = self.client.get(reverse('pages:all-projects'))
         self.assertEqual(response.status_code, 200)
+
+
+class RoboticsTestCase(TestCase):
+    def test_2015_index_accessable(self):
+        response = self.client.get(reverse('pages:robotics-2015-index'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_2014_index_accessable(self):
+        response = self.client.get(reverse('pages:robotics-2014-index'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_2015_robot_accessable(self):
+        response = self.client.get(reverse('pages:robotics-2015-robot'))
+        self.assertEqual(response.status_code, 200)
