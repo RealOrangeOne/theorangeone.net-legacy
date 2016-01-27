@@ -17,6 +17,7 @@ EXIT_CODE = 0
 
 def check_if_exit_code():
     if EXIT_CODE != 0:
+        print("\n{}Tests Failed. {}Please check messages above and then re-run the command.".format(Fore.RED, Fore.YELLOW))
         exit(EXIT_CODE)
 
 
@@ -26,24 +27,20 @@ cov = coverage.Coverage(
 )
 cov.start()
 
-
 print(Fore.YELLOW + "Running Tests...")
 execute_from_command_line([sys.argv[0], 'test'])
 cov.stop()
 
-
-print(Fore.YELLOW + "Collecting Coverage...")
+print("{}Tests Complete. {}Collecting Coverage...".format(Fore.GREEN, Fore.YELLOW))
 cov.save()
 cov.html_report()
-
-
 covered = cov.report()
-if covered <= PERCENTAGE:
-    print(Fore.RED + "ERROR: Your coverage needs to be higher. Current coverage: {}%. Required: {}%.".format(covered, PERCENTAGE))
+if covered < PERCENTAGE:
+    print("{}ERROR: Your coverage needs to be higher. Current coverage: {}%. Required: {}%.".format(Fore.RED, covered, PERCENTAGE))
     EXIT_CODE = 1
 
 check_if_exit_code()
-print(Fore.GREEN + "Coverage Complete.")
+print("{}Coverage Complete. {}Linting...".format(Fore.GREEN, Fore.YELLOW))
 
 
 FLAKE8_IGNORE = '--ignore=E128,E501,E401'
@@ -52,14 +49,14 @@ try:
     subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'scripts', FLAKE8_IGNORE])
     subprocess.check_output([os.path.join(bin_dir, 'flake8'), sys.argv[0], FLAKE8_IGNORE])
 except subprocess.CalledProcessError as e:
-    print(Fore.RED + e.output.decode())
+    print(Fore.RED, e.output.decode())
     EXIT_CODE = 1
-check_if_exit_code()
 
-print(Fore.GREEN + "All Python tests passed!")
+check_if_exit_code()
+print("{}All Python tests passed! {}Testing Static Files...".format(Fore.GREEN, Fore.YELLOW))
 
 
 EXIT_CODE = os.system('npm test')
-
 check_if_exit_code()
-print(Fore.GREEN + "All Tests Passed!")
+
+print("{}All Tests Passed!".format(Fore.GREEN))
