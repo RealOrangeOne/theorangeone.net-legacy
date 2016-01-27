@@ -12,7 +12,7 @@
     "build-images": "cp -r static/src/img/* static/build/img/",
     "watch-less": "watch 'npm run build-less' static/src/less/",
     "watch": "npm run watch-less & npm run watch-images",
-    "clean": "rm -rf static/build collected-static/ node_modules/ env/",
+    "clean": "./scripts/clean.js",
     "test": "npm run lint"
   },
   "repository": {
