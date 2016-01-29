@@ -65,3 +65,7 @@ class RoboticsTestCase(TestCase):
     def test_2015_robot_accessable(self):
         response = self.client.get(reverse('robotics:2015-robot'))
         self.assertEqual(response.status_code, 200)
+
+    def test_2015_code_accessable(self):
+        response = self.client.get(reverse('robotics:2015-code'))
+        self.assertEqual(response.status_code, 200)

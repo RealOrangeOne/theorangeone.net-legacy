@@ -1,4 +1,4 @@
-from project.common.views import CustomTemplate
+from project.common.views import CustomTemplate, MarkdownView
 
 
 class IndexView(CustomTemplate):
@@ -12,6 +12,10 @@ class Index2015View(CustomTemplate):
 
 class Robot2015View(CustomTemplate):
     template_name = 'robotics/2015-robot.html'
+
+
+class Code2015View(MarkdownView):
+    markdown = 'robotics/2015-code.md'
 
 
 # 2014

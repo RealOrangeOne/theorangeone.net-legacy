@@ -19,14 +19,17 @@ export default class NavBar extends React.Component {
                 <ul className="nav navbar-nav" id="navigation">
                   <Dropdown title="Projects">
                     <Item ident="projects:project" args={['pithos']} icon="ion-social-freebsd-devil">Pithos</Item>
-                    <Item href="#" icon="ion-ios-monitor">BSOD Enabler</Item>
-                    <Item href="#" icon="ion-chatbox-working">Hipchat Emoticons for All</Item>
+                    <Item ident="projects:project" args={['bsod-enabler']} icon="ion-ios-monitor">BSOD Enabler</Item>
+                    <Item
+                      ident="projects:project"
+                      args={['hipchat-emoticons-for-all']}
+                      icon="ion-chatbox-working">Hipchat Emoticons for All</Item>
                     <Item href="#" icon="ion-social-windows">Custom PC</Item>
                     <Item ident="projects:all" icon="ion-android-more-vertical">All Projects...</Item>
                   </Dropdown>
                   <Dropdown title="Code">
                     <Item href="#" icon="ion-code-working">Code Challenges</Item>
-                    <Item href="#" icon="ion-ios-circle-filled">BSOD Enabler</Item>
+                    <Item href="#" icon="ion-ios-circle-filled">Pi Time Lapse</Item>
                     <Item href="#" icon="ion-ios-game-controller-a">The Wiki Game Solver</Item>
                   </Dropdown>
                   <Dropdown title="College">
@@ -59,8 +62,8 @@ export default class NavBar extends React.Component {
                   <Item href="#">Links</Item>
                   <Dropdown title="About">
                     <Item ident="about:me" icon="ion-android-person">Me</Item>
-                    <Item ident="about:website" icon="">Website</Item>
-                    <Item href="#" icon="ion-android-contacts">Contact Me</Item>
+                    <Item ident="about:website" icon="ion-cloud">Website</Item>
+                    <Item ident="about:index" icon="ion-android-contacts">Contact Me</Item>
                   </Dropdown>
                 </ul>
               </div>
