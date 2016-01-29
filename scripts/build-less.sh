@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ $@ == prod ]]
+if [ $BUILD_PRODUCTION == "true" ]
 then
   echo ">>> WARNING: Building in Production Mode!"
 fi
@@ -10,7 +10,7 @@ fi
 echo ">> Building LESS..."
 lessc --silent static/src/less/style.less static/build/css/style.css
 
-if [[ $@ == prod ]]
+if [ $BUILD_PRODUCTION == "true" ]
 then
   echo ">> Compressing LESS..."
   cleancss -d --s0 -o static/build/css/style.css static/build/css/style.css

@@ -8,11 +8,11 @@ env/bin/pip install -r requirements.txt --upgrade
 scripts/get-private-data.sh
 
 npm install
-npm run build
+npm run build $@
 
 env/bin/python manage.py collectstatic --noinput
 
-if [[ $@ == prod ]]
+if [ $BUILD_PRODUCTION == "true" ]
 then
   echo ">> Running Migrations..."
   env/bin/python manage.py migrate

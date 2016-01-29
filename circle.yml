@@ -5,10 +5,11 @@ machine:
     DEBUG: true
     DATABASE_URL: sqlite://~/database.db
     EMAIL_BACKEND: django.core.mail.backends.console.EmailBackend
+    BUILD_PRODUCTION: true
 
 dependencies:
   pre:
-    - ./build prod
+    - ./build
   cache_directories:
     - env
 
