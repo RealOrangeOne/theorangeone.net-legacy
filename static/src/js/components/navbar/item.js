@@ -28,9 +28,15 @@ export default class Item extends React.Component {
   render() {
     let icon;
     if (this.props.icon) {
-      icon = (
-        <i className={'icon ' + this.props.icon}></i>
-      );
+      if (this.props.icon.startsWith('ion')) {
+        icon = (
+          <i className={'icon ' + this.props.icon} />
+        );
+      } else if (this.props.icon.startsWith('glyphicon')) {
+        icon = (
+          <span className={'glyphicon ' + this.props.icon} aria-hidden="true" />
+        );
+      }
     }
     return (
       <li><a href={this.state.url}>{icon}{this.props.children}</a></li>
