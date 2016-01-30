@@ -12,7 +12,7 @@ npm run build $@
 
 env/bin/python manage.py collectstatic --noinput
 
-if [ $BUILD_PRODUCTION == "true" ]
+if [[ $BUILD_PRODUCTION ]]
 then
   echo ">> Running Migrations..."
   env/bin/python manage.py migrate

@@ -2,14 +2,14 @@
 
 set -e
 
-if [ $BUILD_PRODUCTION == "true" ]
+if [[ $BUILD_PRODUCTION ]]
 then
   echo ">>> WARNING: Building in Production Mode!"
 fi
 
 mkdir -p static/build/js/lib
 
-if [ $BUILD_PRODUCTION == "true" ]
+if [[ $BUILD_PRODUCTION ]]
 then
   echo ">> Compressing Libraries..."
   uglifyjs node_modules/bootstrap/dist/js/bootstrap.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/lib/bootstrap.js
@@ -22,7 +22,7 @@ fi
 
 rm -rf static/build/js/lib
 
-if [ $BUILD_PRODUCTION == "true" ]
+if [[ $BUILD_PRODUCTION ]]
 then
   echo ">> Compressing jQuery..."
   uglifyjs node_modules/jquery/dist/jquery.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/jquery.js
@@ -35,7 +35,7 @@ fi
 echo ">> Building Application JS..."
 browserify -t [ babelify --presets [ es2015 react ] ] static/src/js/app.js -o static/build/js/app.js
 
-if [ $BUILD_PRODUCTION == "true" ]
+if [[ $BUILD_PRODUCTION ]]
 then
   echo ">> Compressing Application..."
   uglifyjs static/build/js/app.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/app.js
