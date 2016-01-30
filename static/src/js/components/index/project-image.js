@@ -11,15 +11,19 @@ export default class ProjectImage extends React.Component {
     };
   }
   componentDidMount() {
+    if (!this.props.data.link || this.props.data.link === '') {
+      return;
+    }
     if (this.props.data.link.startsWith('#')) {
       this.setState({url: this.props.data.link});
     } else {
-      const args = this.props.data.args || false;
-      Reverser(this.props.data.link, args)
-      .then(function (url) {
+      let args;
+      if (this.props.data.args) {
+        args = [this.props.data.args];
+      }
+      Reverser(this.props.data.link, args, function (url) {
         this.setState({ url });
-      }.bind(this))
-      .catch(console.log);
+      }.bind(this));
     }
   }
 

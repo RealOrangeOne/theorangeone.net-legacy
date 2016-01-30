@@ -18,11 +18,9 @@ export default class Item extends React.Component {
     if (this.props.href) {
       this.setState({url: this.props.href});
     } else {
-      Reverser(this.props.ident, this.props.args)
-      .then(function (url) {
+      Reverser(this.props.ident, this.props.args, function (url) {
         this.setState({ url });
-      }.bind(this))
-      .catch(console.log);
+      }.bind(this));
     }
   }
   render() {
