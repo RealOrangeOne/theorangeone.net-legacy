@@ -14,7 +14,8 @@ export default class ProjectImage extends React.Component {
     if (this.props.data.link.startsWith('#')) {
       this.setState({url: this.props.data.link});
     } else {
-      Reverser(this.props.data.link)
+      const args = this.props.data.args || false;
+      Reverser(this.props.data.link, args)
       .then(function (url) {
         this.setState({ url });
       }.bind(this))

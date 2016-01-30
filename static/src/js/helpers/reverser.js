@@ -2,9 +2,9 @@ export default function Reverser(ident, args) {
   let body = {};
   if (ident) {
     body.ident = ident;
-  }
-  if (args) {
-    body.args = args;
+    if (args) {
+      body.args = args;
+    }
   }
   body = JSON.stringify(body);
   return fetch('/reverse/', {

@@ -12,7 +12,8 @@ const DATA = [
   {
     title: 'BSOD-Enabler',
     text: 'Ever wanted to bring up a Blue Screen of Death on command, well now you can!',
-    link: '',
+    link: 'projects:project',
+    args: 'bsod-enabler'
   },
   {
     title: 'Yoga Pal',
