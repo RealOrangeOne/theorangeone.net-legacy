@@ -10,4 +10,10 @@ Obviously there are many different ways, and probably far better ways of doing t
 
 Below you can find a download link to the application, as well as a link to the source code. I am hoping to upgrade the project in the future to allow for automated triggering, a much faster UI, with options, as well as a simple one-click setup and BSOD.
 
-### Links coming soon!
+
+<div class="btn-group btn-group-justified">
+  <p class="center-text">
+    <a class="btn btn-primary btn-lg" href="" download="BSOD_Enabler.exe">Download BSOD Enabler Here</a>
+    <a class="btn btn-default btn-lg" href="javascript:alert('Coming in next version.');">View on Github <i class="icon ion-social-github"></i></a>
+  </p>
+</div>

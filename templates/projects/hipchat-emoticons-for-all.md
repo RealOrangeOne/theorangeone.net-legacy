@@ -10,4 +10,8 @@ Fortunately after many hours of testing, and changing the code, I finally got ev
 
 Currently the application is in very beta stages right now, only having tested partial support for github, but the code is all available on GitHub, if people have their own suggestions of improvements.
 
-#### Links coming soon
+<div class="btn-group btn-group-justified">
+  <p class="center-text">
+    <a class="btn btn-default btn-lg" href="https://github.com/RealOrangeOne/hipchat-emoticons-for-all">View on Github <i class="icon ion-social-github"></i></a>
+  </p>
+</div>
