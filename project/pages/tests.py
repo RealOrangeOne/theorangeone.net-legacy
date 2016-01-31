@@ -69,3 +69,9 @@ class RoboticsTestCase(TestCase):
     def test_2015_code_accessable(self):
         response = self.client.get(reverse('robotics:2015-code'))
         self.assertEqual(response.status_code, 200)
+
+
+class CollegeTestCase(TestCase):
+    def test_attack_on_blocks_accessable(self):
+        response = self.client.get(reverse('college:attack-on-blocks'))
+        self.assertEqual(response.status_code, 200)
