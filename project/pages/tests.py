@@ -75,3 +75,7 @@ class CollegeTestCase(TestCase):
     def test_attack_on_blocks_accessable(self):
         response = self.client.get(reverse('college:attack-on-blocks'))
         self.assertEqual(response.status_code, 200)
+
+    def test_student_server_accessable(self):
+        response = self.client.get(reverse('college:student-server'))
+        self.assertEqual(response.status_code, 200)
