@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^404/', Custom404View.as_view(), name="404"),
     url(r'^no-js/', NoJavascriptView.as_view(), name="no-js"),
     url(r'^about/', include('project.pages.urls.about', namespace='about')),
+    url(r'^college/', include('project.pages.urls.college', namespace='colldge')),
     url(r'^core/', include('project.pages.urls.core', namespace='core')),
     url(r'^projects/', include('project.pages.urls.projects', namespace='projects')),
     url(r'^robotics/', include('project.pages.urls.robotics', namespace='robotics')),

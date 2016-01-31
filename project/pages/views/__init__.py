@@ -1,1 +1,1 @@
-from . import about, core, projects, robotics
+from . import about, college, core, projects, robotics
