@@ -5,6 +5,5 @@ class AttackOnBlocksView(MarkdownView):
     markdown = 'projects/attack-on-blocks.md'
 
 
-
 class StudentServerView(MarkdownView):
     markdown = 'college/student-server.md'

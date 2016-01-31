@@ -34,8 +34,8 @@ export default class NavBar extends React.Component {
                   </Dropdown>
                   <Dropdown title="College">
                     <Item ident="robotics:index">Student Robotics</Item>
-                    <Item href="#" icon="ion-cube">Attack on Blocks Game</Item>
-                    <Item href="#" icon="glyphicon-hdd">Student Server</Item>
+                    <Item ident="college:attack-on-blocks" icon="ion-cube">Attack on Blocks Game</Item>
+                    <Item ident="college:student-server" icon="glyphicon-hdd">Student Server</Item>
                     <Item href="#" icon="ion-ios-paper">EPQ</Item>
                     <Item href="#">Wall of Sheep</Item>
                   </Dropdown>
