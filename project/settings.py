@@ -30,6 +30,7 @@ INSTALLED_APPS = (
 
     'project.pages',
     'project.common',
+    'project.blog'
 )
 
 MIDDLEWARE_CLASSES = (
