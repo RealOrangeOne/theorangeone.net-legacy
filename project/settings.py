@@ -93,3 +93,5 @@ JOBS = {
         'tasks': ['project.common.jobs.send_email'],
     }
 }
+
+WORDPRESS_URL = "realorangeone.wordpress.com"

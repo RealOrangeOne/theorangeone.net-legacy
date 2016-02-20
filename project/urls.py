@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^core/', include('project.pages.urls.core', namespace='core')),
     url(r'^projects/', include('project.pages.urls.projects', namespace='projects')),
     url(r'^robotics/', include('project.pages.urls.robotics', namespace='robotics')),
+    url(r'^blog/', include('project.blog.urls', namespace='blog')),
     url(r'', include('project.pages.urls.core', namespace='pages'))
 ]
 
