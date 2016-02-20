@@ -3,12 +3,16 @@
 {% block pageTitle %}{{ html_title }}{% endblock %}
 
 {% block content %}
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      {{ blog.content | safe}}
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 pull-right">
+        <h5>Published: {{ blog.date }}</h5>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="container">
+    {{ blog.content | safe }}
+  </div>
+
 {% endblock %}

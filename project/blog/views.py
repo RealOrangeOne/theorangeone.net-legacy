@@ -1,5 +1,5 @@
 from project.common.views import CustomTemplate
-from .utils import get_post
+from .utils import get_post, reformat_date
 from django.http import Http404
 
 
@@ -9,6 +9,7 @@ class BlogView(CustomTemplate):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['blog'] = self.blog_data
+        context['blog']['date'] = reformat_date(self.blog_data['date'])
         return context
 
     def dispatch(self, request, *args, **kwargs):

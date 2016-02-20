@@ -49,7 +49,8 @@ class BlogViewTestCase(TestCase):
             "title": "Test Blog Post",
             "ID": 1,
             "content": "<p>Test blog post content</p>",
-            "slug": "test-post"
+            "slug": "test-post",
+            "date": "2000-01-01T18:05:00+00:00"
         }
 
     def test_accessable(self, m):

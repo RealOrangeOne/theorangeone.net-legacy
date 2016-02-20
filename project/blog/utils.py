@@ -1,4 +1,4 @@
-import requests
+import requests, iso8601
 from django.conf import settings
 
 API_PATH = "https://public-api.wordpress.com/rest/v1.1/sites/{0}/posts/slug:{1}"
@@ -19,3 +19,7 @@ def get_post(slug):
         return
     data = response.json()
     return data if "ID" in data else False
+
+
+def reformat_date(iso_date):
+    return iso8601.parse_date(iso_date).strftime("%x %I:%M")
