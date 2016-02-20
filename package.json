@@ -11,7 +11,7 @@
     "build-fonts": "cp -R node_modules/bootstrap/dist/fonts static/build/ && cp -R node_modules/ionicons/fonts static/build/ ",
     "build-images": "cp -r static/src/img/* static/build/img/",
     "watch-less": "watch 'npm run build-less' static/src/less/",
-    "watch": "npm run watch-less & npm run watch-images",
+    "watch": "npm run watch-less",
     "clean": "./scripts/clean.js",
     "test": "npm run lint"
   },
