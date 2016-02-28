@@ -10,6 +10,9 @@ fi
 echo ">> Building LESS..."
 lessc --silent static/src/less/style.less static/build/css/style.css
 
+echo ">> Post-Processing..."
+postcss -u autoprefixer -o static/build/css/style.css static/build/css/style.css
+
 if [[ $BUILD_PRODUCTION ]]
 then
   echo ">> Compressing LESS..."
