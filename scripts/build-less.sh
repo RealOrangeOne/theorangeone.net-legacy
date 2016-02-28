@@ -15,3 +15,5 @@ then
   echo ">> Compressing LESS..."
   cleancss -d --s0 -o static/build/css/style.css static/build/css/style.css
 fi
+
+echo "> LESS Built!"

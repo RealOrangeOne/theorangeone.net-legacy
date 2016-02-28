@@ -40,3 +40,5 @@ then
   echo ">> Compressing Application..."
   uglifyjs static/build/js/app.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/app.js
 fi
+
+echo "> JS Built!"
