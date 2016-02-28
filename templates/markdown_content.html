@@ -6,12 +6,4 @@
   <div class="container markdown-content">
     {{ markdown_content | safe }}
   </div>
-
-  <script>
-    $(window).load(function () {
-      const TITLE = $('.markdown-content h1').text();
-      $('.header h1').text(TITLE);
-      window.updateTitle(TITLE);
-    });
-  </script>
 {% endblock %}
