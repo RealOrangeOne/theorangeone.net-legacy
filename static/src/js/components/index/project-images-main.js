@@ -81,8 +81,8 @@ export default class ProjectImagesMain extends React.Component {
       <div className="container">
         <h1>Personal Projects</h1>
         { images }
-        <a href={this.state.seeMoreURL}>
-          <h3>See More...</h3>
+        <a href={this.state.seeMoreURL} className="see-more">
+          <h3>See More</h3>
         </a>
       </div>
     );
