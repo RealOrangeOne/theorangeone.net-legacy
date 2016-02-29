@@ -1,6 +1,7 @@
 import React from 'react';
 var ReactBootstrap = require('react-bootstrap');
 import ProjectImage from './project-image';
+import Reverser from '../../helpers/reverser';
 var Row = ReactBootstrap.Row;
 
 const DATA = [
@@ -42,7 +43,8 @@ export default class ProjectImagesMain extends React.Component {
     super();
     this.keys = [[1, 2, 3], [4, 5, 6]];
     this.state = {
-      hover: 0
+      hover: 0,
+      seeMoreURL: ''
     };
     this.setHovering = this.setHovering.bind(this);
     this._generate_image = this._generate_image.bind(this);
@@ -62,6 +64,12 @@ export default class ProjectImagesMain extends React.Component {
       );
   }
 
+  componentDidMount() {
+    Reverser('projects:all', [], function (url) {
+      this.setState({ seeMoreURL: url});
+    }.bind(this));
+  }
+
   render() {
     var images = this.keys.map(function (keyColumns) {
       var col = keyColumns.map(function (key) {
@@ -73,6 +81,9 @@ export default class ProjectImagesMain extends React.Component {
       <div className="container">
         <h1>Personal Projects</h1>
         { images }
+        <a href={this.state.seeMoreURL}>
+          <h3>See More...</h3>
+        </a>
       </div>
     );
   }
