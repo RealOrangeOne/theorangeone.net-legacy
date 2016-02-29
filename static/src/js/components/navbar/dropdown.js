@@ -9,7 +9,7 @@ export default class Dropdown extends React.Component {
           role="button"
           aria-haspopup="true"
           aria-expanded="false">
-          { this.props.title } <i className="icon ion-ios-arrow-up navbar-icon h4"></i>
+          { this.props.title } <i className="icon ion-ios-arrow-up navbar-icon h4 hidden-sm"></i>
         </a>
         <ul className="dropdown-menu dropup">
           { this.props.children }
