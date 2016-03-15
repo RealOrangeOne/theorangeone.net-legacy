@@ -5,14 +5,14 @@
 {% block content %}
   <div class="container">
     <div class="row">
-      <div class="col-xs-4 pull-right">
+      <div class="col-sm-9">
+        {{ blog.content | safe }}
+      </div>
+      <div class="col-sm-3">
         <h5>Published: {{ blog.date }}</h5>
+        <h5><i class="icon ion-thumbsup"></i> {{ blog.like_count }}</h5>
+        <h5><a href="{{ blog.URL }}">View Post</a></h5>
       </div>
     </div>
   </div>
-
-  <div class="container">
-    {{ blog.content | safe }}
-  </div>
-
 {% endblock %}
