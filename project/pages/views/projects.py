@@ -1,17 +1,19 @@
-from collections import namedtuple
 from project.common.views import CustomTemplate, MarkdownView
+from json import load
+from django.conf import settings
+import os.path
 
 
-ProjectDetails = namedtuple('ProjectDetails', ['title', 'image'])
-
-PROJECT_DETAILS = {
-    'hipchat-emoticons-for-all': ProjectDetails('Hipchat Emoticons Plugin', 'https://hipchat-magnolia-cdn.atlassian.com/assets/img/hipchat/hipchat_og_image.jpg'),
-    'attack-on-blocks': ProjectDetails('Attack on Blocks Game', 'https://image.freepik.com/free-vector/space-invaders-game_62147502273.jpg')
-}
+PROJECT_DETAILS = load(open(os.path.join(settings.BASE_DIR, 'data/projects.json')))
 
 
 class AllView(CustomTemplate):
     template_name = 'projects/all.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['projects'] = PROJECT_DETAILS
+        return context
 
 
 class ProjectView(MarkdownView):

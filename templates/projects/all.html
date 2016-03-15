@@ -3,8 +3,14 @@
 {% block pageTitle %}All Projects{% endblock %}
 
 {% block content %}
-
-<div class="container">
-  <p>Stuff</p>
-</div>
+  <div class="row">
+    <div class="container all-projects">
+      {% for key, project in projects.items %}
+        <div class="">
+          <img src="{{ project.image }}">
+          <h5>{{ project.title }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
