@@ -13,7 +13,7 @@
     "watch-less": "watch 'npm run build-less' static/src/less/",
     "watch": "npm run watch-less",
     "clean": "./scripts/clean.js",
-    "test": "npm run lint"
+    "test": "npm run lint && ./scripts/test-extras.sh"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "eslint": "=1.5.0",
     "eslint-config": "git://github.com/dabapps/eslint-config.git",
     "eslint-plugin-react": "=3.4.2",
+    "jsonlint": "=1.6.2",
     "less": "=2.5.1",
     "less-mixins": "git://github.com/RealOrangeOne/less-mixins.git",
     "postcss-cli": "=2.5.1",
