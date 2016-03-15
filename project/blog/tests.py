@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 
 
 @requests_mock.mock()
-class WordPressTestCase(TestCase):
+class WordPressAPITestCase(TestCase):
     def setUp(self):
         self.test_blog_data = {
             "title": "Test Blog Post",
