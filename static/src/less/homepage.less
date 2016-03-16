@@ -1,5 +1,6 @@
 @blueprint-logo: url(http://ultimatestorytellingblueprint.com/wp-content/uploads/2014/07/Blueprint-Background1.jpg);
-.index {
+
+body.index {
   #header {
     height: 100vh;
     background: #232323;
@@ -104,53 +105,10 @@
       }
     }
   }
-  #project-images-main {
-    background: @blueprint-logo;
-    background-size: cover;
-    background-attachment: fixed;
-    @media screen and (max-width: @screen-xs-max) {
-      background-attachment: initial;
-    }
-    .container {
-      text-align: center;
-      margin-top: 25px;
-      margin-bottom: 15px;
-      h1 {
-        margin-top: 0;
-        margin-bottom: 30px;
-        color: white;
-        font-size: 40px;
-      }
-      .see-more {
-        color: white;
-      }
-      .row {
-        margin-bottom: 20px;
-        & > div {
-          background-size: cover;
-          background-position: center;
-        }
 
-        .custom-pc {
-          background-image: url(https://c1.staticflickr.com/1/557/18747807580_d01e8e877a_c.jpg);
-        }
-
-        .bsod-enabler {
-          background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a8/Windows_XP_BSOD.png);
-        }
-
-        .yoga-pal {
-          background-image: url(http://www.lenovo.com/images/gallery/1060x596/lenovo-laptop-convertible-yoga-2-pro-orange-front-1.jpg);
-        }
-
-        .attack-on-blocks {
-          background-image: url(https://c1.staticflickr.com/1/33/49012397_1fbe7855e3_b.jpg);
-        }
-
-        .dotfile-automator {
-          background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/49/Dell_Inspiron_One_23_Touch_AIO_Desktop_PC.png);
-        }
-      }
+  #project-thumbnails {
+    img {
+      max-width: 90%;
     }
   }
 }

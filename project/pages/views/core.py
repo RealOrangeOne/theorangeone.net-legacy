@@ -1,10 +1,18 @@
 from project.common.views import CustomTemplate
+from django.conf import settings
+from json import load
+import os.path
 
 
 class IndexView(CustomTemplate):
     template_name = 'index.html'
     html_title = "Homepage"
     body_class = "index"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['projects'] = load(open(os.path.join(settings.BASE_DIR, 'data/projects.json')))
+        return context
 
 
 class NoJavascriptView(CustomTemplate):
