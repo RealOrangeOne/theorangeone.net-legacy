@@ -1,4 +1,5 @@
 @blueprint-logo: url(http://ultimatestorytellingblueprint.com/wp-content/uploads/2014/07/Blueprint-Background1.jpg);
+@container-inset: 35px;
 
 body.index {
   #header {
@@ -38,8 +39,8 @@ body.index {
     background-color: #333;
     .container {
       text-align: center;
-      margin-top: 35px;
-      margin-bottom: 35px;
+      margin-top: @container-inset;
+      margin-bottom: @container-inset;
       color: white;
     }
   }
@@ -53,11 +54,11 @@ body.index {
     }
     .container {
       text-align: center;
-      margin-top: 27px;
-      margin-bottom: 35px;
+      margin-top: @container-inset;
+      margin-bottom: @container-inset;
       h1 {
         margin-top: 0;
-        margin-bottom: 30px;
+        margin-bottom: @container-inset / 2;
         color: white;
         font-size: 40px;
       }
@@ -80,8 +81,8 @@ body.index {
   #twitter-feed {
     text-align: center;
     .container {
-      margin-top: 25px;
-      margin-bottom: 25px;
+      margin-top: @container-inset;
+      margin-bottom: @container-inset;
     }
     .twitter-timeline {
       height: 65vh !important;  // Because twitter uses inline styles.
