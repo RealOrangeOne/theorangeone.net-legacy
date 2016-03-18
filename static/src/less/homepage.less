@@ -108,9 +108,29 @@ body.index {
   }
 
   #project-thumbnails {
-    img {
-      max-width: 90%;
+    margin-top: @container-inset;
+    margin-bottom: @container-inset;
+    .thumbnail {
+      padding: 15px;
+      height: 300px;
+      @media (max-width: @screen-xs-max) {
+        height: 400px;
+      }
+      text-align: center;
+      img {
+        max-width: 100%;
+        @media (min-width: @screen-sm-min) {
+          max-height: 200px;
+        }
+        @media (max-width: @screen-xs-max) {
+          max-height: 275px;
+        }
+      }
+      h3 {
+        margin: 10px 0;
+      }
     }
+
   }
 }
 
