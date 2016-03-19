@@ -12,7 +12,7 @@ const DATA = [
   {
     title: 'Personal',
     text: 'I write code just to write code, but sometimes it serves a purpose.',
-    link: '#project-images-main',
+    link: '#project-thumbnails',
   },
   {
     title: 'Work',
