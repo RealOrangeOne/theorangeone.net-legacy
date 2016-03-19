@@ -113,6 +113,14 @@ body.index {
     .thumbnail {
       padding: 15px;
       height: 300px;
+      &.see-more {
+        h1 {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          margin: 0;
+        }
+      }
       @media (max-width: @screen-xs-max) {
         height: 400px;
       }
