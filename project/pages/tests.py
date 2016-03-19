@@ -1,5 +1,7 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
+from django.conf import settings
+import os.path, json
 
 
 class AboutTestCase(TestCase):
@@ -41,6 +43,14 @@ class CorePagesTestCase(TestCase):
     def test_index_accessable(self):
         response = self.client.get(reverse('pages:index'))
         self.assertEqual(response.status_code, 200)
+
+    def test_index_projects(self):
+        projects = json.load(open(os.path.join(settings.BASE_DIR, 'data/projects.json')))
+        response = self.client.get(reverse('pages:index'))
+        for key, project in projects.items():
+            self.assertContains(response, project['title'])
+            if 'image' in project:
+                self.assertContains(response, project['image'])
 
 
 class ProjectsTestCase(TestCase):
