@@ -62,6 +62,20 @@ class ProjectsTestCase(TestCase):
         response = self.client.get(reverse('projects:project', args=['test']))
         self.assertEqual(response.status_code, 200)
 
+    def test_projects_accessable(self):
+        projects = json.load(open(os.path.join(settings.BASE_DIR, 'data/projects.json')))
+        for key, project in projects.items():
+            response = self.client.get(reverse('projects:project', args=[key]))
+            self.assertEqual(response.status_code, 200)
+
+    def test_projects_details(self):
+        projects = json.load(open(os.path.join(settings.BASE_DIR, 'data/projects.json')))
+        for key, project in projects.items():
+            response = self.client.get(reverse('projects:project', args=[key]))
+            self.assertContains(response, project['title'])
+            if 'image' in project:
+                self.assertContains(response, project['image'])
+
 
 class RoboticsTestCase(TestCase):
     def test_2015_index_accessable(self):
