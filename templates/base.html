@@ -10,7 +10,9 @@
     <link rel="shortcut icon" href=""/>
   </head>
   <body class="{{ body_class }}">
-    {% block baseContent%}{% endblock %}
+    <div class="content-wrapper">
+      {% block baseContent%}{% endblock %}
+    </div>
     <footer>
       <div class="container">
         <div class="row">

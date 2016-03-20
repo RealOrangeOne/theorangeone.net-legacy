@@ -73,8 +73,14 @@ img {
 
 /* @end Functional */
 
+.content-wrapper {
+  min-height: %(~"calc(100% - %d)", @footer-height);
+}
+
 /* @group Footer */
+@footer-height: 200px;
 footer {
+  height: @footer-height;
   width: 100%;
   text-align: center;
   padding-top: 10px;
