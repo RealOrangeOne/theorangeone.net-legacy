@@ -21,9 +21,9 @@ class ProjectView(MarkdownView):
         context = super().get_context_data(**kwargs)
         try:
             details = PROJECT_DETAILS[kwargs['project']]
-            context['html_title'] = details.title
-            context['page_title'] = details.title
-            context['header_image'] = details.image
+            context['html_title'] = details['title']
+            context['page_title'] = details['title']
+            context['header_image'] = details['image']
         except:
             context['html_title'] = kwargs['project']
             context['page_title'] = kwargs['project']
