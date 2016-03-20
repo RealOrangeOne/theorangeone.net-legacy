@@ -39,11 +39,13 @@
 
 
 .navbar {
-  // max-height: @navbar-height;
   border-radius: 0;
   border: none;
   .home-button a {
     .transition(~"ease-in-out .3 all");
+  }
+  @media (min-height: @screen-sm-min) {
+    max-height: @navbar-height;
   }
 }
 
@@ -117,25 +119,11 @@
   .header {
     #navbar-container {
       margin: 0 auto;
-      width: 110%;
-      margin-left: -5%;
       &:not(.stick-top) {
         position: initial;
       }
       &.stick-top {
-        @container-size: 720px;
-        width: @container-size * 1.1;
-        margin-left: -@container-size * 0.05;
-        @media (min-width: @screen-md-min) {
-          @container-size: 940px;
-          width: @container-size * 1.1;
-          margin-left: -@container-size * 0.05;
-        }
-        @media (min-width: @screen-lg-min) {
-          @container-size: 1140px;
-          width: @container-size * 1.1;
-          margin-left: -@container-size * 0.05;
-        }
+        width: 100%;
       }
     }
   }
