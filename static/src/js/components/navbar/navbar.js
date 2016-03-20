@@ -13,7 +13,7 @@ export default class NavBar extends React.Component {
             <div className="container-fluid">
               <Header />
               <div className="collapse navbar-collapse" id="navbar">
-                <ul className="nav navbar-nav home-button hidden-sm">
+                <ul className="nav navbar-nav home-button hidden-sm hidden-md">
                   <Item href="/" icon="ion-home" />
                 </ul>
                 <ul className="nav navbar-nav" id="navigation">
