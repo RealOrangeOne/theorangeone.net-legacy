@@ -18,14 +18,15 @@ export default class NavBar extends React.Component {
                 </ul>
                 <ul className="nav navbar-nav" id="navigation">
                   <Dropdown title="Projects">
-                    <Item ident="projects:project" args={['pithos']} icon="ion-social-freebsd-devil">Pithos</Item>
-                    <Item ident="projects:project" args={['bsod-enabler']} icon="ion-ios-monitor">BSOD Enabler</Item>
+                    <Item href="/projects/pithos/" icon="ion-social-freebsd-devil">Pithos</Item>
+                    <Item href="/projects/bsod-enabler/" icon="ion-ios-monitor">BSOD Enabler</Item>
                     <Item
-                      ident="projects:project"
-                      args={['hipchat-emoticons-for-all']}
-                      icon="ion-chatbox-working">Hipchat Emoticons for All</Item>
+                      href="/projects/hipchat-emoticons-for-all/"
+                      icon="ion-chatbox-working">
+                        Hipchat Emoticons for All
+                    </Item>
                     <Item href="#" icon="ion-social-windows">Custom PC</Item>
-                    <Item ident="projects:all" icon="ion-android-more-vertical">All Projects...</Item>
+                    <Item href="/projects/all/" icon="ion-android-more-vertical">All Projects...</Item>
                   </Dropdown>
                   <Dropdown title="Code">
                     <Item href="#" icon="ion-code-working">Code Challenges</Item>
@@ -33,9 +34,9 @@ export default class NavBar extends React.Component {
                     <Item href="#" icon="ion-ios-game-controller-a">The Wiki Game Solver</Item>
                   </Dropdown>
                   <Dropdown title="College">
-                    <Item ident="robotics:index">Student Robotics</Item>
-                    <Item ident="college:attack-on-blocks" icon="ion-cube">Attack on Blocks Game</Item>
-                    <Item ident="college:student-server" icon="glyphicon-hdd">Student Server</Item>
+                    <Item href="/robotics">Student Robotics</Item>
+                    <Item href="/college/attack-on-blocks" icon="ion-cube">Attack on Blocks Game</Item>
+                    <Item href="/college/student-server" icon="glyphicon-hdd">Student Server</Item>
                     <Item href="#" icon="ion-ios-paper">EPQ</Item>
                     <Item href="#">Wall of Sheep</Item>
                   </Dropdown>
@@ -61,9 +62,8 @@ export default class NavBar extends React.Component {
                   </Dropdown>
                   <Item href="#">Links</Item>
                   <Dropdown title="About">
-                    <Item ident="about:me" icon="ion-android-person">Me</Item>
-                    <Item ident="about:website" icon="ion-cloud">Website</Item>
-                    <Item ident="about:index" icon="ion-android-contacts">Contact Me</Item>
+                    <Item href="/about/me" icon="ion-android-person">Me</Item>
+                    <Item href="/about/website" icon="ion-cloud">Website</Item>
                   </Dropdown>
                 </ul>
               </div>
