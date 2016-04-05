@@ -2,7 +2,7 @@
 
 It's not often someone will need to decode text into morse code (and visa-versa), but if I had something like this when I needed it, it would have saved me hours of time!
 
-I originally wrote this code for the [Student Robotics 2015]({% url 'robotics:2015-index' %}) Entry, to convert a string message into a morse code message that would be transmitted using LEDs, for aestetics and debugging. Unfortunately due to a fixed time frame, this idea was scraped before it could be fully implemented. Fortunately the decoder worked perfectly!
+I originally wrote this code for the [Student Robotics 2015](/robotics/2015/) Entry, to convert a string message into a morse code message that would be transmitted using LEDs, for aestetics and debugging. Unfortunately due to a fixed time frame, this idea was scraped before it could be fully implemented. Fortunately the decoder worked perfectly!
 
 
 ## Usage

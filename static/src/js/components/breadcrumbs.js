@@ -2,7 +2,8 @@ import React from 'react';
 
 export default class Breadcrumbs extends React.Component {
   render() {
-    const urlParts = Object.freeze(location.pathname.split('/').slice(1, -1));
+    const loc = location.pathname.endsWith('/') ? location.pathname.slice(0, -1) : location.pathname;
+    const urlParts = Object.freeze(loc.split('/').slice(1));
     if (urlParts.length < 2) {
       return null;
     }
