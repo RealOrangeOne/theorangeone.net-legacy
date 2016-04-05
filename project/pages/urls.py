@@ -1,5 +1,5 @@
-from django.conf.urls import include, url
-from .views import page_view, index_view, AboutView
+from django.conf.urls import url
+from .views import page_view, AboutView
 
 
 urlpatterns = [

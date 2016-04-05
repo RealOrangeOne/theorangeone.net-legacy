@@ -1,12 +1,17 @@
 import os.path
+from django.views.generic import FormView
 from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.template.loader import get_template
 from .utils import get_context, parse_content, get_title_from_markdown
+from project.common.forms import ContactForm
 
 
 def page_view(request, path):
     template = None
+    if path.endswith('/'):
+        path = path[:-1]
+
     if os.path.isdir(os.path.join(settings.BASE_DIR, 'templates', path)):
         path = os.path.join(path, 'index')
     for extension in ['md', 'html']:
@@ -25,10 +30,6 @@ def page_view(request, path):
         context['page_title'] = get_title_from_markdown(parsed_content)
         parsed_content = template.render(context, request)
     return HttpResponse(parsed_content)
-
-
-def index_view(request):
-    return page_view(request, 'index')
 
 
 class AboutView(FormView):

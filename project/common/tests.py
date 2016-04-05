@@ -1,13 +1,14 @@
 from django.test import TestCase
-from django.core.urlresolvers import reverse
 import os.path
-from django_dbq.models import Job
 from . import jobs
 from collections import namedtuple
 
+
 PATH = os.path.dirname(os.path.abspath(__file__))
 
-MockJob = namedtuple('MockJob', {'workspace': {}}) 
+
+MockJob = namedtuple('MockJob', {'workspace': {}})
+
 
 class WorkerTestCase(TestCase):
     def test_email_error(self):
