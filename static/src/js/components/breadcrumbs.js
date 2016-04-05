@@ -4,7 +4,7 @@ export default class Breadcrumbs extends React.Component {
   render() {
     const urlParts = Object.freeze(location.pathname.split('/').slice(1, -1));
     if (urlParts.length < 2) {
-      return;
+      return null;
     }
     var elements = [];
     for (var i = 0; i < urlParts.length; i++) {
