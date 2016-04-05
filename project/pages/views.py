@@ -1,4 +1,3 @@
-from project.common.views import CustomTemplate
 import os.path
 from django.conf import settings
 from django.http import HttpResponse, Http404
