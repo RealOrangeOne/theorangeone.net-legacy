@@ -99,4 +99,4 @@ WORDPRESS_URL = "realorangeone.wordpress.com"
 
 # Generate config data
 from project.common.data import generate_config
-DEFAULT_CONTEXT, PAGE_CONTEXT = generate_config(BASE_DIR)
+DEFAULT_CONTEXT, PAGE_CONTEXT, PAGE_SWITCH = generate_config(BASE_DIR)
