@@ -3,7 +3,7 @@ from django.views.generic import FormView
 from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.template.loader import get_template
-from .utils import get_context, parse_content, get_title_from_markdown
+from .utils import get_context, parse_content, get_title_from_markdown, swap_page
 from project.common.forms import ContactForm
 
 
@@ -11,6 +11,8 @@ def page_view(request, path):
     template = None
     if path.endswith('/'):
         path = path[:-1]
+
+    path = swap_page(path)
 
     if os.path.isdir(os.path.join(settings.BASE_DIR, 'templates', path)):
         path = os.path.join(path, 'index')

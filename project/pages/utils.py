@@ -21,3 +21,9 @@ def parse_content(content, extension):
     if extension == 'md':
         return markdown2.markdown(content)
     return content
+
+
+def swap_page(path):
+    if path in settings.PAGE_SWITCH:
+        return settings.PAGE_SWITCH[path]
+    return path
