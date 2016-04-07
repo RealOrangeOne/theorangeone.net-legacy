@@ -16,8 +16,6 @@
       </div>
     </div>
 
-    <div class="container-fluid" id="project-images-types"></div>
-
     <div class="container-fluid" id="twitter-feed">
       <div class="container">
         <div class="row">
@@ -37,25 +35,38 @@
       <div class="container">
         <div class="row">
           <h1>All Projects</h1>
-          {% for key, project in projects.items %}
+          {% for project in projects %}
             <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <img src="{{ project.image }}" alt="{{ key }} image">
-                <div class="caption">
-                  <h3>{{ project.title }}</h3>
-                  <p></p>
-                  <a href="/project/">
-                    Read More
-                  </a>
+              {% if project.header_image %}
+                <div class="thumbnail">
+                  <img src="{{ project.header_image }}" alt="image">
+                  <div class="caption">
+                    <h3>{{ project.name }}</h3>
+                    <p></p>
+                    <a href="{{ project.url }}">
+                      Read More
+                    </a>
+                  </div>
                 </div>
-              </div>
+              {% else %}
+                <div class="thumbnail larger project">
+                  <div class="inner">
+                    <h2>{{ project.name }}</h2>
+                    <a href="{{ project.url }}">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
             </div>
           {% endfor %}
           <div class="col-sm-6 col-md-4">
-            <div class="thumbnail see-more">
-              <a href="/projects">
-                <h1>See All</h1>
-              </a>
+            <div class="thumbnail larger">
+              <div class="inner">
+                <a href="/projects/">
+                  <h1>See All</h1>
+                </a>
+              </div>
             </div>
           </div>
         </div>

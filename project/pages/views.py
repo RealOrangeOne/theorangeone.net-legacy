@@ -30,6 +30,7 @@ def page_view(request, path):
         template = get_template('markdown_content.html')
         context['markdown_content'] = parsed_content
         context['page_title'] = get_title_from_markdown(parsed_content)
+        context['html_title'] = context['page_title']
         parsed_content = template.render(context, request)
     return HttpResponse(parsed_content)
 
