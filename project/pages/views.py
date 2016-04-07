@@ -9,7 +9,7 @@ from project.common.forms import ContactForm
 
 def page_view(request, path):
     template = None
-    if path.endswith('/'):
+    if path.endswith('/'):  # Strip trailing slash
         path = path[:-1]
 
     path = swap_page(path)
