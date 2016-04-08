@@ -22,9 +22,6 @@ def generate_config(base_dir):
         if project['path'] in page:  # If there's a custom config
             default['projects'][i] = dict(project, **page[project['path']])
 
-    # Add links config
-    default['links'] = get_data_from_file(base_dir, 'links.yml')
-
     return default, page, switcher
 
 
