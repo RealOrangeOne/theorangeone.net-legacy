@@ -4,17 +4,27 @@ from glob import glob
 from project.pages.utils import get_title_from_markdown, parse_content
 
 
-def generate_config(base_dir):
-    default = yaml.load(open(os.path.join(base_dir, 'data/context.yml'))) or {}
-    page = yaml.load(open(os.path.join(base_dir, 'data/page_context.yml'))) or {}
-    switcher = yaml.load(open(os.path.join(base_dir, 'data/path_switch.yml'))) or {}
+def get_data_from_file(base_dir, filename):
+    with open(os.path.join(base_dir, 'data', filename)) as data_file:
+        return yaml.load(data_file) or {}
 
+
+def generate_config(base_dir):
+    default = get_data_from_file(base_dir, 'context.yml')
+    page = get_data_from_file(base_dir, 'page_context.yml')
+    switcher = get_data_from_file(base_dir, 'path_switch.yml')
+
+    # Add projects config
     default['projects'] = generate_projects(base_dir)
+    # Join projects config with it's page context
     for i in range(len(default['projects'])):
         project = default['projects'][i]
         if project['path'] in page:  # If there's a custom config
             default['projects'][i] = dict(project, **page[project['path']])
-            default['projects'][i]['url'] = '/' + project['path']
+
+    # Add links config
+    default['links'] = get_data_from_file(base_dir, 'links.yml')
+
     return default, page, switcher
 
 
@@ -33,6 +43,7 @@ def generate_projects(base_dir):
                 filename = filename.split('.')[0]
             files.append({
                 "name": filename,
-                "path": 'projects' + path.replace(projects_path, '').split('.')[0]
+                "path": 'projects' + path.replace(projects_path, '').split('.')[0],
+                "url": '/projects' + path.replace(projects_path, '').split('.')[0],
             })
     return files
