@@ -11,7 +11,8 @@ class BlogView(TemplateView):
         context['blog'] = self.blog_data
         context['blog']['date'] = reformat_date(self.blog_data['date'])
         context['html_title'] = self.blog_data['title']
-        context['header_image'] = self.blog_data['featured_image']
+        if 'featured_image' in self.blog_data:
+            context['header_image'] = self.blog_data['featured_image']
         return context
 
     def dispatch(self, request, *args, **kwargs):
