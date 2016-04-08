@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+if [ -z "$NVM_DIR" ]
+then
+    NVM_DIR="$HOME/.nvm"
+fi
+
+. $NVM_DIR/nvm.sh
+nvm install
+nvm use
+
 set -e
 
 pyvenv-3.4 env
