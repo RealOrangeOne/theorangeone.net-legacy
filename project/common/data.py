@@ -30,7 +30,7 @@ def generate_projects(base_dir):
     files = []
     for path in glob(projects_path + '/*.*'):
         filename = path.replace(projects_path, '')
-        if filename == '/all.html':
+        if filename == '/index.html':
             continue
         with open(path) as f:
             if filename.split('.')[1] == 'md':

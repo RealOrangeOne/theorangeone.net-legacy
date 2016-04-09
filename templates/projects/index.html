@@ -5,10 +5,11 @@
 {% block content %}
   <div class="row">
     <div class="container all-projects">
-      {% for key, project in projects.items %}
+      {% for project in projects %}
         <div class="">
-          <img src="{{ project.image }}">
-          <h5>{{ project.title }}
+          <img src="{{ project.header_image }}">
+          <h4>{{ project.name }}</h4>
+          <a href="{{ project.url }}">Read More</a>
         </div>
       {% endfor %}
     </div>

@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
                         Hipchat Emoticons for All
                     </Item>
                     <Item href="#" icon="ion-social-windows">Custom PC</Item>
-                    <Item href="/projects/all/" icon="ion-android-more-vertical">All Projects...</Item>
+                    <Item href="/projects/" icon="ion-android-more-vertical">All Projects...</Item>
                   </Dropdown>
                   <Dropdown title="Code">
                     <Item href="#" icon="ion-code-working">Code Challenges</Item>
