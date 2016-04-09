@@ -43,7 +43,7 @@ check_if_exit_code()
 print("{}Coverage Complete. {}Linting...".format(Fore.GREEN, Fore.YELLOW))
 
 
-FLAKE8_IGNORE = '--ignore=E128,E501,E401'
+FLAKE8_IGNORE = '--ignore=E128,E501,E401,E402'
 try:
     subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'project', FLAKE8_IGNORE, '--exclude=migrations,settings,wsgi.py,__init__.py'])
     subprocess.check_output([os.path.join(bin_dir, 'flake8'), 'scripts', FLAKE8_IGNORE])
