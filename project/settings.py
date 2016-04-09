@@ -24,7 +24,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'bootstrapform',
-    'django_client_reverse',
     'mail_templated',
     'django_dbq',
 
