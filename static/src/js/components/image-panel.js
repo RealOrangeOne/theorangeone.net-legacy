@@ -1,6 +1,9 @@
 export default function renderImagePanels() {
   $('.image-panel').each(function () {
     const element = $(this);
+    if (!element.data('image')) {  // if it doesnt have an image, ignore it.
+      return;
+    }
 
     element.css('background-image', 'url("' + element.data('image') + '")');
 
