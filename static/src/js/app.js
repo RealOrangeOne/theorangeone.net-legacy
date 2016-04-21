@@ -9,7 +9,9 @@ import React from 'react';
 
 import NavBar from './components/navbar/navbar';
 import Breadcrumbs from './components/breadcrumbs';
+import renderImagePanels from './components/image-panel';
 
+renderImagePanels();
 
 if ($('navbar').length > 0) {
   React.render(<NavBar />, $('navbar')[0]);
