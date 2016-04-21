@@ -1,5 +1,3 @@
-/* global $ */
-
 import './events.js';
 import './globals.js';
 
