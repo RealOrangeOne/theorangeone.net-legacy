@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
-    "lint": "eslint -c node_modules/eslint-config/.eslintrc 'static/src/js/'",
+    "lint": "eslint 'static/src/js/'",
     "build-js": "./scripts/build-js.sh",
     "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
     "build": "npm run create-build-dirs && npm run build-fonts && npm run build-images && npm run build-js && npm run build-less",
