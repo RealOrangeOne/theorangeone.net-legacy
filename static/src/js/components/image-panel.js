@@ -8,7 +8,7 @@ export default function renderImagePanels() {
     element.css('background-image', 'url("' + element.data('image') + '")');
 
     let height;
-    switch (element.data('size').toLowerCase()) {
+    switch (element.data('size')) {
       case 'small':
         height = '30';
         break;
@@ -19,6 +19,6 @@ export default function renderImagePanels() {
       case 'large':
         height = '100';
     }
-    element.css('background-image', `${height}vh`);
+    element.css('height', `${height}vh`);
   });
 }
