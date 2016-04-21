@@ -8,9 +8,11 @@
   <div class="jumbotron header">
     <div class="container">
       <h1>{% block pageTitle %}{% endblock %}</h1>
-      {% if header_image %}
-        <div class="image" style="background-image: url({{ header_image }});"></div>
-      {% endif %}
+      {% block header_image %}
+        {% if header_image %}
+          <div class="image" style="background-image: url({{ header_image }});"></div>
+        {% endif %}
+      {% endblock %}
       <div id="breadcrumbs"></div>
     </div>
     <navbar></navbar>
