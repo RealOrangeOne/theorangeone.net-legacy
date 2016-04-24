@@ -4,7 +4,7 @@ For those that use Windows, the famous [Blue Screen of Death](https://en.wikiped
 
 __And thus the BSOD_Enabler was born!__
 
-After researching into it for a while, it turns out that there are a few different ways to cause a BSOD, unfortunately most of which are by doing things that are meant to cause a BSOD, and can therefore be dangereous to a computer, something I didn't really want. Then I stumbled upon [this article](http://www.wikihow.com/Force-a-Blue-Screen-in-Windows), which shows that you can infact envoke a BSOD without causing any errors or damage to your computer. Now to write a program that can do it too!
+After researching into it for a while, it turns out that there are a few different ways to cause a BSOD, unfortunately most of which are by doing things that are meant to cause a BSOD, and can therefore be dangerous to a computer, something I didn't really want. Then I stumbled upon [this article](http://www.wikihow.com/Force-a-Blue-Screen-in-Windows), which shows that you can in fact raise a BSOD without causing any errors or damage to your computer. Now to write a program that can do it too!
 
 Obviously there are many different ways, and probably far better ways of doing this, but I wanted something that was simple to use, fast, and could be done by anyone, no matter how technically illiterate. So I decided to write it in C#, and use a windows console interface.
 

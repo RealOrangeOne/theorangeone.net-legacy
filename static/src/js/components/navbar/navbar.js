@@ -18,7 +18,7 @@ export default class NavBar extends React.Component {
                 </ul>
                 <ul className="nav navbar-nav" id="navigation">
                   <Dropdown title="Projects">
-                    <Item href="/projects/pithos/" icon="ion-social-freebsd-devil">Pithos</Item>
+                    <Item href="/projects/yoga-pal/" icon="ion-laptop">Yoga Pal</Item>
                     <Item href="/projects/bsod-enabler/" icon="ion-ios-monitor">BSOD Enabler</Item>
                     <Item
                       href="/projects/hipchat-emoticons-for-all/"

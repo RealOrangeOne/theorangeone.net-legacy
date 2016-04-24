@@ -1,8 +1,8 @@
 # Wiki Game Solver
 
-For those who dont know what the Wiki Game is: [The Wiki Game](http://thewikigame.com) is an online game where you attempt to navigate through wikipedia from a start page to a goal page using as few other pages as possible. Once i was shown the Wiki Game by my friend, and after i realised that I really wasn't very good at it, I looked into how the system worked, and how I could beat it.
+For those who don't know what the Wiki Game is: [The Wiki Game](http://thewikigame.com) is an online game where you attempt to navigate through wikipedia from a start page to a goal page using as few other pages as possible. Once I was shown the Wiki Game by my friend, and after I realised that I really wasn't very good at it, I looked into how the system worked, and how I could beat it.
 
-I couldnt see how the back end worked, but after playing a few games and checking what happened on the page,the way that the game was won was when the iframe was at the final page location, or at least a clone of it on their servers with extra querystring information.
+I couldn't see how the back end worked, but after playing a few games and checking what happened on the page,the way that the game was won was when the iframe was at the final page location, or at least a clone of it on their servers with extra querystring information.
 
 With this information, I started to write some javascript that would change the location of the iframe to the goal. Fortunately for me, there was already a link to the real winning page, so I could use that to construct the final URL, and direct the iframe to it, meaning I was able to win the game in 1 turn.
 
@@ -21,6 +21,6 @@ Naturally, the source for this was written in javascript, and relies heavily on 
 
 If you want to win more games, just re-paste the code, it works as often as you like!
 
-### Disclamier
+### Disclaimer
 
 As I experienced whilst developing this, the people that play Wiki Game don't tend to like people cheating. There were a lot of people getting very annoyed whilst I was developing and testing. So please use this at your own risk! At the moment I don't think there is any kind of banning system, but be warned!

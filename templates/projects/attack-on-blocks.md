@@ -7,7 +7,7 @@ I decided to write the game in Python, seeing as there were other people in the 
 ## Easter Eggs
 One of the key features of this take on space invaders (and unfortunately the thing I spent the most time on), is the easter eggs. There are a few dotted around the game, which make the game either much easier, or way more fun! At the moment, there are 3 main easter eggs, the first enabling the other 2. If you would like to know what they are, click the button below. If not, pay the game and try and find them, or search through the source to find them (it's not too hard through the source).
 
-As you will see (If and when you find the easter eggs), most of them are completely useless, and completely unrelated to the game or anything else. The main reason they were put in was because i'm friends with people that pester to the point it's just easier to give in. Hence there are some really very odd ones!
+As you will see (If and when you find the easter eggs), most of them are completely useless, and completely unrelated to the game or anything else. The main reason they were put in was because I'm friends with people that pester to the point it's just easier to give in. Hence there are some really very odd ones!
 
 
 <div class="btn-group btn-group-justified">
