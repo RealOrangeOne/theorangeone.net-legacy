@@ -13,7 +13,8 @@
     "watch-less": "watch 'npm run build-less' static/src/less/",
     "watch": "npm run watch-less",
     "clean": "./scripts/clean.js",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "spellcheck": "mdspell --en-gb -ranx \"templates/**/*.*\""
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "eslint-plugin-react": "=3.4.2",
     "less": "=2.5.1",
     "less-mixins": "git://github.com/RealOrangeOne/less-mixins.git",
+    "markdown-spellcheck": "=0.10.0",
     "postcss-cli": "=2.5.1",
     "react-tools": "=0.13.2",
     "uglify-js": "=2.4.24",

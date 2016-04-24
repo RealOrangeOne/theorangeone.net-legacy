@@ -59,4 +59,9 @@ print("{}All Python tests passed! {}Testing Static Files...".format(Fore.GREEN, 
 EXIT_CODE = os.system('npm test')
 check_if_exit_code()
 
+print("{}All static tests passed! {}Running spell check...".format(Fore.GREEN, Fore.YELLOW))
+
+EXIT_CODE = os.system('')
+check_if_exit_code()
+
 print("{}All Tests Passed!".format(Fore.GREEN))
