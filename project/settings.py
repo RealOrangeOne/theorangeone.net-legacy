@@ -20,12 +20,7 @@ ALLOWED_HOSTS = ['too.ctf.sh', 'theorangeone.net']
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.staticfiles',
-
-    'bootstrapform',
-    'mail_templated',
-    'django_dbq',
 
     'project.pages',
     'project.common',
