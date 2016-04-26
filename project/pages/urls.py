@@ -1,8 +1,7 @@
 from django.conf.urls import url
-from .views import page_view, AboutView
+from .views import page_view
 
 
 urlpatterns = [
-    url(r'^about/?$', AboutView.as_view(), name='about'),
     url(r'^(?P<path>.*)', page_view, name='page'),
 ]

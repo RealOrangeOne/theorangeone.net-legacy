@@ -88,12 +88,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static', 'build'),
 )
 
-JOBS = {
-    'send_email': {
-        'tasks': ['project.common.jobs.send_email'],
-    }
-}
-
 WORDPRESS_URL = "realorangeone.wordpress.com"
 
 # Generate config data

@@ -1,10 +1,8 @@
 import os.path
-from django.views.generic import FormView
 from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.template.loader import get_template
 from .utils import get_context, parse_content, get_title_from_markdown, swap_page
-from project.common.forms import ContactForm
 
 
 def page_view(request, path):
@@ -33,14 +31,3 @@ def page_view(request, path):
         context['html_title'] = context['page_title']
         parsed_content = template.render(context, request)
     return HttpResponse(parsed_content)
-
-
-class AboutView(FormView):
-    template_name = 'about/index.html'
-    success_url = '/about/?sent'
-    form_class = ContactForm
-
-    def get_context_data(self, **kwargs):
-        context = dict(super().get_context_data(**kwargs), **get_context('/about'))
-        context['sent'] = 'sent' not in self.request.GET
-        return context
