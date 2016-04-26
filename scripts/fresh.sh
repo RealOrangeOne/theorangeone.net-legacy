@@ -21,7 +21,4 @@ rm -rf static/build/
 echo ">> Removing Stray Files and Folders..."
 rm -rf htmlcov/ .coverage
 
-echo ">> Removing Database..."
-rm -rf database.db
-
 echo "> Much Fresher!"

@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
+    'default': dj_database_url.config(default='sqlite://memory')
 }
 
 EMAIL_BACKEND = os.environ['EMAIL_BACKEND']
