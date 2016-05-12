@@ -20,9 +20,7 @@ export default class NavBar extends React.Component {
                   <Dropdown title="Projects">
                     <Item href="/projects/yoga-pal/" icon="ion-laptop">Yoga Pal</Item>
                     <Item href="/projects/bsod-enabler/" icon="ion-ios-monitor">BSOD Enabler</Item>
-                    <Item
-                      href="/projects/hipchat-emoticons-for-all/"
-                      icon="ion-chatbox-working">
+                    <Item href="/projects/hipchat-emoticons-for-all/" icon="ion-chatbox-working">
                         Hipchat Emoticons for All
                     </Item>
                     <Item href="#" icon="ion-social-windows">Custom PC</Item>
@@ -31,12 +29,12 @@ export default class NavBar extends React.Component {
                   <Dropdown title="Code">
                     <Item href="#" icon="ion-code-working">Code Challenges</Item>
                     <Item href="#" icon="ion-ios-circle-filled">Pi Time Lapse</Item>
-                    <Item href="#" icon="ion-ios-game-controller-a">The Wiki Game Solver</Item>
+                  <Item href="/projects/wiki-game-solver/" icon="ion-ios-game-controller-a">The Wiki Game Solver</Item>
                   </Dropdown>
                   <Dropdown title="College">
-                    <Item href="/robotics">Student Robotics</Item>
-                    <Item href="/college/attack-on-blocks" icon="ion-cube">Attack on Blocks Game</Item>
-                    <Item href="/college/student-server" icon="glyphicon-hdd">Student Server</Item>
+                    <Item href="/robotics/">Student Robotics</Item>
+                    <Item href="/college/attack-on-blocks/" icon="ion-cube">Attack on Blocks Game</Item>
+                    <Item href="/college/student-server/" icon="glyphicon-hdd">Student Server</Item>
                     <Item href="#" icon="ion-ios-paper">EPQ</Item>
                     <Item href="#">Wall of Sheep</Item>
                   </Dropdown>
@@ -57,13 +55,13 @@ export default class NavBar extends React.Component {
                       icon="ion-social-youtube">
                       YouTube Channel
                     </Item>
-                    <Item href="#" icon="ion-social-rss">Feed</Item>
+                    <Item href="/blog/" icon="ion-social-rss">Blog</Item>
                     <Item href="https://www.flickr.com/photos/theorangeone/" icon="ion-social-camera">Gallery</Item>
                   </Dropdown>
                   <Item href="#">Links</Item>
                   <Dropdown title="About">
-                    <Item href="/about/me" icon="ion-android-person">Me</Item>
-                    <Item href="/about/website" icon="ion-cloud">Website</Item>
+                    <Item href="/about/me/" icon="ion-android-person">Me</Item>
+                    <Item href="/about/website/" icon="ion-cloud">Website</Item>
                   </Dropdown>
                 </ul>
               </div>
