@@ -6,9 +6,7 @@
     "lint": "eslint 'static/src/js/'",
     "build-js": "./scripts/build-js.sh",
     "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
-    "build": "npm run create-build-dirs && npm run build-fonts && npm run build-images && npm run build-js && npm run build-less",
-    "build-fonts": "cp -R node_modules/bootstrap/dist/fonts static/build/ && cp -R node_modules/ionicons/fonts static/build/ ",
-    "build-images": "cp -r static/src/img/* static/build/img/",
+    "build-scss": "node-sass theme/static/src/scss/index.scss theme/static/build/css/index.css",
     "test": "npm run lint",
     "spellcheck": "mdspell --en-gb -ranx \"templates/**/*.*\""
   },
