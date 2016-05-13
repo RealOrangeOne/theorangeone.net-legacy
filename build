@@ -14,15 +14,6 @@ set -e
 pyvenv env
 env/bin/pip install -r requirements.txt --upgrade
 
-scripts/get-private-data.sh
 
 npm install
 npm run build $@
-
-env/bin/python manage.py collectstatic --noinput
-
-if [[ $BUILD_PRODUCTION ]]
-then
-  echo ">> Running Migrations..."
-  env/bin/python manage.py migrate
-fi
