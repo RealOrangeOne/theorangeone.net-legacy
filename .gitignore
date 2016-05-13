@@ -57,3 +57,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+srv.pid
+pelican.pid
+output/
