@@ -1,18 +1,14 @@
 {
   "name": "TheOrangeOne-Site",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
     "lint": "eslint 'static/src/js/'",
     "build-js": "./scripts/build-js.sh",
     "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
     "build": "npm run create-build-dirs && npm run build-fonts && npm run build-images && npm run build-js && npm run build-less",
-    "build-less": "./scripts/build-less.sh",
     "build-fonts": "cp -R node_modules/bootstrap/dist/fonts static/build/ && cp -R node_modules/ionicons/fonts static/build/ ",
     "build-images": "cp -r static/src/img/* static/build/img/",
-    "watch-less": "watch 'npm run build-less' static/src/less/",
-    "watch": "npm run watch-less",
-    "clean": "./scripts/clean.js",
     "test": "npm run lint",
     "spellcheck": "mdspell --en-gb -ranx \"templates/**/*.*\""
   },
