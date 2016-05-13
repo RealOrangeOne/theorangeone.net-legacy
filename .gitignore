@@ -50,7 +50,7 @@ coverage.xml
 *.log
 collected-static/
 node_modules/
-static/build
+theme/static/build
 
 # Sphinx documentation
 docs/_build/
