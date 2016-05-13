@@ -2,151 +2,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block htmltitle %}{% endblock %} | TheOrangeOne</title>
+    <title>{{ html_title }} | TheOrangeOne</title>
     <meta chatset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="shortcut icon" href=""/>
   </head>
-<body>
-  <div class="row page-width page-height" id="header" {% if header_BG %}style="background-image: url('{{ header_BG }}');" {% endif %}>
-    <div class="col-sm-10 col-sm-offset-1 jumbotron container">
-      {% block headercontent %}{% endblock %}
+  <body class="{{ body_class }}">
+    <div class="content-wrapper">
+      {% block baseContent%}{% endblock %}
     </div>
-    <div class="row page-width" id="page-down">
-      <div class="col-md-2 col-md-offset-5">
-        <i class="icon ion-chevron-down h2 clickable" id="page-down-button"></i>
-      </div>
-    </div>
-  </div>
-  <div id='navbar-anchor'></div>
-    <div id="navbar-container" class="align h4" style="width: 96%; left: 2%; margin: 0; z-index: 10000;">
-      <nav class="navbar navbar-inverse" style="border-radius: 0;">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand visible-xs"><i class="icon ion-compass"></i> Navigation</a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbar" style=" padding-left: 0px;">
-            <ul class="nav navbar-nav home-button hidden-sm">
-              <li class="active home"><a href="{% url 'pages:index' %}"><i class="icon ion-home"></i></a></li>
-            </ul>
-            <ul class="nav navbar-nav" id="navigation">
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Projects <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-                <ul class="dropdown-menu dropup">
-                  <li><a href="#"><i class="icon ion-social-freebsd-devil"></i> Pithos</a></li>
-                  <li><a href="{% url 'projects:bsod-enabler'%}"><i class="icon ion-ios-monitor"></i> BSOD Enabler</a></li>
-                  <li><a href="{% url 'projects:hipchat-emoticons' %}"><i class="icon ion-chatbox-working"></i> Hipchat Emoticons for All</a></li>
-                  <li><a href="{% url 'setup:desk' %}"><i class="icon ion-social-windows"></i> Custom PC</a></li>
-                  <li><a href="{% url 'projects:index' %}"><i class="icon ion-android-more-vertical"></i> All Projects...</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Code <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-                <ul class="dropdown-menu dropup">
-                  <li><a href="#"><i class="icon ion-code-working"></i> Code Challenges</a></li>
-                  <li><a href="{% url 'projects:morse-code-decoder' %}"><i class="icon ion-ios-circle-filled"></i> Morse Code Decoder</a></li>
-                  <li><a href="{% url 'projects:wiki-game-solver' %}"><i class="icon ion-ios-game-controller-a"></i> The Wiki Game Solver</a></li>
-                  <li><a href=""><span class="glyphicon glyphicon-print" aria-hidden="true"></span>  Printr</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  College <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-                <ul class="dropdown-menu dropup">
-                  <li><a href="{% url 'robotics:index' %}">Student Robotics</a></li>
-                  <li><a href="{% url 'projects:attack-on-blocks' %}"><i class="icon ion-cube"></i> Attack on Blocks Game</a></li>
-                  <li><a href="{% url 'college:student-server' %}"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> Student Server</a></li>
-                  <li><a href="#"><i class="icon ion-ios-paper"></i> EPQ</a></li>
-                  <li><a href="#">Wall of Sheep</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Setup <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-                <ul class="dropdown-menu dropup">
-                  <li><a href="{% url 'setup:desk' %}">&#128129; Desk</a></li>
-                  <li><a href="#"><i class="icon ion-briefcase"></i> Work</a></li>
-                  <li><a href="#"><i class="icon ion-model-s"></i> On the Go</a></li>
-                  <li><a href="#"><i class="icon ion-android-phone-portrait"></i> Devices</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> Servers</a></li>
-                  <li><a href="{% url 'setup:index' %}"><i class="icon ion-android-more-vertical"></i> All</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Work <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-                <ul class="dropdown-menu dropup">
-                  <li><a href="#"><i class="icon ion-fork-repo"></i> Projects</a></li>
-                  <li><a href="#"><i class="icon ion-android-desktop"></i> Setup</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Media <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-                <ul class="dropdown-menu dropup">
-                  <li><a href="{% url 'media:youtube' %}"><i class="icon ion-social-youtube"></i> Youtube Channel</a></li>
-                  <li><a href="#"><i class="icon ion-social-rss"></i> Feed</a></li>
-                  <li><a href="{% url 'media:gallery' %}"><i class="icon ion-ios-camera"></i> Gallery</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Links</a></li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  About <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-
-                <ul class="dropdown-menu dropup">
-                  <li><a href="#"><i class="icon ion-android-person"></i> Me</a></li>
-                  <li><a href="{% url 'pages:about-website' %}"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Website</a></li>
-                  <li><a href="#"><i class="icon ion-android-contacts"></i> Contact Me</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Account <i class="icon ion-ios-arrow-up navbar-icon h4"></i>
-                </a>
-                <ul class="dropdown-menu dropup">
-                  <li class="active hidden-xs"><a><i class="icon ion-ios-body-outline"></i> *username*</a></li>
-                  <li><a href="#"><i class="icon ion-ios-cog-outline"></i> Preferences</a></li>
-                  <li><a href="#"><i class="icon ion-log-in"></i> Login / Logout</a></li>
-                </ul>
-              </li>
-            </ul>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="social">
+              <a href="{{ links.twitter }}"><i class="icon ion-social-twitter"></i></a>
+              <a href="{{ links.instagram }}"><i class="icon ion-social-instagram-outline"></i></a>
+              <a href="{{ links.reddit }}"><i class="icon ion-social-reddit"></i></a>
+              <a href="{{ links.youtube }}"><i class="icon ion-social-youtube"></i></a>
+              <a href="soon"><i class="icon ion-social-codepen"></i></a>
+              <a href="soon"><i class="icon ion-social-twitch-outline"></i></a>
+              <a href="{{ links.github }}"><i class="icon ion-social-octocat"></i></a>
+            </p>
           </div>
         </div>
-      </nav>
-    </div>
-      {% block content %}{% endblock %}
-    {% if not no_footer %}
-      <footer>
-        <p class="center-text">Copyright &copy; Jake Howard 2015</p>
-        <p class="center-text footer-links">
-          <a href="{%url 'pages:about' %}">About</a> - <a href="">Contact</a> - <a href="">Things</a>
-        </p>
-      </footer>
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="bar-links">
+              <a href="/about/">About</a> |
+              <a href="{{ links.github }}/theorangeone.net" target="_blank">View Source</a>
+            <p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 powered-by">
+            <p>Powered by <a href="https://www.djangoproject.com/">Django</a>, <a href="https://clients.inceptionhosting.com/aff.php?aff=256">Inception Hosting</a>, and a whole heap of <a href="https://github.com/RealOrangeOne/theorangeone.net">Magic</a>!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <a href="https://circleci.com/gh/RealOrangeOne/theorangeone.net" target="_blank">
+              <img class="ci-badge" src="https://circleci.com/gh/RealOrangeOne/theorangeone.net.svg?style=svg"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="{% static 'js/libs.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    {% if js_redirect %}
+      <noscript>
+        <style> html, body { display:none; }</style>
+        <meta http-equiv="refresh" content="0.0;url=/no-js">
+      </noscript>
     {% endif %}
-  <script type="text/javascript" src="{% static 'js/libs.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-  <noscript>
-    <style> html, body { display:none; }</style>
-    <meta http-equiv="refresh" content="0.0;url={% url 'pages:no-js' %}">
-  </noscript>
   </body>
 </html>

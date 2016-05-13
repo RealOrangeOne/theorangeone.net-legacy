@@ -1,14 +1,24 @@
-var React = require('react');
-var indexCarousel = require('./components/indexCarousel.js');
+import './events.js';
+import './globals.js';
 
-require('./events.js');
+import 'whatwg-fetch';
 
+import React from 'react';
 
-if ($('#index-carousel-container').length == 1) {
-    React.render(indexCarousel, $("#index-carousel-container")[0]);
+import NavBar from './components/navbar/navbar';
+import Breadcrumbs from './components/breadcrumbs';
+import renderImagePanels from './components/image-panel';
+
+renderImagePanels();
+
+if ($('navbar').length > 0) {
+  React.render(<NavBar />, $('navbar')[0]);
 }
 
-$(window).load(function(){
-    $(window).trigger('scroll').trigger('resize');
-    var s = skrollr.init();
-});
+if ($('#breadcrumbs').length > 0) {
+  React.render(<Breadcrumbs />, $('#breadcrumbs')[0]);
+}
+
+if ($('.header h1').text()) {
+  $('.markdown-content h1').eq(0).hide();
+}

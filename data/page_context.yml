@@ -1,0 +1,9 @@
+index:
+  body_class: index
+  html_title: Homepage
+
+projects/hipchat-emoticons-for-all:
+  header_image: https://hipchat-magnolia-cdn.atlassian.com/assets/img/hipchat/hipchat_og_image.jpg
+
+projects/yoga-pal:
+  header_image: http://www.lenovo.com/images/OneWebImages/SubSeries/gallery/laptops/IdeaPad-Yoga-13-Convertible-Laptop-PC-Clementine-Orange-Closed-Cover-View-gallery-940x529.jpg

@@ -1,0 +1,38 @@
+# markdown-spellcheck spelling configuration file
+# Format - lines beginning # are comments
+# global dictionary is at the start, file overrides afterwards
+# one word per line, to define a file override use ' - filename'
+# where filename is relative to this configuration file
+Django
+SQLite
+eg
+MyWindowsHosting
+nginx
+backends
+PyGame
+easter
+_Enabler
+Hipchat
+DabApps
+JakeSidSmith
+facepalm
+notsureif
+wat
+premis
+hipchat
+plugin
+firefox
+Jetpack
+Javascript
+facebook
+github
+morse
+wikipedia
+iframe
+querystring
+javascript
+jQuery
+gists
+Lenovo
+Collyer's
+til

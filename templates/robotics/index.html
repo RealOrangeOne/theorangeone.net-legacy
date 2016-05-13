@@ -1,54 +1,64 @@
-{% extends 'base.html' %}
+{% extends 'content_base.html' %}
+{% load static %}
+{% block pageTitle %}Student Robotics{% endblock %}
 
-{% block htmltitle %}Student Robotics{% endblock %}
+{% block header_image %}<div class="image" style="background-image: url(https://farm9.staticflickr.com/8779/16687725664_13993f35d1_o_d.jpg);"></div>{% endblock %}
 
-{% block headercontent %}
-  <div class="row">
-    <h1>Student Robotics</h1>
-  </div>
-  <div class="row">
-    <h4>It's like a completely autonomous, nerdy, non-contact version of Robot Wars!</h4>
-  </div>
-{% endblock %}
-
-{% block content%}
+{% block content %}
   <div class="container">
     <p>Student Robotics is the the place where my development knowledge really started to grow. Thanks to the other people in my team teaching me. I had never done anything robotics related, and so when my computing teacher initially told us about it, I wasnt really interested. After I found out that my friend was also doing it, I signed up, and went along to the kickstart. From then on I was hooked, getting involved with all aspects of the development and design, as well as helping out other teams on the IRC room.</p>
   </div>
 
   <div class="container">
     <h2>What is Student Robotics?</h2>
-    <p>Student Robotics is a volunteer organisation that runs an annual robotics competition for 16-18 year olds. It was originally founded by students from the University of Southampton in 2006, and now includes volunteers (“Blue Shirts”) from multiple other universities, including the University of Bristol and Grenoble INP. It primarily takes teams and volunteers from the UK, but also some from Germany and France.</p>
-    <p>To find out more, visit their website <a href="https://studentrobotics.org">Here.</a></p>
+    <blockquote cite="https://www.studentrobotics.org/about/">Student Robotics is a volunteer organisation that runs an annual robotics competition for 16-18 year olds. It was originally founded by students from the University of Southampton in 2006, and now includes volunteers (“Blue Shirts”) from multiple other universities, including the University of Bristol and Grenoble INP. It primarily takes teams and volunteers from the UK, but also some from Germany and France.</blockquote>
+    <p>More information can be found on <a href="https://studentrobotics.org">their website</a>.</p>
   </div>
 
   <div class="container">
-    <p>Being at college for 2 years, meant I entered 2 years of competitions, SR14, and SR15. We were encouraged to gain an online presence for our team, so I created a website for both years. Unfortunately due to account inactivity, and me changing my website 3 times since, The original pages have been lost, however all the content still remains. Below you can find all the content, media and information about both competitions, as well as the source code for Lucy, the 2014 entry. </p>
+    <h2>My Entries</h2>
+    <p>Being at college for 2 years, meant I was able to enter 2 years of competitions, SR14, and SR15. We were encouraged to gain an online presence for our team, so I created a website for both years. Unfortunately due to account inactivity, and me changing my website 3 times since, The original pages have been lost, however all the content still remains.</p>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <div class="thumbnail sr-option">
-          <div class='image' style="background-image: url('https://farm9.staticflickr.com/8687/16678909884_469834a1b6_b.jpg');"></div>
+        <div class="thumbnail">
+          <img src="https://c2.staticflickr.com/8/7670/17115168179_1ef30ac6e9_b.jpg" alt="Lucy">
           <div class="caption">
-            <h2>Student Robotics 2014</h2>
-            <p><strong>Robot Name:</strong> Lucy</p>
-            <p><a href="{% url 'robotics:2014-index' %}" class="btn btn-srobo btn-block">More Info</a></p>
+            <h3>Student Robotics 2014</h3>
+            <p><strong>Robot Name:</strong> Lucy
+            <br /><small>(No, it doesn't stand for anything)</small>
+            <p><a href="/robotics/2014/" class="btn btn-srobo btn-block">More Info</a></p>
           </div>
         </div>
       </div>
 
       <div class="col-sm-6">
-        <div class="thumbnail sr-option">
-          <div class="image" style="background-image: url('https://farm8.staticflickr.com/7674/17308375182_8f8f60bfbb_b.jpg');"></div>
+        <div class="thumbnail">
+          <img src="https://c2.staticflickr.com/8/7726/17309695331_584e7de16c_b.jpg" alt="A.L.I.C.E">
           <div class="caption">
-            <h2>Student Robotics 2015</h2>
-            <p><strong>Robot Name : </strong> A.L.I.C.E <small>(<strong>A</strong>utonomous <strong>L</strong>ogistics and <strong>I</strong>nevitable <strong>C</strong>ollision <strong>E</strong>ngine)</small></p>
-            <p><a href="{% url 'robotics:2015-index' %}" class="btn btn-srobo btn-block" >More Info</a></p>
+            <h3>Student Robotics 2015</h3>
+            <p><strong>Robot Name : </strong> A.L.I.C.E
+            <br /><small>(<strong>A</strong>utonomous <strong>L</strong>ogistics and <strong>I</strong>nevitable <strong>C</strong>ollision <strong>E</strong>ngine)</small></p>
+            <p><a href="/robotics/2015/" class="btn btn-srobo btn-block" >More Info</a></p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="image-panel" data-image="{% static 'img/SR-logo-banner.png' %}"></div>
+
+  <div class="container">
+    <h2>Adult volunteer</h2>
+    <p>
+      Unfortunately, after I left college, I also left behind entering Student Robotics as a competitor. Fortunately for me however, they're always looking for volunteers to help run the competition itself.
+    </p>
+    <h4>
+      Years
+    </h4>
+    <ul>
+      <li>2016</li>
+    </ul>
   </div>
 {% endblock %}

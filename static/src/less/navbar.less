@@ -1,0 +1,136 @@
+#navigation {
+  @media (min-width: @screen-xs-max) {
+    .flexbox();
+    justify-content: center;
+    float: none;
+  }
+  & a {
+    .transition(~"ease-in-out .3s color");
+  }
+  & > li {
+    max-height: @navbar-height;
+    @media (min-width: @screen-md-min) {
+      margin-right: 15px;
+    }
+  }
+  .dropdown-toggle, & > li > a {
+    font-size: 19px;
+    max-height: @navbar-height;
+  }
+  .dropdown-menu {
+    .transition(~"ease-in-out .2s all");
+    @media (min-width: @screen-sm) {
+      right: auto;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    & > li > a {
+      font-size: 15px;
+    }
+    &.dropup {
+      bottom: 100%;
+      top: initial;
+    }
+    &.dropdown {
+      top: 100%;
+      bottom: initial;
+    }
+    .open & {
+      opacity: 1;
+    }
+  }
+}
+
+
+.navbar {
+  border-radius: 0;
+  border: none;
+  .home-button a {
+    .transition(~"ease-in-out .3 all");
+  }
+  @media (min-height: @screen-sm-min) {
+    max-height: @navbar-height;
+  }
+}
+
+.navbar-nav.nav {
+  margin: 0;
+}
+
+.navbar-toggle {
+  right: 10px;
+}
+
+#navbar-container {
+  margin: 0;
+  z-index: 10000;
+  @media (max-width: @screen-xs-max) {
+    width: 96%;
+    left: 2%;
+  }
+  @media (min-width: @screen-sm-min) {
+    width: 100%;
+  }
+  i + *, .glyphicon + * {
+    margin-left: 5px;
+  }
+  & .container-fluid{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &.align {
+    @media (min-width: @screen-sm) {
+      position: initial;
+      height: @navbar-height;
+      margin-top: -50px;
+    }
+    @media (max-width: @screen-sm) {
+      position: fixed;
+      top: 0;
+      width: 95%;
+
+    }
+  }
+}
+
+#navbar-anchor {
+  width: 100%;
+  height: 50px;
+}
+
+@media (min-width: @screen-xs-max) {
+  .home-button {
+    margin-right: 15px !important;
+  }
+}
+
+#navbar {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand {
+  margin-left: 15px;
+}
+
+.stick-top {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+// /* @group Header Navbar*/
+// @media (min-width: @screen-sm-min) {
+//   .header {
+//     #navbar-container {
+//       margin: 0 auto;
+//       &:not(.stick-top) {
+//         position: initial;
+//       }
+//       &.stick-top {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+// /* @end Header Navbar*/

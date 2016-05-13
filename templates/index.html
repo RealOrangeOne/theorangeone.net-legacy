@@ -1,49 +1,74 @@
 {% extends 'base.html' %}
-
-{% block htmltitle %}Homepage{% endblock %}
-
-{% block headercontent %}
-  <div class="row">
-    <h1>Welcome Internet!</h1>
-  </div>
-  <div class="row">
-    <h4>Welcome to the place where my knowledge lies - Or at least most of it.</h4>
-  </div>
-{% endblock %}
-
-{% block content%}
-  <div class="container">
-    <p>Welcome people, to my little slice of the internet. I'm Jake, an apprentice software engineer at <a href="//dabapps.com">Dabapps</a>, and this is my website. Somewhere I can put all my work, projects, media, and anything else I can think of. I've done a lot of things in the past, such as <a href="{% url 'robotics:index' %}">Student Robotics</a>, <a href="{% url 'setup:desk' %}">Custom built PC's</a> and <a>College Projects</a>. All of this and more ca be found here. Take a look around, chances are you'll see some very cool things!</p>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-md-offset-1 h5">
-        <div class="list-group">
-          <a class="list-group-item active h4">Recently Added</a>
-          <a href="#" class="list-group-item">Printr Module for Python. Display messages like a BOSS!</a>
-          <a href="#" class="list-group-item">Hipchat emoticons on other websites? Yes Please!</a>
-          <a href="#" class="list-group-item">All the Roboics media is finally live!</a>
-          <a href="#maintenance" class="list-group-item">Undergoing Maintenance</a>
-        </div>
-      </div>
-      <div class="col-md-5 col-md-offset-1">
-        <p style="text-align:center"><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/RealOrangeOne" data-widget-id="600774030069760003">Tweets by @RealOrangeOne</a></p>
-        <script>
-          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-        </script>
+{% load staticfiles %}
+{% block baseContent%}
+  <div class="container-fluid" id="header">
+      <div class="jumbotron container animated zoomInDown">
+        <img src="{% static 'img/logo-transparent.png'%}"/>
+        <h1>Hello world!</h1>
+        <p>Welcome to my website</p>
+        <p class="scroll-icon"><a href="#intro-text" class="no-color-change"><i class="icon ion-chevron-down"></i></a></p>
       </div>
     </div>
-  </div>
-  <div class="container" id="maintenance">
-    <h1>My website is currently being re-written, to make it look nicer, and fix a bug on mobile.</h1>
-    <p>
-      There are a lot of changes that need to be made, mainly in looks. So this will take a while. In the mean time, this site isn't being updated with any new content.
-    </p>
-    <p>
-      Check up on my progress <a href="https://github.com/RealOrangeOne/theorangeone.net/tree/v3">here</a>.
-    </p>
-  </div>
-  <div class="full-width">
-    <div id="index-carousel-container"></div>
-  </div>
+    <div class="container-fluid" id="intro-text">
+      <div class="container">
+        <p>Bacon ipsum dolor amet pork chop biltong venison pork belly, pig meatball kevin cow ham pancetta pork fatback doner flank. Flank turducken swine leberkas andouille, tongue ball tip cow chicken ham hock sausage. Ball tip swine tri-tip salami turkey beef ribs doner pancetta shankle pork chop prosciutto. Spare ribs biltong pork loin, flank beef leberkas ribeye t-bone alcatra ball tip. Pork rump sausage capicola, beef ribs pancetta drumstick doner. Kielbasa fatback turducken turkey jowl strip steak. Landjaeger andouille t-bone, bacon cupim prosciutto short ribs.</p>
+        <p>Doner turducken bacon tail ham hock. Cow corned beef shankle pork chop frankfurter turducken. Pig ball tip tri-tip, meatloaf filet mignon cow andouille cupim swine pork corned beef sausage spare ribs chuck. Beef jowl bacon shank capicola. Kevin turkey ground round pork loin t-bone. Tri-tip turducken ham, short ribs prosciutto kevin pork loin fatback doner pig kielbasa tenderloin.</p>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="twitter-feed">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12 feed">
+            <h5>Twitter widget broken - repair coming soon!</h5>
+          </div>
+          <div class="col-sm-6 twitter-icon hidden-xs">
+            <a href="https://twitter.com/RealOrangeOne" class="no-color-change">
+              <i class="icon ion-social-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <navbar></navbar>
+    <div class="container-fluid" id="project-thumbnails">
+      <div class="container">
+        <div class="row">
+          <h1>All Projects</h1>
+          {% for project in projects %}
+            <div class="col-sm-6 col-md-4">
+              {% if project.header_image %}
+                <div class="thumbnail">
+                  <img src="{{ project.header_image }}" alt="image">
+                  <div class="caption">
+                    <h3>{{ project.name }}</h3>
+                    <a href="{{ project.url }}">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              {% else %}
+                <div class="thumbnail larger project">
+                  <div class="inner">
+                    <h2>{{ project.name }}</h2>
+                    <a href="{{ project.url }}">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail larger">
+              <div class="inner">
+                <a href="/projects/">
+                  <h1>See All</h1>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 {% endblock %}

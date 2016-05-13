@@ -1,18 +1,44 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
-cp node_modules/bootstrap/dist/js/bootstrap.js static/src/js/lib/
-cp node_modules/skrollr/src/skrollr.js static/src/js/lib/
+if [[ $BUILD_PRODUCTION ]]
+then
+  echo ">>> WARNING: Building in Production Mode!"
+fi
 
-echo ">> Building Libraries..."
-uglifyjs node_modules/jquery/dist/jquery.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/jquery.js
-uglifyjs node_modules/markdown/lib/markdown.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/markdown.js
-uglifyjs static/src/js/lib/* --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/libs.js
+mkdir -p static/build/js/lib
+
+if [[ $BUILD_PRODUCTION ]]
+then
+  echo ">> Compressing Libraries..."
+  uglifyjs node_modules/bootstrap/dist/js/bootstrap.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/lib/bootstrap.js
+  uglifyjs static/build/js/lib/* --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/libs.js
+else
+  echo ">> Building Libraries..."
+  cp node_modules/bootstrap/dist/js/bootstrap.js static/build/js/lib/bootstrap.js
+  uglifyjs static/build/js/lib/* --screw-ie8 --stats --keep-fnames -o static/build/js/libs.js
+fi
+
+rm -rf static/build/js/lib
+
+if [[ $BUILD_PRODUCTION ]]
+then
+  echo ">> Compressing jQuery..."
+  uglifyjs node_modules/jquery/dist/jquery.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/jquery.js
+else
+  echo ">> Building jQuery..."
+  uglifyjs node_modules/jquery/dist/jquery.js --screw-ie8 --stats --keep-fnames -o static/build/js/jquery.js
+fi
+
 
 echo ">> Building Application JS..."
-browserify -t reactify static/src/js/app.js -o static/build/js/app.js
-# uglifyjs static/build/js/app.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/app.js
+browserify -t [ babelify --presets [ es2015 react ] ] static/src/js/app.js -o static/build/js/app.js
 
-echo ">> Building Global Utilities..."
-uglifyjs static/src/js/utils.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/utils.js
+if [[ $BUILD_PRODUCTION ]]
+then
+  echo ">> Compressing Application..."
+  uglifyjs static/build/js/app.js --compress --screw-ie8 --define --stats --keep-fnames -o static/build/js/app.js
+fi
+
+echo "> JS Built!"
