@@ -3,10 +3,10 @@
   "version": "4.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
-    "lint": "eslint 'static/src/js/'",
+    "lint": "eslint 'theme/static/src/js/'",
     "build-js": "./scripts/build-js.sh",
-    "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
     "build-scss": "bash scripts/build-scss.sh",
+    "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css theme/static/build/img",
     "test": "npm run lint",
     "spellcheck": "mdspell --en-gb -ranx \"templates/**/*.*\""
   },
@@ -19,6 +19,7 @@
     "bootstrap-sass": "=3.3.6",
     "ionicons": "=3.0.0",
     "jquery": "=2.2.3",
+    "jquery.easing": "=1.3.2",
     "underscore": "=1.8.3"
   },
   "devDependencies": {
