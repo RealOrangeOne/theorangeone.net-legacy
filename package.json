@@ -6,7 +6,7 @@
     "lint": "eslint 'static/src/js/'",
     "build-js": "./scripts/build-js.sh",
     "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
-    "build-scss": "node-sass theme/static/src/scss/index.scss theme/static/build/css/index.css",
+    "build-scss": "bash scripts/build-scss.sh",
     "test": "npm run lint",
     "spellcheck": "mdspell --en-gb -ranx \"templates/**/*.*\""
   },
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "animate.css": "=3.5.1",
-    "bootstrap": "=3.3.6",
+    "bootstrap-sass": "=3.3.6",
     "ionicons": "=3.0.0",
     "jquery": "=2.2.3",
     "underscore": "=1.8.3"
