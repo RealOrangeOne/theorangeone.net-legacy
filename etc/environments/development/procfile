@@ -1,2 +1,2 @@
-web: manage.py runserver 0.0.0.0:$PORT
-watcher: npm run watch
+web: bash scripts/server.sh
+watcher: pelican -vrdD
