@@ -4,9 +4,6 @@ machine:
   node:
     version: 5.10.1
   environment:
-    DEBUG: true
-    DATABASE_URL: sqlite://~/database.db
-    EMAIL_BACKEND: django.core.mail.backends.console.EmailBackend
     BUILD_PRODUCTION: true
 
 dependencies:
@@ -14,6 +11,7 @@ dependencies:
     - ./build
   cache_directories:
     - env
+    - node_modules
 
 test:
   override:
