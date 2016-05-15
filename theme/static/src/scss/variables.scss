@@ -1,0 +1,13 @@
+$brand-orange: #f05f40;
+$brand-orange-dark: darken($brand-orange, 10%);
+$brand-grey-dark: #333;
+
+
+$font-family-heading: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+
+/* @group Bootstrap Overrides */
+
+$font-family-base: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$brand-primary: $brand-orange;
+
+/* @end Bootstrap Overrides */
