@@ -5,19 +5,21 @@
 
 /* @end Fonts */
 
+
 /* @group Libraries */
 
 @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
-@import "css/animate";
+@import "node_modules/animate.css/animate";
 
 /* @end Libraries */
 
 
+/* @group Other Imports */
+
 @import "variables";
 @import "creative/creative";
 
-/* @group Other Imports */
-
 /* @end Other Imports */
+
 
 @import "homepage";

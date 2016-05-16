@@ -2,12 +2,19 @@
 
 set -e
 
-mkdir -p theme/static/src/scss/css
+if [[ $BUILD_PRODUCTION ]]
+then
+  echo ">>> WARNING: Building in Production Mode!"
+fi
 
-# scss can't import css, so copy them into src dir and change the extension!
-cp node_modules/animate.css/animate.css theme/static/src/scss/css/animate.scss
-
+echo ">> Building SCSS..."
 node-sass theme/static/src/scss/index.scss theme/static/build/css/index.css --source-map-embed
 
-# Cleanup
-rm -rf theme/static/src/scss/css
+echo ">> Post-Processing..."
+postcss -u autoprefixer -o theme/static/build/css/index.css theme/static/build/css/index.css
+
+if [[ $BUILD_PRODUCTION ]]
+then
+  echo ">> Compressing CSS..."
+  cleancss -d --s0 -o theme/static/build/css/index.css theme/static/build/css/index.css
+fi
