@@ -14,7 +14,8 @@ EXIT_CODE = 0
 def check_if_exit_code():
     if EXIT_CODE != 0:
         print("\n{}Tests Failed. {}Please check messages above and then re-run the command.".format(Fore.RED, Fore.YELLOW))
-        exit(EXIT_CODE)
+        print("{}Exit Code: {}".format(Fore.RED, EXIT_CODE))
+        exit(1)
 
 print("{}Linting...".format(Fore.YELLOW))
 
