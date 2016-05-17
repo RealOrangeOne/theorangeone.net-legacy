@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ $BUILD_PRODUCTION ]]
+if [ "$NODE_ENV" = "production" ]
 then
   echo ">>> WARNING: Building in Production Mode!"
 fi
@@ -13,7 +13,7 @@ node-sass theme/static/src/scss/index.scss theme/static/build/css/index.css --so
 echo ">> Post-Processing..."
 postcss -u autoprefixer -o theme/static/build/css/index.css theme/static/build/css/index.css
 
-if [[ $BUILD_PRODUCTION ]]
+if [ "$NODE_ENV" = "production" ]
 then
   echo ">> Compressing CSS..."
   cleancss -d --s0 -o theme/static/build/css/index.css theme/static/build/css/index.css
