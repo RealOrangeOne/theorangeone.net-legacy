@@ -59,4 +59,5 @@ target/
 
 # Pelican stuff
 output/
-theme/static/build
+theme/static/build/
+plugins/
