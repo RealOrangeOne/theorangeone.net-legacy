@@ -68,3 +68,8 @@ CATEGORY_SAVE_AS = False
 CATEGORIES_SAVE_AS = False
 
 PLUGIN_PATHS = ["plugins"]
+PLUGINS = ['sitemap']
+
+SITEMAP = {
+    'format': 'xml'
+}
