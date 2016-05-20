@@ -1,4 +1,3 @@
-/*global jQuery */
 /*!
 * FitText.js 1.2
 *
@@ -9,35 +8,37 @@
 * Date: Thu May 05 14:23:00 2011 -0600
 */
 
-(function( $ ){
+$.fn.fitText = function( kompressor, options ) {
+  // Setup options
+  const compressor = kompressor || 1,
+    settings = $.extend({
+      'minFontSize' : Number.NEGATIVE_INFINITY,
+      'maxFontSize' : Number.POSITIVE_INFINITY
+    }, options);
 
-  $.fn.fitText = function( kompressor, options ) {
+  return this.each(function() {
 
-    // Setup options
-    var compressor = kompressor || 1,
-        settings = $.extend({
-          'minFontSize' : Number.NEGATIVE_INFINITY,
-          'maxFontSize' : Number.POSITIVE_INFINITY
-        }, options);
+    // Store the object
+    var $this = $(this);
 
-    return this.each(function(){
+    // Resizer() resizes items based on the object width divided by the compressor * 10
+    var resizer = function () {
+      $this.css('font-size',
+        Math.max(
+          Math.min(
+            $this.width() / (compressor * 10),
+            parseFloat(settings.maxFontSize)
+          ),
+        parseFloat(settings.minFontSize))
+      );
+    };
 
-      // Store the object
-      var $this = $(this);
+    // Call once to set.
+    resizer();
 
-      // Resizer() resizes items based on the object width divided by the compressor * 10
-      var resizer = function () {
-        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
-      };
+    // Call on resize. Opera debounces their resize by default.
+    $(window).on('resize.fittext orientationchange.fittext', resizer);
 
-      // Call once to set.
-      resizer();
+  });
 
-      // Call on resize. Opera debounces their resize by default.
-      $(window).on('resize.fittext orientationchange.fittext', resizer);
-
-    });
-
-  };
-
-})( jQuery );
+};
