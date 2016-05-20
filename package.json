@@ -7,7 +7,7 @@
     "lint-scss": "sass-lint -vqc .sass-lint.yml",
     "build": "npm run create-build-dirs && npm run build-fonts && npm run build-js && npm run build-scss",
     "build-js": "./scripts/build-js.sh",
-    "build-scss": "bash scripts/build-scss.sh",
+    "build-scss": "./scripts/build-scss.sh",
     "build-fonts": "cp -R node_modules/bootstrap-sass/assets/fonts/bootstrap/* theme/static/build/fonts/ && cp -R node_modules/font-awesome/fonts theme/static/build/ ",
     "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css theme/static/build/img",
     "test": "npm run lint-js && npm run lint-scss",
