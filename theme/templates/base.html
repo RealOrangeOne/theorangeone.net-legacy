@@ -39,6 +39,40 @@
 
     {% block content %}{% endblock %}
 
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="social">
+              {% for key, link in SOCIAL.items()|sort %}
+                <a href="{{ link.url }}"><i class="fa {{ link.icon }}"></i></a>
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="bar-links">
+              <a href="/about/">About</a> |
+              <a href="">View Source</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 powered-by">
+            <p>Powered by</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <a href="https://circleci.com">
+              <img class="ci-badge" src="https://circleci.com" alt="CI Badge" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/libs.js"></script>
     <script src="/static/js/app.js"></script>

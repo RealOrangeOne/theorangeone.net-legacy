@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+import sys, os
+sys.path.insert(0, os.path.realpath('./plugins'))
+
 AUTHOR = 'Jake Howard'
 SITENAME = 'TheOrangeOne'
 SITEURL = 'http://theorangeone.net'
@@ -26,10 +29,11 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+import social
+SOCIAL = social.generate()
 
-DEFAULT_PAGINATION = 15
+
+DEFAULT_PAGINATION = False
 DELETE_OUTPUT_DIRECTORY = True
 
 
@@ -67,9 +71,12 @@ ARCHIVES_SAVE_AS = "blog/archive/index.html"
 CATEGORY_SAVE_AS = False
 CATEGORIES_SAVE_AS = False
 
-PLUGIN_PATHS = ["plugins"]
+PLUGIN_PATHS = ["pelican_plugins"]
 PLUGINS = ['sitemap']
 
 SITEMAP = {
     'format': 'xml'
 }
+
+
+# Extra context

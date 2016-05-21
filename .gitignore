@@ -60,4 +60,4 @@ target/
 # Pelican stuff
 output/
 theme/static/build/
-plugins/
+pelican_plugins/
