@@ -38,3 +38,8 @@ $fa-font-path: "../fonts";
 .panel-blue {
   @include panel-variant(#337AB7, $white, #337AB7, #337AB7);
 }
+
+
+.btn-primary-dark {
+  @include button-variant($white, $brand-orange-dark, $brand-orange-dark);
+}
