@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <title>{% block htmltitle %}Page{% endblock%} - {{ SITENAME }}</title>
 
@@ -18,35 +18,7 @@
 
     {% block content %}{% endblock %}
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <p class="social">
-              {% for key, link in SOCIAL.items()|sort %}
-                <a href="{{ link.url }}"><i class="fa {{ link.icon }}"></i></a>
-              {% endfor %}
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 powered-by">
-            <p>
-              Powered by <a href="http://blog.getpelican.com/">Pelican</a>,
-              <a href="https://clients.inceptionhosting.com/aff.php?aff=256">Inception Hosting</a>,
-              and a whole heap of <a href="https://github.com/RealOrangeOne/theorangeone.net">Magic</a>!
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <a href="https://circleci.com/gh/RealOrangeOne/theorangeone.net">
-              <img class="ci-badge" src="https://circleci.com/gh/RealOrangeOne/theorangeone.net.svg?style=svg" alt="CI Badge" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    {% include "extras/footer.html" %}
 
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/libs.js"></script>
