@@ -22,6 +22,7 @@ $fa-font-path: "../fonts";
 /* @group Other Imports */
 
 @import "creative/creative";
+@import "pygment";
 
 /* @end Other Imports */
 
@@ -42,4 +43,10 @@ $fa-font-path: "../fonts";
 
 .btn-primary-dark {
   @include button-variant($white, $brand-orange-dark, $brand-orange-dark);
+}
+
+
+.highlight> pre {
+  background-color: transparent;
+  font-size: $font-size-base;
 }

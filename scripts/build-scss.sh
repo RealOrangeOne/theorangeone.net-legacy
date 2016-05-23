@@ -7,6 +7,9 @@ then
   echo ">>> WARNING: Building in Production Mode!"
 fi
 
+echo ">> Generating Pygments styles..."
+pygmentize -S monokai -f html -a .highlight > theme/static/src/scss/pygment.css
+
 echo ">> Building SCSS..."
 node-sass theme/static/src/scss/index.scss theme/static/build/css/index.css --source-map-embed
 
