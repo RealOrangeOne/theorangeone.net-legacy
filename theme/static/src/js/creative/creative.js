@@ -39,6 +39,6 @@ $('h1').fitText(
 // Offset for Main Navigation
 $('#main-nav').affix({
   offset: {
-    top: 100
+    top: 50
   }
 });
