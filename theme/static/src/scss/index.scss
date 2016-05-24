@@ -46,7 +46,13 @@ $fa-font-path: "../fonts";
 }
 
 
-.highlight> pre {
+.highlight > pre {
   background-color: transparent;
   font-size: $font-size-base;
+}
+
+
+hr.wide {
+  width: 100%;
+  max-width: initial;
 }
