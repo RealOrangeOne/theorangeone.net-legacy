@@ -13,43 +13,44 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="me">
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-8">
           <p>
-
+            Hi, I'm Jake, a software engineer currently working for a company in Brighton. I've been working as a developer since mid-2015, and have been studying IT and computer science since 2013.
+            I work primarily as a full-stack developer, however more recently I've been working more on mobile apps.
           </p>
         </div>
-        <div class="col-sm-3 text-center">
+        <div class="col-sm-4 text-center">
           <div data-theme="medium" data-github="RealOrangeOne" class="github-card"></div>
         </div>
       </div>
     </div>
     <script async defer src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
   </section>
-  <section class="bg-primary">
+  <section class="bg-primary" id="website">
     <div class="container">
       <h2>About my website</h2>
       <p>
         My website is the culmination of all my knowledge, compiled into 1 place. It not only contains all my projects, but it in itself is a project. Making sure this website works properly is a tall order, especially considering it's self hosted.
       </p>
       <p>
-        I went with the Django framework because it's what I use with at work, as well as the fact it's simple, clean and easy. It also allows for some server side assets, eg blogging.
+        The site is primarily powered by <a href="">Pelican</a>, a static site generator. This converts markdown and HTML templates into static HTML files. The templates are generated using <a href="">Jinja2</a>, a templating language similar to <a href="">Django</a>'s. This allows me to write nice clean, <i>DRY</i> content, and have it come out as clean HTML.
       </p>
       <p>
-        The only reason I have a database is because certain sections require it. For this reason I went with SQLite, because it's really lightweight and simple.
+        The static content (JS, CSS etc) is built using a custom build pipeline. The Javascript is built and compiled using <a href="">Babel</a> and <a href="">Browserify</a>, and the CSS is written using <a href="">node-SCSS</a> as a pre-processor.
       </p>
     </div>
   </section>
-  <section>
+  <section id="server">
     <div class="container">
       <h2>The Server</h2>
       <p>
-        The website is hosted on my UK VPS. Previous versions have been hosted on 1&amp;1 and MyWindowsHosting.
+        The website is hosted on my <a href="">UK VPS</a>. Previous versions have been hosted on <a href="">1&amp;1</a> and <a href="">MyWindowsHosting</a>.
       </p>
       <p>
-        The Django application itself is served using waitress. This get's it's port from a custom reverse proxy allowing me to host multiple sites on a single server easily. This is the same one I use for local development. The main web-facing server is nginx, because it's simple to setup, and damn fast!
+        The static files are served using a <a href="">custom Express server</a>, which allows me to auto-deploy the site from my <a href="">CI</a>. This is then served using a custom, closed-source reverse proxy, which makes local development and domain switching much easier. This is pointed to by <a href="">NGINX</a>, which actually serves port 80.
       </p>
     </div>
   </section>
