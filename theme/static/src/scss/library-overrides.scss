@@ -1,0 +1,37 @@
+/* @group Bootstrap Panels */
+
+.panel-green {
+  @include panel-variant(#139F5B, $white, #139F5B, #139F5B);
+}
+
+
+.panel-blue {
+  @include panel-variant(#337AB7, $white, #337AB7, #337AB7);
+}
+
+
+/* @end Bootstrap Panels */
+
+
+/* @group Pygments */
+
+.highlight > pre {
+  background-color: transparent;
+  font-size: $font-size-base;
+}
+
+/* @end Pygments */
+
+/* @group backgrounds */
+
+.btn-primary-dark {
+  @include button-variant($white, $brand-orange-dark, $brand-orange-dark);
+}
+
+.bg-primary p {
+  a:hover {
+    color: $brand-grey-dark;
+  }
+}
+
+/* @end backgrounds */

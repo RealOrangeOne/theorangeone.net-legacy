@@ -23,36 +23,19 @@ $fa-font-path: "../fonts";
 
 @import "creative/creative";
 @import "pygment";
-
-/* @end Other Imports */
-
-
 @import "homepage";
 @import "footer";
+@import "library-overrides";
 
-
-.panel-green {
-  @include panel-variant(#139F5B, $white, #139F5B, #139F5B);
-}
-
-
-.panel-blue {
-  @include panel-variant(#337AB7, $white, #337AB7, #337AB7);
-}
-
-
-.btn-primary-dark {
-  @include button-variant($white, $brand-orange-dark, $brand-orange-dark);
-}
-
-
-.highlight > pre {
-  background-color: transparent;
-  font-size: $font-size-base;
-}
+/* @end Other Imports */
 
 
 hr.wide {
   width: 100%;
   max-width: initial;
+}
+
+p a {
+  text-decoration: underline;
+  color: inherit;
 }

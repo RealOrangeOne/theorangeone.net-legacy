@@ -19,8 +19,12 @@ footer {
   .powered-by p {
     font-size: $font-size-base;
 
-    a:hover {
-      color: $brand-orange;
+    a {
+      color: inherit;
+
+      &:hover {
+        color: $brand-orange;
+      }
     }
   }
 
