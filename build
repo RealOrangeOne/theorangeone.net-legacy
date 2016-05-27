@@ -14,6 +14,6 @@ set -e
 pyvenv env
 env/bin/pip install -r requirements.txt
 
-git clone --recursive https://github.com/getpelican/pelican-plugins plugins/
+git clone --recursive https://github.com/getpelican/pelican-plugins plugins/ || echo "Plugins already installed!"
 
 npm install
