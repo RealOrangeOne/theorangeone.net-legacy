@@ -35,7 +35,8 @@ SOCIAL = social.generate()
 
 DEFAULT_PAGINATION = False
 DELETE_OUTPUT_DIRECTORY = True
-
+DEFAULT_DATE_FORMAT = '%c'
+DEFAULT_DATE = "fs"
 
 PAGE_PATHS = ["pages"]
 PAGE_SAVE_AS = "{slug}/index.html"
@@ -49,34 +50,33 @@ EXTRA_PATH_METADATA = {
     "assets/favicon.ico": {"path": "favicon.ico"}
 }
 
-ARTICLE_PATHS = ["articles"]
-ARTICLE_SAVE_AS = "blog/{slug}/index.html"
-ARTICLE_URL = "/blog/{slug}/"
+ARTICLE_SAVE_AS = "{category}/{slug}/index.html"
+ARTICLE_URL = "{category}/{slug}/"
 
 TAG_URL = "blog/tag/{slug}/"
 TAG_SAVE_AS = "blog/tag/{slug}/index.html"
 
-TAGS_URL = "blog/tags/"
-TAGS_SAVE_AS = "blog/tags/index.html"
+TAGS_URL = "tags/"
+TAGS_SAVE_AS = "tags/index.html"
 
-AUTHOR_URL = "/blog/author/{slug}/"
-AUTHOR_SAVE_AS = "blog/author/{slug}/index.html"
+AUTHOR_URL = "author/{slug}/"
+AUTHOR_SAVE_AS = "author/{slug}/index.html"
 
-AUTHORS_URL = "/blog/authors/"
-AUTHORS_SAVE_AS = "blog/authors/index.html"
+AUTHORS_URL = False
+AUTHORS_SAVE_AS = False
 
-ARCHIVES_URL = "blog/archive/"
-ARCHIVES_SAVE_AS = "blog/archive/index.html"
+ARCHIVES_URL = False
+ARCHIVES_SAVE_AS = False
 
-CATEGORY_SAVE_AS = False
+CATEGORY_SAVE_AS = "{slug}/index.html"
 CATEGORIES_SAVE_AS = False
+USE_FOLDER_AS_CATEGORY = True
 
 PLUGIN_PATHS = ["pelican_plugins"]
-PLUGINS = ['sitemap']
+PLUGINS = ["sitemap", "filetime_from_git"]
 
 SITEMAP = {
-    'format': 'xml'
+    "format": "xml"
 }
-
 
 # Extra context

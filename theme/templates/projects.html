@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {{ article.title }}
+{% endblock %}
+
+{% block content %}
+  <section class="bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h1 class="section-heading">{{ article.title }}</h1>
+          <hr class="light">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <p class="text-right">
+        Updated: {{ article.updated }}
+        Date: {{ article.date }}
+      </p>
+      {{ article.content }}
+    </div>
+  </section>
+  <div class="container text-center">
+    <div class="btn-group">
+      {% if article.download_link %}
+        <a class="btn btn-primary btn-xl" href="{{ article.download_link }}" download="Attack-on-blocks.zip">Download {{ article.title }}</a>
+      {% endif %}
+      {% if article.repo %}
+        <a class="btn btn-github btn-xl" href="{{ article.repo }}"><i class="fa fa-github fa-lg"></i> View on Github</a>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
