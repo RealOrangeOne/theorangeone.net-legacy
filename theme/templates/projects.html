@@ -19,7 +19,7 @@
     <div class="container">
       <p class="text-right">
         Updated: {{ article.updated }}
-        Date: {{ article.date }}
+        Date: {{ article.date|datetime }}
       </p>
       {{ article.content }}
     </div>

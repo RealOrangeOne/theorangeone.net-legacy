@@ -35,8 +35,7 @@ SOCIAL = social.generate()
 
 DEFAULT_PAGINATION = False
 DELETE_OUTPUT_DIRECTORY = True
-DEFAULT_DATE_FORMAT = '%c'
-DEFAULT_DATE = "fs"
+
 
 PAGE_PATHS = ["pages"]
 PAGE_SAVE_AS = "{slug}/index.html"
@@ -79,4 +78,8 @@ SITEMAP = {
     "format": "xml"
 }
 
+import filters
+JINJA_FILTERS = {
+    "datetime": filters.format_datetime
+}
 # Extra context
