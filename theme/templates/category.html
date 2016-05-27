@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  All {{ category }}
+{% endblock %}
+
+{% block content %}
+  <section class="bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h1 class="section-heading">About Me</h1>
+          <hr class="light">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="no-padding" id="projects">
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        {% for article in dates %}
+          <div class="col-lg-4 col-sm-6">
+            <a href="#" class="portfolio-box">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category">
+                    {{ article.title }}
+                  </div>
+                  <div class="project-name">
+                    {{ article.summary|raw }}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

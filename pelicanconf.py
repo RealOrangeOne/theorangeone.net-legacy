@@ -36,7 +36,6 @@ SOCIAL = social.generate()
 DEFAULT_PAGINATION = False
 DELETE_OUTPUT_DIRECTORY = True
 
-
 PAGE_PATHS = ["pages"]
 PAGE_SAVE_AS = "{slug}/index.html"
 PAGE_URL = "{slug}"
@@ -68,6 +67,8 @@ ARCHIVES_URL = False
 ARCHIVES_SAVE_AS = False
 
 CATEGORY_SAVE_AS = "{slug}/index.html"
+CATEGORY_URL = "{slug}/"
+
 CATEGORIES_SAVE_AS = False
 USE_FOLDER_AS_CATEGORY = True
 
@@ -80,6 +81,7 @@ SITEMAP = {
 
 import filters
 JINJA_FILTERS = {
-    "datetime": filters.format_datetime
+    "datetime": filters.format_datetime,
+    "raw": filters.html_to_raw
 }
 # Extra context
