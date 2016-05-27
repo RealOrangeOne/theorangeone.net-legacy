@@ -1,32 +1,27 @@
 @import "variables";  // Import variables before anything else
 
-/* @group Fonts */
 
+/* @group Fonts */
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,300,300italic,400italic,700italic");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,300italic,400italic,700italic");
-
 /* @end Fonts */
 
 
 /* @group Libraries */
-
 @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
 @import "node_modules/animate.css/animate";
 
 $fa-font-path: "../fonts";
 @import "node_modules/font-awesome/scss/font-awesome";
-
 /* @end Libraries */
 
 
 /* @group Other Imports */
-
 @import "creative/creative";
 @import "pygment";
 @import "homepage";
 @import "footer";
 @import "library-overrides";
-
 /* @end Other Imports */
 
 
@@ -38,4 +33,8 @@ hr.wide {
 p a {
   text-decoration: underline;
   color: inherit;
+}
+
+.btn i {
+  margin: 0 3px;
 }

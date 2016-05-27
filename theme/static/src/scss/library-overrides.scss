@@ -1,38 +1,34 @@
 /* @group Bootstrap Panels */
-
 .panel-green {
   @include panel-variant(#139F5B, $white, #139F5B, #139F5B);
 }
 
-
 .panel-blue {
   @include panel-variant(#337AB7, $white, #337AB7, #337AB7);
 }
-
-
 /* @end Bootstrap Panels */
 
 
-/* @group groupname */
-
+/* @group Bootstrap buttons */
 .btn {
   border-radius: 0;
 }
 
-/* @end groupname */
+.btn.btn-github {
+  @include button-variant(#333, #F5F5F5, #D8D8D8);
+}
+/* @end Bootstrap buttons */
 
 
 /* @group Pygments */
-
 .highlight > pre {
   background-color: transparent;
   font-size: $font-size-base;
 }
-
 /* @end Pygments */
 
-/* @group backgrounds */
 
+/* @group backgrounds */
 .btn-primary-dark {
   @include button-variant($white, $brand-orange-dark, $brand-orange-dark);
 }
@@ -42,5 +38,4 @@
     color: $brand-grey-dark;
   }
 }
-
 /* @end backgrounds */
