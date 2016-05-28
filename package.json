@@ -9,7 +9,7 @@
     "build-js": "./scripts/build-js.sh",
     "build-scss": "./scripts/build-scss.sh",
     "build-fonts": "cp -R node_modules/font-awesome/fonts theme/static/build/",
-    "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css theme/static/build/img",
+    "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css",
     "test": "npm run lint-js && npm run lint-scss",
     "spellcheck": "mdspell --en-gb -ranx \"templates/**/*.*\""
   },
