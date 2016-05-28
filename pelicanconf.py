@@ -35,6 +35,7 @@ SOCIAL = social.generate()
 
 DEFAULT_PAGINATION = False
 DELETE_OUTPUT_DIRECTORY = True
+SLUGIFY_SOURCE = 'basename'
 
 PAGE_PATHS = ["pages"]
 PAGE_SAVE_AS = "{slug}/index.html"
@@ -72,6 +73,9 @@ CATEGORY_URL = "{slug}/"
 CATEGORIES_SAVE_AS = False
 USE_FOLDER_AS_CATEGORY = True
 
+FEED_ATOM = 'feed.atom'
+FEED_DOMAIN = SITEURL
+
 PLUGIN_PATHS = ["pelican_plugins"]
 PLUGINS = ["sitemap", "filetime_from_git", "pelican-jinja2content"]
 
@@ -80,7 +84,7 @@ SITEMAP = {
 }
 
 from fontawesome_markdown import FontAwesomeExtension
-MD_EXTENSIONS = [FontAwesomeExtension()]
+MD_EXTENSIONS = [FontAwesomeExtension(), 'codehilite(css_class=highlight)', 'extra']
 
 import filters
 JINJA_FILTERS = {
