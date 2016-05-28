@@ -79,6 +79,9 @@ SITEMAP = {
     "format": "xml"
 }
 
+from fontawesome_markdown import FontAwesomeExtension
+MD_EXTENSIONS = [FontAwesomeExtension()]
+
 import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
