@@ -11,3 +11,10 @@ def html_to_raw(html):
     for script in soup(["script", "style"]):  # Remove script / style tags
         script.extract()
     return soup.get_text()
+
+
+def category_find(categories, name):
+    for category_name, articles in categories:
+        if category_name == name:
+            return articles
+    return []
