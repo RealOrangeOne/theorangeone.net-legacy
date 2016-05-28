@@ -73,7 +73,7 @@ CATEGORIES_SAVE_AS = False
 USE_FOLDER_AS_CATEGORY = True
 
 PLUGIN_PATHS = ["pelican_plugins"]
-PLUGINS = ["sitemap", "filetime_from_git"]
+PLUGINS = ["sitemap", "filetime_from_git", "pelican-jinja2content"]
 
 SITEMAP = {
     "format": "xml"
