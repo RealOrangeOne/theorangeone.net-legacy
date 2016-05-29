@@ -1,10 +1,12 @@
 from collections import namedtuple
+from random import shuffle
 
 
-SocialLink = namedtuple('SocialLink', ['name', 'url', 'icon'])
+SocialLink = namedtuple("SocialLink", ["name", "url", "icon"])
+ProjectLink = namedtuple("ProjectLink", ["name", "url", "image"])
 
 
-def generate():
+def social():
     return {
         "github": SocialLink("GitHub", "https://github.com/RealOrangeOne", "fa-github"),
         "twitter": SocialLink("Twitter", "https://twitter.com/RealOrangeOne", "fa-twitter"),
@@ -12,3 +14,12 @@ def generate():
         "instagram": SocialLink("Instagram", "https://instagram.com/RealOrangeOne", "fa-instagram"),
         "youtube": SocialLink("YouTube", "https://youtube.com/user/TheOrangeOneOfficial", "fa-youtube")
     }
+
+
+def index_projects():
+    projects = [
+        ProjectLink("Student Robotics", "/robotics/", "https://c2.staticflickr.com/8/7711/17122633430_e1b599fe47.jpg"),
+        ProjectLink("Dotfiles", "/projects/dotfiles/", "http://jleajones.com/assets/images/dotfiles.png")
+    ]
+    shuffle(projects)
+    return projects

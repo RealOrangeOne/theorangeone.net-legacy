@@ -32,8 +32,9 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-import social
-SOCIAL = social.generate()
+import links
+SOCIAL = links.social()
+INDEX_PROJECTS = links.index_projects()
 
 # Disable some pages
 TAG_URL = False
