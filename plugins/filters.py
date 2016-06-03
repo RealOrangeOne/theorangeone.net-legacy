@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 def format_datetime(value):
-    return iso8601.parse_date(str(value)).strftime("%x %-H:%M")
+    return iso8601.parse_date(str(value)).strftime("%x")
 
 
 def html_to_raw(html):
@@ -18,3 +18,9 @@ def category_find(categories, name):
         if category_name == name:
             return articles
     return []
+
+
+def limit(line, length):
+    if len(line) <= length:
+        return line
+    return " ".join(line.split(" ")[:length]) + '...'
