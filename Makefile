@@ -25,7 +25,7 @@ clean:
 
 install: env node_modules pelican_plugins
 
-pelican_plugins:
+pelican_plugins: env
 	git clone --recursive https://github.com/getpelican/pelican-plugins --depth=1 pelican_plugins/
 	@echo ">> Hotfixing..."
 	rm -rf pelican_plugins/pelican-jinja2content
@@ -35,7 +35,7 @@ env:
 	pyvenv env
 	$(ENV)/pip install -r requirements.txt
 
-node_modules:
+node_modules: env
 	@source ~/.nvm/nvm.sh && nvm install
 	npm install
 
