@@ -3,15 +3,8 @@
   "version": "4.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
-    "lint-js": "eslint 'theme/static/src/js/'",
-    "lint-scss": "sass-lint -vqc .sass-lint.yml",
-    "build": "npm run create-build-dirs && npm run build-fonts && npm run build-js && npm run build-scss",
     "build-js": "./scripts/build-js.sh",
-    "build-scss": "./scripts/build-scss.sh",
-    "build-fonts": "cp -R node_modules/font-awesome/fonts theme/static/build/",
-    "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css",
-    "test": "npm run lint-js && npm run lint-scss",
-    "spellcheck": "mdspell --en-gb -ranx \"templates/**/*.*\""
+    "build-scss": "./scripts/build-scss.sh"
   },
   "repository": {
     "type": "git",

@@ -8,12 +8,12 @@ machine:
 
 dependencies:
   pre:
-    - ./build
+    - make
   cache_directories:
     - env
     - node_modules
-    - plugins
+    - pelican_plugins
 
 test:
   override:
-    - ./runtests
+    - make test
