@@ -8,6 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 FLAKE8_IGNORE=--ignore=E128,E501,E401,E402
 
 build: install
+	rm -rf $(OUTPUTDIR)/*
 	@echo ">> Building static data..."
 	mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css
 	cp -R node_modules/font-awesome/fonts theme/static/build/
