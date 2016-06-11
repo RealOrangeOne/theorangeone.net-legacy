@@ -15,11 +15,9 @@ DEFAULT_LANG = 'en'
 PAGE_PATHS = ["pages"]
 THEME = "theme"
 THEME_STATIC_DIR = "static"
-THEME_STATIC_PATHS = ['static/build']
-STATIC_PATHS = ["assets", "assets/favicon.ico"]
-EXTRA_PATH_METADATA = {
-    "assets/favicon.ico": {"path": "favicon.ico"}
-}
+THEME_STATIC_PATHS = ["static/build"]
+STATIC_PATHS = ["assets"]
+
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_PAGINATION = False
 SLUGIFY_SOURCE = 'basename'
