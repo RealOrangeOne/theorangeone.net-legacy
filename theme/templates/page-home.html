@@ -4,6 +4,12 @@
   {{ page.title }}
 {% endblock %}
 
+{% block metadata %}
+  {% for tag, value in page.ogtags %}
+    <meta property="{{ tag }}" content="{{ value|striptags|e }}" />
+  {% endfor %}
+{% endblock %}
+
 {% block content %}
   {{ page.content }}
 {% endblock %}

@@ -4,6 +4,12 @@
   {{ article.title }}
 {% endblock %}
 
+{% block metadata %}
+  {% for tag, value in page.ogtags %}
+    <meta property="{{ tag }}" content="{{ value|striptags|e }}" />
+  {% endfor %}
+{% endblock %}
+
 {% block content %}
   <section class="bg-primary">
     <div class="container text-center text-uppercase">

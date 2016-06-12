@@ -58,8 +58,8 @@ FEED_ATOM = 'feed.atom'
 FEED_DOMAIN = SITEURL
 
 # Setup plugins
-PLUGIN_PATHS = ["pelican_plugins"]
-PLUGINS = ["sitemap", "filetime_from_git", "pelican-jinja2content"]
+PLUGIN_PATHS = ["pelican_plugins", "plugins"]
+PLUGINS = ["sitemap", "filetime_from_git", "pelican-jinja2content", "open_graph"]
 
 SITEMAP = {
     "format": "xml"
