@@ -43,7 +43,6 @@ env:
 	$(ENV)/pip install -r requirements.txt
 
 node_modules: env
-	@source ~/.nvm/nvm.sh && nvm install
 	npm install
 
 
