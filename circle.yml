@@ -14,3 +14,9 @@ test:
   override:
     - make build
     - make test
+
+deployment:
+  production:
+    branch: v4
+    commands:
+      - make upload
