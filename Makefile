@@ -5,6 +5,10 @@ PELICAN=$(ENV)/pelican
 BASEDIR=$(PWD)
 OUTPUTDIR=$(BASEDIR)/output
 
+SSH_USER=web
+SSH_HOST=theorangeone.net
+SSH_TARGET_DIR=/home/web/v4-theorangeone.net/site  # Dev path only!
+
 FLAKE8_IGNORE=--ignore=E128,E501,E401,E402
 
 build: install
@@ -53,4 +57,8 @@ lint:
 	$(ENV)/flake8 $(BASEDIR)/pelicanconf.py $(FLAKE8_IGNORE)
 
 
-.PHONY: build clean test lint install
+upload: build
+	rsync -e "/usr/bin/ssh" -rvz --delete $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+
+
+.PHONY: build clean test lint install upload
