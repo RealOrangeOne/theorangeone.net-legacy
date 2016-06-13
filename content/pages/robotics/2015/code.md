@@ -1,8 +1,6 @@
 title: The Code
 html_title: The Code | SR2015
 slug: robotics/2015/code
-template: page-title
-
 
 The code used for this competition was by far the most complicated and advanced code that had ever been written by a Collyer's team.
 

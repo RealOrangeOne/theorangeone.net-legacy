@@ -1,4 +1,3 @@
-template: page-title
 title: The Robot - A.L.I.C.E
 html_title: The Robot | SR2015
 slug: robotics/2015/robot

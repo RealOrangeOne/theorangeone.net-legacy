@@ -33,7 +33,7 @@
                     {{ article.title }}
                   </div>
                   <div class="project-name">
-                    {{ article.summary|raw }}
+                    {{ article.summary|striptags|e }}
                   </div>
                 </div>
               </div>

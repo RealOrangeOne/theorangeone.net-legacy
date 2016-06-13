@@ -1,5 +1,4 @@
 title: Student Robotics
-template: page-title
 slug: robotics
 
 

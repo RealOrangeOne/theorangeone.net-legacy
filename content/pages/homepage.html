@@ -113,7 +113,7 @@
                 <div class="row">
                   <div class="col-xs-12 text-left">
                     <h3>{{ article.title }}</h3>
-                    <p>{{ article.summary|raw|limit(30) }}</p>
+                    <p>{{ article.summary|striptags|e|limit(30) }}</p>
                   </div>
                 </div>
                 <hr class="light">
