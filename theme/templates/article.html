@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {{ article.html_title or article.title }}
+{% endblock %}
+
+{% block metadata %}
+  {% for tag, value in article.ogtags %}
+    <meta property="{{ tag }}" content="{{ value|striptags|e }}" />
+  {% endfor %}
+{% endblock %}
+
+{% block content %}
+  <section class="bg-primary">
+    <div class="container text-center text-uppercase">
+      <h1 class="section-heading uppercase">{{ article.title }}</h1>
+      <hr class="light">
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      {{ article.content }}
+    </div>
+  </section>
+{% endblock %}
