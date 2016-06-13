@@ -20,6 +20,7 @@ build: install
 	npm run build-scss
 	@echo ">> Building pelican..."
 	$(PELICAN) -o $(OUTPUTDIR) -v
+	mv $(OUTPUTDIR)/assets/robots.txt $(OUTPUTDIR)
 	cp -R $(OUTPUTDIR)/assets/* $(OUTPUTDIR)/static
 	rm -rf $(OUTPUTDIR)/assets
 
