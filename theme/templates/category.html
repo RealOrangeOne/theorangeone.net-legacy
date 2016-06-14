@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-  All {{ category }}
+  {{ category|title }}
 {% endblock %}
 
 {% block metadata %}
@@ -15,13 +15,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h1 class="section-heading">About Me</h1>
+          <h1 class="section-heading">{{ category|title }}</h1>
           <hr class="light">
         </div>
       </div>
     </div>
   </section>
-  <section class="no-padding" id="projects">
+  <section class="no-padding">
     <div class="container-fluid">
       <div class="row no-gutter">
         {% for article in dates %}
@@ -33,7 +33,7 @@
                     {{ article.title }}
                   </div>
                   <div class="project-name">
-                    {{ article.summary|striptags|e }}
+                    {{ article.title }}
                   </div>
                 </div>
               </div>
