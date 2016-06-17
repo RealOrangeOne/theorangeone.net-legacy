@@ -22,14 +22,9 @@ USE_FOLDER_AS_CATEGORY = True
 DEFAULT_PAGINATION = False
 SLUGIFY_SOURCE = 'basename'
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
 # Social widget
 import links
+ACCOUNTS = links.accounts()
 FOOTER_LINKS = links.footer()
 INDEX_PROJECTS = links.index_projects()
 

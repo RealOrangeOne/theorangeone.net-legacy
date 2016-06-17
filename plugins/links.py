@@ -1,8 +1,6 @@
 from collections import namedtuple
 from random import shuffle
 
-
-SocialLink = namedtuple("SocialLink", ["name", "url", "icon"])
 ProjectLink = namedtuple("ProjectLink", ["name", "url", "image"])
 Account = namedtuple("Account", ["name", "url", "icon", "username"])
 
