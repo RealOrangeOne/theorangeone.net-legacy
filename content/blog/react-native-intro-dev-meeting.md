@@ -9,7 +9,7 @@ The workflow that we needed to adopt to use react native is an odd one. To keep 
 
 After one of the developers wanted to know our workflow, with a couple of potential app projects on the horizon, I set about creating a talk for our (_usually_) bi-weekly dev meetings. With the aim of trying to get everyone up to speed all in 1 go.
 
-The slides from my talk are available on my [GitHub]({{ SOCIAL.github.url }}/react-native-intro-dev-meeting) page, and whilst they are primarily relevant to our workflow, I hope they will be able to help anyone else looking to get started with React Native.
+The slides from my talk are available on my [GitHub](https://github.com/RealOrangeOne/react-native-intro-dev-meeting) page, and whilst they are primarily relevant to our workflow, I hope they will be able to help anyone else looking to get started with React Native.
 
 React Native is a tricky platform to get started on, but once you understand the _qwerks_, it truly is the future of cross-platform mobile development!
 

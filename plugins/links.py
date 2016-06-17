@@ -4,17 +4,28 @@ from random import shuffle
 
 SocialLink = namedtuple("SocialLink", ["name", "url", "icon"])
 ProjectLink = namedtuple("ProjectLink", ["name", "url", "image"])
+Account = namedtuple("Account", ["name", "url", "icon", "username"])
 
 
-def social():
-    return {
-        "github": SocialLink("GitHub", "https://github.com/RealOrangeOne", "fa-github"),
-        "twitter": SocialLink("Twitter", "https://twitter.com/RealOrangeOne", "fa-twitter"),
-        "reddit": SocialLink("Reddit", "https://reddit.com/user/RealOrangeOne", "fa-reddit"),
-        "instagram": SocialLink("Instagram", "https://instagram.com/RealOrangeOne", "fa-instagram"),
-        "youtube": SocialLink("YouTube", "https://youtube.com/user/TheOrangeOneOfficial", "fa-youtube"),
-        "flickr": SocialLink("Flickr", "https://www.flickr.com/photos/theorangeone/", "fa-flickr")
+def accounts():
+    links = {
+        "github": Account("GitHub", "https://github.com/RealOrangeOne/", "fa-github", "RealOrangeOne"),
+        "twitter": Account("Twitter", "https://twitter.com/RealOrangeOne", "fa-twitter", "@RealOrangeOne"),
+        "reddit": Account("Reddit", "https://reddit.com/user/RealOrangeOne", "fa-reddit", "/u/RealOrangeOne"),
+        "instagram": Account("Instagram", "https://instagram.com/RealOrangeOne", "fa-instagram", "RealOrangeOne"),
+        "youtube": Account("YouTube", "https://youtube.com/user/TheOrangeOneOfficial", "fa-youtube", "TheOrangeOneOfficial"),
+        "flickr": Account("Flickr", "https://flickr.com/photos/TheOrangeOne/", "fa-flickr", "TheOrangeOne"),
     }
+    return links
+
+
+def footer():
+    footer_accounts = ["github", "twitter", "reddit", "instagram", "youtube", "flickr"]
+    all_accounts = accounts()
+    footer_links = []
+    for account in footer_accounts:
+        footer_links.append(all_accounts[account])
+    return footer_links
 
 
 def index_projects():

@@ -30,7 +30,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 import links
-SOCIAL = links.social()
+FOOTER_LINKS = links.footer()
 INDEX_PROJECTS = links.index_projects()
 
 # Disable some pages

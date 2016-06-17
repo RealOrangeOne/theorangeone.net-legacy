@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12">
         <p class="social">
-          {% for key, link in SOCIAL.items()|sort %}
+          {% for link in FOOTER_LINKS|sort %}
             <a href="{{ link.url }}"><i class="fa {{ link.icon }}"></i></a>
           {% endfor %}
         </p>
