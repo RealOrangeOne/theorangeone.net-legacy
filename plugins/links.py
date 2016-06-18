@@ -13,6 +13,13 @@ def accounts():
         "instagram": Account("Instagram", "https://instagram.com/RealOrangeOne", "fa-instagram", "RealOrangeOne"),
         "youtube": Account("YouTube", "https://youtube.com/user/TheOrangeOneOfficial", "fa-youtube", "TheOrangeOneOfficial"),
         "flickr": Account("Flickr", "https://flickr.com/photos/TheOrangeOne/", "fa-flickr", "TheOrangeOne"),
+        "bitbucket": Account("BitBucket", "https://bitbucket.org/TheOrangeOne", "fa-bitbucket", "TheOrangeOne"),
+        "trello": Account("Trello", "https://trello.com/TheOrangeOne", "fa-trello", "TheOrangeOne"),
+        "freenode": Account("Freenode", "https://webchat.freenode.net", "fa-rss", "TheOrangeOne"),
+        "atomio": Account("Atomio Slack", "https://atomio.slack.com", "fa-slack", "TheOrangeOne"),
+        "pcpartpicker": Account("PCPartPicker", "https://uk.pcpartpicker.com/user/theorangeone97", "fa-desktop", "TheOrangeOne97"),
+        "codepen": Account("CodePen", "https://codepen.io/TheOrangeOne", "fa-codepen", "TheOrangeOne"),
+        "npm": Account("npm", "https://www.npmjs.com/~TheOrangeOne", "fa-file-code-io", "TheOrangeOne")
     }
     return links
 
