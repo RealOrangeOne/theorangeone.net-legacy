@@ -62,7 +62,8 @@ SITEMAP = {
 
 # Setup markdown extensions
 from fontawesome_markdown import FontAwesomeExtension
-MD_EXTENSIONS = [FontAwesomeExtension(), 'codehilite(css_class=highlight)', 'extra']
+from pyembed.markdown import PyEmbedMarkdown
+MD_EXTENSIONS = [FontAwesomeExtension(), PyEmbedMarkdown(), 'codehilite(css_class=highlight)', 'extra']
 
 # Setup jinja2 filters
 import filters

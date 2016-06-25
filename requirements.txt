@@ -1,7 +1,7 @@
-beautifulsoup4==4.4.1
 flake8==2.5.0
 fontawesome_markdown==0.2.5
 gitpython==2.0.3
 iso8601==0.1.11
 markdown==2.6.6
 pelican==3.6.3
+pyembed-markdown==1.1.0
