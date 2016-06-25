@@ -4,6 +4,7 @@ PELICAN=$(ENV)/pelican
 
 BASEDIR=$(PWD)
 OUTPUTDIR=$(BASEDIR)/output
+PLUGINS_DIR=$(BASEDIR)/pelican_plugins
 
 SSH_USER=web
 SSH_HOST=theorangeone.net
@@ -28,16 +29,19 @@ clean:
 	rm -rf $(OUTPUTDIR)/*
 	rm -rf $(BASEDIR)/env/
 	rm -rf $(BASEDIR)/node_modules/
-	rm -rf $(BASEDIR)/pelican_plugins/
+	rm -rf $(PLUGINS_DIR)/*
 
 
 install: env node_modules pelican_plugins
 
 pelican_plugins: env
-	git clone --recursive https://github.com/getpelican/pelican-plugins --depth=1 pelican_plugins/
+	rm -rf $(PLUGINS_DIR) || "No existing extensions"
+	git clone --recursive https://github.com/getpelican/pelican-plugins --depth=10 $(PLUGINS_DIR) || "Git Fail"
 	@echo ">> Hotfixing..."
-	rm -rf pelican_plugins/pelican-jinja2content
-	git clone https://github.com/RealOrangeOne/pelican-jinja2content -b patch-1 --depth=1 pelican_plugins/pelican-jinja2content
+	rm -rf $(PLUGINS_DIR)/pelican-jinja2content
+	git clone https://github.com/RealOrangeOne/pelican-jinja2content -b patch-1 --depth=1 $(PLUGINS_DIR)/pelican-jinja2content
+	rm -rf $(PLUGINS_DIR)/ace_editor/static/ace-build
+	git clone https://github.com/ajaxorg/ace-builds --depth=1 $(PLUGINS_DIR)/ace_editor/static/ace-build  --recursive  # Fix because reasons I don't quite understand
 
 env:
 	pyvenv env
