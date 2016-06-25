@@ -68,7 +68,6 @@ MD_EXTENSIONS = [FontAwesomeExtension(), 'codehilite(css_class=highlight)', 'ext
 import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
-    "raw": filters.html_to_raw,
     "category_find": filters.category_find,
     "limit": filters.limit
 }
