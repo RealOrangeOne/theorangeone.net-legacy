@@ -54,11 +54,13 @@ FEED_DOMAIN = SITEURL
 
 # Setup plugins
 PLUGIN_PATHS = ["pelican_plugins", "plugins"]
-PLUGINS = ["sitemap", "filetime_from_git", "pelican-jinja2content", "open_graph"]
+PLUGINS = ["sitemap", "filetime_from_git", "pelican-jinja2content", "open_graph", "autopages"]
 
 SITEMAP = {
     "format": "xml"
 }
+
+CATEGORY_PAGE_PATH = "theme/templates/categories"
 
 # Setup markdown extensions
 from fontawesome_markdown import FontAwesomeExtension

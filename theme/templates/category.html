@@ -15,12 +15,19 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h1 class="section-heading">{{ category|title }}</h1>
+          <h1 class="section-heading">{{ category.name|title }}</h1>
           <hr class="light">
         </div>
       </div>
     </div>
   </section>
+  {% if category.page %}
+    <section>
+      <div class="container">
+        {{ category.page.content }}
+      </div>
+    </section>
+  {% endif %}
   <section class="no-padding">
     <div class="container-fluid">
       <div class="row no-gutter">
@@ -33,7 +40,7 @@
                     {{ article.title }}
                   </div>
                   <div class="project-name">
-                    {{ article.title }}
+                    {{ article.summary|striptags|e }}
                   </div>
                 </div>
               </div>
