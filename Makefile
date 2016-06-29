@@ -36,12 +36,10 @@ install: env node_modules pelican_plugins
 
 pelican_plugins: env
 	rm -rf $(PLUGINS_DIR) || "No existing extensions"
-	git clone --recursive https://github.com/getpelican/pelican-plugins --depth=10 $(PLUGINS_DIR) || "Git Fail"
+	git clone --recursive https://github.com/getpelican/pelican-plugins $(PLUGINS_DIR) || "Git Fail"
 	@echo ">> Hotfixing..."
 	rm -rf $(PLUGINS_DIR)/pelican-jinja2content
 	git clone https://github.com/RealOrangeOne/pelican-jinja2content -b patch-1 --depth=1 $(PLUGINS_DIR)/pelican-jinja2content
-	rm -rf $(PLUGINS_DIR)/ace_editor/static/ace-build
-	git clone https://github.com/ajaxorg/ace-builds --depth=1 $(PLUGINS_DIR)/ace_editor/static/ace-build  --recursive  # Fix because reasons I don't quite understand
 
 env:
 	pyvenv env
