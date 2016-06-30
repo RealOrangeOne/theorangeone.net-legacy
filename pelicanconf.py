@@ -65,7 +65,14 @@ CATEGORY_PAGE_PATH = "theme/templates/categories"
 # Setup markdown extensions
 from fontawesome_markdown import FontAwesomeExtension
 from pyembed.markdown import PyEmbedMarkdown
-MD_EXTENSIONS = [FontAwesomeExtension(), PyEmbedMarkdown(), 'codehilite(css_class=highlight)', 'extra']
+from mkdcomments import CommentsExtension
+MD_EXTENSIONS = [
+    FontAwesomeExtension(),
+    PyEmbedMarkdown(),
+    CommentsExtension(),
+    'codehilite(css_class=highlight)',
+    'extra'
+]
 
 # Setup jinja2 filters
 import filters
