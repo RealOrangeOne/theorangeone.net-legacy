@@ -16,3 +16,8 @@ def limit(line, length):
     if len(line) <= length:
         return line
     return " ".join(line.split(" ")[:length]) + '...'
+
+
+def format_title(value):
+    space_split = " ".join(value.split("-"))
+    return space_split.title()
