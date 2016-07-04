@@ -13,9 +13,12 @@ def category_find(categories, name):
 
 
 def limit(line, length):
-    if len(line) <= length:
-        return line
-    return " ".join(line.split(" ")[:length]) + '...'
+    if isinstance(line, str):
+        if len(line) <= length:
+            return line
+        return " ".join(line.split(" ")[:length]) + '...'
+    elif isinstance(line, list):
+        return line[:length]
 
 
 def format_title(value):
