@@ -12,12 +12,7 @@
 
 {% block content %}
   {% if not page.no_container %}
-    <section class="bg-primary">
-      <div class="container text-center text-uppercase">
-        <h1 class="section-heading uppercase">{{ page.title }}</h1>
-        <hr class="light">
-      </div>
-    </section>
+    {% include 'extras/header.html' with context %}
     <section>
       <div class="container">
         {{ page.content }}
