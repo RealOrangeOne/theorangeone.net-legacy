@@ -45,3 +45,9 @@ p a {
   background-position: center;
   background-size: cover;
 }
+
+.container > img,
+.container p > img {
+  margin: 10px 0;
+  width: 100%;
+}
