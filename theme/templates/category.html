@@ -34,7 +34,11 @@
         <div class="row no-gutter">
           {% for article in dates %}
             <div class="col-lg-4 col-sm-6">
-              <a href="#" class="portfolio-box">
+              {% if article.image %}
+                <a href="/{{ article.url }}" class="portfolio-box image" data-image="{{ article.image }}">
+              {% else %}
+                <a href="/{{ article.url }}" class="portfolio-box show" >
+              {% endif %}
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category">
