@@ -1,6 +1,7 @@
 title: BSOD Enabler
 template: projects
 slug: bsod-enabler
+summary: Call a _Blue Screen of Death_ on demand! It's more fun than it sounds
 
 For those that use Windows, the famous [Blue Screen of Death](https://en.wikipedia.org/wiki/Blue_Screen_of_Death) is an annoyance that plagues computers, causing error, frustration, and even data loss. They happened to me a lot whilst I was trying to configure my computer, and I thought _I wonder who else I can annoy with a BSOD_
 

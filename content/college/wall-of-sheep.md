@@ -1,5 +1,6 @@
 title: Wall of Sheep
 slug: wall-of-sheep
+summary: Hacking is fun!
 
 
 Personally, I dislike being limited by technology. If there's a system in place like a proxy filter, network restrictions, or even any remote control software, I just have to try and break through it or work around it. This was mostly the case at college.
