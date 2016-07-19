@@ -25,6 +25,7 @@
       {% if article.download_link %}
         <a class="btn btn-primary btn-xl" href="{{ article.download_link }}">Download {{ article.title }}</a>
       {% endif %}
+
       {% if article.repo %}
         <a class="btn btn-github btn-xl" href="{{ article.repo }}"><i class="fa fa-github fa-lg"></i> View on Github</a>
       {% endif %}
