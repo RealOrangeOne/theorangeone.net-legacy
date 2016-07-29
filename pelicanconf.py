@@ -62,7 +62,7 @@ PLUGINS = [
     "minify"
 ]
 
-if "DEBUG" in os.environ:
+if "BUILD_PRODUCTION" in os.environ:
     PLUGINS.append("minify")  # only minify on production build
 
 SITEMAP = {
