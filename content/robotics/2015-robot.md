@@ -17,27 +17,27 @@ slug: 2015/robot
 The entire chassis was made from sheets of plywood, which we laser cut in college, allowing us to be very precise in the design of the robot to make sure that all the pieces would fit together properly, making the chassis less likely to break.
 
 
-The initial design was concieved by Ben, at kickstart, and was then refined over the coming weeks by me and the rest of the building team. This was made much easier from the use of the 3d model, that ben made, which helped us visualize any changes that were to be made, as well as work out strategy by seeing the measurements we had to work with.
+The initial design was conceived by Ben, at kickstart, and was then refined over the coming weeks by me and the rest of the building team. This was made much easier from the use of the 3D model, that Ben made, which helped us visualize any changes that were to be made, as well as work out strategy by seeing the measurements we had to work with.
 
 
 Once the build was completed, it was to a much higher design and quality than I could have ever imagined! It allowed us to forget about any shortcomings when it came to chassis, not having to compensate for weight distribution, or worry about the grip on the wheels.
 
 <div class="image-panel" data-image="https://farm1.staticflickr.com/737/20984044320_ccbba155f9_o.gif"></div>
 
-## Why call it 'A.L.I.C.E'?
+## Why call it _A.L.I.C.E_?
 The decision to name the robot 'Alice' was a decision made by the whole group!
 
 
-Thats a lie, Ben suggested it and as no one had any better ideas and because he gets overruling vote on this, for some reason , it stuck.
+That's a lie, Ben suggested it and as no one had any better ideas and because he gets overruling vote on this, for some reason , it stuck.
 
 
 After this decisions was made, I decided to set out to find the cheesiest acronym we could for 'Alice', to make the name slightly more interesting, and not some random girls name pulled from thin air on the bus ride home from kickstart. There were a few rather good ideas, most of them coming from Sam:
 
 - 'Automated Laser-cut Interactive Capturing Entity'</li>
-- 'Abnormally Lame and Innacurate Control-less Engine'</li>
+- 'Abnormally Lame and Inaccurate Control-less Engine'</li>
 - 'Anti-Losing Immaculate Competitive Extravaganza'</li>
 
-One idea was also suggested that we name the robot after the first sponsor we got, but as we didnt get one until after the team split, the other team took that name instead. In the end we decided to go with one that Sam initially suggested, so 'ALICE' officially stands for:
+One idea was also suggested that we name the robot after the first sponsor we got, but as we didn't get one until after the team split, the other team took that name instead. In the end we decided to go with one that Sam initially suggested, so 'ALICE' officially stands for:
 
 <h3 class="text-center">'Autonomous Logistics and Inevitable Collision Engine'</h3>
 

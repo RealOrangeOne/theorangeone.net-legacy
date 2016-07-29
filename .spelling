@@ -1,0 +1,57 @@
+# markdown-spellcheck spelling configuration file
+# Format - lines beginning # are comments
+# global dictionary is at the start, file overrides afterwards
+# one word per line, to define a file override use ' - filename'
+# where filename is relative to this configuration file
+_list
+kickstart
+olds
+sitemap.xml
+gittime
+protonmail
+hotmail
+swiss
+fastmail
+rackspace
+runbox
+dabapps
+qwerks
+LanSchool
+astrill
+OpenVPN
+config
+openvpn-compatable
+_link
+pygame
+easter
+bsod-enabler
+_enabler
+dotfiles
+owncloud
+hipchat
+jakesidsmith
+facepalm
+notsureif
+wat
+plugin
+firefox
+jetpack
+javascript
+jsfuckify
+morese-code-decoder
+morse-code
+morse
+centers
+backends
+wikipedia
+iframe
+querystring
+jQuery
+gists
+lenovo
+_title
+collyer's
+til
+A.L.I.C.E
+ethernet
+everyones
