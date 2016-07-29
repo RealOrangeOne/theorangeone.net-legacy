@@ -3,6 +3,8 @@ machine:
     version: 3.5.1
   node:
     version: 5.11.1
+  environment:
+    DEBUG: false
 
 dependencies:
   pre:

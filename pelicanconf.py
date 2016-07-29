@@ -62,12 +62,17 @@ PLUGINS = [
     "minify"
 ]
 
+if "DEBUG" in os.environ:
+    PLUGINS.append("minify")  # only minify on production build
+
 SITEMAP = {
     "format": "xml"
 }
 CATEGORY_PAGE_PATH = "theme/templates/categories"
 MINIFY = {
-    "remove_comments": True
+    "remove_comments": True,
+    "remove_optional_attribute_quotes": False,
+    "reduce_boolean_attributes": True
 }
 
 # Setup markdown extensions
