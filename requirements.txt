@@ -1,6 +1,6 @@
 flake8==2.5.0
 fontawesome_markdown==0.2.5
-gitpython==2.0.3
+gitpython==2.0.7
 iso8601==0.1.11
 markdown==2.6.6
 git+https://github.com/ryneeverett/python-markdown-comments.git

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-
+from git import Repo
 import sys, os
 sys.path.insert(0, os.path.realpath('./plugins'))
 
@@ -26,6 +26,7 @@ import links
 ACCOUNTS = links.accounts()
 FOOTER_LINKS = links.footer()
 INDEX_PROJECTS = links.index_projects()
+REPO = Repo(search_parent_directories=True)
 
 # Disable some pages
 TAG_URL = False
