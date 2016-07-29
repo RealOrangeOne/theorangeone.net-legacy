@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 from pelican import signals
 import os.path
 
@@ -6,15 +7,22 @@ def get_content_type(instance):
     return type(instance).__name__
 
 
+def html_to_raw(html):
+    summary = BeautifulSoup(html, "html.parser")
+    for script in summary(["script", "style"]):  # Remove extra tags
+        script.extract()
+    return summary.get_text()
+
+
 def get_twiter_tags(instance):
     return {
         "twitter:card": "summary_large_image",
         "twitter:site": instance.settings.get("ACCOUNTS")["twitter"].username,
         "twitter:title": instance.metadata.get("title", ""),
-        "twitter:description": instance.metadata.get("summary", ""),
+        "twitter:description": html_to_raw(instance.metadata.get("summary", "")),
         "twitter:creator": instance.settings.get("ACCOUNTS")["twitter"].username,
         "twitter:image": instance.metadata.get("image", ""),
-        "twitter:image:alt": instance.metadata.get("summary", ""),
+        "twitter:image:alt": html_to_raw(instance.metadata.get("summary", "")),
         "twitter:url": os.path.join(instance.settings.get("SITEURL", ""), instance.url)
     }
 
@@ -25,7 +33,7 @@ def get_og_tags(instance):
         "og:type": get_content_type(instance).lower(),
         "og:url": os.path.join(instance.settings.get("SITEURL"), instance.url),
         "og:image": instance.metadata.get("image", ""),
-        "og:description": instance.metadata.get("summary", ""),
+        "og:description": html_to_raw(instance.metadata.get("summary", "")),
         "og:site_name": instance.settings.get("SITENAME"),
         "og:locale": instance.metadata.get("locale", "en_GB")
     }
@@ -34,7 +42,7 @@ def get_og_tags(instance):
 def get_schema_tags(instance):
     return {
         "name": instance.metadata.get("title", ""),
-        "description": instance.metadata.get("summary", ""),
+        "description": html_to_raw(instance.metadata.get("summary", "")),
         "image": instance.metadata.get("image", "")
     }
 
@@ -45,7 +53,7 @@ def get_general_tags(instance):
         "article:modified_time": instance.metadata.get("modified", ""),  # Set build time as default?
         "article:published_time": instance.metadata.get("date", ""),
         "article:section": instance.category.name if hasattr(instance, "category") else "",
-        "description": instance.metadata.get("summary", ""),
+        "description": html_to_raw(instance.metadata.get("summary", "")),
         "author": instance.metadata.get("author", instance.settings.get("AUTHOR")),
         "canonical": instance.settings.get("SITEURL")
     }
