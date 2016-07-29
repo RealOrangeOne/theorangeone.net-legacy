@@ -5,9 +5,7 @@
 {% endblock %}
 
 {% block metadata %}
-  {% for tag, value in article.ogtags %}
-    <meta property="{{ tag }}" content="{{ value|striptags|e }}" />
-  {% endfor %}
+  {{ article.metatags }}
 {% endblock %}
 
 {% block content %}
