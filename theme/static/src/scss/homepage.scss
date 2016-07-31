@@ -1,3 +1,9 @@
 header {
   min-height: 100%;
+  background-image: url("../img/header.jpg");
+
+  .header-content-inner p {
+    font-size: $font-size-h3 !important;
+    font-weight: 400 !important;
+  }
 }
