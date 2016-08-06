@@ -30,14 +30,12 @@
     <section>
       <div class="container">
         <div class="row no-gutter">
-          {% for article in dates %}
-            <div class="media">
-              <div class="media-body">
-                <a href="{{ article.url }}">
-                  <h3 class="media-heading">{{ article.title }}</h3>
-                </a>
-                <p>{{ article.summary|striptags|e }}</p>
-              </div>
+          {% for article in articles|sort(attribute="title") %}
+            <div class="category-item">
+              <a href="{{ article.url }}">
+                <h3>{{ article.title }}</h3>
+              </a>
+              <p>{{ article.summary|striptags|e }}</p>
             </div>
           {% endfor %}
         </div>
