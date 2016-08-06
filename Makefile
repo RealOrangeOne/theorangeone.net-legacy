@@ -1,6 +1,5 @@
-ENV=env/bin
 NODE_BIN=node_modules/.bin
-PELICAN=$(ENV)/pelican
+PELICAN=pelican
 
 BASEDIR=$(PWD)
 OUTPUTDIR=$(BASEDIR)/output
@@ -32,9 +31,9 @@ clean:
 	rm -rf $(PLUGINS_DIR)/*
 
 
-install: env node_modules pelican_plugins
+install: node_modules pelican_plugins
 
-pelican_plugins: env
+pelican_plugins:
 	rm -rf $(PLUGINS_DIR) || "No existing extensions"
 	git clone --recursive https://github.com/getpelican/pelican-plugins $(PLUGINS_DIR) || "Git Fail"
 	@echo ">> Hotfixing..."
@@ -43,9 +42,9 @@ pelican_plugins: env
 
 env:
 	pyvenv env
-	$(ENV)/pip install -r requirements.txt
+	pip install -r requirements.txt
 
-node_modules: env
+node_modules:
 	npm install
 
 
@@ -54,9 +53,9 @@ test: lint spellcheck
 lint:
 	$(NODE_BIN)/eslint 'theme/static/src/js/'
 	$(NODE_BIN)/sass-lint -vqc .sass-lint.yml
-	$(ENV)/flake8 $(BASEDIR)/plugins/ $(FLAKE8_IGNORE)
-	$(ENV)/flake8 $(BASEDIR)/scripts/ $(FLAKE8_IGNORE)
-	$(ENV)/flake8 $(BASEDIR)/pelicanconf.py $(FLAKE8_IGNORE)
+	flake8 $(BASEDIR)/plugins/ $(FLAKE8_IGNORE)
+	flake8 $(BASEDIR)/scripts/ $(FLAKE8_IGNORE)
+	flake8 $(BASEDIR)/pelicanconf.py $(FLAKE8_IGNORE)
 
 spellcheck:
 	$(NODE_BIN)/mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
