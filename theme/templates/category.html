@@ -32,7 +32,7 @@
         <div class="row no-gutter">
           {% for article in articles|sort(attribute="title") %}
             <div class="category-item">
-              <a href="{{ article.url }}">
+              <a href="/{{ article.url }}">
                 <h3>{{ article.title }}</h3>
               </a>
               <p>{{ article.summary|striptags|e }}</p>
