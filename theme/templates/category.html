@@ -31,11 +31,20 @@
       <div class="container">
         <div class="row no-gutter">
           {% for article in articles|sort(attribute="title") %}
-            <div class="category-item">
-              <a href="/{{ article.url }}">
-                <h3>{{ article.title }}</h3>
-              </a>
-              <p>{{ article.summary|striptags|e }}</p>
+            <div class="media categories">
+              {% if article.image %}
+                <div class="media-left">
+                  <a href="/{{ article.url }}">
+                    <img class="media-object" src="{{ article.image }}">
+                  </a>
+                </div>
+              {% endif %}
+              <div class="media-body">
+                <a href="/{{ article.url }}">
+                  <h4 class="media-heading">{{ article.title }}</h4>
+                </a>
+                <p>{{ article.summary|striptags|e }}</p>
+              </div>
             </div>
           {% endfor %}
         </div>
