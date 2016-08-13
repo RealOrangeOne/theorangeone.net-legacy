@@ -1,13 +1,11 @@
-NODE_BIN=node_modules/.bin
-PELICAN=pelican
-
 BASEDIR=$(PWD)
+ENV=$(BASEDIR)/env/bin
+NODE_BIN=node_modules/.bin
+PELICAN=$(ENV)/pelican
+
 OUTPUTDIR=$(BASEDIR)/output
 PLUGINS_DIR=$(BASEDIR)/pelican_plugins
-
-SSH_USER=web
-SSH_HOST=theorangeone.net
-SSH_TARGET_DIR=/home/web/v4-theorangeone.net/site  # Dev path only!
+DEPLOY_DIR=$(BASEDIR)/deploy
 
 FLAKE8_IGNORE=--ignore=E128,E501,E401,E402
 
@@ -42,7 +40,7 @@ pelican_plugins:
 
 env:
 	pyvenv env
-	pip install -r requirements.txt
+	$(ENV)/pip install -r requirements.txt
 
 node_modules:
 	npm install
@@ -53,9 +51,9 @@ test: lint spellcheck
 lint:
 	$(NODE_BIN)/eslint 'theme/static/src/js/'
 	$(NODE_BIN)/sass-lint -vqc .sass-lint.yml
-	flake8 $(BASEDIR)/plugins/ $(FLAKE8_IGNORE)
-	flake8 $(BASEDIR)/scripts/ $(FLAKE8_IGNORE)
-	flake8 $(BASEDIR)/pelicanconf.py $(FLAKE8_IGNORE)
+	$(ENV)/flake8 $(BASEDIR)/plugins/ $(FLAKE8_IGNORE)
+	$(ENV)/flake8 $(BASEDIR)/scripts/ $(FLAKE8_IGNORE)
+	$(ENV)/flake8 $(BASEDIR)/pelicanconf.py $(FLAKE8_IGNORE)
 
 spellcheck:
 	$(NODE_BIN)/mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
@@ -63,7 +61,10 @@ spellcheck:
 
 
 upload: build
-	rsync -e "/usr/bin/ssh" -rvz --delete $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+	git clone https://github.com/RealOrangeOne/host-container.git $(DEPLOY_DIR)
+	cp -rf $(OUTPUTDIR)/* $(DEPLOY_DIR)/site/
+	cd $(DEPLOY_DIR) && git remote add dokku $(DEPLOY_URL) && git add . && git commit -m "add files" && git push -f dokku master
+	rm -rf $(DEPLOY_DIR)
 
 
 .PHONY: build clean test lint install upload
