@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {{ article.title }}
+{% endblock %}
+
+{% block metadata %}
+  {{ article.metatags }}
+{% endblock %}
+
+{% block content %}
+  {% include 'extras/header.html' with context %}
+  <section>
+    <div class="container">
+      <p class="text-right small">
+          Updated: {{ article.date|datetime }}
+      </p>
+      {{ article.content }}
+    </div>
+  </section>
+  <div class="container text-center">
+    <div class="btn-group">
+      {% if article.download_link %}
+        <a class="btn btn-primary btn-xl" href="{{ article.download_link }}">Download {{ article.title }}</a>
+      {% endif %}
+
+      {% if article.repo %}
+        <a class="btn btn-github btn-xl" href="{{ article.repo }}"><i class="fa fa-github fa-lg"></i> View on Github</a>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

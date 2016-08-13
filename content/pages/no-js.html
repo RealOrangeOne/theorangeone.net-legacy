@@ -1,0 +1,65 @@
+<head>
+  <meta name="slug" content="no-js" />
+  <meta name="title" content="Javascript is disabled" />
+  <meta name="template" content="page-no-js">
+</head>
+<body>
+  <div class="jumbotron header">
+    <div class="container">
+      <h1>You have Javascript is disabled!</h1>
+    </div>
+  </div>
+  <div class="container message">
+    <p>
+      You appear to have javascript disabled. For my site to function properly, javascript must be enabled. To re-enable javascript, simply follow the instructions below.
+    </p>
+    <p>
+      After enabling javascript, the page should automatically redirect to the homepage. If it doesn't, just refresh the page, or <a href="/">Click here</a> to return home.
+    </p>
+  </div>
+  <div class="container">
+    <h2>Re-enabling Javascript in your browser</h2>
+    <div class="panel panel-primary" id="enable-firefox">
+      <div class="panel-heading">
+        <h3 class="panel-title">Re-enabling in Firefox</h3>
+      </div>
+      <div class="panel-body">
+        <ol>
+          <li>Navigate to 'about:config', using the browsers address bar.</li>
+          <li>Accept the security warning, and notice that no dragons lie ahead.</li>
+          <li>In the search bar, enter 'javascript'</li>
+          <li>Find the entry 'Javascript.enabled' (possibly using <kbd>ctrl + F</kbd>)</li>
+          <li>Toggle the entry by either double-clicking the entry, or right-clicking and selecting 'Toggle'.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel panel-green" id="enable-chrome">
+      <div class="panel-heading">
+        <h3 class="panel-title">Re-enabling in Chrome</h3>
+      </div>
+      <div class="panel-body">
+        <ol>
+          <li>Click the Chrome menu icon (<i class="fa fa-bars"></i>) in the top right hand corder of the window.</li>
+          <li>Click 'Settings'.</li>
+          <li>Under the 'Privacy' section, select 'Content settings'.</li>
+          <li>Under 'Javascript', select 'Allow all sites to run Javascript (Recommended)'.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel panel-blue" id="enable-ie">
+      <div class="panel-heading">
+        <h3 class="panel-title">Re-enabling in Internet Explorer</h3>
+      </div>
+      <div class="panel-body">
+        <ol>
+          <li>Select the gear icon in the top right hand corner (<i class="fa fa-cog"></i>), and click 'Internet Options'.</li>
+          <li>Select Security > Internet > Custom Level.</li>
+          <li>Scroll down until you find 'Scripting', and select 'Enable'</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>window.location.href=location.href.replace('/no-js', '');</script>
+</body>

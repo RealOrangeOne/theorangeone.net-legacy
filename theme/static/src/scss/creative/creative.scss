@@ -1,0 +1,344 @@
+@import "mixins";
+
+// Global Components
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-family-base;
+}
+
+hr {
+  border-width: 3px;
+  border-color: $brand-orange;
+  max-width: 50px;
+
+  &.light {
+    border-color: $white;
+  }
+}
+
+a {
+  transition: all 0.35s;
+  color: $brand-orange;
+
+  &:hover,
+  &:focus {
+    color: $brand-orange-dark;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.bg-primary {
+  background-color: $brand-orange;
+}
+
+.bg-dark {
+  background-color: $brand-grey-dark;
+  color: $white;
+}
+
+section {
+  padding: 100px 0;
+}
+
+aside {
+  padding: 50px 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+// Navigation
+
+.navbar-default {
+  transition: all 0.35s;
+  border-color: opacify($brand-grey-dark, 0.05);
+  background-color: $white;
+  font-family: $font-family-heading;
+
+  .navbar-header .navbar-brand {
+    text-transform: uppercase;
+    color: $brand-orange;
+    font-family: $font-family-heading;
+    font-weight: 700;
+
+    &:hover, &:focus {
+      color: darken($brand-orange, 10%);
+    }
+  }
+
+  .nav {
+    & > li {
+      & > a,
+      & > a:focus {
+        text-transform: uppercase;
+        color: $brand-grey-dark;
+        font-size: 13px;
+        font-weight: 700;
+
+        &:hover {
+          color: $brand-orange;
+        }
+      }
+
+      &.active {
+        & > a,
+        & > a:focus {
+          background-color: transparent;
+          color: $brand-orange !important;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    border-color: opacify($white, 0.3);
+    background-color: transparent;
+
+    .navbar-header .navbar-brand {
+      color: opacify($white, 0.7);
+
+      &:hover, &:focus {
+        color: $white;
+      }
+    }
+
+    .nav > li > a,
+    .nav > li > a:focus {
+      color: opacify($white, 0.7);
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &.affix {
+      border-color: opacify($brand-grey-dark, 0.05);
+      background-color: $white;
+
+      .navbar-header .navbar-brand {
+        color: $brand-orange;
+        font-size: 14px;
+
+        &:hover, &:focus {
+          color: darken($brand-orange, 10%);
+        }
+      }
+
+      .nav > li > a,
+      .nav > li > a:focus {
+        color: $brand-grey-dark;
+
+        &:hover {
+          color: $brand-orange;
+        }
+      }
+    }
+  }
+}
+
+// Homepage Header
+
+header {
+  position: relative;
+  background-image: url("../img/header.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  color: $white;
+
+  .header-content {
+    position: relative;
+    padding: 100px 15px;
+    width: 100%;
+    text-align: center;
+
+    .header-content-inner {
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      hr {
+        margin: 30px auto;
+      }
+
+      p {
+        margin-bottom: 50px;
+        color: opacify($white, 0.7);
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    min-height: 100%;
+
+    .header-content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0 50px;
+
+      .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+
+        p {
+          margin-right: auto;
+          margin-left: auto;
+          max-width: 80%;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// Sections
+
+.section-heading {
+  margin-top: 0;
+}
+
+.service-box {
+  margin: 50px auto 0;
+  max-width: 400px;
+
+  @media (min-width: 992px) {
+    margin: 20px auto 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.portfolio-box {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: 650px;
+
+  .portfolio-box-caption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.35s;
+    opacity: 0;
+    background: opacify($brand-orange, 0.9);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: $white;
+
+    .portfolio-box-caption-content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+
+      .project-category,
+      .project-name {
+        padding: 0 15px;
+        font-family: $font-family-heading;
+      }
+
+      .project-category {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .project-name {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &:hover {
+    .portfolio-box-caption {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .portfolio-box-caption {
+      .portfolio-box-caption-content {
+        .project-category {
+          font-size: 16px;
+        }
+
+        .project-name {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+.call-to-action h2 {
+  margin: 0 auto 20px;
+}
+
+.text-primary {
+  color: $brand-orange;
+}
+
+.no-gutter > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-default {
+  @include button-variant($brand-grey-dark, $white, $white);
+}
+
+.btn-primary {
+  @include button-variant($white, $brand-orange, $brand-orange);
+}
+
+.btn {
+  border: 0;
+  border-radius: 300px;
+  text-transform: uppercase;
+  font-family: $font-family-heading;
+  font-weight: 700;
+}
+
+.btn-xl {
+  padding: 15px 30px;
+}
+
+// Extras
+// -- Highlight Color Customization
+::selection {
+  background: $brand-grey-dark;
+  text-shadow: none;
+  color: $white;
+}
+
+img::selection {
+  background: transparent;
+  color: $white;
+}

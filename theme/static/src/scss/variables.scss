@@ -1,0 +1,19 @@
+$brand-orange-light: #FF7F00;
+$brand-orange: #F05F40;
+$brand-orange-dark: darken($brand-orange, 10%);
+$brand-grey-dark: #333;
+
+
+/* @group General Colours */
+$white: #FFF;
+/* @end General Colours */
+
+
+$footer-height: 175px;
+$font-family-heading: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+
+
+/* @group Bootstrap Overrides */
+$font-family-base: "Roboto", "Helvetica Neue", Arial, sans-serif;
+$brand-primary: $brand-orange;
+/* @end Bootstrap Overrides */

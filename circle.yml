@@ -1,20 +1,23 @@
 machine:
   python:
-    version: 3.4.2
+    version: 3.5.1
   node:
-    version: 5.10.1
+    version: 5.11.1
   environment:
-    DEBUG: true
-    DATABASE_URL: sqlite://~/database.db
-    EMAIL_BACKEND: django.core.mail.backends.console.EmailBackend
     BUILD_PRODUCTION: true
 
 dependencies:
   pre:
-    - ./build
-  cache_directories:
-    - env
+    - make install
+    - export NODE_ENV=production
+    - make build
 
 test:
   override:
-    - ./runtests
+    - make test
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - make upload

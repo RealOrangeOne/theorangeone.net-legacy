@@ -1,0 +1,71 @@
+@import "variables";  // Import variables before anything else
+
+
+/* @group Fonts */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,300,300italic,400italic,700italic");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,300italic,400italic,700italic");
+/* @end Fonts */
+
+
+/* @group Libraries */
+@import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "node_modules/animate.css/animate";
+
+$fa-font-path: "../fonts";
+@import "node_modules/font-awesome/scss/font-awesome";
+/* @end Libraries */
+
+
+/* @group Other Imports */
+@import "creative/creative";
+@import "pygment";
+@import "homepage";
+@import "footer";
+@import "library-overrides";
+@import "functional";
+/* @end Other Imports */
+
+
+hr.wide {
+  width: 100%;
+  max-width: initial;
+}
+
+p a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.btn i {
+  margin: 0 3px;
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container > img,
+.container p > img {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.portfolio-box {
+  background-color: $brand-grey-dark;
+  max-width: initial;
+  min-height: 300px;
+
+  &.show .portfolio-box-caption {
+    opacity: 1;
+  }
+
+  .portfolio-box-caption {
+    background-color: transparentize($brand-orange, 0.2);
+  }
+}
+
+.category-item {
+  padding: 1px 0;
+}

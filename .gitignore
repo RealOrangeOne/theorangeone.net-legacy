@@ -50,7 +50,6 @@ coverage.xml
 *.log
 collected-static/
 node_modules/
-static/build
 
 # Sphinx documentation
 docs/_build/
@@ -58,5 +57,10 @@ docs/_build/
 # PyBuilder
 target/
 
-private/
-database.db
+# Pelican stuff
+output/
+theme/static/build/
+pelican_plugins/
+
+theme/static/src/scss/pygment.css
+deploy/

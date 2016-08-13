@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {{ page.html_title or page.title }}
+{% endblock %}
+
+{% block metadata %}
+  {{ page.metatags }}
+{% endblock %}
+
+{% block content %}
+  {% if not page.no_container %}
+    {% include 'extras/header.html' with context %}
+    <section>
+      <div class="container">
+        {{ page.content }}
+      </div>
+    </section>
+  {% else %}
+    {{ page.content }}
+  {% endif %}
+{% endblock %}

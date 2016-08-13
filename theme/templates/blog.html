@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {{ article.title }}
+{% endblock %}
+
+{% block metadata %}
+  {{ article.metatags }}
+{% endblock %}
+
+{% block content %}
+  {% include 'extras/header.html' with context %}
+  <section>
+    <div class="container">
+      <p class="text-right small">
+        Published: {{ article.date|datetime }}
+      </p>
+      {{ article.content }}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,58 @@
+<head>
+  <meta name="slug" content="about" />
+  <meta name="title" content="About Me" />
+  <meta name="no_container" content="true" />
+</head>
+<body>
+  <section class="bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h1 class="section-heading">About Me</h1>
+          <hr class="light">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="me">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <p>
+            Hi, I'm Jake, a software engineer currently working for a company in Brighton. I've been working as a developer since mid-2015, and have been studying IT and computer science since 2013.
+            I work primarily as a full-stack developer, however more recently I've been working more on mobile apps.
+          </p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <div data-theme="medium" data-github="RealOrangeOne" class="github-card"></div>
+        </div>
+      </div>
+    </div>
+    <script async defer src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+  </section>
+  <section class="bg-primary" id="website">
+    <div class="container">
+      <h2>About my website</h2>
+      <p>
+        My website is the culmination of all my knowledge, compiled into 1 place. It not only contains all my projects, but it in itself is a project. Making sure this website works properly is a tall order, especially considering it's self hosted.
+      </p>
+      <p>
+        The site is primarily powered by <a href="http://getpelican.com">Pelican</a>, a static site generator. This converts markdown and HTML templates into static HTML files. The templates are generated using <a href="http://jinja.pocoo.org/">Jinja2</a>, a templating language similar to <a href="https://www.djangoproject.com/">Django</a>'s. This allows me to write nice clean, <i>DRY</i> content, and have it come out as clean HTML.
+      </p>
+      <p>
+        The static content (JS, CSS etc) is built using a custom build pipeline. The Javascript is built and compiled using <a href="https://babeljs.io/">Babel</a> and <a href="http://browserify.org/">Browserify</a>, and the CSS is written using <a href="https://github.com/sass/node-sass">node-SCSS</a> as a pre-processor.
+      </p>
+    </div>
+  </section>
+  <section id="server">
+    <div class="container">
+      <h2>The Server</h2>
+      <p>
+        The website is hosted on my <a href="">UK VPS</a>. Previous versions have been hosted on <a href="https://www.1and1.com/">1&amp;1</a> and <a href="http://www.myWindowsHosting.com/index?r=100196823">MyWindowsHosting</a>.
+      </p>
+      <p>
+        The static files are served using a <a href="https://github.com/RealOrangeOne/host-container">custom Express server</a>, which allows me to auto-deploy the site from my <a href="https://circleci.com/">CI</a>. This is then served using a custom, closed-source reverse proxy, which makes local development and domain switching much easier. This is pointed to by <a href="https://www.nginx.com/">NGINX</a>, which actually serves port 80.
+      </p>
+    </div>
+  </section>
+</body>

@@ -1,3 +1,0 @@
-DEBUG=false
-EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
-BUILD_PRODUCTION=true

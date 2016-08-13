@@ -1,0 +1,49 @@
+footer {
+  background-color: $brand-grey-dark;
+  padding-top: 20px;
+  width: 100%;
+  height: $footer-height;
+  text-align: center;
+  color: $white;
+
+  a {
+    color: $brand-orange-light;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .powered-by p {
+    font-size: $font-size-base;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: $brand-orange;
+      }
+    }
+  }
+
+  .social {
+    margin: 0;
+    padding: 7px;
+    font-size: 23px;
+
+    a {
+      margin: 0 4px;
+      color: $white;
+
+      &:hover {
+        color: $brand-orange-light;
+      }
+    }
+  }
+
+  .ci-badge {
+    margin-top: 10px;
+    height: $font-size-h3;
+  }
+}

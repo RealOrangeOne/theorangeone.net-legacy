@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {{ category|title }}
+{% endblock %}
+
+{% block metadata %}
+  {{ page.metatags }}
+{% endblock %}
+
+{% block content %}
+  <section class="bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h1 class="section-heading">{{ category.name|format_title }}</h1>
+          <hr class="light">
+        </div>
+      </div>
+    </div>
+  </section>
+  {% if category.page.content %}
+    <section>
+      <div class="container">
+        {{ category.page.content }}
+      </div>
+    </section>
+  {% endif %}
+  {% if not category.page.hide_list %}
+    <section>
+      <div class="container">
+        <div class="row no-gutter">
+          {% for article in articles|sort(attribute="title") %}
+            <div class="media categories">
+              {% if article.image %}
+                <div class="media-left">
+                  <a href="/{{ article.url }}">
+                    <img class="media-object" src="{{ article.image }}">
+                  </a>
+                </div>
+              {% endif %}
+              <div class="media-body">
+                <a href="/{{ article.url }}">
+                  <h4 class="media-heading">{{ article.title }}</h4>
+                </a>
+                <p>{{ article.summary|striptags|e }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}
