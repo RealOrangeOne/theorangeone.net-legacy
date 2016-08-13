@@ -1,6 +1,6 @@
 {
   "name": "TheOrangeOne-Site",
-  "version": "4",
+  "version": "4.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
     "build-js": "./scripts/build-js.sh",
