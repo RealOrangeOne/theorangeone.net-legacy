@@ -29,9 +29,9 @@ clean:
 	rm -rf $(PLUGINS_DIR)/*
 
 
-install: node_modules pelican_plugins
+install: env node_modules pelican_plugins
 
-pelican_plugins:
+pelican_plugins: env
 	rm -rf $(PLUGINS_DIR) || "No existing extensions"
 	git clone --recursive https://github.com/getpelican/pelican-plugins $(PLUGINS_DIR) || "Git Fail"
 	@echo ">> Hotfixing..."
