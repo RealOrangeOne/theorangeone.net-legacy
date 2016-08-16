@@ -26,7 +26,10 @@ import links
 ACCOUNTS = links.accounts()
 FOOTER_LINKS = links.footer()
 INDEX_PROJECTS = links.index_projects()
+
+# Extra config
 REPO = Repo(search_parent_directories=True)
+BUILD_PRODUCTION = 'BUILD_PRODUCTION' in os.environ
 
 # Disable some pages
 TAG_URL = False
@@ -59,11 +62,10 @@ PLUGINS = [
     "filetime_from_git",
     "pelican-jinja2content",
     "metatags",
-    "autopages",
-    "minify"
+    "autopages"
 ]
 
-if "BUILD_PRODUCTION" in os.environ:
+if BUILD_PRODUCTION:
     PLUGINS.append("minify")  # only minify on production build
 
 SITEMAP = {
