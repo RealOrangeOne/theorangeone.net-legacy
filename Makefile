@@ -63,7 +63,7 @@ spellcheck:
 upload: build
 	git clone https://github.com/RealOrangeOne/host-container.git $(DEPLOY_DIR)
 	cp -rf $(OUTPUTDIR)/* $(DEPLOY_DIR)/site/
-	cd $(DEPLOY_DIR) && git remote add dokku $(DEPLOY_URL) && git add . && git commit -m "add files" && git push -f dokku master
+	@cd $(DEPLOY_DIR) && git remote add dokku $(DEPLOY_URL) && git add . && git commit -m "add files" && git push -f dokku master --quiet
 	rm -rf $(DEPLOY_DIR)
 
 
