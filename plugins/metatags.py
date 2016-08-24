@@ -71,21 +71,21 @@ def tag_item(instance):
         if not value:
             continue
         metatags.append(
-            "<meta name='{0}' content='{1}' />".format(tag, value)
+            "<meta name=\"{0}\" content=\"{1}\" />".format(tag, value)
         )
 
     for tag, value in get_og_tags(instance).items():
         if not value:
             continue
         metatags.append(
-            "<meta property='{0}' content='{1}' />".format(tag, value)
+            "<meta property=\"{0}\" content=\"{1}\" />".format(tag, value)
         )
 
     for tag, value in get_schema_tags(instance).items():
         if not value:
             continue
         metatags.append(
-            "<meta itemprop='{0}' content='{1}' />".format(tag, value)
+            "<meta itemprop=\"{0}\" content=\"{1}\" />".format(tag, value)
         )
 
     general_tags = get_general_tags(instance).items()
@@ -97,7 +97,7 @@ def tag_item(instance):
         if not value:
             continue
         metatags.append(
-            "<meta name='{0}' content='{1}' />".format(tag, value)
+            "<meta name=\"{0}\" content=\"{1}\" />".format(tag, value)
         )
 
     instance.metatags = '\n'.join(metatags)
