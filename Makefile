@@ -62,8 +62,6 @@ spellcheck:
 
 upload: build
 	git clone https://github.com/RealOrangeOne/host-container.git $(DEPLOY_DIR)
-	git config --global user.email "git@theorangeone.net"
-	git config --global user.name "TheOrangeOne"
 	cp -rf $(OUTPUTDIR)/. $(DEPLOY_DIR)/site/
 	@cd $(DEPLOY_DIR) && git remote add dokku $(DEPLOY_URL) && git add . && git commit -m "add files" && git push -f dokku master --quiet
 	rm -rf $(DEPLOY_DIR)
