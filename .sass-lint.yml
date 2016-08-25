@@ -55,6 +55,7 @@ rules:
   single-line-per-selector: 0
   force-pseudo-nesting: 0
   force-element-nesting: 0
+  placeholder-in-extend: 0
   nesting-depth:
     - 2
     -

@@ -3,14 +3,15 @@ header {
   min-height: 100%;
 
   h1 {
-    font-size: $font-size-h1 * 1.5;
     @extend .text-shadow;
+    font-size: $font-size-h1 * 1.5;
   }
 
   .page-scroll {
     position: absolute;
     bottom: 10%;
     color: $white;
+
     & > i {
       font-size: $font-size-h1;
     }
