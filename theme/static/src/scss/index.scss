@@ -47,7 +47,8 @@ p a {
 }
 
 .container > img,
-.container p > img {
+.container p > img,
+.row > div > img {
   margin: 10px 0;
   width: 100%;
 }
@@ -68,4 +69,17 @@ p a {
 
 .category-item {
   padding: 1px 0;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+
+  &.image .section-heading {
+    @extend .text-shadow;
+  }
+
+  @media screen and (min-height: $screen-xs-max) {
+    height: 40vh;
+  }
 }
