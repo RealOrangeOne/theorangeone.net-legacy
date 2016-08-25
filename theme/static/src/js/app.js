@@ -2,5 +2,9 @@ import './creative';
 
 $('.image').each(function () {
   const ele = $(this);
-  ele.css('background-image', 'url(' + ele.data('image') + ')');
+  if (ele.data('image')) {
+    ele.css('background-image', 'url(' + ele.data('image') + ')');
+  } else {
+    ele.removeClass('image');
+  }
 });
