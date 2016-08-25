@@ -41,3 +41,21 @@ $btn-srobo-border: darken($btn-srobo-bg, 5%);
 section {
   padding: 75px 0;
 }
+
+hr {
+  max-width: 100px;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
