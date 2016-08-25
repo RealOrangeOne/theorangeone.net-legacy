@@ -27,10 +27,7 @@ def accounts():
 def footer():
     footer_accounts = ["github", "twitter", "reddit", "instagram", "youtube", "flickr"]
     all_accounts = accounts()
-    footer_links = []
-    for account in footer_accounts:
-        footer_links.append(all_accounts[account])
-    return footer_links
+    return [all_accounts[account] for account in footer_accounts]
 
 
 def index_projects():
