@@ -50,7 +50,6 @@ def get_all_files():
 
 
 def generate():
-    print("Removing old files...")
     for size, image_file in get_all_files().items():
         try:
             os.remove(os.path.join(OUTPUT_DIR, image_file))
