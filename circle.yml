@@ -5,11 +5,12 @@ machine:
     version: 5.11.1
   environment:
     BUILD_PRODUCTION: true
+    NODE_ENV: production
+    NPM_CONFIG_PRODUCTION: false
 
 dependencies:
   pre:
     - make install
-    - export NODE_ENV=production
     - make build
 
 test:
