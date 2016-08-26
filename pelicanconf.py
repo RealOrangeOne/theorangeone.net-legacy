@@ -30,6 +30,8 @@ INDEX_PROJECTS = links.index_projects()
 # Extra config
 REPO = Repo(search_parent_directories=True)
 BUILD_PRODUCTION = 'BUILD_PRODUCTION' in os.environ
+import image_resizer
+META_IMAGES = image_resizer.generate()
 
 # Disable some pages
 TAG_URL = False
