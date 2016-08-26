@@ -98,5 +98,4 @@ JINJA_FILTERS = {
     "datetime": filters.format_datetime,
     "category_find": filters.category_find,
     "limit": filters.limit,
-    "format_title": filters.format_title
 }
