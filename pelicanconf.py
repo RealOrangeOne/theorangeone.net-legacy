@@ -64,7 +64,8 @@ PLUGINS = [
     "filetime_from_git",
     "pelican-jinja2content",
     "metatags",
-    "autopages"
+    "autopages",
+    "screenfetch"
 ]
 
 if BUILD_PRODUCTION:
@@ -97,6 +98,5 @@ import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
     "category_find": filters.category_find,
-    "limit": filters.limit,
-    "ansi2html": filters.ansi2html
+    "limit": filters.limit
 }
