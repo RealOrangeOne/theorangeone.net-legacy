@@ -19,3 +19,7 @@ def limit(line, length):
         return " ".join(line.split(" ")[:length]) + '...'
     elif isinstance(line, list):
         return line[:length]
+
+
+def ansi2html(content):
+    return "<pre class='highlight ansi-up'>{0}</pre>".format(content)
