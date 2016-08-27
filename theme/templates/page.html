@@ -10,7 +10,7 @@
 
 {% block content %}
   {% if not page.no_container %}
-    {% include 'extras/header.html' with context %}
+    {% include 'extras/page-header.html' with context %}
     <section>
       <div class="container">
         {{ page.content }}
