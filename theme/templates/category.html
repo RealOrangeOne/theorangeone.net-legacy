@@ -31,14 +31,12 @@
       <div class="container">
         <div class="row no-gutter">
           {% for article in articles|sort(attribute="title") %}
-            <div class="media categories">
-              {% if article.image %}
-                <div class="media-left">
-                  <a href="/{{ article.url }}">
-                    <img class="media-object" src="{{ article.image }}">
-                  </a>
-                </div>
-              {% endif %}
+            <div class="media category">
+              <div class="media-left">
+                {% if article.image %}
+                  <div class="image" data-image="{{ article.image }}"></div>
+                {% endif %}
+              </div>
               <div class="media-body">
                 <a href="/{{ article.url }}">
                   <h4 class="media-heading">{{ article.title }}</h4>
