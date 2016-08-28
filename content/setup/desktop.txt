@@ -14,6 +14,6 @@
 [0m[34mddmmdddddhhhhhhhso[0m[1;34m++++++[0m[34myhhhhhhdddddmmdy [0m[1;34m Font:[0m Cantarell 11[0m
 [0m[34mdmmmdddddddhhhyso[0m[1;34m++++++[0m[34mshhhhhddddddmmmmh [0m[1;34m CPU:[0m AMD FX-8350 Eight-Core @ 4.013GHz[0m
 [0m[34m-dmmmdddddddhhys[0m[1;34mo++++o[0m[34mshhhhdddddddmmmmd- [0m[1;34m GPU:[0m GeForce GTX 660 Ti[0m
-[0m[34m .smmmmddddddddhhhhhhhhhdddddddddmmmms. [0m[1;34m RAM:[0m
+[0m[34m .smmmmddddddddhhhhhhhhhdddddddddmmmms. [0m[1;34m RAM:[0m 7887MiB
 [0m[34m   `+ydmmmdddddddddddddddddddmmmmdy/.     [0m
 [0m[34m      `.:+ooyyddddddddddddyyso+:.`[0m
