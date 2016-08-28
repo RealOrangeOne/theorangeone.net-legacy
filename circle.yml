@@ -10,8 +10,7 @@ machine:
 
 dependencies:
   pre:
-    - make install
-    - make build
+    - make -B
 
 test:
   override:
