@@ -62,7 +62,7 @@ PLUGIN_PATHS = ["pelican_plugins", "plugins"]
 PLUGINS = [
     "sitemap",
     "filetime_from_git",
-    "jinja2content",
+    "pelican-jinja2content",
     "metatags",
     "autopages",
     "screenfetch"
