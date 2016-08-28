@@ -57,7 +57,7 @@ lint:
 
 spellcheck:
 	$(NODE_BIN)/mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
-	$(NODE_BIN)/mdspell --en-gb -ranx content/**/*.* content/*.*
+	$(NODE_BIN)/mdspell --en-gb -ranx content/**/*.md content/*.md content/**/*.html content/*.html
 
 
 upload: build
