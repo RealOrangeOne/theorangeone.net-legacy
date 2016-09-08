@@ -5,14 +5,15 @@ import sys, os
 sys.path.insert(0, os.path.realpath('./'))
 
 from config import settings
+print("Settings: ", settings)
 
 # Global core settings
-AUTHOR = 'Jake Howard'
-SITENAME = 'TheOrangeOne'
-SITEURL = 'http://theorangeone.net'
+AUTHOR = settings.author
+SITENAME = settings.site_name
+SITEURL = settings.url
 PATH = '../content'
-TIMEZONE = 'Europe/London'
-DEFAULT_LANG = 'en'
+TIMEZONE = settings.timezone
+DEFAULT_LANG = settings.language
 PAGE_PATHS = ["pages"]
 THEME = "../theme"
 THEME_STATIC_DIR = "static"
@@ -61,27 +62,16 @@ FEED_DOMAIN = SITEURL
 
 # Setup plugins
 PLUGIN_PATHS = ["../pelican_plugins", "../plugins"]
-PLUGINS = [
-    "sitemap",
-    "filetime_from_git",
-    "pelican-jinja2content",
-    "metatags",
-    "autopages",
-    "screenfetch"
-]
+PLUGINS = settings.pelican_plugins
 
 if BUILD_PRODUCTION:
     PLUGINS.append("minify")  # only minify on production build
 
 SITEMAP = {
-    "format": "xml"
+    "format": settings.sitemap_format
 }
 CATEGORY_PAGE_PATH = "theme/templates/categories"
-MINIFY = {
-    "remove_comments": True,
-    "remove_optional_attribute_quotes": False,
-    "reduce_boolean_attributes": True
-}
+MINIFY = settings.minify_config
 
 # Setup markdown extensions
 from fontawesome_markdown import FontAwesomeExtension

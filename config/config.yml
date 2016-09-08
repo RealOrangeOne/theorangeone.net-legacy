@@ -1,1 +1,20 @@
-foo: bar
+author: Jake Howard
+site_name: TheOrangeOne
+url: https://theorangeone.net
+timezone: Europe/London
+language: en
+
+pelican_plugins:
+  - sitemap
+  - filetime_from_git
+  - pelican-jinja2content
+  - metatags
+  - autopages
+  - screenfetch
+
+sitemap_format: xml
+
+minify_config:
+  - remove_comments: true
+  - remove_optional_attribute_quotes: false
+  - reduce_boolean_attributes: true
