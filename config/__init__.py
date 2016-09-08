@@ -19,7 +19,7 @@ class WrappedSettings:
         self.settings = yaml.load(settings)
 
     def __getattr__(self, name):
-        value = getattr(self.settings, name)
+        value = self.settings[name]
         if type(value) == dict:
             value = DotDictionary(value)
         return value
