@@ -2,17 +2,17 @@
 from __future__ import unicode_literals
 from git import Repo
 import sys, os
-sys.path.insert(0, os.path.realpath('./plugins'))
+sys.path.insert(0, os.path.realpath('./'))
 
 # Global core settings
 AUTHOR = 'Jake Howard'
 SITENAME = 'TheOrangeOne'
 SITEURL = 'http://theorangeone.net'
-PATH = 'content'
+PATH = '../content'
 TIMEZONE = 'Europe/London'
 DEFAULT_LANG = 'en'
 PAGE_PATHS = ["pages"]
-THEME = "theme"
+THEME = "../theme"
 THEME_STATIC_DIR = "static"
 THEME_STATIC_PATHS = ["static/build"]
 STATIC_PATHS = ["assets"]
@@ -22,7 +22,7 @@ DEFAULT_PAGINATION = False
 SLUGIFY_SOURCE = 'basename'
 
 # Social widget
-import links
+from plugins import links
 ACCOUNTS = links.accounts()
 FOOTER_LINKS = links.footer()
 INDEX_PROJECTS = links.index_projects()
@@ -30,7 +30,7 @@ INDEX_PROJECTS = links.index_projects()
 # Extra config
 REPO = Repo(search_parent_directories=True)
 BUILD_PRODUCTION = 'BUILD_PRODUCTION' in os.environ
-import image_resizer
+from plugins import image_resizer
 META_IMAGES = image_resizer.generate()
 
 # Disable some pages
@@ -58,7 +58,7 @@ FEED_ATOM = 'feed.atom'
 FEED_DOMAIN = SITEURL
 
 # Setup plugins
-PLUGIN_PATHS = ["pelican_plugins", "plugins"]
+PLUGIN_PATHS = ["../pelican_plugins", "../plugins"]
 PLUGINS = [
     "sitemap",
     "filetime_from_git",
@@ -94,7 +94,7 @@ MD_EXTENSIONS = [
 ]
 
 # Setup jinja2 filters
-import filters
+from plugins import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
     "category_find": filters.category_find,

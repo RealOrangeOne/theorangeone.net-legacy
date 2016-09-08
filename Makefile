@@ -6,6 +6,7 @@ PELICAN=$(ENV)/pelican
 OUTPUTDIR=$(BASEDIR)/output
 PLUGINS_DIR=$(BASEDIR)/pelican_plugins
 DEPLOY_DIR=$(BASEDIR)/deploy
+CONFIG_FILE=$(BASEDIR)/config/pelicanconf.py
 
 FLAKE8_IGNORE=--ignore=E128,E501,E401,E402
 
@@ -17,7 +18,7 @@ build: install
 	npm run build-js
 	npm run build-scss
 	@echo ">> Building pelican..."
-	$(PELICAN) -o $(OUTPUTDIR) -v
+	$(PELICAN) -o $(OUTPUTDIR) -vs $(CONFIG_FILE)
 	mv $(OUTPUTDIR)/assets/robots.txt $(OUTPUTDIR)
 	cp -R $(OUTPUTDIR)/assets/* $(OUTPUTDIR)/static
 	rm -rf $(OUTPUTDIR)/assets
