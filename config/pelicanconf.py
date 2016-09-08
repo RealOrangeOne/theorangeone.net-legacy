@@ -4,6 +4,8 @@ from git import Repo
 import sys, os
 sys.path.insert(0, os.path.realpath('./'))
 
+from config import settings
+
 # Global core settings
 AUTHOR = 'Jake Howard'
 SITENAME = 'TheOrangeOne'
