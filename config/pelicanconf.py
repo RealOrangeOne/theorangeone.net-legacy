@@ -71,7 +71,11 @@ SITEMAP = {
     "format": settings.sitemap_format
 }
 CATEGORY_PAGE_PATH = "theme/templates/categories"
-MINIFY = settings.minify_config
+MINIFY = {
+    'remove_comments': True,
+    'remove_optional_attribute_quotes': False,
+    'reduce_boolean_attributes': True,
+}
 
 # Setup markdown extensions
 from fontawesome_markdown import FontAwesomeExtension

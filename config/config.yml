@@ -13,8 +13,3 @@ pelican_plugins:
   - screenfetch
 
 sitemap_format: xml
-
-minify_config:
-  - remove_comments: true
-  - remove_optional_attribute_quotes: false
-  - reduce_boolean_attributes: true
