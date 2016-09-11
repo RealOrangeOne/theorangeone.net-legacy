@@ -1,11 +1,12 @@
 flake8==2.5.0
 fontawesome_markdown==0.2.5
+git+https://github.com/ryneeverett/python-markdown-comments.git
 gitpython==2.0.7
 iso8601==0.1.11
 markdown==2.6.6
-git+https://github.com/ryneeverett/python-markdown-comments.git
-pelican==3.6.3
+nose2==0.6.5
 pelican-minify==0.9
+pelican==3.6.3
 pyembed-markdown==1.1.0
 python-resize-image==1.1.3
 pyyaml==3.12

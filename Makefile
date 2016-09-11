@@ -50,11 +50,13 @@ node_modules:
 test: lint spellcheck
 
 lint:
+	$(ENV)/nose2 --verbose
 	$(NODE_BIN)/eslint 'theme/static/src/js/'
 	$(NODE_BIN)/sass-lint -vqc .sass-lint.yml
 	$(ENV)/flake8 $(BASEDIR)/plugins/ $(FLAKE8_IGNORE)
 	$(ENV)/flake8 $(BASEDIR)/scripts/ $(FLAKE8_IGNORE)
 	$(ENV)/flake8 $(BASEDIR)/config/ $(FLAKE8_IGNORE)
+	$(ENV)/flake8 $(BASEDIR)/tests/ $(FLAKE8_IGNORE)
 
 spellcheck:
 	$(NODE_BIN)/mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*

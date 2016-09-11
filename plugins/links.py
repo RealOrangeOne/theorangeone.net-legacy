@@ -10,6 +10,7 @@ def accounts():
     links = {}
     for key, (site, user, url, icon) in settings.accounts.items():
         links[key] = DotDictionary({
+            'key': key,
             'site': site,
             'username': user,
             'url': url.format(user),
