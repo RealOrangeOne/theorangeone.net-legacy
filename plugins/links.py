@@ -19,9 +19,8 @@ def accounts():
 
 
 def footer():
-    footer_accounts = ["github", "twitter", "reddit", "instagram", "youtube", "flickr"]
     all_accounts = accounts()
-    return [all_accounts[account] for account in footer_accounts]
+    return [all_accounts[account] for account in settings.footer_accounts]
 
 
 def index_projects():
