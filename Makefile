@@ -47,10 +47,12 @@ node_modules:
 	npm install
 
 
-test: lint spellcheck
+test: unittest lint spellcheck
+
+unittest:
+	$(ENV)/nose2 --verbose
 
 lint:
-	$(ENV)/nose2 --verbose
 	$(NODE_BIN)/eslint 'theme/static/src/js/'
 	$(NODE_BIN)/sass-lint -vqc .sass-lint.yml
 	$(ENV)/flake8 $(BASEDIR)/plugins/ $(FLAKE8_IGNORE)
@@ -63,7 +65,7 @@ spellcheck:
 	$(NODE_BIN)/mdspell --en-gb -ranx content/**/*.md content/*.md content/**/*.html content/*.html
 
 
-upload: build
+upload:
 	git clone https://github.com/RealOrangeOne/host-container.git $(DEPLOY_DIR)
 	cp -rf $(OUTPUTDIR)/. $(DEPLOY_DIR)/site/
 	@cd $(DEPLOY_DIR) && git remote add dokku $(DEPLOY_URL) && git add . && git commit -m "add files" && git push -f dokku master --quiet
