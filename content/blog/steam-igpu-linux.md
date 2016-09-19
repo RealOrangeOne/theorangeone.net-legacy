@@ -41,7 +41,7 @@ STEAM_RUNTIME is enabled automatically
 Installing breakpad exception handler for appid(steam)/version(1468023329)
 ```
 
-Unfortunately, it doesnt seem to work if you add it to the `steam.desktop` file, for reasons I don't quite understand. But, just edit `/usr/bin/steam` to include the variable, and that works perfectly!
+Unfortunately, it doesn't seem to work if you add it to the `steam.desktop` file, for reasons I don't quite understand. But, just edit `/usr/bin/steam` to include the variable, and that works perfectly!
 
 ```bash
 export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
