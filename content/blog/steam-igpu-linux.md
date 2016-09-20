@@ -1,4 +1,4 @@
-title: My Level 3 Apprenticeship
+title: Fix steam under linux with an iGPU
 template: blog
 
 Running steam on linux is great, except for the game support obviously. But running it on an iGPU has recently been causing me problems, mainly under Arch.
@@ -25,7 +25,7 @@ libGL error: failed to load driver: swrast
 ## The solution
 I have no idea why it works, or why it works, but speaking to some people online, this is the best solution:
 
-```
+```bash
 LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam %U
 ```
 
