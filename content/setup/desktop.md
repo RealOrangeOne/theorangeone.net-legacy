@@ -1,5 +1,5 @@
 title: Desktop
-slug: desktop
+slug: custom-pc
 screenfetch_path: setup/desktop.txt
 image: /static/img/header.jpg
 
