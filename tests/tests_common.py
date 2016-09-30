@@ -1,4 +1,4 @@
-from tests.TestWrapper import TestCase
+from tests import TestCase
 from config import settings
 
 
