@@ -30,7 +30,6 @@ def index_projects():
         ProjectLink("Dotfiles", "/projects/dotfiles/", "http://jleajones.com/assets/images/dotfiles.png"),
         ProjectLink("Custom PC", "/setup/custom-pc/", "https://c2.staticflickr.com/8/7083/27071954860_f6096ccce6.jpg"),
         ProjectLink("Yoga-Pal", "/projects/yoga-pal/", "http://brain-images.cdn.dixons.com/8/1/10135218/l_10135218_002.jpg"),
-        ProjectLink("React-Native Mock", "/projects/react-native-mock/", "http://i.imgur.com/ZB8O0DL.jpg"),
         ProjectLink("Wall of Sheep", "/wall-of-sheep/", "http://www.hackerstickers.com/uploaded/thumbnails/db_file_img_3582_475xauto.jpg")
     ]
     shuffle(projects)
