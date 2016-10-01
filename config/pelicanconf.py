@@ -5,7 +5,6 @@ import sys, os
 sys.path.insert(0, os.path.realpath('./'))
 
 from config import settings
-print("Settings: ", settings)
 
 # Global core settings
 AUTHOR = settings.author
