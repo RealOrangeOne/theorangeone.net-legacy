@@ -29,5 +29,12 @@ class TestClient:
 class TestCase(unittest.TestCase):
     client = TestClient()
 
+    def get_children(self, content):
+        return str(list(content.children)[0])
+
     def assertTitle(self, content, title):
         self.assertIn(title, content.title.string)
+
+    def assertHeaderTitle(self, content, title):
+        header_title = content.find('h1', class_="section-heading")
+        self.assertIn(title, self.get_children(header_title))

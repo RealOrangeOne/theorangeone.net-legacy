@@ -49,7 +49,7 @@ AUTHOR_SAVE_AS = False
 
 # Override page URLs
 PAGE_SAVE_AS = "{slug}/index.html"
-PAGE_URL = "{slug}"
+PAGE_URL = "{slug}/"
 ARTICLE_SAVE_AS = "{category}/{slug}/index.html"
 ARTICLE_URL = "{category}/{slug}/"
 CATEGORY_SAVE_AS = "{slug}/index.html"
