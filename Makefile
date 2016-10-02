@@ -41,7 +41,7 @@ pelican_plugins: env
 
 env:
 	pyvenv env
-	$(ENV)/pip install -r requirements.txt
+	$(ENV)/pip install -r requirements.txt --upgrade
 
 node_modules:
 	npm install
