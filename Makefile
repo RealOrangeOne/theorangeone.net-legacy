@@ -47,7 +47,7 @@ node_modules:
 	npm install
 
 
-test: unittest lint spellcheck
+test: unittest lint spellcheck securitycheck
 
 unittest:
 	$(ENV)/nose2 --verbose
@@ -63,6 +63,10 @@ lint:
 spellcheck:
 	$(NODE_BIN)/mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
 	$(NODE_BIN)/mdspell --en-gb -ranx content/**/*.md content/*.md content/**/*.html content/*.html
+
+securitycheck:
+	$(NODE_BIN)/nsp check
+	$(ENV)/bandit -r plugins/ config/ tests/
 
 
 upload:
