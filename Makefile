@@ -59,6 +59,7 @@ lint:
 	$(ENV)/flake8 $(BASEDIR)/scripts/ $(FLAKE8_IGNORE)
 	$(ENV)/flake8 $(BASEDIR)/config/ $(FLAKE8_IGNORE)
 	$(ENV)/flake8 $(BASEDIR)/tests/ $(FLAKE8_IGNORE)
+	$(ENV)/yamllint config/config.yml
 
 spellcheck:
 	$(NODE_BIN)/mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
