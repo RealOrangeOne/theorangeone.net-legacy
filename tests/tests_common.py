@@ -1,5 +1,5 @@
 from tests import TestCase
-from config import settings
+from config import settings, DotDictionary
 
 
 class CorePagesTestCase(TestCase):
@@ -46,3 +46,53 @@ class CorePagesTestCase(TestCase):
         for link in footer.find('p', class_="social").find_all('a'):
             self.assertIn(link.attrs['alt'], settings.footer_accounts)
             self.assertIn("fa fa-", str(list(link.children)[0]))
+
+
+class DotDictionaryTestCase(TestCase):
+    def setUp(self):
+        self.test_dict = DotDictionary({
+            'foo': 'bar',
+            'bar': {
+                'foo': 'bar'
+            }
+        })
+
+    def test_returns_value(self):
+        self.assertEqual(self.test_dict.foo, 'bar')
+
+    def test_returns_self_on_dict(self):
+        self.assertEqual(self.test_dict.bar, {
+            'foo': 'bar'
+        })
+        self.assertIsInstance(self.test_dict.bar, DotDictionary)
+
+    def test_set(self):
+        self.test_dict.baz = 'foo'
+        self.assertEqual(self.test_dict, {
+            'foo': 'bar',
+            'baz': 'foo',
+            'bar': {
+                'foo': 'bar'
+            }
+        })
+
+    def test_delete(self):
+        del self.test_dict.bar
+        with self.assertRaises(KeyError):
+            print(self.test_dict.bar)
+        self.assertEqual(self.test_dict, {
+            'foo': 'bar'
+        })
+
+
+class WrappedSettingTestCase(TestCase):
+    def test_has_data(self):
+        self.assertIsInstance(settings.settings, dict)
+        self.assertTrue(len(settings.settings))
+
+    def test_returns_values(self):
+        self.assertEqual(settings.language, 'en')
+        self.assertEqual(settings.timezone, 'Europe/London')
+
+    def test_returns_dict(self):
+        self.assertIsInstance(settings.accounts, DotDictionary)
