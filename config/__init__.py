@@ -16,7 +16,7 @@ class WrappedSettings:
     def __init__(self):
         self.settings_dir = os.path.join(os.path.dirname(__file__), 'config.yml')
         settings = open(self.settings_dir)
-        self.settings = yaml.load(settings)
+        self.settings = yaml.safe_load(settings)
 
     def __getattr__(self, name):
         value = self.settings[name]
