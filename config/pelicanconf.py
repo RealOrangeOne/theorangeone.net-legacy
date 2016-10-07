@@ -34,6 +34,7 @@ REPO = Repo(search_parent_directories=True)
 BUILD_PRODUCTION = 'BUILD_PRODUCTION' in os.environ
 from plugins import image_resizer
 META_IMAGES = image_resizer.generate()
+PIWIK = settings.piwik
 
 # Disable some pages
 TAG_URL = False

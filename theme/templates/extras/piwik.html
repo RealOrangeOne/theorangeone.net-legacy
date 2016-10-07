@@ -1,0 +1,18 @@
+{% if BUILD_PRODUCTION %}
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["setDomains", ["*.theorangeone.net"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//{{ PIWIK.url }}/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '{{ PIWIK.site_id }}']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="//{{ PIWIK.url }}/piwik.php?idsite={{ PIWIK.site_id }}" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+{% endif %}

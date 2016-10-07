@@ -18,6 +18,8 @@
     <title>{% block htmltitle %}Page{% endblock %} - {{ SITENAME }}</title>
 
     <link rel="stylesheet" href="/static/css/index.css" type="text/css" />
+
+    {% include "extras/piwik.html" with context %}
   </head>
   <body id="page-top">
     {% block navbar %}
