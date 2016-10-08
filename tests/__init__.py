@@ -11,6 +11,8 @@ class TestClient:
         content = "".join(open(file_path).readlines())
         if path.endswith('html'):
             content = BeautifulSoup(content, 'html.parser')
+            for script in content(["noscript"]):  # Remove extra tags
+                script.extract()
         return content
 
     def build_path(self, path):

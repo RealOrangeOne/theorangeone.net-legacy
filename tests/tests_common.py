@@ -27,6 +27,8 @@ class CorePagesTestCase(TestCase):
     def test_has_scripts(self):
         content = self.client.get('index.html')
         for script in content.find_all('script'):
+            if script.attrs.get('id') == 'piwik':
+                continue
             self.client.exists(script.attrs['src'])
 
     def test_has_stylesheet(self):
