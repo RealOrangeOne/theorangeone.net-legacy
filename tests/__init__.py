@@ -6,13 +6,14 @@ from bs4 import BeautifulSoup
 class TestClient:
     output_path = os.path.realpath('./output')
 
-    def get(self, path):
+    def get(self, path, JS=True):
         file_path = self.build_path(path)
         content = "".join(open(file_path).readlines())
         if path.endswith('html'):
             content = BeautifulSoup(content, 'html.parser')
-            for script in content(["noscript"]):  # Remove extra tags
-                script.extract()
+            if JS:
+                for script in content(["noscript"]):  # Remove noscript tags
+                    script.extract()
         return content
 
     def build_path(self, path):
@@ -21,11 +22,7 @@ class TestClient:
         return os.path.join(self.output_path, path)
 
     def exists(self, path):
-        try:
-            with open(self.build_path(path)):
-                return True
-        except FileNotFoundError:
-            return False
+        return os.path.exists(self.build_path(path))
 
 
 class TestCase(unittest.TestCase):

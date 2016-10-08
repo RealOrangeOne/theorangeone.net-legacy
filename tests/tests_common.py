@@ -1,6 +1,8 @@
 from tests import TestCase
 from config import settings, DotDictionary
 from bs4 import BeautifulSoup
+from unittest import skipIf
+from os import environ
 
 
 class CorePagesTestCase(TestCase):
@@ -49,6 +51,18 @@ class CorePagesTestCase(TestCase):
         for link in footer.find('p', class_="social").find_all('a'):
             self.assertIn(link.attrs['alt'], settings.footer_accounts)
             self.assertIn("fa fa-", str(list(link.children)[0]))
+
+    @skipIf(not environ.get('BUILD_PRODUCTION', False), 'Not building production')
+    def test_has_analytics(self):
+        content = self.client.get('index.html', False)
+        piwik_script_tag = content.find('script', id='piwik')
+        self.assertNotEqual(piwik_script_tag, None)
+        piwik_script = self.get_children(piwik_script_tag)
+        self.assertIn('piwik.js', piwik_script)
+        self.assertIn(str(settings.piwik.site_id), piwik_script)
+        piwik_img = content.find('noscript', id='piwik').find('img')
+        self.assertIn(settings.piwik.url, piwik_img.attrs['src'])
+        self.assertIn(str(settings.piwik.site_id), piwik_img.attrs['src'])
 
 
 class DotDictionaryTestCase(TestCase):
