@@ -1,8 +1,10 @@
+---
 title: Morse code decoder
 template: projects
 slug: morese-code-decoder
 repo: https://gist.github.com/RealOrangeOne/6dc94875c93b787e5834
 summary: A JSON file to help decode morse-code
+---
 
 It's not often someone will need to decode text into morse code (and visa-versa), but if I had something like this when I needed it, it would have saved me hours of time!
 

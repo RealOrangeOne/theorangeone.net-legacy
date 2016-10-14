@@ -1,6 +1,8 @@
+---
 title: LanSchool
 slug: LanSchool
 summary: The tool of choice of my college to monitor students usage of computers. Turns out it's not particularly robust!
+---
 
 LanSchool is the software of choice for my college to monitor and control computer usage. It allows teachers to see students screens, interact with them, and even block certain functionality like the internet and removable storage. My secondary school had a system much like this, but they weren't as active in using it.
 

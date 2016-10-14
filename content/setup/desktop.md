@@ -1,7 +1,9 @@
+---
 title: Desktop
 slug: custom-pc
 screenfetch_path: setup/desktop.txt
 image: /static/img/header.jpg
+---
 
 
 My setup is everything, I use my computer at least once a day to browse the internet, work on projects, even update this website, so it's very important that everything works perfectly and the fastest it can. Obviously this machine is probably a little too powerful for someone that does almost primarily software development, but it means when I want to do things like video editing, 3D modelling, or anything else that would require a high end computer, I can, because my computer is equipped to handle it.

@@ -1,7 +1,9 @@
+---
 title: Hipchat emoticons for all
 template: projects
 slug: hipchat-emoticons-for-all
 repo: https://github.com/RealOrangeOne/hipchat-emoticons-for-all/
+---
 
 After starting my new job at DabApps, I was introduced to the world of [Hipchat](https://hipchat.com), and it's wonderful array of emoticons, as well as the ones added. It was wonderful, it made communicating with friends and colleagues much more interesting!
 

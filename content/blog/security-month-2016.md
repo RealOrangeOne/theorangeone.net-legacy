@@ -1,8 +1,10 @@
+---
 title: Cyber Security Month 2016
 gittime: off
 date: 2016-10-01
 template: blog
 summary: The best time to upgrade the security on my projects!
+---
 
 As it's [Cyber Security Month](https://cybersecuritymonth.eu/), now's the perfect time to work on improving the security on my websites, projects, and servers. But, upgrading them for now isn't good enough for me, I want to add a way of scanning projects automatically during unit tests, to check for any new vulnerabilities.
 

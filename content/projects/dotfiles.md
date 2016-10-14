@@ -1,8 +1,10 @@
+---
 title: My Dotfiles
 template: projects
 slug: dotfiles
 repo: https://github.com/RealOrangeOne/dotfiles/
 summary: How I set up my machines just the way I like them!
+---
 
 ### What are dotfiles?
 Dotfiles are a way for people to store their settings and preferences to make setting up a new computer that much easier. They can usually be found in a persons VCS profile.

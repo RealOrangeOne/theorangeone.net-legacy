@@ -1,7 +1,8 @@
+---
 title: Student Server
 slug: student-server
 summary: The college needed a server, but didn't have any server admins
-
+---
 
 Back when I was in college, we needed a server for computing students to learn how to use FTP, and script on a server using python CGI and [PHP](http://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/#an-analogy), as well as possibly for some students coursework. Fortunately, the college already had one, running the IT students microsite for extra course information. The problem was that it was majorly out of date, and no one really new how to use it properly. It was up to me and my friend Alex to bring the server up to date, and get it ready for the students who needed it.
 

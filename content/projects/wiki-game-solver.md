@@ -1,8 +1,10 @@
+---
 title: Wiki Game solver
 template: projects
 slug: wiki-game-solver
 repo: https://gist.github.com/RealOrangeOne/7da9a3dd1bf90ecdf7be
 summary: Simple script to win the Wiki Game
+---
 
 For those who don't know what the Wiki Game is: [The Wiki Game](http://thewikigame.com) is an online game where you attempt to navigate through wikipedia from a start page to a goal page using as few other pages as possible. Once I was shown the Wiki Game by my friend, and after I realised that I really wasn't very good at it, I looked into how the system worked, and how I could beat it.
 

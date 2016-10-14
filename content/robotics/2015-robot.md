@@ -1,6 +1,8 @@
+---
 title: The Robot - A.L.I.C.E
 html_title: The Robot | SR2015
 slug: 2015/robot
+---
 
 <div class="row">
   <div class="col-sm-4">

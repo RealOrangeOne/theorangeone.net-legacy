@@ -1,8 +1,10 @@
+---
 title: ProtonMail - Can it replace your email provider?
 template: blog
 date: 2016-06-28
 image: https://protonmail.com/images/main-banner.jpg
 summary: Incredibly secure, easy to use, but are it's trade-offs worth it?
+---
 
 Throughout my life, I've had many different email providers, starting with hotmail almost 10 years ago. In more recent years, I've been focusing more on ways I can secure my emails, both from potential intruders, or governments. No, I may not have anything to hide, but that doesn't mean I don't want the information I to have to be accessible easily.
 
