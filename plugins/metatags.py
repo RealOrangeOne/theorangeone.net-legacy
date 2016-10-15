@@ -8,10 +8,10 @@ def get_content_type(instance):
 
 
 def html_to_raw(html):
-    summary = BeautifulSoup(html, "html.parser")
-    for script in summary(["script", "style"]):  # Remove extra tags
+    parsed = BeautifulSoup(html, "html.parser")
+    for script in parsed(["script", "style"]):  # Remove extra tags
         script.extract()
-    return summary.get_text()
+    return parsed.get_text()
 
 
 def get_twiter_tags(instance):
