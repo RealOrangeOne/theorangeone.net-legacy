@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+export PATH=env/bin:${PATH}
+export DEBUG=true
+export IN_TEST=true
+export SECRET_KEY='secrit'
+
+flake8 project --ignore=E128,E501 --exclude=migrations,settings,wsgi.py
+coverage run --source=project --omit='*/wsgi.py,*/settings.py,*/migrations/*.py,*__init__.py' manage.py test $@
+coverage report
+
+npm test
