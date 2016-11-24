@@ -4,6 +4,8 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel
 
 
 class HomePage(Page):
+    is_home = True
+    
     body = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [

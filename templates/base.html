@@ -20,6 +20,8 @@
   <body class="{% block body_class %}{% endblock %}" id="page-top">
     {% wagtailuserbar %}
 
+    {% include 'common/navbar.html' with page=self %}
+
     {% block content %}{% endblock %}
 
     <script type="text/javascript" src="{% static 'js/libs.js' %}"></script>
