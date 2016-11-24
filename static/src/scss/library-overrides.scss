@@ -1,0 +1,60 @@
+.panel-green {
+  @include panel-variant(#139F5B, $white, #139F5B, #139F5B);
+}
+
+.panel-blue {
+  @include panel-variant(#337AB7, $white, #337AB7, #337AB7);
+}
+
+.btn {
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.btn.btn-github {
+  @include button-variant(#333, #F5F5F5, #D8D8D8);
+}
+
+$btn-srobo-bg: #253571;
+$btn-srobo-border: darken($btn-srobo-bg, 5%);
+
+.btn-srobo {
+  @include button-variant(#DADADA, $btn-srobo-bg, $btn-srobo-border);
+}
+
+
+.highlight > pre {
+  font-size: $font-size-base;
+}
+
+.btn-primary-dark {
+  @include button-variant($white, $brand-orange-dark, $brand-orange-dark);
+}
+
+.bg-primary p {
+  a:hover {
+    color: $brand-grey-dark;
+  }
+}
+
+section {
+  padding: 75px 0;
+}
+
+hr {
+  max-width: 100px;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
