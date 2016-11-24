@@ -26,6 +26,10 @@ export PATH=env/bin:${PATH}
 pip install -r requirements.txt
 
 npm install
+
+mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img
+cp -R node_modules/font-awesome/fonts static/build/
+
 npm run build
 
-honcho --app-root environment --env env run env/bin/python manage.py collectstatic --noinput
+honcho --app-root environment --env env run env/bin/python3 manage.py collectstatic --noinput
