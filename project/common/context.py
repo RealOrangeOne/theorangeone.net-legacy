@@ -8,7 +8,8 @@ SETTINGS_KEYS = [
     'MEDIA_URL',
     'LANGUAGE_CODE',
     'TIME_ZONE',
-    'ALLOWED_HOSTS'
+    'ALLOWED_HOSTS',
+    'WAGTAIL_SITE_NAME'
 ]
 
 
