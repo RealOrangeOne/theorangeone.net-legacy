@@ -3,8 +3,10 @@
   "version": "5.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
+    "create-build-dirs": "mkdir -p static/build/js/lib static/build/fonts static/build/css static/build/img",
     "build-js": "./scripts/build-js.sh",
-    "build-scss": "./scripts/build-scss.sh"
+    "build-scss": "./scripts/build-scss.sh",
+    "build": "npm run create-build-dirs && npm run build-scss && npm run build-js"
   },
   "repository": {
     "type": "git",

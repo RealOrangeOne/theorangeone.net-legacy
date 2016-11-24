@@ -8,16 +8,16 @@ then
 fi
 
 echo ">> Generating Pygments styles..."
-env/bin/pygmentize -S github -f html -a .highlight > theme/static/src/scss/pygment.css
+env/bin/pygmentize -S github -f html -a .highlight > static/src/scss/pygment.css
 
 echo ">> Building SCSS..."
-node-sass theme/static/src/scss/index.scss theme/static/build/css/index.css --source-map-embed
+node-sass static/src/scss/index.scss static/build/css/index.css --source-map-embed
 
 echo ">> Post-Processing..."
-postcss -u autoprefixer -o theme/static/build/css/index.css theme/static/build/css/index.css
+postcss -u autoprefixer -o static/build/css/index.css static/build/css/index.css
 
 if [ "$NODE_ENV" = "production" ]
 then
   echo ">> Compressing CSS..."
-  cleancss -d --s0 -o theme/static/build/css/index.css theme/static/build/css/index.css
+  cleancss -d --s0 -o static/build/css/index.css static/build/css/index.css
 fi
