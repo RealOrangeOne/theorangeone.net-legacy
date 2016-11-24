@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'wagtail.wagtailcore',
 
     'wagtail.contrib.settings',
+    "wagtail.contrib.table_block",
 
     'modelcluster',
     'taggit',
@@ -132,6 +133,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Wagtail settings
 
 WAGTAIL_SITE_NAME = "project"
+
+WAGTAIL_PASSWORD_MANAGEMENT_ENABLED = True
+WAGTAIL_ENABLE_UPDATE_CHECK = True
+WAGTAIL_ALLOW_UNICODE_SLUGS = True
+WAGTAIL_USAGE_COUNT_ENABLED = True
+
 
 WAGTAILSEARCH_BACKENDS = {
     'default': {
