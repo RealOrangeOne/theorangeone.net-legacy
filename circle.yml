@@ -1,0 +1,16 @@
+machine:
+  python:
+    version: 3.5.1
+  node:
+    version: 6.9.1
+
+dependencies:
+  pre:
+    - scripts/build
+  cache_directories:
+    - env
+    - node_modules
+
+test:
+  override:
+    - scripts/runtests
