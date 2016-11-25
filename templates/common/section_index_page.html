@@ -5,7 +5,29 @@
 {% block body_class %}template-indexpage{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-
-    <div class="intro">{{ page.intro|richtext }}</div>
+  <section class="bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h1 class="section-heading">{{ page.name }}</h1>
+          <hr class="light">
+        </div>
+      </div>
+    </div>
+  </section>
+  {% if page.intro %}
+    <section>
+      <div class="container">
+        {{ page.intro|richtext }}
+      </div>
+    </section>
+  {% endif %}
+  {% if not page.hide_list %}
+    <section>
+      <div class="container">
+        <div class="row no-gutter">
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}
