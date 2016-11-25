@@ -6,8 +6,10 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 
+from project.common.models import Entity
 
-class BlogPage(Page):
+
+class BlogPage(Entity):
     main_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
