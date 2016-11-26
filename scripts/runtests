@@ -2,6 +2,7 @@
 
 set -e
 
+export PATH=node_modules/.bin:${PATH}
 export PATH=env/bin:${PATH}
 export DEBUG=true
 export IN_TEST=true
@@ -15,3 +16,5 @@ npm test
 
 bandit -r project/ manage.py
 safety check
+nsp check
+snyk test
