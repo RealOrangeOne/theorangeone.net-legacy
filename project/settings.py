@@ -6,10 +6,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ['DEBUG']
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n_v3f*dcdg=ni-9ftiyo@c2%gkcr=qg(2bni)4borex-$9&1$v'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
