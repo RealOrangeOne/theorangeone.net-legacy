@@ -12,3 +12,6 @@ coverage run --source=project --omit='*/wsgi.py,*/settings.py,*/migrations/*.py,
 coverage report
 
 npm test
+
+bandit -r project/ manage.py
+safety check
