@@ -5,4 +5,5 @@ flake8==3.2.1
 honcho==0.7.1
 pygments-style-github==0.4
 wagtail>=1.7,<1.8
+waitress==1.0.1
 whitenoise==3.2.2
