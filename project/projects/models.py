@@ -44,6 +44,9 @@ class ProjectPage(Entity):
         related_name='+'
     )
 
+    def get_download_url(self):
+        return self.download_url or self.asset.url
+
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),

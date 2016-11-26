@@ -5,14 +5,24 @@
 {% block body_class %}template-projectpage{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date }}</p>
+  {% include 'common/header.html' with page=page %}
+  <section>
+    <div class="container">
+      <p class="text-right small">
+        Updated: {{ page.date|datetime }}
+      </p>
+      {{ page.body|richtext }}
+    </div>
+  </section>
+  <div class="container text-center">
+    <div class="btn-group">
+      {% if page.get_download_link %}
+        <a class="btn btn-primary btn-xl" href="{{ page.get_download_link }}">Download {{ page.title }}</a>
+      {% endif %}
 
-    {% if page.main_image %}
-        {% image page.main_image width-400 %}
-    {% endif %}
-
-    <div class="intro">{{ page.intro }}</div>
-
-    {{ page.body|richtext }}
+      {% if page.url %}
+        <a class="btn btn-github btn-xl" href="{{ page.url }}"><i class="fa fa-github fa-lg"></i> View on Github</a>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}
