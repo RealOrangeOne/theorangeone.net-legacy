@@ -11,11 +11,17 @@ DEBUG = os.environ['DEBUG']
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+MAX_UPLOAD_SIZE = 5242880 # 5MB - 5242880
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = True
+X_FRAME_OPTIONS = 'DENY'
+
 
 
 # Application definition
