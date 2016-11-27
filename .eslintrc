@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/eslint-config/.eslintrc",
+  "extends": "./node_modules/eslint-config-dabapps/base/.eslintrc",
   "globals": {
     $: true
   }
