@@ -2,20 +2,29 @@
 
 set -e
 
+echo "> Starting Tests..."
+
 export PATH=node_modules/.bin:${PATH}
 export PATH=env/bin:${PATH}
 export DEBUG=true
 export IN_TEST=true
 export SECRET_KEY='secrit'
 
+echo ">> Running flake8..."
 flake8 project --ignore=E128,E501 --exclude=migrations,wsgi.py
+
+echo ">> Running backend unit tests..."
 coverage run --source=project --omit='*/wsgi.py,*/settings.py,*/migrations/*.py,*__init__.py' manage.py test $@
 coverage report
 
+echo ">> Testing client-side"
 eslint static/src
 sass-lint -vqc .sass-lint.yml
 
+echo ">> Checking Security..."
 bandit -r project/ manage.py
 safety check
 nsp check
 snyk test
+
+echo "> Tests complete!"
