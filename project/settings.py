@@ -7,6 +7,7 @@ ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ['DEBUG']
+ENABLE_ADMIN = DEBUG
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
@@ -47,7 +48,7 @@ INSTALLED_APPS = [
     'project.search',
 ]
 
-if DEBUG:
+if ENABLE_ADMIN:
     INSTALLED_APPS += ['django.contrib.admin']
 
 # Harden Django!
