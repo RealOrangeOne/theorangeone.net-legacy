@@ -27,7 +27,7 @@
     "babelify": "=7.3.0",
     "browserify": "=13.1.0",
     "clean-css": "=3.4.20",
-    "eslint-config": "git://github.com/dabapps/eslint-config.git#2.0.3",
+    "eslint-config": "dabapps/eslint-config.git#2.0.3",
     "markdown-spellcheck": "=0.11.0",
     "node-sass": "=3.8.0",
     "nsp": "=2.6.1",
