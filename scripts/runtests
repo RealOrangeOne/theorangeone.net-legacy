@@ -8,7 +8,7 @@ export DEBUG=true
 export IN_TEST=true
 export SECRET_KEY='secrit'
 
-flake8 project --ignore=E128,E501 --exclude=migrations,settings,wsgi.py
+flake8 project --ignore=E128,E501 --exclude=migrations,wsgi.py
 coverage run --source=project --omit='*/wsgi.py,*/settings.py,*/migrations/*.py,*__init__.py' manage.py test $@
 coverage report
 
