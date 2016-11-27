@@ -12,7 +12,8 @@ flake8 project --ignore=E128,E501 --exclude=migrations,settings,wsgi.py
 coverage run --source=project --omit='*/wsgi.py,*/settings.py,*/migrations/*.py,*__init__.py' manage.py test $@
 coverage report
 
-npm test
+eslint static/src
+sass-lint -vqc .sass-lint.yml
 
 bandit -r project/ manage.py
 safety check
