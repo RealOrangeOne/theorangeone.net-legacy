@@ -13,21 +13,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-if not DEBUG:
-    print("NOT DEBUG!")
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    CSRF_COOKIE_HTTPONLY = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_SSL_REDIRECT = True
-
-X_FRAME_OPTIONS = 'DENY'
-MAX_UPLOAD_SIZE = 5242880 # 5MB - 5242880
-
 
 # Application definition
-
 INSTALLED_APPS = [
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
@@ -47,7 +34,6 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
 
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -60,6 +46,22 @@ INSTALLED_APPS = [
     'project.projects',
     'project.search',
 ]
+
+if DEBUG:
+    INSTALLED_APPS += ['django.contrib.admin']
+
+# Harden Django!
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_SSL_REDIRECT = True
+
+X_FRAME_OPTIONS = 'DENY'
+MAX_UPLOAD_SIZE = 5242880 # 5MB - 5242880
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
