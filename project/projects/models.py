@@ -33,8 +33,8 @@ class ProjectPage(Entity):
     )
     summary = models.CharField(max_length=500)
     body = RichTextField()
-    url = models.URLField(validators=[validate_url], blank=True)
-    download_url = models.URLField(validators=[validate_url], blank=True)
+    project_url = models.URLField(blank=True)
+    download_url = models.URLField(blank=True)
     asset = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
@@ -43,8 +43,10 @@ class ProjectPage(Entity):
         related_name='+'
     )
 
+    def get_download_url(self):
+        return self.download_url or self.asset.url
+
     search_fields = Page.search_fields + [
-        index.SearchField('intro'),
         index.SearchField('body'),
     ]
 
@@ -52,7 +54,7 @@ class ProjectPage(Entity):
         ImageChooserPanel('main_image'),
         FieldPanel('summary'),
         FieldPanel('body'),
-        FieldPanel('url'),
         FieldPanel('download_url'),
+        FieldPanel('project_url'),
         DocumentChooserPanel('asset')
     ]
