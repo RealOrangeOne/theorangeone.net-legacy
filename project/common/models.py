@@ -10,5 +10,3 @@ class Entity(Page):
 
     class Meta:
         abstract = True
-
-

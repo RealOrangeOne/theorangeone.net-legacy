@@ -12,6 +12,7 @@ class SimpleContentPage(Entity):
         FieldPanel('body', classname="full")
     ]
 
+
 class SectionIndexPage(Entity):
     intro = RichTextField(blank=True)
     hide_list = models.BooleanField(default=False)
