@@ -33,8 +33,8 @@ class ProjectPage(Entity):
     )
     summary = models.CharField(max_length=500)
     body = RichTextField()
-    project_url = models.URLField(blank=True)
-    download_url = models.URLField(blank=True)
+    project_url = models.URLField(validators=[validate_url], blank=True)
+    download_url = models.URLField(validators=[validate_url], blank=True)
     asset = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
