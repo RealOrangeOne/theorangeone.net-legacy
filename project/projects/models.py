@@ -1,13 +1,11 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-
+from project.common.fields import build_stream_field
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
-
 from project.common.models import Entity
 
 
@@ -32,7 +30,7 @@ class ProjectPage(Entity):
         related_name='+'
     )
     summary = models.CharField(max_length=500)
-    body = RichTextField()
+    body = build_stream_field()
     project_url = models.URLField(validators=[validate_url], blank=True)
     download_url = models.URLField(validators=[validate_url], blank=True)
     asset = models.ForeignKey(
@@ -53,7 +51,7 @@ class ProjectPage(Entity):
     content_panels = Page.content_panels + [
         ImageChooserPanel('main_image'),
         FieldPanel('summary'),
-        FieldPanel('body'),
+        StreamFieldPanel('body'),
         FieldPanel('download_url'),
         FieldPanel('project_url'),
         DocumentChooserPanel('asset')
