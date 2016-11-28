@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'project.blog',
     'project.common',
     'project.home',
+    'project.pages',
     'project.projects',
     'project.search',
 ]
