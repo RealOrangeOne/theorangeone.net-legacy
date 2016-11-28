@@ -12,12 +12,10 @@ class Entity(Page):
 
 
 class SectionIndexPage(Entity):
-    name = models.CharField(max_length=250)
     intro = RichTextField(blank=True)
     hide_list = models.BooleanField(default=False)
 
     content_panels = Page.content_panels + [
-        FieldPanel('name'),
         FieldPanel('intro', classname="full"),
         FieldPanel('hide_list')
     ]

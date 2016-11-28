@@ -31,8 +31,7 @@ class ProjectPage(Entity):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    date = models.DateField("Post date")
-    intro = models.CharField(max_length=250)
+    summary = models.CharField(max_length=500)
     body = RichTextField()
     url = models.URLField(validators=[validate_url], blank=True)
     download_url = models.URLField(validators=[validate_url], blank=True)
@@ -44,18 +43,14 @@ class ProjectPage(Entity):
         related_name='+'
     )
 
-    def get_download_url(self):
-        return self.download_url or self.asset.url
-
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),
     ]
 
     content_panels = Page.content_panels + [
-        FieldPanel('date'),
         ImageChooserPanel('main_image'),
-        FieldPanel('intro'),
+        FieldPanel('summary'),
         FieldPanel('body'),
         FieldPanel('url'),
         FieldPanel('download_url'),
