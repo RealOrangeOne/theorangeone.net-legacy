@@ -9,9 +9,9 @@
   <section>
     <div class="container">
       <p class="text-right small">
-        Updated: {{ page.date|datetime }}
+        Updated: {{ page.date }}
       </p>
-      {{ page.body|richtext }}
+      {% include_block page.body %}
     </div>
   </section>
   <div class="container text-center">
