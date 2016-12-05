@@ -2,6 +2,7 @@ from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
+from wagtailmarkdown.blocks import MarkdownBlock
 
 
 def build_header_fields():
@@ -14,13 +15,14 @@ def build_fixed_fields():
     return [
         ('ansi', blocks.TextBlock(template="blocks/ansi.html")),
         ('document', DocumentChooserBlock()),
-        ('gist', blocks.CharBlock(template="blocks/gist.html")),
+        ('gist', blocks.CharBlock(icon="code", template="blocks/gist.html")),
         ('image', ImageChooserBlock()),
-        ('ol', blocks.ListBlock(blocks.CharBlock(label="List Item"), label="Ordered List", template='blocks/ordered-list.html')),
+        ('markdown', MarkdownBlock()),
+        ('ol', blocks.ListBlock(blocks.CharBlock(label="List Item"), icon="list-ol", label="Ordered List", template='blocks/ordered-list.html')),
         ('paragraph', blocks.RichTextBlock()),
         ('raw_html', blocks.RawHTMLBlock(label="Raw HTML")),
         ('secret', blocks.RichTextBlock(icon="password", template='blocks/secret.html')),
-        ('ul', blocks.ListBlock(blocks.CharBlock(label="List Item"), label="Unordered List")),
+        ('ul', blocks.ListBlock(blocks.CharBlock(label="List Item"), icon="list-ul", label="Unordered List")),
     ]
 
 
