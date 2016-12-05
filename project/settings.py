@@ -144,12 +144,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "project"
+WAGTAIL_SITE_NAME = "TheOrangeOne"
 
 WAGTAIL_PASSWORD_MANAGEMENT_ENABLED = True
 WAGTAIL_ENABLE_UPDATE_CHECK = True
 WAGTAIL_ALLOW_UNICODE_SLUGS = True
 WAGTAIL_USAGE_COUNT_ENABLED = True
+WAGTAILIMAGES_JPEG_QUALITY = 100
 
 
 WAGTAILSEARCH_BACKENDS = {
@@ -160,5 +161,5 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = 'https://theorangeone.net'
 SITE_URL = BASE_URL
