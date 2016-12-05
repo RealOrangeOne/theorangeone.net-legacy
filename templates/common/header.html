@@ -1,4 +1,8 @@
-<section id="header" class="bg-primary image" data-image="{{ page.main_image }}">
+{% load wagtailimages_tags %}
+
+{% image page.main_image original as main_image %}
+
+<section id="header" class="bg-primary image" data-image="{{ main_image.url }}">
   <div class="container text-center text-uppercase">
     <h1 class="section-heading">{{ page.title }}</h1>
     <hr class="light">
