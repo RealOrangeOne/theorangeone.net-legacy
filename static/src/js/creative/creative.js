@@ -28,3 +28,10 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
   $('.navbar-toggle:visible').click();
 });
+
+// Offset for Main Navigation
+$('#main-nav').affix({
+  offset: {
+    top: NAVBAR_HEIGHT * 1.5
+  }
+});
