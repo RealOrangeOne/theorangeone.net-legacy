@@ -1,8 +1,7 @@
 from django.db import models
-
+from project.common.fields import build_stream_field
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 
@@ -19,7 +18,7 @@ class BlogPage(Entity):
     )
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
-    body = RichTextField(blank=True)
+    body = build_stream_field()
 
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
@@ -30,5 +29,5 @@ class BlogPage(Entity):
         FieldPanel('date'),
         ImageChooserPanel('main_image'),
         FieldPanel('intro'),
-        FieldPanel('body'),
+        StreamFieldPanel('body'),
     ]
