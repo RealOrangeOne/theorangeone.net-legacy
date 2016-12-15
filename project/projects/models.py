@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-from project.common.fields import build_stream_field
+from project.common.blocks import build_stream_field
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel

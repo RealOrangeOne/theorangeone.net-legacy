@@ -1,5 +1,5 @@
 from django.db import models
-from project.common.fields import build_stream_field
+from project.common.blocks import build_stream_field
 from project.common.models import Entity
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField

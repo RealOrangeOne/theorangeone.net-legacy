@@ -1,5 +1,5 @@
 from django.db import models
-from project.common.fields import build_stream_field
+from project.common.blocks import build_stream_field
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel

@@ -1,4 +1,4 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar wagtailmetadata_tags %}
 
 <!DOCTYPE html>
 <html lang="{{ django_settings.LANGUAGE_CODE }}">
@@ -10,6 +10,8 @@
     <meta http-equiv="Content-Language" content="{{ django_settings.LANGUAGE_CODE }}" />
     <meta name="superfish" content="nofish" />
     <meta name="application-name" content="{{ django_settings.WAGTAIL_SITE_NAME }}" />
+
+    {% meta_tags %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 

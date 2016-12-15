@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+
+{% include_block value.video %}
+
+{% if value.caption %}
+  <span>
+    {% include_block value.caption %}
+  </span>
+{% endif %}

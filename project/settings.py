@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'wagtailmetadata',
+
     'project.blog',
     'project.common',
     'project.home',
@@ -79,7 +81,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'wagtail.wagtailcore.middleware.SiteMiddleware',
-    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware'
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -163,3 +165,15 @@ WAGTAILSEARCH_BACKENDS = {
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'https://theorangeone.net'
 SITE_URL = BASE_URL
+
+
+# Password policy settings
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+PASSWORD_CHECK_ONLY_AT_LOGIN = True
+PASSWORD_MIN_LENGTH = 7
+PASSWORD_MAX_LENGTH = 25
+PASSWORD_HISTORY_COUNT = 6
+PASSWORD_MIN_LETTERS = 1
+PASSWORD_MIN_NUMBERS = 1
+PASSWORD_MIN_SYMBOLS = 1
+PASSWORD_DIFFERENCE_DISTANCE = 3

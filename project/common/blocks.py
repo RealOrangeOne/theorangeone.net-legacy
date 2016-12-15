@@ -3,19 +3,35 @@ from wagtail.wagtailcore import blocks
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtailmarkdown.blocks import MarkdownBlock
+from wagtail.wagtailembeds.blocks import EmbedBlock
 
 
-def build_header_fields():
-    for i in range(6):
-        h_tag = "h" + str(i + 1)
-        yield (h_tag, blocks.CharBlock(classname=h_tag, label=h_tag.upper(), icon="title"))
+HEADING_CHOICES = [('h' + str(i), 'H' + str(i)) for i in range(1, 6)]
 
 
-def build_fixed_fields():
-    return [
+class HeadingBlock(blocks.StructBlock):
+    size = blocks.ChoiceBlock(choices=HEADING_CHOICES)
+    value = blocks.CharBlock()
+
+    class Meta:
+        icon = 'title'
+        template = 'blocks/heading.html'
+
+
+class VideoBlock(blocks.StructBlock):
+    video = EmbedBlock()
+    caption = blocks.CharBlock()
+
+    class Meta:
+        template = 'blocks/video.html'
+
+
+def build_stream_field():
+    return StreamField([
         ('ansi', blocks.TextBlock(template="blocks/ansi.html")),
         ('document', DocumentChooserBlock()),
         ('gist', blocks.CharBlock(icon="code", template="blocks/gist.html")),
+        ('heading', HeadingBlock()),
         ('image', ImageChooserBlock()),
         ('markdown', MarkdownBlock()),
         ('ol', blocks.ListBlock(blocks.CharBlock(label="List Item"), icon="list-ol", label="Ordered List", template='blocks/ordered-list.html')),
@@ -23,15 +39,5 @@ def build_fixed_fields():
         ('raw_html', blocks.RawHTMLBlock(label="Raw HTML")),
         ('secret', blocks.RichTextBlock(icon="password", template='blocks/secret.html')),
         ('ul', blocks.ListBlock(blocks.CharBlock(label="List Item"), icon="list-ul", label="Unordered List")),
-    ]
-
-
-def build_stream_field():
-    fields = []
-    for field_builder in [
-        build_header_fields,
-        build_fixed_fields
-    ]:
-        for field in field_builder():
-            fields.append(field)
-    return StreamField(fields)
+        ('video', VideoBlock())
+    ])
