@@ -10,8 +10,6 @@ new WOW().init();
  * (Edited for theorangeone.net)
  */
 
-
-
 $('a.page-scroll').bind('click', function(event) {
   const anchor = $(this);
   $('html, body').stop().animate(

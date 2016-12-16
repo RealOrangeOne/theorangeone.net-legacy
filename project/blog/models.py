@@ -1,7 +1,6 @@
-from django.db import models
 from project.common.blocks import build_stream_field
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
 from wagtail.wagtailsearch import index
 
 from project.common.models import Entity

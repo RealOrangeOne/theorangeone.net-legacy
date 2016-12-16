@@ -1,6 +1,6 @@
 import './creative';
 import ansi_up from 'ansi_up';
-import { SCROLL_SPEED } from './consts';
+import { SCROLL_SPEED, NAVBAR_HEIGHT } from './consts';
 
 $('.image').each(function () {  // setup div-image hybrids
   const ele = $(this);
