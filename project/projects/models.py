@@ -4,7 +4,6 @@ from project.common.blocks import build_stream_field
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtaildocs.edit_handlers import DocumentChooserPanel
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
 from project.common.models import Entity
 
@@ -22,14 +21,6 @@ def validate_url(value):
 
 
 class ProjectPage(Entity):
-    main_image = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
-    summary = models.CharField(max_length=500)
     body = build_stream_field()
     project_url = models.URLField(validators=[validate_url], blank=True)
     download_url = models.URLField(validators=[validate_url], blank=True)
@@ -49,8 +40,6 @@ class ProjectPage(Entity):
     ]
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('main_image'),
-        FieldPanel('summary'),
         StreamFieldPanel('body'),
         FieldPanel('download_url'),
         FieldPanel('project_url'),
