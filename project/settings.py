@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'wagtailmetadata',
+    'bootstrapform',
 
     'project.blog',
     'project.common',
@@ -166,14 +167,5 @@ WAGTAILSEARCH_BACKENDS = {
 BASE_URL = 'https://theorangeone.net'
 SITE_URL = BASE_URL
 
+PASSWORD_REQUIRED_TEMPLATE = 'pages/password_required.html'
 
-# Password policy settings
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
-PASSWORD_CHECK_ONLY_AT_LOGIN = True
-PASSWORD_MIN_LENGTH = 7
-PASSWORD_MAX_LENGTH = 25
-PASSWORD_HISTORY_COUNT = 6
-PASSWORD_MIN_LETTERS = 1
-PASSWORD_MIN_NUMBERS = 1
-PASSWORD_MIN_SYMBOLS = 1
-PASSWORD_DIFFERENCE_DISTANCE = 3
