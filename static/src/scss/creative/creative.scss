@@ -29,7 +29,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-heading;
+  font-family: $headings-font-family;
 }
 
 p {
@@ -65,12 +65,12 @@ aside {
   transition: all 0.35s;
   border-color: opacify($brand-grey-dark, 0.05);
   background-color: $white;
-  font-family: $font-family-heading;
+  font-family: $headings-font-family;
 
   .navbar-header .navbar-brand {
     text-transform: uppercase;
     color: $brand-orange;
-    font-family: $font-family-heading;
+    font-family: $headings-font-family;
     font-weight: 700;
 
     &:hover, &:focus {
@@ -261,7 +261,7 @@ header {
       .project-category,
       .project-name {
         padding: 0 15px;
-        font-family: $font-family-heading;
+        font-family: $headings-font-family;
       }
 
       .project-category {
@@ -322,7 +322,7 @@ header {
   border: 0;
   border-radius: 300px;
   text-transform: uppercase;
-  font-family: $font-family-heading;
+  font-family: $headings-font-family;
   font-weight: 700;
 }
 
