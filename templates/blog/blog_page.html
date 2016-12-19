@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags %}
 
 {% block body_class %}template-blogpage{% endblock %}
 
@@ -11,7 +11,7 @@
       <p class="text-right small">
         Published: {{ page.date|datetime }}
       </p>
-      {{ page.body|richtext }}
+      {% include_block page.body %}
     </div>
   </section>
 {% endblock %}

@@ -6,9 +6,7 @@
 
 {% block content %}
   {% include 'common/header' %}
-  <section>
-    <div class="container">
-      {{ page.body|richtext }}
-    </div>
+  <section class="container">
+    {% include_block page.body %}
   </section>
 {% endblock %}
