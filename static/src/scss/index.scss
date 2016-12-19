@@ -76,12 +76,17 @@ p a {
   display: flex;
   align-items: center;
 
+  hr.light {
+    max-width: 250px;
+  }
+
   &.image .section-heading {
     @extend .text-shadow;
+    font-size: 72px;
   }
 
   @media screen and (min-height: $screen-xs-max) {
-    height: 40vh;
+    height: 50vh;
   }
 }
 
