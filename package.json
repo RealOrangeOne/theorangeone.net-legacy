@@ -19,6 +19,7 @@
     "bootstrap-sass": "=3.3.7",
     "font-awesome": "=4.6.3",
     "jquery": "=3.0.0",
+    "pygments-css": "=1.0.0",
     "underscore": "=1.8.3",
     "wow.js": "=1.2.0"
   },

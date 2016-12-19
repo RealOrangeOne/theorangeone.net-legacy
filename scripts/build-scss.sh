@@ -7,9 +7,6 @@ then
   echo ">>> WARNING: Building in Production Mode!"
 fi
 
-echo ">> Generating Pygments styles..."
-env/bin/pygmentize -S github -f html -a .highlight > static/src/scss/pygment.css
-
 echo ">> Building SCSS..."
 node-sass static/src/scss/index.scss static/build/css/index.css --source-map-embed
 
