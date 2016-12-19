@@ -168,4 +168,3 @@ BASE_URL = 'https://theorangeone.net'
 SITE_URL = BASE_URL
 
 PASSWORD_REQUIRED_TEMPLATE = 'pages/password_required.html'
-
