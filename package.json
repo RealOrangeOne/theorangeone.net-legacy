@@ -3,9 +3,11 @@
   "version": "5.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
+    "postinstall": "npm run build",
     "build-js": "./scripts/build-js.sh",
     "build-scss": "./scripts/build-scss.sh",
-    "build": "npm run build-scss && npm run build-js"
+    "build-static": "./scripts/build-static.sh",
+    "build": "npm run build-static && npm run build-scss && npm run build-js"
   },
   "repository": {
     "type": "git",
