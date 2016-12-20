@@ -29,8 +29,16 @@ class Entity(MetadataPageMixin, Page):
         ], 'Common page configuration'),
     ]
 
+    @property
+    def short_body(self):
+        body_words = str(self.body).split(' ')
+        return ' '.join(body_words[:30])  # limit to 30 words (ish)
+
     def get_meta_image(self):
         return self.image
+
+    def get_meta_description(self):
+        return self.search_description or self.short_body
 
     class Meta:
         abstract = True
