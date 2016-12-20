@@ -11,13 +11,6 @@ class Entity(MetadataPageMixin, Page):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     post_date = models.DateTimeField(null=True, blank=True)
-    image = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        related_name='+',
-        on_delete=models.SET_NULL
-    )
 
     promote_panels = [
         MultiFieldPanel([
@@ -30,12 +23,13 @@ class Entity(MetadataPageMixin, Page):
     ]
 
     @property
+    def image(self):
+        return self.search_image
+
+    @property
     def short_body(self):
         body_words = str(self.body).split(' ')
         return ' '.join(body_words[:30])  # limit to 30 words (ish)
-
-    def get_meta_image(self):
-        return self.image
 
     def get_meta_description(self):
         return self.search_description or self.short_body
