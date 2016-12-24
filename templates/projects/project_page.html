@@ -11,15 +11,17 @@
       {% include_block page.body %}
     </div>
   </section>
-  <section class="text-center">
-    <div class="btn-group">
-      {% if page.get_download_link %}
-        <a class="btn btn-primary btn-xl" href="{{ page.get_download_link }}">Download {{ page.title }}</a>
-      {% endif %}
+  {% if page.get_download_link or page.project_url %}
+    <section class="text-center">
+      <div class="btn-group">
+        {% if page.get_download_link %}
+          <a class="btn btn-primary btn-xl" href="{{ page.get_download_link }}">Download {{ page.title }}</a>
+        {% endif %}
 
-      {% if page.url %}
-        <a class="btn btn-github btn-xl" href="{{ page.project_url }}"><i class="fa fa-github fa-lg"></i> View Project</a>
-      {% endif %}
-    </div>
-  </section>
+        {% if page.project_url %}
+          <a class="btn btn-github btn-xl" href="{{ page.project_url }}"><i class="fa fa-github fa-lg"></i> View Project</a>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}
