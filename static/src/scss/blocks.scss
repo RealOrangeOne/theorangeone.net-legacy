@@ -3,10 +3,13 @@
     max-width: 100%;
     height: auto;
     max-height: 100vh;
+    margin: $padding-large-vertical 0;
   }
 }
 
 .block-video {
+  margin: $padding-large-vertical 0;
+
   iframe {
     width: 100%;
     height: 50vh;
