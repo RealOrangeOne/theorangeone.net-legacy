@@ -18,7 +18,7 @@ class Entity(MetadataPageMixin, Page):
             FieldPanel('seo_title'),
             FieldPanel('post_date'),
             FieldPanel('search_description'),
-            ImageChooserPanel('image'),
+            ImageChooserPanel('search_image'),
         ], 'Common page configuration'),
     ]
 
