@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-indexpage{% endblock %}
 
@@ -17,6 +17,21 @@
     <section>
       <div class="container">
         <div class="row no-gutter">
+          {% for child in page.get_children.specific %}
+            <div class="media category">
+              <div class="media-left">
+                <a href="{{ child.url }}">
+                  {% image child.image max-200x200 %}
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="{{ child.url }}">
+                  <h4 class="media-heading">{{ child.title }}</h4>
+                </a>
+                <p>{{ child.get_meta_description }}</p>
+              </div>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </section>

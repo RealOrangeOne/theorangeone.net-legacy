@@ -3,6 +3,7 @@ from django.db import models
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtailmetadata.models import MetadataPageMixin
+from bs4 import BeautifulSoup
 
 
 class Entity(MetadataPageMixin, Page):
@@ -28,8 +29,8 @@ class Entity(MetadataPageMixin, Page):
 
     @property
     def short_body(self):
-        body_words = str(self.body).split(' ')
-        return ' '.join(body_words[:30])  # limit to 30 words (ish)
+        body_words = BeautifulSoup(str(self.body)).get_text().split(' ')
+        return ' '.join(body_words[:30]) + '...'  # limit to 30 words (ish)
 
     def get_meta_description(self):
         return self.search_description or self.short_body
