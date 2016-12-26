@@ -3,7 +3,6 @@ from .context import SETTINGS_KEYS
 from django.conf import settings
 from project.home.models import HomePage
 from wagtail.wagtailcore.models import Site, Page
-from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from rest_framework.test import APIClient
 from django.utils.text import slugify
@@ -11,43 +10,34 @@ from bs4 import BeautifulSoup
 
 
 class BaseTestCase(WagtailPageTests):
-    USERNAME = 'test_user'
-    EMAIL = 'test@example.com'
-    PASSWORD = 'test'
+    client = APIClient()
 
     def setUp(self):
         super().setUp()
 
-        self.client = APIClient()
         self.root = self.create_initial_homepage()
-        self.user = User.objects.create_superuser(
-            self.USERNAME,
-            self.EMAIL,
-            self.PASSWORD
-        )
-        self.client.login(
-            username=self.USERNAME,
-            password=self.PASSWORD
-        )
 
     def create_model(self, model, data={}):
         add_url = reverse('wagtailadmin_pages:add', args=[
             model._meta.app_label, model._meta.model_name, self.root.pk
         ])
-        data['action-publish'] = 'action-publish'
-        data['body-count'] = 1
-        data['body-0-deleted'] = ''
-        data['body-0-order'] = 0
-        data['body-0-type'] = 'raw_html'
-        data['body-0-value'] = data['body']
-        data['slug'] = slugify(data['title'])
+        data.update({
+            'action-publish': 'action-publish',
+            'body-count': 1,
+            'body-0-deleted': '',
+            'body-0-order': 0,
+            'body-0-type': 'raw_html',
+            'body-0-value': data['body'],
+            'slug': slugify(data['title'])
+        })
         return self.client.post(add_url, data)
 
+    def create_test_user(self):
+        self.user = super().create_test_user()
+        return self.user
+
     def parse_content(self, content):
-        parsed_content = BeautifulSoup(content, 'html.parser')
-        for tag in parsed_content(["noscript"]):  # Remove noscript tags
-            tag.extract()
-        return parsed_content
+        return BeautifulSoup(content, 'html.parser')
 
     def create_initial_homepage(self):
         """
