@@ -1,9 +1,9 @@
 .block-image {
   img {
+    margin: $padding-large-vertical 0;
     max-width: 100%;
     height: auto;
     max-height: 100vh;
-    margin: $padding-large-vertical 0;
   }
 }
 
