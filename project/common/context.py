@@ -1,4 +1,5 @@
 from django.conf import settings
+from .models import SocialMediaSettings
 
 
 SETTINGS_KEYS = [
@@ -13,8 +14,11 @@ SETTINGS_KEYS = [
 ]
 
 
-def settings_injector(request=None):
-    injected_settings = {}
+def settings_injector(request):
+    django_settings = {}
     for setting in SETTINGS_KEYS:
-        injected_settings[setting] = getattr(settings, setting)
-    return {'django_settings': injected_settings}
+        django_settings[setting] = getattr(settings, setting)
+    django_settings.update({
+        'social': SocialMediaSettings.for_site(request.site)
+    })
+    return {'settings': django_settings}
