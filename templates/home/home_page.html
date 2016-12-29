@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -77,6 +77,22 @@
   <section id="projects">
     <div class="container-fluid">
       <div class="row no-gutter">
+        {% for project in projects %}
+          <div class="col-sm-4">
+            {% image project.image max-1000x1000 as project_image %}
+            <a href="{{ project.url }}" class="portfolio-box image" data-image="{{ project_image.url }}">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-name">
+                    <h2>
+                      {{ project.title }}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
       </div>
       <div class="row">
         <div class="col-xs-12 text-center">
