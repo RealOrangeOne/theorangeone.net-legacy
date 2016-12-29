@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{% block htmltitle %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}</title>
+    <title>{% block htmltitle %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %} | {{ settings.WAGTAIL_SITE_NAME }}</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
     <meta http-equiv="Content-Language" content="{{ settings.LANGUAGE_CODE }}" />
     <meta name="superfish" content="nofish" />
