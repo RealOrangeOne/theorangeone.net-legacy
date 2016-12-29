@@ -4,7 +4,6 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtailmetadata.models import MetadataPageMixin
 from bs4 import BeautifulSoup
-from wagtail.contrib.settings.models import BaseSetting, register_setting
 
 
 class Entity(MetadataPageMixin, Page):
@@ -38,13 +37,3 @@ class Entity(MetadataPageMixin, Page):
 
     class Meta:
         abstract = True
-
-
-@register_setting
-class SocialMediaSettings(BaseSetting):
-    flickr = models.URLField(help_text="Flickr Profile URL")
-    freenode = models.CharField(help_text="Freenode Username", max_length=15)
-    github = models.URLField(help_text="GitHub Profile URL")
-    reddit = models.URLField(help_text="Reddit Profile URL")
-    twitter = models.CharField(help_text='Twitter Username', max_length=15)
-    youtube = models.URLField(help_text='Youtube Channel URL')
