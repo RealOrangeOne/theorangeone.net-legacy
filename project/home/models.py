@@ -10,7 +10,7 @@ from project.common.utils import round_to_multiple
 class HomePage(Entity):
     is_home = True
 
-    body = RichTextField(blank=True)
+    body = RichTextField()
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full")
