@@ -48,6 +48,7 @@ class BaseTestCase(WagtailPageTests):
         # Create a new homepage
         homepage = HomePage.objects.create(
             title="Homepage",
+            body="Home Page",
             slug='home',
             path='00010001',
             depth=2,
