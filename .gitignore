@@ -60,7 +60,6 @@ target/
 # Pelican stuff
 output/
 theme/static/build/
-pelican_plugins/
 
 theme/static/src/scss/pygment.css
 deploy/

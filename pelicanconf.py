@@ -10,11 +10,11 @@ from config import settings
 AUTHOR = settings.author
 SITENAME = settings.site_name
 SITEURL = settings.url
-PATH = '../content'
+PATH = 'content'
 TIMEZONE = settings.timezone
 DEFAULT_LANG = settings.language
 PAGE_PATHS = ["pages"]
-THEME = "../theme"
+THEME = "theme"
 THEME_STATIC_DIR = "static"
 THEME_STATIC_PATHS = ["static/build"]
 STATIC_PATHS = ["assets"]
@@ -61,7 +61,7 @@ FEED_ATOM = 'feed.atom'
 FEED_DOMAIN = SITEURL
 
 # Setup plugins
-PLUGIN_PATHS = ["../pelican_plugins", "../plugins"]
+PLUGIN_PATHS = ["plugins", "pelican_plugins"]
 PLUGINS = settings.pelican_plugins
 
 if BUILD_PRODUCTION:

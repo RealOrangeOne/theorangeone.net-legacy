@@ -3,6 +3,10 @@
   "version": "4.0.0",
   "description": " Source code for TheOrangeOne.net",
   "scripts": {
+    "postinstall": "npm run create-build-dirs && npm run copy-fonts && npm run build",
+    "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css theme/static/build/img",
+    "copy-fonts": "cp -R node_modules/font-awesome/fonts theme/static/build/",
+    "build": "npm run build-scss && npm run build-js",
     "build-js": "./scripts/build-js.sh",
     "build-scss": "./scripts/build-scss.sh"
   },

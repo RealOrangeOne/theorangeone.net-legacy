@@ -1,0 +1,7 @@
+[submodule "plugins/pelican-jinja2content"]
+	path = plugins/pelican-jinja2content
+	url = https://github.com/RealOrangeOne/pelican-jinja2content
+
+[submodule "pelican_plugins"]
+	path = pelican_plugins
+	url = https://github.com/getpelican/pelican-plugins

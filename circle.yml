@@ -7,19 +7,3 @@ machine:
     BUILD_PRODUCTION: true
     NODE_ENV: production
     NPM_CONFIG_PRODUCTION: false
-
-dependencies:
-  pre:
-    - make -B
-
-test:
-  override:
-    - make test
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - git config --global user.email "git@theorangeone.net"
-      - git config --global user.name "TheOrangeOne"
-      - make upload
