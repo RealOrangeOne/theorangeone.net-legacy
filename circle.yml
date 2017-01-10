@@ -10,7 +10,7 @@ machine:
 
 dependencies:
     pre:
-        - scripts/build
+        - pelican -v
 
 
 test:
