@@ -5,9 +5,7 @@
   "scripts": {
     "postinstall": "npm run create-build-dirs && npm run copy-fonts",
     "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css theme/static/build/img",
-    "copy-fonts": "cp -R node_modules/font-awesome/fonts theme/static/build/",
-    "build-js": "./scripts/build-js.sh",
-    "build-scss": "./scripts/build-scss.sh"
+    "copy-fonts": "cp -R node_modules/font-awesome/fonts theme/static/build/"
   },
   "repository": {
     "type": "git",
