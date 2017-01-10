@@ -8,6 +8,11 @@ machine:
     NODE_ENV: production
     NPM_CONFIG_PRODUCTION: false
 
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init --recursive
+
 dependencies:
     post:
         - pelican -v
