@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+export PATH=env/bin:${PATH}
+export PATH=node_modules/.bin:${PATH}
+
+FLAKE8_IGNORE=--ignore=E128,E501,E401,E402
+
+set -e
+
+nose2 --verbose
+
+eslint 'theme/static/src/js/'
+
+sass-lint -vqc .sass-lint.yml
+
+flake8 plugins/ $FLAKE8_IGNORE
+flake8 scripts/ $FLAKE8_IGNORE
+flake8 config/ $FLAKE8_IGNORE
+flake8 tests/ $FLAKE8_IGNORE
+
+yamllint config/config.yml
+
+mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
+mdspell --en-gb -ranx content/**/*.md content/*.md content/**/*.html content/*.html
+
+nsp check
+
+bandit -r plugins/ config/ tests/

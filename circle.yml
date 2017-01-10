@@ -11,3 +11,8 @@ machine:
 dependencies:
     pre:
         - scripts/build
+
+
+test:
+    override:
+        - scripts/test
