@@ -13,6 +13,7 @@ pelican_plugins:
   - metatags
   - autopages
   - screenfetch
+  - post_build
 
 sitemap_format: xml
 
