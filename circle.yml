@@ -9,7 +9,7 @@ machine:
     NPM_CONFIG_PRODUCTION: false
 
 dependencies:
-    pre:
+    post:
         - pelican -v
 
 
