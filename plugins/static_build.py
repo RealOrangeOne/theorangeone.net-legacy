@@ -43,7 +43,7 @@ def static_build(*args, **kwargs):
     run_command('Building jQuery', [node_bin('uglifyjs'), 'node_modules/jquery/dist/jquery.js', UGLIFY_ARGS, '-o', 'theme/static/build/js/jquery.js'])
     run_command('Building Application', [
         node_bin('browserify'),
-        '-t', '[', 'babelify', '--presets', '[', 'es2015', 'react', ']', ']',
+        '-t', '[', 'babelify', '--presets', '[', 'es2015', ']', ']',
         'theme/static/src/js/app.js',
         '-o', 'theme/static/build/js/app.js'
     ])
