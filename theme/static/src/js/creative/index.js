@@ -1,3 +1,5 @@
+'use strict';
+
 require('jquery.easing');
 require('./creative');
 

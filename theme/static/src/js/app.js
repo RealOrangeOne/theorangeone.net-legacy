@@ -1,3 +1,5 @@
+'use strict';
+
 require('./creative');
 var ansi_up = require('ansi_up');
 
