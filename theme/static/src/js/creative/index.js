@@ -1,6 +1,6 @@
-import 'jquery.easing';
-import './creative';
+require('jquery.easing');
+require('./creative');
 
-import WOW from 'wow.js';
+var WOW = require('wow.js');
 
 new WOW().init();
