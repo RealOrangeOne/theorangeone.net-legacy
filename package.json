@@ -5,7 +5,8 @@
   "scripts": {
     "postinstall": "npm run create-build-dirs && npm run copy-fonts",
     "create-build-dirs": "mkdir -p theme/static/build/js/lib theme/static/build/fonts theme/static/build/css theme/static/build/img",
-    "copy-fonts": "cp -R node_modules/font-awesome/fonts theme/static/build/"
+    "copy-fonts": "cp -R node_modules/font-awesome/fonts theme/static/build/",
+    "start": "tstatic output/"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
     "font-awesome": "=4.6.3",
     "jquery": "=2.2.3",
     "jquery.easing": "=1.3.2",
+    "tstatic": "git://github.com/RealOrangeOne/tstatic",
     "underscore": "=1.8.3",
     "wow.js": "=1.2.0"
   },
