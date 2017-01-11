@@ -2,7 +2,7 @@ machine:
   python:
     version: 3.5.1
   node:
-    version: 5.11.1
+    version: 6.9.4
   environment:
     BUILD_PRODUCTION: true
     NODE_ENV: production
