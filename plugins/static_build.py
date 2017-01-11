@@ -47,16 +47,18 @@ def static_build(*args, **kwargs):
         'theme/static/src/js/app.js',
         '-o', 'theme/static/build/js/app.js'
     ])
-    run_command('Compressing Application', [node_bin('uglifyjs'), 'theme/static/build/js/app.js', UGLIFY_ARGS, '-o', 'theme/static/build/js/app.js'])
 
     logger.info('JS built!')
 
     run_command('Building Pygments Style', ['pygmentize', '-S', 'github', '-f', 'html', '-a', '.highlight', '>', 'theme/static/src/scss/pygment.css'], True)
     run_command('Building Styles', [node_bin('node-sass'), 'theme/static/src/scss/index.scss', 'theme/static/build/css/index.css', '--source-map-embed'])
-    run_command('Prefixing Styles', [node_bin('postcss'), '-u', 'autoprefixer', '-o', 'theme/static/build/css/index.css', 'theme/static/build/css/index.css'])
-    run_command('Compressing Styles', [node_bin('cleancss'), '-d', '--s0', '-o', 'theme/static/build/css/index.css', 'theme/static/build/css/index.css'])
 
     logger.info('SCSS Built!')
+
+    if NODE_PRODUCTION:
+        run_command('Compressing Application', [node_bin('uglifyjs'), 'theme/static/build/js/app.js', UGLIFY_ARGS, '-o', 'theme/static/build/js/app.js'])
+        run_command('Prefixing Styles', [node_bin('postcss'), '-u', 'autoprefixer', '-o', 'theme/static/build/css/index.css', 'theme/static/build/css/index.css'])
+        run_command('Compressing Styles', [node_bin('cleancss'), '-d', '--s0', '-o', 'theme/static/build/css/index.css', 'theme/static/build/css/index.css'])
 
 
 def register():
