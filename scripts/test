@@ -25,4 +25,6 @@ mdspell --en-gb -ranx content/**/*.md content/*.md content/**/*.html content/*.h
 
 nsp check
 
+safety check
+
 bandit -r plugins/ config/ tests/
