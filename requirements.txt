@@ -1,8 +1,8 @@
-bandit==1.1.0
-flake8==3.0.4
-fontawesome_markdown==0.2.5
+bandit==1.3.0
+flake8==3.2.1
+fontawesome_markdown==0.2.6
 git+https://github.com/ryneeverett/python-markdown-comments.git
-gitpython==2.0.8
+gitpython==2.1.1
 iso8601==0.1.11
 markdown==2.6.7
 nose2==0.6.5
@@ -10,7 +10,7 @@ pelican-minify==0.9
 pelican==3.6.3
 pyembed-markdown==1.1.0
 pygments-style-github==0.4
-python-resize-image==1.1.3
+python-resize-image==1.1.10
 pyyaml==3.12
-sh==1.11
-yamllint==1.4.1
+sh==1.12.9
+yamllint==1.6.0
