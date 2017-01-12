@@ -1,14 +1,21 @@
 from pelican import signals
 import os
+from plugins.utils import run_command
 
 
 OUTPUT_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'output')
 
 
 def post_build(*args, **kwargs):
-    os.system("mv {0}/assets/robots.txt {0}".format(OUTPUT_PATH))
-    os.system("cp -R {0}/assets/* {0}/static".format(OUTPUT_PATH))
-    os.system("rm -rf {0}/assets".format(OUTPUT_PATH))
+    run_command('Copying Robots.txt', [
+        'mv', os.path.join(OUTPUT_PATH, 'assets', 'robots.txt'), OUTPUT_PATH
+    ])
+    run_command('Copying Assets', [
+        'cp', '-R', os.path.join(OUTPUT_PATH, 'assets', '*'), os.path.join(OUTPUT_PATH, 'static')
+    ], True)
+    run_command('Remove Old Assets', [
+        'rm', '-rf', os.path.join(OUTPUT_PATH, 'assets')
+    ])
 
 
 def register():

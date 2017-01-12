@@ -1,35 +1,11 @@
 from pelican import signals
 import os
-import subprocess
+from plugins.utils import node_bin, run_command
 import logging
 
 logger = logging.getLogger(__file__)
 
 NODE_PRODUCTION = os.environ.get('NODE_ENV') == 'production'
-
-
-def flatten_list(array):
-    res = []
-    for el in array:
-        if isinstance(el, (list, tuple)):
-            res.extend(flatten_list(el))
-            continue
-        res.append(el)
-    return res
-
-
-def run_command(detail, args, use_system=False):
-    logger.info(detail + '...')
-    if use_system:
-        exit_code = os.system(' '.join(flatten_list(args)))
-        if exit_code:
-            exit(exit_code)
-    else:
-        subprocess.run(flatten_list(args), check=True)
-
-
-def node_bin(exec):
-    return os.path.join('node_modules', '.bin', exec)
 
 
 def static_build(*args, **kwargs):
