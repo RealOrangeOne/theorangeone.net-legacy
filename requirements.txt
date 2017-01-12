@@ -10,7 +10,7 @@ pelican-minify==0.9
 pelican==3.6.3
 pyembed-markdown==1.1.0
 pygments-style-github==0.4
-python-resize-image==1.1.10
+python-resize-image==1.1.3
 pyyaml==3.12
 safety==0.5.1
 sh==1.12.9
