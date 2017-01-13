@@ -9,7 +9,7 @@ from jinja2 import Environment, ChoiceLoader, FileSystemLoader
 def execjinja2(instance):
     if type(instance) in (contents.Article, contents.Page):
         base_path = os.path.dirname(os.path.abspath(__file__))
-        jinja2_env = Environment(
+        jinja2_env = Environment(  # nosec
             loader=ChoiceLoader([
                 FileSystemLoader(
                     os.path.join(base_path, instance.settings['THEME'], 'templates')
