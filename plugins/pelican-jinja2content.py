@@ -1,20 +1,20 @@
 import os
-from pelican import signals
-from pelican import contents
-
+from pelican import signals, contents
 from jinja2 import Environment, ChoiceLoader, FileSystemLoader
+from config import social
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def execjinja2(instance):
     if type(instance) in (contents.Article, contents.Page):
-        base_path = os.path.dirname(os.path.abspath(__file__))
         jinja2_env = Environment(  # nosec
             loader=ChoiceLoader([
                 FileSystemLoader(
-                    os.path.join(base_path, instance.settings['THEME'], 'templates')
+                    os.path.join(BASE_DIR, instance.settings['THEME'], 'templates')
                 ),
                 FileSystemLoader(
-                    os.path.join(base_path, instance.settings['PATH'])
+                    os.path.join(BASE_DIR, instance.settings['PATH'])
                 )
             ]),
             **instance.settings['JINJA_ENVIRONMENT'],
@@ -29,7 +29,8 @@ def execjinja2(instance):
             kwargs['article'] = instance
         elif type(instance) is contents.Page:
             kwargs['page'] = instance
-        kwargs['instance'] = instance  # avoid using outside common elements
+
+        kwargs['social'] = social
 
         instance._content = jinja2_template.render(**kwargs)
 
