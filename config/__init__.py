@@ -2,29 +2,12 @@ import yaml
 import os.path
 
 
-class DotDictionary(dict):
-    def __getattr__(self, attr):
-        value = self[attr]
-        if type(value) == dict:
-            value = DotDictionary(value)
-        return value
-    __setattr__ = dict.__setitem__
-    __delattr__ = dict.__delitem__
+settings_dir = os.path.dirname(__file__)
 
 
-class WrappedSettings:
-    def __init__(self):
-        self.settings_dir = os.path.join(os.path.dirname(__file__), 'config.yml')
-        settings = open(self.settings_dir)
-        self.settings = yaml.safe_load(settings)
+def get_config(filename):
+    with open(os.path.join(settings_dir, '{}.yml'.format(filename))) as f:
+        return yaml.safe_load(f)
 
-    def __getattr__(self, name):
-        value = self.settings[name]
-        if type(value) == dict:
-            value = DotDictionary(value)
-        return value
 
-    def __str__(self):
-        return str(self.settings)
-
-settings = WrappedSettings()
+social = get_config('social')

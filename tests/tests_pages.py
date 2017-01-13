@@ -1,5 +1,5 @@
 from tests import TestCase
-from config import settings
+from config import social as social_settings
 import os.path
 
 
@@ -44,7 +44,7 @@ class AboutPageTestCase(TestCase):
         self.assertEqual(len(tags), 1)
         tag = tags[0]
         self.assertEqual('medium', tag.attrs['data-theme'])
-        self.assertEqual(settings.accounts.github[1], tag.attrs['data-github'])
+        self.assertEqual(social_settings['accounts']['github'][1], tag.attrs['data-github'])
 
 
 class Page404TestCase(TestCase):

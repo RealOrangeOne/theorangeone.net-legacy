@@ -18,7 +18,7 @@ flake8 scripts/ $FLAKE8_IGNORE
 flake8 config/ $FLAKE8_IGNORE
 flake8 tests/ $FLAKE8_IGNORE
 
-yamllint config/config.yml
+yamllint config/social.yml
 
 mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
 mdspell --en-gb -ranx content/**/*.md content/*.md content/**/*.html content/*.html

@@ -4,15 +4,13 @@ from git import Repo
 import sys, os
 sys.path.insert(0, os.path.realpath('./'))
 
-from config import settings
-
 # Global core settings
-AUTHOR = settings.author
-SITENAME = settings.site_name
-SITEURL = settings.url
+AUTHOR = "Jake Howard"
+SITENAME = "TheOrangeOne"
+SITEURL = "https://theorangeone.net"
 PATH = 'content'
-TIMEZONE = settings.timezone
-DEFAULT_LANG = settings.language
+TIMEZONE = "Europe/London"
+DEFAULT_LANG = "en"
 PAGE_PATHS = ["pages"]
 THEME = "theme"
 THEME_STATIC_DIR = "static"
@@ -34,7 +32,10 @@ REPO = Repo(search_parent_directories=True)
 BUILD_PRODUCTION = 'BUILD_PRODUCTION' in os.environ
 from plugins import image_resizer
 META_IMAGES = image_resizer.generate()
-PIWIK = settings.piwik
+PIWIK = {
+    'url': 'piwik.theorangeone.net',
+    'site_id': '1'
+}
 
 # Disable some pages
 TAG_URL = False
@@ -62,13 +63,22 @@ FEED_DOMAIN = SITEURL
 
 # Setup plugins
 PLUGIN_PATHS = ["plugins", "pelican_plugins"]
-PLUGINS = settings.pelican_plugins
+PLUGINS = [
+    'sitemap',
+    'filetime_from_git',
+    'pelican-jinja2content',
+    'metatags',
+    'autopages',
+    'screenfetch',
+    'post_build',
+    'static_build'
+]
 
 if BUILD_PRODUCTION:
     PLUGINS.append("minify")  # only minify on production build
 
 SITEMAP = {
-    "format": settings.sitemap_format
+    "format": 'xml'
 }
 CATEGORY_PAGE_PATH = "theme/templates/categories"
 MINIFY = {

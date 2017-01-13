@@ -1,5 +1,4 @@
 import os
-
 from pelican import signals
 from pelican import contents
 
