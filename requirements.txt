@@ -7,7 +7,7 @@ iso8601==0.1.11
 markdown==2.6.7
 nose2==0.6.5
 pelican-minify==0.9
-pelican==3.6.3
+pelican==3.7.1
 pyembed-markdown==1.1.0
 pygments-style-github==0.4
 python-resize-image==1.1.3

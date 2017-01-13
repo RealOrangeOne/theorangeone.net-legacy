@@ -81,18 +81,25 @@ MINIFY = {
 from fontawesome_markdown import FontAwesomeExtension
 from pyembed.markdown import PyEmbedMarkdown
 from mkdcomments import CommentsExtension
-MD_EXTENSIONS = [
-    FontAwesomeExtension(),
-    PyEmbedMarkdown(),
-    CommentsExtension(),
-    'codehilite(css_class=highlight)',
-    'extra'
-]
-
+MARKDOWN = {
+    'extensions': [
+        FontAwesomeExtension(),
+        PyEmbedMarkdown(),
+        CommentsExtension(),
+        'codehilite(css_class=highlight)',
+        'extra'
+    ]
+}
 # Setup jinja2 filters
 from plugins import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
     "category_find": filters.category_find,
     "limit": filters.limit
+}
+
+JINJA_ENVIRONMENT = {
+    'trim_blocks': True,
+    'lstrip_blocks': True,
+    'extensions': {}
 }
