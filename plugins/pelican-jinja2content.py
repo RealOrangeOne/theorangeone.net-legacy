@@ -30,6 +30,7 @@ def execjinja2(instance):
             kwargs['article'] = instance
         elif type(instance) is contents.Page:
             kwargs['page'] = instance
+        kwargs['instance'] = instance  # avoid using outside common elements
 
         instance._content = jinja2_template.render(**kwargs)
 
