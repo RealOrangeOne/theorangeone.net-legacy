@@ -101,5 +101,8 @@ JINJA_FILTERS = {
 JINJA_ENVIRONMENT = {
     'trim_blocks': True,
     'lstrip_blocks': True,
-    'extensions': {}
+    'extensions': [
+        'jinja2.ext.with_',
+        'plugins.include_with.IncludeWith'
+    ]
 }
