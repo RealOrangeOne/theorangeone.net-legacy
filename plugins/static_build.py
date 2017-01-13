@@ -6,7 +6,6 @@ logger = logging.getLogger(__file__)
 
 
 def static_build(*args, **kwargs):
-    return
     if NODE_PRODUCTION:
         logger.info('Building Production...')
         UGLIFY_ARGS = ['--compress', '--screw-ie8', '--define', '--stats', '--keep-fnames']
