@@ -6,6 +6,9 @@ import os
 logger = logging.getLogger(__file__)
 
 
+NODE_PRODUCTION = os.environ.get('NODE_ENV') == 'production'
+
+
 def flatten_list(array):
     res = []
     for el in array:
@@ -18,7 +21,7 @@ def flatten_list(array):
 
 def run_command(detail, args, wrap=False):
     if wrap:
-        run_command('', ['bash', '-c', ' '.join(flatten_list(args))])
+        run_command(detail, ['bash', '-c', ' '.join(flatten_list(args))])
     else:
         logger.info(detail + '...')
         subprocess.run(flatten_list(args), check=True)

@@ -1,11 +1,8 @@
 from pelican import signals
-import os
-from plugins.utils import node_bin, run_command
+from plugins.utils import node_bin, run_command, NODE_PRODUCTION
 import logging
 
 logger = logging.getLogger(__file__)
-
-NODE_PRODUCTION = os.environ.get('NODE_ENV') == 'production'
 
 
 def static_build(*args, **kwargs):
@@ -14,7 +11,7 @@ def static_build(*args, **kwargs):
         UGLIFY_ARGS = ['--compress', '--screw-ie8', '--define', '--stats', '--keep-fnames']
     else:
         UGLIFY_ARGS = []
-
+    run_command('Copying Fonts', ['cp', '-r', 'node_modules/font-awesome/fonts', 'theme/static/build/'])
     run_command('Building Bootstrap', [node_bin('uglifyjs'), 'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js', UGLIFY_ARGS, '-o', 'theme/static/build/js/bootstrap.js'])
     run_command('Building jQuery', [node_bin('uglifyjs'), 'node_modules/jquery/dist/jquery.js', UGLIFY_ARGS, '-o', 'theme/static/build/js/jquery.js'])
     run_command('Building Application', [
