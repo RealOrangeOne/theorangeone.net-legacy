@@ -2,13 +2,14 @@
 
 [![Circle CI](https://circleci.com/gh/RealOrangeOne/theorangeone.net.svg?style=svg)](https://circleci.com/gh/RealOrangeOne/theorangeone.net)
 
+Find it here: [https://theorangeone.net](http://theorangeone.net)
 
 ## Installation
 ```bash
-make
+./scripts/build
 ```
 
 ## Run Tests
 ```bash
-make test
+./scripts/test
 ```
