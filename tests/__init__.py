@@ -29,7 +29,7 @@ class TestCase(unittest.TestCase):
     client = TestClient()
 
     def get_children(self, content):
-        return str(list(content.children)[0])
+        return str(list(content.children)[0]).strip()
 
     def assertTitle(self, content, title):
         self.assertIn(title, content.title.string)
@@ -37,3 +37,6 @@ class TestCase(unittest.TestCase):
     def assertHeaderTitle(self, content, title):
         header_title = content.find('h1', class_="section-heading")
         self.assertIn(title, self.get_children(header_title))
+
+    def assertSamePath(self, p1, p2):
+        self.assertEqual(self.client.build_path(p1), self.client.build_path(p2))

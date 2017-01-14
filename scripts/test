@@ -7,7 +7,7 @@ FLAKE8_IGNORE=--ignore=E128,E501,E401,E402
 
 set -e
 
-nose2 --verbose
+nose2
 
 eslint 'theme/static/src/js/'
 

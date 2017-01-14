@@ -36,7 +36,7 @@ from plugins import image_resizer
 META_IMAGES = image_resizer.generate()
 PIWIK = {
     'url': 'piwik.theorangeone.net',
-    'site_id': '1'
+    'site_id': 1
 }
 
 # Disable some pages

@@ -27,12 +27,13 @@ class CorePagesTestCase(TestCase):
         content = self.client.get('.404.html')
         self.assertTitle(content, '404')
 
+class CommonPagesTestCase(TestCase):
     def test_has_scripts(self):
         content = self.client.get('index.html')
         for script in content.find_all('script'):
             if script.attrs.get('id') == 'piwik':
                 continue
-            self.client.exists(script.attrs['src'])
+            self.assertTrue(self.client.exists(script.attrs['src']))
 
     def test_has_stylesheet(self):
         content = self.client.get('index.html')
@@ -52,6 +53,22 @@ class CorePagesTestCase(TestCase):
         for link in footer.find('p', class_="social").find_all('a'):
             self.assertIn(link.attrs['alt'], social_settings['footer_accounts'])
             self.assertIn("fa fa-", str(list(link.children)[0]))
+
+    def test_navbar_links(self):
+        content = self.client.get('.404.html')  # a page that isnt home
+        links = content.find('ul', class_='navbar-nav').find_all('a')
+        self.assertEqual(len(links), 4)
+        for link in links:
+            element = self.get_children(link)
+            self.assertEqual(link.attrs['href'], '/{}/'.format(element.lower()))
+            self.assertTrue(self.client.exists(link.attrs['href']))
+
+    def test_navbar_index_link(self):
+        content = self.client.get('.404.html')  # a page that isnt home
+        link = content.find('a', class_='navbar-brand')
+        self.assertTrue(self.client.exists(link.attrs['href']))
+        self.assertSamePath(link.attrs['href'], '/')
+        self.assertEqual(self.get_children(link), settings.SITENAME)
 
     @skipIf(not environ.get('BUILD_PRODUCTION', False), 'Not building production')
     def test_has_analytics(self):
