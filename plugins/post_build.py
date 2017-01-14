@@ -16,6 +16,9 @@ def post_build(*args, **kwargs):
     run_command('Remove Old Assets', [
         'rm', '-rf', os.path.join(OUTPUT_PATH, 'assets')
     ])
+    run_command('Remove Drafts', [
+        'rm', '-rf', os.path.join(OUTPUT_PATH, 'drafts')
+    ])
 
 
 def register():
