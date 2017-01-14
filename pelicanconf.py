@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-from git import Repo
 import sys, os
 sys.path.insert(0, os.path.realpath('./'))
 
@@ -16,6 +15,10 @@ THEME = "theme"
 THEME_STATIC_DIR = "static"
 THEME_STATIC_PATHS = ["static/build"]
 STATIC_PATHS = ["assets"]
+DEFAULT_DATE = 'fs'
+WITH_FUTURE_DATES = True
+LOAD_CONTENT_CACHE = False
+CACHE_CONTENT = False
 
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_PAGINATION = False
@@ -28,7 +31,6 @@ FOOTER_LINKS = links.footer()
 INDEX_PROJECTS = links.index_projects()
 
 # Extra config
-REPO = Repo(search_parent_directories=True)
 BUILD_PRODUCTION = 'BUILD_PRODUCTION' in os.environ
 from plugins import image_resizer
 META_IMAGES = image_resizer.generate()
@@ -65,7 +67,6 @@ FEED_DOMAIN = SITEURL
 PLUGIN_PATHS = ["plugins", "pelican_plugins"]
 PLUGINS = [
     'sitemap',
-    'filetime_from_git',
     'pelican-jinja2content',
     'metatags',
     'autopages',
@@ -98,7 +99,8 @@ MARKDOWN = {
         CommentsExtension(),
         'codehilite(css_class=highlight)',
         'extra'
-    ]
+    ],
+    "output_format": "html5"
 }
 # Setup jinja2 filters
 from plugins import filters
