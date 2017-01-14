@@ -1,1 +1,1 @@
-web: pelican -v && npm start
+web: bash scripts/run-build-server.sh
