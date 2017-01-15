@@ -58,7 +58,7 @@ class CommonPagesTestCase(TestCase):
     def test_navbar_links(self):
         content = self.client.get('.404.html')  # a page that isnt home
         links = content.find('ul', class_='navbar-nav').find_all('a')
-        self.assertEqual(len(links), 4)
+        self.assertEqual(len(links), 5)
         for link in links:
             element = self.get_children(link)
             self.assertEqual(link.attrs['href'], '/{}/'.format(element.lower()))
