@@ -1,22 +1,4 @@
 ---
-
-author: Jake Howard
-site_name: TheOrangeOne
-url: https://theorangeone.net
-timezone: Europe/London
-language: en
-
-pelican_plugins:
-  - sitemap
-  - filetime_from_git
-  - pelican-jinja2content
-  - metatags
-  - autopages
-  - screenfetch
-
-sitemap_format: xml
-
-
 accounts:
   github:
     - GitHub
@@ -103,7 +85,3 @@ footer_accounts:
   - instagram
   - youtube
   - flickr
-
-piwik:
-  url: piwik.theorangeone.net
-  site_id: 1

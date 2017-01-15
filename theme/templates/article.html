@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-  {% include 'extras/header.html' with context %}
+  {% include 'extras/header.html' with instance=article %}
   <section>
     <div class="container">
       {{ article.content }}

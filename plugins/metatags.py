@@ -17,10 +17,10 @@ def html_to_raw(html):
 def get_twiter_tags(instance):
     return {
         "twitter:card": "summary_large_image",
-        "twitter:site": instance.settings.get("ACCOUNTS")["twitter"].username,
+        "twitter:site": instance.settings.get("ACCOUNTS")["twitter"]['username'],
         "twitter:title": instance.metadata.get("title", ""),
         "twitter:description": html_to_raw(instance.metadata.get("summary", "")),
-        "twitter:creator": instance.settings.get("ACCOUNTS")["twitter"].username,
+        "twitter:creator": instance.settings.get("ACCOUNTS")["twitter"]['username'],
         "twitter:image": instance.metadata.get("image", ""),
         "twitter:image:alt": html_to_raw(instance.metadata.get("summary", "")),
         "twitter:url": os.path.join(instance.settings.get("SITEURL", ""), instance.url)

@@ -2,24 +2,22 @@ machine:
   python:
     version: 3.5.1
   node:
-    version: 5.11.1
+    version: 6.9.4
   environment:
     BUILD_PRODUCTION: true
     NODE_ENV: production
     NPM_CONFIG_PRODUCTION: false
 
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init --recursive
+
 dependencies:
-  pre:
-    - make -B
+  override:
+    - scripts/build
+    - pelican -v
 
 test:
   override:
-    - make test
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - git config --global user.email "git@theorangeone.net"
-      - git config --global user.name "TheOrangeOne"
-      - make upload
+    - scripts/test

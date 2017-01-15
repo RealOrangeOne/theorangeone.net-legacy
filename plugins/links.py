@@ -1,6 +1,6 @@
 from collections import namedtuple
 from random import shuffle
-from config import settings, DotDictionary
+from config import social
 
 
 ProjectLink = namedtuple("ProjectLink", ["name", "url", "image"])
@@ -8,20 +8,20 @@ ProjectLink = namedtuple("ProjectLink", ["name", "url", "image"])
 
 def accounts():
     links = {}
-    for key, (site, user, url, icon) in settings.accounts.items():
-        links[key] = DotDictionary({
+    for key, (site, user, url, icon) in social['accounts'].items():
+        links[key] = {
             'key': key,
             'site': site,
             'username': user,
             'url': url.format(user),
             'icon': icon
-        })
+        }
     return links
 
 
 def footer():
     all_accounts = accounts()
-    return [all_accounts[account] for account in settings.footer_accounts]
+    return [all_accounts[account] for account in social['footer_accounts']]
 
 
 def index_projects():

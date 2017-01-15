@@ -1,23 +1,25 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-from git import Repo
 import sys, os
 sys.path.insert(0, os.path.realpath('./'))
 
-from config import settings
-
 # Global core settings
-AUTHOR = settings.author
-SITENAME = settings.site_name
-SITEURL = settings.url
-PATH = '../content'
-TIMEZONE = settings.timezone
-DEFAULT_LANG = settings.language
+AUTHOR = "Jake Howard"
+SITENAME = "TheOrangeOne"
+SITEURL = "https://theorangeone.net"
+PATH = 'content'
+TIMEZONE = "Europe/London"
+DEFAULT_LANG = "en"
 PAGE_PATHS = ["pages"]
-THEME = "../theme"
+THEME = "theme"
 THEME_STATIC_DIR = "static"
 THEME_STATIC_PATHS = ["static/build"]
 STATIC_PATHS = ["assets"]
+DEFAULT_DATE = 'fs'
+WITH_FUTURE_DATES = True
+LOAD_CONTENT_CACHE = False
+CACHE_CONTENT = False
+DELETE_OUTPUT_DIRECTORY = True
 
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_PAGINATION = False
@@ -30,11 +32,13 @@ FOOTER_LINKS = links.footer()
 INDEX_PROJECTS = links.index_projects()
 
 # Extra config
-REPO = Repo(search_parent_directories=True)
 BUILD_PRODUCTION = 'BUILD_PRODUCTION' in os.environ
 from plugins import image_resizer
 META_IMAGES = image_resizer.generate()
-PIWIK = settings.piwik
+PIWIK = {
+    'url': 'piwik.theorangeone.net',
+    'site_id': 1
+}
 
 # Disable some pages
 TAG_URL = False
@@ -61,14 +65,22 @@ FEED_ATOM = 'feed.atom'
 FEED_DOMAIN = SITEURL
 
 # Setup plugins
-PLUGIN_PATHS = ["../pelican_plugins", "../plugins"]
-PLUGINS = settings.pelican_plugins
+PLUGIN_PATHS = ["plugins", "pelican_plugins"]
+PLUGINS = [
+    'sitemap',
+    'pelican-jinja2content',
+    'metatags',
+    'autopages',
+    'screenfetch',
+    'post_build',
+    'static_build'
+]
 
 if BUILD_PRODUCTION:
     PLUGINS.append("minify")  # only minify on production build
 
 SITEMAP = {
-    "format": settings.sitemap_format
+    "format": 'xml'
 }
 CATEGORY_PAGE_PATH = "theme/templates/categories"
 MINIFY = {
@@ -81,18 +93,29 @@ MINIFY = {
 from fontawesome_markdown import FontAwesomeExtension
 from pyembed.markdown import PyEmbedMarkdown
 from mkdcomments import CommentsExtension
-MD_EXTENSIONS = [
-    FontAwesomeExtension(),
-    PyEmbedMarkdown(),
-    CommentsExtension(),
-    'codehilite(css_class=highlight)',
-    'extra'
-]
-
+MARKDOWN = {
+    'extensions': [
+        FontAwesomeExtension(),
+        PyEmbedMarkdown(),
+        CommentsExtension(),
+        'codehilite(css_class=highlight)',
+        'extra'
+    ],
+    "output_format": "html5"
+}
 # Setup jinja2 filters
 from plugins import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
     "category_find": filters.category_find,
     "limit": filters.limit
+}
+
+JINJA_ENVIRONMENT = {
+    'trim_blocks': True,
+    'lstrip_blocks': True,
+    'extensions': [
+        'jinja2.ext.with_',
+        'plugins.include_with.IncludeWith'
+    ]
 }

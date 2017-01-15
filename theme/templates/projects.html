@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-  {% include 'extras/header.html' with context %}
+  {% include 'extras/header.html' with instance=article %}
   <section>
     <div class="container">
       <p class="text-right small">
@@ -18,15 +18,19 @@
       {{ article.content }}
     </div>
   </section>
-  <div class="container text-center">
-    <div class="btn-group">
-      {% if article.download_link %}
-        <a class="btn btn-primary btn-xl" href="{{ article.download_link }}">Download {{ article.title }}</a>
-      {% endif %}
+  {% if article.download_link or article.repo %}
+    <section class="text-center">
+      <div class="container">
+        <div class="btn-group">
+          {% if article.download_link %}
+            <a class="btn btn-primary btn-xl" href="{{ article.download_link }}">Download {{ article.title }}</a>
+          {% endif %}
 
-      {% if article.repo %}
-        <a class="btn btn-github btn-xl" href="{{ article.repo }}"><i class="fa fa-github fa-lg"></i> View on Github</a>
-      {% endif %}
-    </div>
-  </div>
+          {% if article.repo %}
+            <a class="btn btn-github btn-xl" href="{{ article.repo }}"><i class="fa fa-github fa-lg"></i> View on Github</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}

@@ -10,6 +10,7 @@
 /* @group Libraries */
 @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
 @import "node_modules/animate.css/animate";
+@import "node_modules/pygments-css/github";
 
 $fa-font-path: "../fonts";
 @import "node_modules/font-awesome/scss/font-awesome";
@@ -18,7 +19,6 @@ $fa-font-path: "../fonts";
 
 /* @group Other Imports */
 @import "creative/creative";
-@import "pygment";
 @import "homepage";
 @import "footer";
 @import "library-overrides";
