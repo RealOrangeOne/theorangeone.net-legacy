@@ -7,24 +7,30 @@ FLAKE8_IGNORE=--ignore=E128,E501,E401,E402
 
 set -e
 
+echo "> Running tests"
+
 nose2
 
+echo ">> Testing client-side"
 eslint 'theme/static/src/js/'
-
 sass-lint -vqc .sass-lint.yml
 
+echo ">> Running flake8"
 flake8 plugins/ $FLAKE8_IGNORE
-flake8 scripts/ $FLAKE8_IGNORE
 flake8 config/ $FLAKE8_IGNORE
 flake8 tests/ $FLAKE8_IGNORE
+flake8 pelicanconf.py $FLAKE8_IGNORE
 
+echo ">> Checking config"
 yamllint config/social.yml
 
+echo ">> Running spellcheck"
 mdspell --en-gb -ranx theme/templates/**/*.* theme/templates/*.*
 mdspell --en-gb -ranx content/**/*.md content/*.md content/**/*.html content/*.html
 
+echo ">> Running security check"
 nsp check
-
 safety check
-
 bandit -r plugins/ config/ tests/
+
+echo "> Tests complete!"
