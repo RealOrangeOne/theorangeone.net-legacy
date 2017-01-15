@@ -27,6 +27,7 @@ class CorePagesTestCase(TestCase):
         content = self.client.get('.404.html')
         self.assertTitle(content, '404')
 
+
 class CommonPagesTestCase(TestCase):
     def test_has_scripts(self):
         content = self.client.get('index.html')
