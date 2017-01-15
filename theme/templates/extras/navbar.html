@@ -8,15 +8,16 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand page-scroll" href="/">
-        TheOrangeOne
+        {{ SITENAME }}
       </a>
     </div>
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/about/">About</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/setup/">Setup</a></li>
+        {% for category, articles in categories %}
+          {% if not category.page.hide_from_nav %}
+            <li><a href="/{{ category.url }}">{{ category.name }}</a></li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </div>
   </div>
