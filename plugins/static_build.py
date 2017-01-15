@@ -22,7 +22,6 @@ def static_build(*args, **kwargs):
 
     logger.info('JS built!')
 
-    run_command('Building Pygments Style', ['pygmentize', '-S', 'github', '-f', 'html', '-a', '.highlight', '>', 'theme/static/src/scss/pygment.css'], True)
     run_command('Building Styles', [node_bin('node-sass'), 'theme/static/src/scss/index.scss', 'theme/static/build/css/index.css', '--source-map-embed'])
 
     logger.info('SCSS Built!')

@@ -61,5 +61,4 @@ target/
 output/
 theme/static/build/
 
-theme/static/src/scss/pygment.css
 deploy/
