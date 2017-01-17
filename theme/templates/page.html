@@ -9,8 +9,8 @@
 {% endblock %}
 
 {% block content %}
+  {% include 'extras/header.html' with instance=page %}
   {% if not page.no_container %}
-    {% include 'extras/header.html' with instance=page %}
     <section>
       <div class="container">
         {{ page.content }}

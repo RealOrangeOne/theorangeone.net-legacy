@@ -1,6 +1,8 @@
-<section id="header" class="bg-primary image" data-image="{{ instance.image }}">
-  <div class="container text-center text-uppercase">
-    <h1 class="section-heading">{{ instance.title }}</h1>
-    <hr class="light">
+<header id="header" class="bg-primary image" data-image="{{ instance.image or (instance.page and instance.page.image) }}">
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1>{{ instance.title or instance.name or (instance.page and instance.page.name) }}</h1>
+      <hr>
+    </div>
   </div>
-</section>
+</header>

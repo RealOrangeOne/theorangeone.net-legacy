@@ -71,16 +71,18 @@ p a {
   padding: 1px 0;
 }
 
-#header {
+header#header {
   display: flex;
   align-items: center;
+  min-height: 50vh;
+
 
   &.image .section-heading {
     @extend .text-shadow;
   }
 
-  @media screen and (min-height: $screen-xs-max) {
-    height: 40vh;
+  @media screen and (max-height: $screen-xs-max) {
+    height: 100vh;
   }
 }
 
@@ -98,4 +100,8 @@ p a {
       height: 100%;
     }
   }
+}
+
+.github-card-container > iframe {
+  max-width: 100%;
 }
