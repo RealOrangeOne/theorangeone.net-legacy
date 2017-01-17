@@ -35,7 +35,7 @@ class TestCase(unittest.TestCase):
         self.assertIn(title, content.title.string)
 
     def assertHeaderTitle(self, content, title):
-        header_title = content.find('h1', class_="section-heading")
+        header_title = content.find('div', class_="header-content").find('h1')
         self.assertIn(title, self.get_children(header_title))
 
     def assertSamePath(self, p1, p2):
