@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-bottom: 20px;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: $font-size-base;
 }
 
 .bg-primary {
@@ -84,7 +84,7 @@ aside {
       & > a:focus {
         text-transform: uppercase;
         color: $brand-grey-dark;
-        font-size: 13px;
+        font-size: $font-size-small;
         font-weight: 700;
 
         &:hover {
@@ -132,7 +132,7 @@ aside {
 
       .navbar-header .navbar-brand {
         color: $brand-orange;
-        font-size: 14px;
+        font-size: $font-size-small;
 
         &:hover, &:focus {
           color: darken($brand-orange, 10%);
@@ -184,7 +184,7 @@ header {
       p {
         margin-bottom: 50px;
         color: opacify($white, 0.7);
-        font-size: 16px;
+        font-size: $font-size-base;
         font-weight: 300;
       }
     }
@@ -207,7 +207,7 @@ header {
           margin-right: auto;
           margin-left: auto;
           max-width: 80%;
-          font-size: 18px;
+          font-size: $font-size-large;
         }
       }
     }
@@ -266,12 +266,12 @@ header {
 
       .project-category {
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: $font-size-small;
         font-weight: 600;
       }
 
       .project-name {
-        font-size: 18px;
+        font-size: $font-size-large;
       }
     }
   }
@@ -286,11 +286,11 @@ header {
     .portfolio-box-caption {
       .portfolio-box-caption-content {
         .project-category {
-          font-size: 16px;
+          font-size: $font-size-base;
         }
 
         .project-name {
-          font-size: 22px;
+          font-size: $font-size-large;
         }
       }
     }
