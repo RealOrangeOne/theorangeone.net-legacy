@@ -98,14 +98,15 @@
   <section class="bg-primary" id="blog">
     <div class="container text-center">
       <h2 class="section-heading">Blog</h2>
+      <hr class="light">
       {% for article in categories|category_find("blog")|limit(4) %}
-        <hr class="light">
         <div class="row">
           <div class="col-xs-12">
             <p class="h3"><a href="{{ article.url }}">{{ article.title }}</a></p>
             <p>{{ article.summary|striptags|e }}</p>
           </div>
         </div>
+        <hr class="light">
       {% endfor %}
       <a href="/blog/" class="btn btn-primary-dark btn-xl">View all posts</a>
     </div>
