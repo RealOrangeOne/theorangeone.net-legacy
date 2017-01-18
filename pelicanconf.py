@@ -68,10 +68,10 @@ FEED_DOMAIN = SITEURL
 PLUGIN_PATHS = ["plugins", "pelican_plugins"]
 PLUGINS = [
     'sitemap',
-    'pelican-jinja2content',
+    'screenfetch',
     'metatags',
     'autopages',
-    'screenfetch',
+    'pelican-jinja2content',
     'post_build',
     'static_build'
 ]
