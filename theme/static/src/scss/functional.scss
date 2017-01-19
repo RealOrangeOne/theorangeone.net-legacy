@@ -10,3 +10,9 @@
 .text-shadow {
   text-shadow: 0 5px 3px $brand-grey-dark;
 }
+
+.outer-gutter {
+  padding: 0 $grid-gutter-width / 2;
+  @extend .no-gutter;
+
+}

@@ -15,11 +15,6 @@
   @include button-variant(#333, #F5F5F5, #D8D8D8);
 }
 
-.btn-srobo {
-  @include button-variant($white, $srobo-blue, darken($srobo-blue, 5%));
-}
-
-
 .highlight > pre {
   font-size: $font-size-base;
 }

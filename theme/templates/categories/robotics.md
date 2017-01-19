@@ -12,29 +12,35 @@ More information can be found on [their website](https://studentrobotics.org).
 ## My Entries
 Being at college for 2 years, meant I was able to enter 2 years of competitions, SR14, and SR15. We were encouraged to gain an online presence for our team, so I created a website for both years. Unfortunately due to account inactivity, and me changing my website 3 times since, The original pages have been lost, however a large amount of the content the content still remains.
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="thumbnail">
-      <img src="https://c2.staticflickr.com/8/7670/17115168179_1ef30ac6e9_b.jpg" alt="Lucy">
-      <div class="caption">
-        <h3>Student Robotics 2014</h3>
-        <p><strong>Robot Name:</strong> Lucy
-        <br /><small>(No, it doesn't stand for anything)</small>
-        <p><a href="/robotics/2014/" class="btn btn-srobo btn-block">More Info</a></p>
-      </div>
-    </div>
-  </div>
 
+<div class="row outer-gutter">
   <div class="col-sm-6">
-    <div class="thumbnail">
-      <img src="https://c2.staticflickr.com/8/7726/17309695331_584e7de16c_b.jpg" alt="A.L.I.C.E">
-      <div class="caption">
-        <h3>Student Robotics 2015</h3>
-        <p><strong>Robot Name : </strong> A.L.I.C.E
-        <br /><small>(<strong>A</strong>utonomous <strong>L</strong>ogistics and <strong>I</strong>nevitable <strong>C</strong>ollision <strong>E</strong>ngine)</small></p>
-        <p><a href="/robotics/2015/" class="btn btn-srobo btn-block" >More Info</a></p>
+    <a href="/robotics/2014/" class="portfolio-box image" data-image="https://c2.staticflickr.com/8/7670/17115168179_1ef30ac6e9_b.jpg">
+      <div class="portfolio-box-caption">
+        <div class="portfolio-box-caption-content">
+          <div class="project-name">
+            <h2>2014</h2>
+          </div>
+          <div class="project-category">
+            <i>Lucy</i>
+          </div>
+        </div>
       </div>
-    </div>
+    </a>
+  </div>
+  <div class="col-sm-6">
+    <a href="/robotics/2015/" class="portfolio-box image" data-image="https://c2.staticflickr.com/8/7726/17309695331_584e7de16c_b.jpg">
+      <div class="portfolio-box-caption">
+        <div class="portfolio-box-caption-content">
+          <div class="project-name">
+            <h2>2015</h2>
+          </div>
+          <div class="project-category">
+            <i>A.L.I.C.E</i>
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
 
