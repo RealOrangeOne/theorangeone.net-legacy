@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-  {{ article.title }}
+  {{ article|get_html_title }}
 {% endblock %}
 
 {% block metadata %}
@@ -23,7 +23,7 @@
       <div class="container">
         <div class="btn-group">
           {% if article.download_link %}
-            <a class="btn btn-primary btn-xl" href="{{ article.download_link }}">Download {{ article.title }}</a>
+            <a class="btn btn-primary btn-xl" href="{{ article.download_link }}">Download {{ article|get_title }}</a>
           {% endif %}
 
           {% if article.repo %}

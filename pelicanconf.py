@@ -108,7 +108,9 @@ from plugins import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
     "category_find": filters.category_find,
-    "limit": filters.limit
+    "limit": filters.limit,
+    "get_title": filters.get_title,
+    "get_html_title": filters.get_html_title
 }
 
 JINJA_ENVIRONMENT = {

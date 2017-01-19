@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-  {{ category.name|title }}
+  {{ category|get_html_title }}
 {% endblock %}
 
 {% block metadata %}
@@ -30,7 +30,7 @@
               </div>
               <div class="media-body">
                 <a href="/{{ article.url }}">
-                  <h4 class="media-heading">{{ article.title }}</h4>
+                  <h4 class="media-heading">{{ article|get_title }}</h4>
                 </a>
                 <p>{{ article.summary|striptags|e }}</p>
               </div>
