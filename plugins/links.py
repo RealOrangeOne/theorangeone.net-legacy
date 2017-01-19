@@ -1,5 +1,4 @@
 from collections import namedtuple
-from random import shuffle
 from config import social
 
 
@@ -32,5 +31,4 @@ def index_projects():
         ProjectLink("Yoga-Pal", "/projects/yoga-pal/", "http://brain-images.cdn.dixons.com/8/1/10135218/l_10135218_002.jpg"),
         ProjectLink("Wall of Sheep", "/wall-of-sheep/", "http://www.hackerstickers.com/uploaded/thumbnails/db_file_img_3582_475xauto.jpg")
     ]
-    shuffle(projects)
     return projects
