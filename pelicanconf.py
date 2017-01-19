@@ -110,7 +110,8 @@ JINJA_FILTERS = {
     "category_find": filters.category_find,
     "limit": filters.limit,
     "get_title": filters.get_title,
-    "get_html_title": filters.get_html_title
+    "get_html_title": filters.get_html_title,
+    "get_image": filters.get_image
 }
 
 JINJA_ENVIRONMENT = {

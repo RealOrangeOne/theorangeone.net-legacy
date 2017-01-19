@@ -31,3 +31,7 @@ def get_title(instance):
 
 def get_html_title(instance):
     return get_attribute(instance, 'html_title') or get_title(instance)
+
+
+def get_image(instance):
+    return get_attribute(instance, 'image') or (hasattr(instance, 'page') and get_attribute(instance.page, 'name')) or ''

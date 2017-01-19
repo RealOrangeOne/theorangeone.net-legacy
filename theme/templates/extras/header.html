@@ -1,4 +1,4 @@
-<header id="header" class="bg-primary image" data-image="{{ instance.image or (instance.page and instance.page.image) }}">
+<header id="header" class="bg-primary image" data-image="{{ instance|get_image }}">
   <div class="header-content">
     <div class="header-content-inner">
       <h1>{{ instance|get_title }}</h1>
