@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p class="social">
+        <h2 class="social">
           {% for link in FOOTER_LINKS %}
-            <a href="{{ link.url }}" alt="{{ link.key }}" class="footer-link"><i class="fa {{ link.icon }}"></i></a>
+            <a href="{{ link.url }}" class="footer-link"><i class="fa {{ link.icon }}"></i></a>
           {% endfor %}
-        </p>
+        </h2>
       </div>
     </div>
     <div class="row">
