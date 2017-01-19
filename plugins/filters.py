@@ -28,13 +28,13 @@ def limit(line, length):
 def get_title(instance):
     return (
         get_attribute(instance, 'title') or (hasattr(instance, 'page') and get_attribute(instance.page, 'name')) or get_attribute(instance, 'name') or ''
-    ).title()
+    )
 
 
 def get_html_title(instance):
     return (
         get_attribute(instance, 'html_title') or get_title(instance)
-    ).title()
+    )
 
 
 def get_image(instance):

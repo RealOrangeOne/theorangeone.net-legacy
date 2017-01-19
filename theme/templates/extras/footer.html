@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <h2 class="social">
           {% for link in FOOTER_LINKS %}
-            <a href="{{ link.url }}" class="footer-link"><i class="fa {{ link.icon }}"></i></a>
+            <a href="{{ link.url }}" alt="{{ link.key }}" class="footer-link"><i class="fa {{ link.icon }}"></i></a>
           {% endfor %}
         </h2>
       </div>

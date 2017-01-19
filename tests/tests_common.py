@@ -51,7 +51,7 @@ class CommonPagesTestCase(TestCase):
     def test_footer_links(self):
         content = self.client.get('index.html')
         footer = content.footer
-        for link in footer.find('p', class_="social").find_all('a'):
+        for link in footer.find('h2', class_="social").find_all('a'):
             self.assertIn(link.attrs['alt'], social_settings['footer_accounts'])
             self.assertIn("fa fa-", str(list(link.children)[0]))
 

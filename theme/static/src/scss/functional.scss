@@ -12,7 +12,7 @@
 }
 
 .outer-gutter {
-  padding: 0 $grid-gutter-width / 2;
   @extend .no-gutter;
 
+  padding: 0 $grid-gutter-width / 2;
 }
