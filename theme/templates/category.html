@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-  {{ category|get_html_title }}
+  {{ category|get_html_title|title }}
 {% endblock %}
 
 {% block metadata %}
