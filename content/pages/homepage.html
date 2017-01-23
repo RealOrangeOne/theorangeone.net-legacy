@@ -117,15 +117,13 @@
       <h2 class="section-heading">More Content</h2>
       <hr class="primary">
       <p>There's more than just my project and blog!</p>
-      <a class="btn btn-primary btn-xl margin" href="/college/">
-        College
-      </a>
-      <a class="btn btn-primary btn-xl margin" href="/setup/">
-        Setup
-      </a>
-      <a class="btn btn-primary btn-xl margin" href="/work/">
-        Work
-      </a>
+      {% for category, articles in categories %}
+        {% if category.name not in ['blog', 'projects'] %}
+          <a class="btn btn-primary btn-xl margin" href="{{ category.url }}">
+            {{ category|get_title }}
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
   </section>
 </body>
