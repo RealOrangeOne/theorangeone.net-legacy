@@ -120,7 +120,7 @@
       {% for category, articles in categories %}
         {% if category.name not in ['blog', 'projects'] %}
           <a class="btn btn-primary btn-xl margin" href="{{ category.url }}">
-            {{ category|get_title }}
+            {{ category.name }}
           </a>
         {% endif %}
       {% endfor %}
