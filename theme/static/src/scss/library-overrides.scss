@@ -15,14 +15,6 @@
   @include button-variant(#333, #F5F5F5, #D8D8D8);
 }
 
-$btn-srobo-bg: #253571;
-$btn-srobo-border: darken($btn-srobo-bg, 5%);
-
-.btn-srobo {
-  @include button-variant(#DADADA, $btn-srobo-bg, $btn-srobo-border);
-}
-
-
 .highlight > pre {
   font-size: $font-size-base;
 }

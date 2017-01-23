@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-  {{ category|title }}
+  {{ category|get_html_title|title }}
 {% endblock %}
 
 {% block metadata %}
@@ -9,16 +9,7 @@
 {% endblock %}
 
 {% block content %}
-  <section class="bg-primary">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h1 class="section-heading">{{ category.name|title }}</h1>
-          <hr class="light">
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include 'extras/header.html' with instance=category %}
   {% if category.page.content %}
     <section>
       <div class="container">
@@ -39,7 +30,7 @@
               </div>
               <div class="media-body">
                 <a href="/{{ article.url }}">
-                  <h4 class="media-heading">{{ article.title }}</h4>
+                  <h4 class="media-heading">{{ article|get_title }}</h4>
                 </a>
                 <p>{{ article.summary|striptags|e }}</p>
               </div>

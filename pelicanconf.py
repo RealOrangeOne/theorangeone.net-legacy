@@ -68,10 +68,10 @@ FEED_DOMAIN = SITEURL
 PLUGIN_PATHS = ["plugins", "pelican_plugins"]
 PLUGINS = [
     'sitemap',
-    'pelican-jinja2content',
+    'screenfetch',
     'metatags',
     'autopages',
-    'screenfetch',
+    'pelican-jinja2content',
     'post_build',
     'static_build'
 ]
@@ -108,7 +108,10 @@ from plugins import filters
 JINJA_FILTERS = {
     "datetime": filters.format_datetime,
     "category_find": filters.category_find,
-    "limit": filters.limit
+    "limit": filters.limit,
+    "get_title": filters.get_title,
+    "get_html_title": filters.get_html_title,
+    "get_image": filters.get_image
 }
 
 JINJA_ENVIRONMENT = {
