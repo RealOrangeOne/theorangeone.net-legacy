@@ -1,6 +1,5 @@
 ---
 title: React-Native intro dev meeting
-gittime: off
 date: 2016-03-16
 template: blog
 summary: Introducing React-Native to the rest of the office

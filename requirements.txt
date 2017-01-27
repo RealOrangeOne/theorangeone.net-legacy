@@ -2,7 +2,6 @@ bandit==1.4.0
 flake8==3.2.1
 fontawesome_markdown==0.2.6
 git+https://github.com/ryneeverett/python-markdown-comments.git
-gitpython==2.1.1
 iso8601==0.1.11
 markdown==2.6.7
 nose2==0.6.5

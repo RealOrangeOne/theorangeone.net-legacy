@@ -1,6 +1,5 @@
 ---
 title: Cyber Security Month 2016
-gittime: off
 date: 2016-10-01
 template: blog
 summary: The best time to upgrade the security on my projects!
