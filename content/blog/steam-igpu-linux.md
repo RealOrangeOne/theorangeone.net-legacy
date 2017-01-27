@@ -4,7 +4,7 @@ template: blog
 summary: Fixing "`libGL error: failed to load driver: i965`"
 ---
 
-Running steam on linux is great, except for the game support obviously. But running it on an iGPU has recently been causing me problems, mainly under Arch.
+Running steam on linux is great, besides for the game support obviously. But running it on an iGPU has recently been causing me problems, mainly under Arch.
 
 ## Stacktrace:
 ```
