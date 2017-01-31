@@ -10,7 +10,7 @@
       <div class="header-content-inner">
         <h1>{{ AUTHOR }}</h1>
         <hr>
-        <p>Full-stack Developer, Hardware tinkerer, <i>Hacker</i> of all the things</p>
+        <p>Full-stack Developer, Security Enthusiast, <i>Hacker</i> of all the things</p>
       </div>
     </div>
     <a href="#about" class="page-scroll">
@@ -23,7 +23,7 @@
       <h2 class="section-heading">About</h2>
       <hr class="light">
       <p>
-        Hi, I'm Jake. I've been working as a full-stack developer for just over a year. This is my website, where all my projects, blog posts, and other stuff live. Some of it useful, some not so much!
+        I'm Jake. A software engineer with a passion for security and privacy. This is my website, a home for my projects, blog posts, and anything else for that matter.
       </p>
       <a href="/about/" class="btn btn-primary-dark btn-xl">More Info</a>
     </div>
@@ -37,29 +37,25 @@
         <div class="col-lg-3 col-md-6">
           <div class="service-box">
             <i class="fa fa-4x fa-server wow bounceIn text-primary" data-wow-delay=".3s"></i>
-            <h3>Server</h3>
-            <p>Designing and building high-performance server applications and environments</p>
+            <h3>Servers</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="service-box">
-            <i class="fa fa-4x fa-firefox wow bounceIn text-primary" data-wow-delay=".5s"></i>
-            <h3>Client</h3>
-            <p>Creating functional, fast, and responsive websites</p>
+            <i class="fa fa-4x fa-lock wow bounceIn text-primary" data-wow-delay=".5s"></i>
+            <h3>Security</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="service-box">
             <i class="fa fa-4x fa-mobile wow bounceIn text-primary" data-wow-delay=".7s"></i>
             <h3>Mobile</h3>
-            <p>Building lightweight, cross-platform mobile applications</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="service-box">
             <i class="fa fa-4x fa-usb wow bounceIn text-primary" data-wow-delay=".9s"></i>
             <h3>Hardware</h3>
-            <p>Constructing workflow-specific Desktops, Servers and Notebooks</p>
           </div>
         </div>
       </div>
@@ -116,7 +112,6 @@
     <div class="container text-center">
       <h2 class="section-heading">More Content</h2>
       <hr class="primary">
-      <p>There's more than just my project and blog!</p>
       {% for category, articles in categories %}
         {% if category.name not in ['blog', 'projects'] %}
           <a class="btn btn-primary btn-xl margin" href="{{ category.url }}">
