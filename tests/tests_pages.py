@@ -44,20 +44,20 @@ class HomepageTestCase(TestCase):
 class AboutPageTestCase(TestCase):
     def test_title(self):
         content = self.client.get('about/index.html')
-        self.assertHeaderTitle(content, 'About Me')
+        self.assertHeaderTitle(content, 'About')
         self.assertTitle(content, 'About')
 
     def test_website_section(self):
         content = self.client.get('about/index.html')
         section = content.find('section', id='website')
         subtitle = section.find('h2')
-        self.assertEqual('About my website', self.get_children(subtitle))
+        self.assertEqual('Website', self.get_children(subtitle))
 
     def test_server_section(self):
         content = self.client.get('about/index.html')
         section = content.find('section', id='server')
         subtitle = section.find('h2')
-        self.assertEqual('The Server', self.get_children(subtitle))
+        self.assertEqual('Server', self.get_children(subtitle))
 
     def test_github_card(self):
         content = self.client.get('about/index.html')
