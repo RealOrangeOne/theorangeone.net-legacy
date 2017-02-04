@@ -13,4 +13,4 @@ After researching into it for a while, it turns out that there are a few differe
 
 Obviously there are many different ways, and probably far better ways of doing this, but I wanted something that was simple to use, fast, and could be done by anyone, no matter how technically illiterate. I decided to write it in C#, and use a windows console interface so the whole thing could be done with a few key presses.
 
-Unfortunately I can't find the original source, or a copy of the executable. Once I find them, i'll update this post!
+Unfortunately I can't find the original source, or a copy of the executable. Once I find them, I'll update this post!

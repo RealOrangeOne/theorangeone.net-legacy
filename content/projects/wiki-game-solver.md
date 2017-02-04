@@ -25,7 +25,7 @@ The game isn't open source, so I couldn't see how the back end worked, but after
 
 The game was won when the iframe was at the final page location, or at least a clone of it on their servers with some extra querystring information.
 
-With this, I started to write something that would change the location of the iframe to the goal. Fortunately for me, the goal url was on the page. So all it took was a little mutative switcheroo to win! 
+With this, I started to write something that would change the location of the iframe to the goal. Fortunately for me, the goal URL was on the page. So all it took was a little switcheroo to win! 
 
 ### Source
 The source for this was written in pure JS, and relies heavily on the fact that the wiki game uses jQuery so I can plug into components and events really easily. The code can be found in the GitHub gists below. Both the standard and compact versions are available.

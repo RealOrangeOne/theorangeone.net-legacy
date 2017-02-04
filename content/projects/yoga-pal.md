@@ -14,7 +14,7 @@ This script worked great, doing exactly what it said it did, nicely and quickly,
 
 So I wrote my own CLI, based off the above script, that would allow me to tweak everything, so the laptop can be used as it was intended. With a simple command, I could swap the _mode_ of the laptop to match how I was using it.
  
-Eg:
+eg:
 
 ```bash
 $ yoga mode tablet  # Set to tablet mode
