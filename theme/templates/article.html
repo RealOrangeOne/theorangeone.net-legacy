@@ -10,9 +10,13 @@
 
 {% block content %}
   {% include 'extras/header.html' with instance=article %}
-  <section>
-    <div class="container">
-      {{ article.content }}
-    </div>
-  </section>
+  {% if not article.no_container %}
+    <section>
+      <div class="container">
+        {{ article.content }}
+      </div>
+    </section>
+  {% else %}
+    {{ article.content }}
+  {% endif %}
 {% endblock %}

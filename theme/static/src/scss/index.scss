@@ -46,6 +46,11 @@ p a {
   background-size: cover;
 }
 
+section.image {
+  background-attachment: fixed;
+  height: 55vh;
+}
+
 .container > img,
 .container p > img,
 .row > div > img {
