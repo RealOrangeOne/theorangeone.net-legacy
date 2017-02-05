@@ -1,21 +1,20 @@
 ---
 title: LanSchool
-slug: LanSchool
-summary: The tool of choice of my college to monitor students usage of computers. Turns out it's not particularly robust!
+summary: The tool of choice of my college to monitor students usage of computers. Turns out it's not particularly secure!
 ---
 
-LanSchool is the software of choice for my college to monitor and control computer usage. It allows teachers to see students screens, interact with them, and even block certain functionality like the internet and removable storage. My secondary school had a system much like this, but they weren't as active in using it.
+LanSchool was the software of choice for my college to monitor and control computer usage. It allows teachers to see students screens, interact with them, and even block certain functionality like the internet and removable storage.
 
-By far the worst feature of LanSchool was the screen blocking. At will, a teacher could show an overlay on your screen, usually consisting of test saying _"Eyes front"_ etc. The problem with this pop up was there was no way to hide it, it just appeared suddenly and forced you to stop using your computer. This tool had to be stopped!
+By far the worst feature of LanSchool was the screen blocking. At will, a teacher could show an overlay on your screen, usually consisting of test saying _"Eyes front"_ etc. There was no way to hide this product, it just appeared suddenly and forced you to stop using your computer.
 
-Within a few weeks of realising this tool, A friend of mine discovered how to get around it in a really primitive way: simply unplugging the ethernet. It's rather incredible this worked, but it had some problems:
+Within a few weeks, A friend of mine discovered how to get around it in a really primitive way: just unplugging the ethernet. It's rather incredible this worked, but it had some problems:
 
 - It took around 10 seconds after disconnect before the screen was restored, not a major problem, but still annoying.
 - With all documents and programs bring stored on the network, you couldn't access any programs and documents you didn't already have open.
 - When you reconnect the cable, the screen returns to the state of everyone else.
 - Your computer would suddenly disappear from the list of machines on the teachers screen. If they were observant, they'd notice!
 
-This solution worked, but wasn't ideal. Another solution was to log out (using the `ctrl + alt + delete` shortcut, which worked for some reason), and log in again. Our network was slow, so sometimes it wasn't worth the wait if your screens were only disabled for a short period of time. However the main problem with this was the fact it didn't always work, only around 30% of the time.
+This solution worked, but wasn't ideal. Another solution was to log out (using the `ctrl + alt + delete` shortcut, which still worked for some reason), and log in again. Our network was slow, so sometimes it wasn't worth the wait if your screens were only disabled for a short period of time. However the main issue was that it didn't always work, only around 30% of the time.
 
 #### The best fix
 
@@ -28,11 +27,11 @@ This method worked almost perfectly, however had a few problems:
 - It worked for every user account on that computer, so it had to be done on each computer I used.
 - A teacher would notice, as you would never show up on their list.
 
-Fortunately this last point is a non-issue, as usually the teachers put it down to the software messing up, not a student breaking the install. Another key problem with this is that it's rather obvious when everyones computer other than yours is disabled, as you're still actively using yours, whilst everyone else is actually listening!
+Fortunately this last point is a non-issue, as usually the teachers put it down to the software messing up, not a student breaking it intentionally. Another key problem with this is that it's rather obvious when everyone else's is disabled.
 
 #### The silver lining
 
-Disabling the client on a machine also allowed for another feature that I had never thought of, but was by far the greatest bi-product of disabling LanSchool: __Teacher Mode!__
+Disabling the client on a machine also allowed for another feature that I had never thought of, but was by far the greatest feature of disabling LanSchool: __Teacher Mode!__
 
 Due to me being able to have access to a teachers computer one evening, I was able to copy the executables for the teachers console onto a USB drive, and then run them later on my computer. Obviously I know most software won't work in this way, but I'm so glad this one did!
 
@@ -40,4 +39,4 @@ Now, I had access to everything the teacher did, which made lessons much more ex
 
 #### Phase 2
 
-Whilst writing this article, over 2 years after all this, I realised I could improve it considerable. Writing some kind of wrapper program, to detect my username, and run LanSchool for users other than me, would be harder to work out there was a problem with the computer, as well as prevent it disabling LanSchool for every user.
+While writing this, over 2 years after leaving, I realised I could improve it considerably. Writing some kind of wrapper program, to detect my username, and run LanSchool for users other than me, would be harder to work out there was a problem with the computer, as well as prevent it disabling LanSchool for every user.
