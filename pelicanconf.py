@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.realpath('./'))
 AUTHOR = "Jake Howard"
 SITENAME = "TheOrangeOne"
 SITEURL = "https://theorangeone.net"
+CONTACT_EMAIL = "info@theorangeone.net"
 PATH = 'content'
 TIMEZONE = "Europe/London"
 DEFAULT_LANG = "en"
@@ -111,7 +112,8 @@ JINJA_FILTERS = {
     "limit": filters.limit,
     "get_title": filters.get_title,
     "get_html_title": filters.get_html_title,
-    "get_image": filters.get_image
+    "get_image": filters.get_image,
+    "encode_text": filters.encode_text
 }
 
 JINJA_ENVIRONMENT = {
