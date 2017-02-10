@@ -49,13 +49,13 @@ accounts:
     - fa-trello
 
   freenode:
-    - Freenode IRC
+    - Freenode
     - TheOrangeOne
     - https://webchat.freenode.net/
     - fa-rss
 
   atomio:
-    - AtomIO Slack
+    - Atom Slack
     - TheOrangeOne
     - https://atomio.slack.com/
     - fa-slack
@@ -76,7 +76,7 @@ accounts:
     - npm
     - TheOrangeOne
     - https://www.npmjs.com/~{0}/
-    - fa-file-code-io
+    - fa-file-code-o
 
 footer_accounts:
   - github
