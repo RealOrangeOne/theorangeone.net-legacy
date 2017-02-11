@@ -31,21 +31,13 @@ $('.navbar-brand').bind('click', function (event) {
   event.preventDefault();
 });
 
-$('.panel-heading').bind('click', function () {
-  var ele = $(this);
-  if (ele.find('.panel-body').hasClass('ascii-hidden')) {
-    ele = ele.find('.panel-body');
-    var raw_code = ele.text().split(' ');
-
-  }
-});
 
 $('.protected-mailto').bind('click', function (evt) {
   evt.preventDefault();
   var char_codes = $(this).data('value').split(' ');
-  var plain_text = []
-  for(var i=0; i<char_codes.length; i++) {
-    plain_text.push(String.fromCharCode(parseInt(char_codes[i])));
+  var plain_text = [];
+  for (var i = 0; i < char_codes.length; i++) {
+    plain_text.push(String.fromCharCode(parseInt(char_codes[i], 10)));
   }
   window.location = 'mailto:' + plain_text.join('');
 });

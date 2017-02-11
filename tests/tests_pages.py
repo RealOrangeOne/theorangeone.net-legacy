@@ -1,5 +1,6 @@
 from tests import TestCase
 from config import social as social_settings
+import pelicanconf as settings
 import os.path
 
 
@@ -47,18 +48,6 @@ class AboutPageTestCase(TestCase):
         self.assertHeaderTitle(content, 'About')
         self.assertTitle(content, 'About')
 
-    def test_website_section(self):
-        content = self.client.get('about/index.html')
-        section = content.find('section', id='website')
-        subtitle = section.find('h2')
-        self.assertEqual('Website', self.get_children(subtitle))
-
-    def test_server_section(self):
-        content = self.client.get('about/index.html')
-        section = content.find('section', id='server')
-        subtitle = section.find('h2')
-        self.assertEqual('Server', self.get_children(subtitle))
-
     def test_github_card(self):
         content = self.client.get('about/index.html')
         tags = content.find_all('div', class_='github-card')
@@ -66,6 +55,19 @@ class AboutPageTestCase(TestCase):
         tag = tags[0]
         self.assertEqual('medium', tag.attrs['data-theme'])
         self.assertEqual(social_settings['accounts']['github'][1], tag.attrs['data-github'])
+
+    def test_accounts(self):
+        content = self.client.get('about/index.html')
+        accounts = content.find_all('div', class_='account')
+        defined_accounts = [s for k, s in settings.ACCOUNTS.items()]
+        self.assertEqual(len(accounts), len(defined_accounts))
+        site_names = [s['site'] for s in defined_accounts]
+        urls = [s['url'] for s in defined_accounts]
+        icons = [s['icon'] for s in defined_accounts]
+        for account in accounts:
+            self.assertIn(account.find('a').attrs['href'], urls)
+            self.assertIn(account.find('i').attrs['class'][-1], icons)
+            self.assertIn(self.get_children(account.find('h3')), site_names)
 
 
 class Page404TestCase(TestCase):
