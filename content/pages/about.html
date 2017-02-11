@@ -1,5 +1,5 @@
 <head>
-  <meta name="title" content="About" />
+  <meta name="title" content="About Me" />
   <meta name="no_container" content="true" />
 </head>
 <body>
@@ -15,7 +15,7 @@
   </section>
   <section class="bg-primary">
     <div class="container">
-      <h2>Personal Data</h2>
+      <h2 class="section-heading">Personal Data</h2>
       <p>
         In the interest of privacy, there's very little personal information here.
       </p>
@@ -24,25 +24,29 @@
       </p>
     </div>
   </section>
-  <section id="skills">
+  <section>
     <div class="container">
       <h2 class="section-heading">Accounts</h2>
       <p>
         These are all the accounts I run, all to do with various things. Take a look!
       </p>
-      <hr class="primary">
       <div class="row text-center">
         {% for key, account in ACCOUNTS.items() %}
           <div class="col-sm-3 col-xs-6">
-            <div class="service-box">
-              <a href="{{ account.url }}">
-                <i class="fa fa-4x {{ account.icon }} text-primary"></i>
+            <div class="service-box account">
+              <a href="{{ account.url }}" class="no-underline">
+                <i class="fa fa-4x {{ account.icon }}"></i>
                 <h3>{{ account.site }}</h3>
               </a>
             </div>
           </div>
         {% endfor %}
       </div>
+    </div>
+  </section>
+  <section class="bg-primary text-center">
+    <div class="container">
+      <a class="btn btn-primary-dark btn-xl" href="/contact/">Contact Me</a>
     </div>
   </section>
 </body>

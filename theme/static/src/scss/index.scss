@@ -114,3 +114,9 @@ header#header {
 .protected-mailto {
   cursor: pointer;
 }
+
+.service-box.account {
+  a:hover {
+    color: $brand-orange-dark;
+  }
+}

@@ -1,0 +1,27 @@
+<head>
+  <meta name="title" content="Contact Me" />
+  <meta name="no_container" content="true" />
+</head>
+<body>
+  <section>
+    <div class="container">
+      <p>
+        The fastest way to contact me is through twitter. Just tag me or send me a message and I'll respond as soon as possible!
+      </p>
+    </div>
+  </section>
+  <section class="bg-primary">
+    <div class="container">
+      <h2 class="section-heading">Need something more formal?</h2>
+      <p>
+        If you need to contact me in a more formal capacity, send me an email! I aim to respond to all emails within 3 days.
+      </p>
+    </div>
+  </section>
+  <section class="text-center">
+    <div class="container">
+      <a class="btn btn-primary btn-xl margin protected-mailto" data-value="{{ CONTACT_EMAIL|encode_text }}">Send me an email!</a>
+      <a class="btn btn-primary btn-xl margin" href="{{ ACCOUNTS.twitter.url }}">View Twitter</a>
+    </div>
+  </section>
+</body>
