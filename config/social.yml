@@ -69,7 +69,7 @@ accounts:
   codepen:
     - CodePen
     - TheOrangeOne
-    - https://codepen.io/~{0}/
+    - https://codepen.io/{0}/
     - fa-codepen
 
   npm:
