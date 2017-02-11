@@ -96,5 +96,11 @@ class TestClientTestCase(TestCase):
     def test_file_exists(self):
         self.assertTrue(self.client.exists('index.html'))
 
+    def test_build_path_without_index(self):
+        self.assertEqual(
+            self.client.build_path('foo/'),
+            self.client.build_path('foo/index.html')
+        )
+
     def test_file_doesnt_exist(self):
         self.assertFalse(self.client.exists('foo.bar'))

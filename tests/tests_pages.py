@@ -70,6 +70,20 @@ class AboutPageTestCase(TestCase):
             self.assertIn(self.get_children(account.find('h3')), site_names)
 
 
+class ContactPageTestCase(TestCase):
+    def test_title(self):
+        content = self.client.get('contact/')
+        self.assertHeaderTitle(content, 'Contact Me')
+        self.assertTitle(content, 'Contact Me')
+
+    def test_contact_links(self):
+        content = self.client.get('contact/')
+        links = content.find_all('section')[2].find_all('a')
+        self.assertEqual(links[1].attrs['href'], settings.ACCOUNTS['twitter']['url'])
+        decoded_value = ''.join([chr(int(c)) for c in links[0].attrs['data-value'].split(' ')])
+        self.assertEqual(decoded_value, settings.CONTACT_EMAIL)
+
+
 class Page404TestCase(TestCase):
     def test_title(self):
         content = self.client.get('.404.html')
