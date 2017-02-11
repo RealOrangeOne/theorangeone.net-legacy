@@ -110,3 +110,13 @@ header#header {
 .github-card-container > iframe {
   max-width: 100%;
 }
+
+.protected-mailto {
+  cursor: pointer;
+}
+
+.service-box.account {
+  a:hover {
+    color: $brand-orange-dark;
+  }
+}

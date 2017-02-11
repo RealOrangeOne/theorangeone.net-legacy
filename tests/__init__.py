@@ -9,7 +9,7 @@ class TestClient:
     def get(self, path, JS=True):
         file_path = self.build_path(path)
         content = "".join(open(file_path).readlines())
-        if path.endswith('html'):
+        if file_path.endswith('html'):
             content = BeautifulSoup(content, 'html.parser')
             if JS:
                 for script in content(["noscript"]):  # Remove noscript tags
@@ -19,6 +19,8 @@ class TestClient:
     def build_path(self, path):
         if path.startswith('/'):
             path = path[1:]
+        if path.endswith('/'):
+            path += 'index.html'
         return os.path.join(self.output_path, path)
 
     def exists(self, path):

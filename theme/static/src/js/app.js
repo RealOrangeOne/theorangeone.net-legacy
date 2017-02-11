@@ -30,3 +30,14 @@ $('.navbar-brand').bind('click', function (event) {
   }
   event.preventDefault();
 });
+
+
+$('.protected-mailto').bind('click', function (evt) {
+  evt.preventDefault();
+  var char_codes = $(this).data('value').split(' ');
+  var plain_text = [];
+  for (var i = 0; i < char_codes.length; i++) {
+    plain_text.push(String.fromCharCode(parseInt(char_codes[i], 10)));
+  }
+  window.location = 'mailto:' + plain_text.join('');
+});

@@ -1,6 +1,5 @@
 <head>
-  <meta name="slug" content="about" />
-  <meta name="title" content="About" />
+  <meta name="title" content="About Me" />
   <meta name="no_container" content="true" />
 </head>
 <body>
@@ -14,36 +13,40 @@
     </div>
     <script async defer src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
   </section>
-  <section class="bg-primary" id="website">
+  <section class="bg-primary">
     <div class="container">
-      <h2>Website</h2>
+      <h2 class="section-heading">Personal Data</h2>
       <p>
-        My website is the culmination of all my knowledge, compiled into 1 place. It not only contains all my projects, but is itself is a project.
+        In the interest of privacy, there's very little personal information here.
       </p>
       <p>
-        The site is primarily built with <a href="http://getpelican.com">Pelican</a>, a static site generator. This allows me to write nice clean, <i>DRY</i> content, and have it come out as clean, minified HTML.
-      </p>
-      <p>
-        The Javascript is built using <a href="http://browserify.org/">Browserify</a>, and the CSS is built using <a href="https://github.com/sass/node-sass">node-SCSS</a>. Both are run as a build step when pelican builds.
+        The information that is here is eitther not personal enough to bother protecting, or has been selectively chosen as nothing bad.
       </p>
     </div>
   </section>
-  <section id="server">
+  <section>
     <div class="container">
-      <h2>Server</h2>
+      <h2 class="section-heading">Accounts</h2>
       <p>
-        The website is hosted on part of my dedicated server from <a href="https://www.soyoustart.com/en/">SoYouStart</a>, running an Ubuntu Server VM with <a href="http://dokku.viewdocs.io/dokku/">Dokku</a> installed.
+        These are all the accounts I run, all to do with various things. Take a look!
       </p>
-      <p>
-        The prebuilt static files are served using a <a href="https://github.com/RealOrangeOne/tstatic">custom Express server</a>, to make the site as fast and effective as possible.
-      </p>
-    </div>
-  </section>
-  <section class="text-center">
-    <div class="container">
-      <div class="btn-group">
-        <a class="btn btn-github btn-xl" href="https://github.com/RealOrangeOne/theorangeone.net"><i class="fa fa-github fa-lg"></i> View Source</a>
+      <div class="row text-center">
+        {% for key, account in ACCOUNTS.items() %}
+          <div class="col-sm-3 col-xs-6">
+            <div class="service-box account">
+              <a href="{{ account.url }}" class="no-underline">
+                <i class="fa fa-4x {{ account.icon }}"></i>
+                <h3>{{ account.site }}</h3>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
       </div>
+    </div>
+  </section>
+  <section class="bg-primary text-center">
+    <div class="container">
+      <a class="btn btn-primary-dark btn-xl" href="/contact/">Contact Me</a>
     </div>
   </section>
 </body>

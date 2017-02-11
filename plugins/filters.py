@@ -39,3 +39,7 @@ def get_html_title(instance):
 
 def get_image(instance):
     return get_attribute(instance, 'image') or (hasattr(instance, 'page') and get_attribute(instance.page, 'name')) or ''
+
+
+def encode_text(text):
+    return " ".join([str(ord(c)) for c in text])
