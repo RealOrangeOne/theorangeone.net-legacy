@@ -31,7 +31,7 @@
         These are all the accounts I run, all to do with various things. Take a look!
       </p>
       <div class="row text-center">
-        {% for key, account in ACCOUNTS.items() %}
+        {% for account in ACCOUNTS.values()|sort(attribute='site') %}
           <div class="col-sm-3 col-xs-6">
             <div class="service-box account">
               <a href="{{ account.url }}" class="no-underline">
