@@ -1,8 +1,7 @@
-# My Website
+# My Website - Legacy Version
 
-[![Circle CI](https://circleci.com/gh/RealOrangeOne/theorangeone.net.svg?style=svg)](https://circleci.com/gh/RealOrangeOne/theorangeone.net)
+New version at [https://github.com/RealOrangeOne/theorangeone.net](https://github.com/RealOrangeOne/theorangeone.net).
 
-Find it here: [https://theorangeone.net](http://theorangeone.net)
 
 ## Installation
 ```bash
